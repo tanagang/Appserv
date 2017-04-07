@@ -1,0 +1,92 @@
+<div class="header">
+	<div class="header-top sm-hidden">
+		<div class="wd1000">
+			<ul>
+				<li id="userInfo"><a href="login.html">登录</a> / <a href="regist.html">注册</a></li>
+				<li class="mp hide"><a href="pindex.html">我的泡泡</a></li>
+				<li><a href="patternTag2.html">泡泡模式</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="header-nav clearfix">
+		<div class="logo clearfix">
+			<a href="index.html"><img src="img/header-nav.png"/></a>
+			<div class="sm-hidden infomation">有知庐集研究、实践、教学为一体，通过筛选出有助于理想未来的愿望型有知需求，促进其转变为公德型有知需求，以推动社会的进步。有知庐使用前沿的商业模式，将盈余100%支持这一事业的理念推广和独立运营。</div>
+		</div>
+		<div class="bar hide sm-visible">
+			<span id="userInfo2"><a href="login.html">登录 </a>&ensp;/&ensp;<a href="regist.html">注册 </a></span>
+			<a href="javascript:void(0)" id="barToggle"><img src="img/bar.png"/></a>
+			<ul id="ulNav" class="hide">
+				<li rel="navOne"><a href="navOne.html" >进步商业</a></li>
+				<li rel="navTwo"><a href="navTwo.html">杜绝童乞</a></li>
+				<li rel="navThree"><a href="navThree.html">救急精神</a></li>
+			</ul>
+		</div>
+		<ul class="ul-nav sm-hidden">
+			<li rel="navOne"><a href="navOne.html">进步商业</a></li>
+			<li rel="navTwo"><a href="navTwo.html">杜绝童乞</a></li>
+			<li rel="navThree"><a href="navThree.html">救急精神</a></li>
+		</ul>
+	</div>
+	<div class="header-bottom hide">
+		<div class="wd1000">
+			<p class="header-bottom-t">有知庐</p>
+			<p class="header-bottom-b">集研究、实践、教学为一体，通过筛选出有助于理想未来的愿望型有知需求，促进其转变为公德型有知需求，以推动社会的进步。有知庐使用前沿的商业模式，将盈余100%支持这一事业的理念推广和独立运营。</p>
+			<p class="header-bottom-t">有知需求</p>
+			<p class="header-bottom-b">是指超越个人生存和繁殖的需求，包括对自身，他人、社会、动物或环境的关注， 分为愿望型（个人或少数人的）和公德型（大多数人所共享的）。</p>
+		</div>
+	</div>
+</div>
+<script>
+	var userid = "";
+	$(function(){
+		var arrUrl = {
+			"0":["navOne.html","navTwo.html","navThree.html"],
+			"1":["pindex.html","mMycollect.html","mMymark.html","mMypao.html","mMysupport.html","addPao.html","mSpread.html","message.html","motivatePao.html","mSafe.html"]
+		};
+		
+		var splitArr = window.location.pathname.split("/");
+		var pageName = splitArr[splitArr.length-1];
+		
+		for(var i in arrUrl){
+			var f = arrUrl[i].indexOf(pageName);
+			if(f>=0){
+				var rel = pageName.split(".")[0];
+				$("#ulNav li[rel~="+rel+"]").addClass("active");
+				$(".ul-nav li[rel~="+rel+"] a").addClass("active");
+			}
+		}
+		userid = $.cookie("c_member_mobile");
+		if(userid){
+			userid = userid.substring(0,3)+"****"+userid.substring(7,11);
+			$(".mp").removeClass("hide");
+		}
+		
+		if(userid==null||userid==""){
+			$("#userInfo,#userInfo2").html('<a href="login.html">登录</a> / <a href="regist.html">注册</a>');
+			$(".mp").addClass("hide");
+		}else{
+			$("#userInfo,#userInfo2").html('<a href="#">'+userid+'</a> / <a href="javascript:void(0)" id="loginOut">退出</a>');
+			$(".mp").removeClass("hide");
+		}
+		//登出
+		$(document).on("click","#loginOut",function(){
+			$.ajax({
+				type:"post",
+				dataType:dataType, 
+				url:url+"user/logout.json",
+				data:{},
+				success:function(data){
+					if(data.respCode=="0000"){
+						alert("退出成功！");
+						$("#userInfo,#userInfo2").html('<a href="login.html">登录</a> / <a href="regist.html">注册</a>');
+						window.location.reload();
+					}else{
+						alert(data.respMsg);
+					}
+				}
+			});
+		});
+	});
+	
+</script>

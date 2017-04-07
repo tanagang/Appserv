@@ -1,0 +1,100 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>pccb</title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" type="text/css" href="css/tz_style.css">
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script src="js/swipe.js"></script>
+</head>
+<body>
+    <div id='mySwipe' class='swipe'>
+      <ul class='swipe-wrap'>
+        <li><img src="images/slide.jpg" style="width:100%;" title="0"></li>
+        <li><img src="images/slide.jpg" style="width:100%;" title="1"></li>
+        <li><img src="images/slide.jpg" style="width:100%;" title="2"></li>
+      </ul>
+       <p id="dot"></p>
+    </div>
+    <section class="lc2 clearfix mt0">
+        <p class="txt-center f16 mt5">浩然科技大厦</p>
+        <div class="f14 mt10 line-height180">浩然高科技大厦座落于上交大徐汇校区，它
+是由台湾大陆工程公司创办人、世界建筑业
+知名企业家殷之浩先生，于1993年捐赠100万
+美元（后殷氏家族为使大厦更趋完善又追加
+捐赠200万美元用以建造24层高科技大厦一幢
+。江泽民总书记亲笔题写“浩然高科技大厦”以
+示铭记。它的外形象征一册开启的书本，寓意
+“开卷有益”，和交大这所国际著名大学所倡导
+的教书育人之精神相得益彰。
+
+</div>
+    </section>
+    <div style="height:55px"></div>
+    <footer class="box" id="footer">
+        <div class="flex">
+            <a href="#" rel="1">
+                <dl>
+                    <dt><img src="images/icon1.png" height="22"></dt>
+                    <dd>咖啡</dd>
+                </dl>
+            </a>
+         </div>
+        <div class="flex">
+            <a href="#" rel="2"  class="active" >
+                <dl>
+                    <dt><img src="images/icon2_active.png"  height="22"/></dt>
+                    <dd>预定</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+            <a href="#">
+                <dl>
+                    <dt><img src="images/icon3.png" height="22" /></dt>
+                    <dd>我的</dd>
+                </dl>
+             </a>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+    var elem = document.getElementById('mySwipe');
+    var size=$(".swipe-wrap li").size();
+    var startIndex = 0;
+    var str='';
+    if(size>1){
+        startIndex = 1;
+        for(var i=0;i<size;i++){
+         str+='<span></span>';
+        }
+        $("#dot").html(str);
+        $("#dot span").eq(1).addClass("active");
+    }
+    
+    window.mySwipe = Swipe(elem, {
+       startSlide:startIndex,
+       auto: 5000,
+       continous: true,
+       disableScroll: true,
+      // stopPropagation: true,
+       callback: function(index, element) {
+           var idx=$(element).find("img").attr("title");
+           $("#dot span").removeClass("active");
+           $("#dot span").eq(idx).addClass("active");
+        },
+      // transitionEnd: function(index, element) {}
+    });
+    
+    
+</script>
+
+

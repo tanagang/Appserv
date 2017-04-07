@@ -1,0 +1,63 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>中奖</title>
+<link rel="stylesheet" href="css/index.css" />
+<style type="text/css">
+	.file-wrap{width:100px; height:100px; line-height: 100px; text-align: center;  overflow: hidden; position: relative;border:1px solid #61B754;border-radius:100%;margin:0 auto;background:#fff; }
+	.file-wrap:hover{background:#ddd;}
+	.file-wrap input{position: absolute;top:0;right:0; z-index:999;width:100px; height:100px;display: block;opacity: 0;cursor: pointer;}
+	.file-wrap img{position: absolute;top:0;left:0;width:100px; z-index:998;height:100px;display: block;}
+</style>
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+</head>
+<body class="fff">
+	 <div style="padding:0.5rem 1.5rem;">
+		<p class="title2" style="color:#666">提交信息让小伙伴为你投票</p>
+		<form>
+			<div class="file-wrap">
+				<input type="file" onchange="Preview(this)"/>上传头像
+				<img src="" id="img" width="100%" />
+			</div>
+			<div class="clearfix"></div>
+			<div class="inp">
+				<img src="images/icon4.png" width="20" height="20" />
+				<input type="text" placeholder="请输入姓名" />
+			</div>
+			<div class="inp">
+				<textarea placeholder="请在此输入拉票语..."></textarea>
+			</div>
+			<input type="submit" class="sub" value="去拉票" />
+			<p style="margin:1rem auto;font-size:1.2rem">提交后在下一个页面<br/>点击右上角按钮，点击发送给好友，朋友圈或微信群<br/>坐等小伙伴为你投票</p>
+		</form>
+	</div>
+</body>
+</html>
+<script>
+	//图片上传
+	function Preview(e) {  
+		//$("#error").html("图片限于png，gif，jpeg，jpg格式！").css("color","");
+		var ext =$(e).val().split(".")[1].toUpperCase();
+		if ( ext != "PNG" && ext != "GIF" && ext != "JPG" && ext != "JPEG") {
+			//$("#error").html("请上传正确的图片格式png，gif，jpeg，jpg！").css("color","red");
+			return false;
+		}else{
+			 var url= window.URL.createObjectURL($(e)[0].files[0]);
+			 $("#img").attr("src",url);
+		}
+	}
+	
+</script>
+
+
+
+
+
+

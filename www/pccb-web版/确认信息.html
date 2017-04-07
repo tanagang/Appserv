@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<style type="text/css">
+   .dl-wrap dl{width:50%;float:left;}
+   .dl-wrap dl dd{text-align:center;height:5rem;line-height:5rem;}
+   .file-wrap{width:100%; height:9.5rem;font-size:12px;text-align: center;  overflow: hidden; position: relative;margin:0 auto;background:#fff;padding:1rem;border:1px dashed #ddd;border-radius:0.5rem;}
+   .file-wrap input{position: absolute;top:0;right:0; z-index:999;width:100%; height:9.5rem;display: block;opacity: 0;cursor: pointer;}
+   .file-wrap a{position:absolute;top:50%;left:50%;padding:0.3rem 1rem;border-radius:0.4rem;background:rgba(0,0,0,0.3);display:block; z-index:998;color:#eee;-webkit-transform: translateX(-50%) translateY(-50%);}
+   .file-wrap img{position: absolute;top:0;left:0;width:100%; z-index:997;height:9.5rem;display: block;background:#fff;padding:1rem;box-sizing: border-box;}
+</style>
+</head>
+<body class="fff">
+	<header>
+		<a href="javascript:void(0)"><img src="images/back.png" height="20" width="12"></a>
+		开通易极付
+	</header>
+	<img src="images/banner.png" class="banner">
+   <section>
+   		<nav>
+   			<a href="javascript:void(0)">1.输入身份证信息</a>
+   			<a href="javascript:void(0)" class="active">2.确认信息</a>
+   		</nav>
+			<p class="info margin-top-10">为了确保是您本人开通，需上传身份证正反面。</p>
+			
+			<div class="clearfix dl-wrap margin-top-20">
+            <dl>
+               <dt class="file-wrap">
+                  <a href="javascript:void(0)">上传图片</a>
+                  <input type="file" onchange="Preview(this)"/>
+                  <img src="" width="100%" />
+               </dt>
+               <dd>
+                  正面照片
+               </dd>
+            </dl>
+            <dl>
+               <dt class="file-wrap no-border">
+                   <img src="images/1.jpg" />
+               </dt>
+               <dd>
+                  示例
+               </dd>
+            </dl>
+         </div>
+         <div class="clearfix dl-wrap">
+            <dl>
+               <dt class="file-wrap">
+                  <a href="javascript:void(0)">上传图片</a>
+                  <input type="file" onchange="Preview(this)"/>
+                  <img src="" width="100%" />
+               </dt>
+               <dd>
+                  反面照片
+               </dd>
+            </dl>
+            <dl>
+               <dt class="file-wrap no-border">
+                   <img src="images/2.jpg"/>
+               </dt>
+               <dd>
+                  示例
+               </dd>
+            </dl>
+         </div>
+         <p class="margin-top-20"><a href="javascript:void(0)" class="btn">完成</a></p>
+   </section>
+
+</body>
+</html>
+<script>
+   //图片上传
+   function Preview(e) {  
+      //$("#error").html("图片限于png，gif，jpeg，jpg格式！").css("color","");
+      var ext =$(e).val().split(".")[1].toUpperCase();
+      if ( ext != "PNG" && ext != "GIF" && ext != "JPG" && ext != "JPEG") {
+        alert("请上传正确的图片格式png，gif，jpeg，jpg！")
+         return false;
+      }else{
+          var url= window.URL.createObjectURL($(e)[0].files[0]);
+          $(e).closest('dl').find("img").attr("src",url);
+      }
+   }
+   
+</script>
+
+
+
+
+
+
+
+
+
+
+

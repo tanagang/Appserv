@@ -1,0 +1,20 @@
+.reg-main{width: 782px;margin: 50px auto;background: #fff;border: 2px solid #dadada;border-radius: 5px;padding-bottom: 80px;}
+.reg-main .reg-title{height: 72px;line-height: 72px;background: #ddca9d;text-align: center;font-size: 24px;color: #fff;position: relative;}
+.reg-main .reg-title .arrow-down {position: absolute;width:0; height:0; border-left:15px solid transparent; border-right:15px solid transparent; border-top:15px solid #ddca9d;top: 72px;left: 375px;}
+.reg-main .reg-con{padding-top: 30px;}
+.reg-main .reg-con li{margin-top: 20px;height: 46px;line-height: 46px;}
+.reg-main .reg-con li span{display: inline-block;width: 220px;text-align: right;font-size: 18px;margin-right: 5px;}
+.reg-main .reg-con li input{width: 368px;height: 44px;border: 1px solid #cecece;padding-left: 20px;font-size: 16px;}
+#drag{position: relative; background-color: #cecece; width: 390px; height: 46px; line-height: 46px; text-align: center; }
+#drag .handler{position: absolute; top: 0px; left: 0px; width: 46px; height: 44px; border: 1px solid #ccc; cursor: move; }
+.handler_bg{background: #fff url(../images/slider.png) no-repeat center; }
+.handler_ok_bg{background: #fff url(../images/slidsuc.png) no-repeat center; }
+#drag .drag_bg{background-color: #7ac23c; height: 46px; width: 0px; }
+#drag .drag_text{position: absolute; top: 0px; width: 390px; -moz-user-select: none; -webkit-user-select: none; user-select: none; -o-user-select:none; -ms-user-select:none; color: #fff;font-size: 16px;}
+.reg-main .reg-btn{display: block;width: 390px;height: 46px;line-height: 46px;text-align: center;font-size: 24px;color: #fff;border-radius: 5px;background: #7698f8;margin-top: 30px;margin-left: 225px;}
+.reg-main .tips{padding: 100px 0 70px;text-align: center;font-size: 18px;}
+.reg-main .reLogin{margin: 0 auto;}
+
+
+
+

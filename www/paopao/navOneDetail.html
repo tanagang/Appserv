@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>详情页</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/pubu.css" />
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/public.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<!--公共头部-->
+		<div id="header"></div>
+	  
+	   	<!--main-->
+		<div class="pubuDetails wd1000 clearfix">
+			<div class="detailsLeft fl">
+				<div class="detailsLeftTop">
+					<div class="pr videoWrap2" >
+						<a href="javascript:void(0)" class="support" class="txt-center" ><img src="img/footer-bg.png" width="45" />
+							<br><span class="hide" style="color:#fff"></span>
+						</a>
+						<div id="vv">
+							
+						</div>
+					</div>
+					<div class="embedBottom clearfix">
+						<div class="fl" id="vidioId"></div>
+						<div class="fr">
+							<a href="javascript:void(0)" class="star star0">
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								<i></i>
+								&nbsp;<span class="level"></span>分
+							</a>
+							<div style="float:right" class="pr">
+								<span class="first"><i></i><b></b></span>
+								<span class="second"><a href="javascript:void(0)"><i></i></a><b></b></span>
+								<span class="third" id="shareBtn"><a href="javascript:void(0)"><i></i></a></span>
+								<div class="share-con clearfix">
+									<div class="bdsharebuttonbox" data-tag="share_1">
+										<a class="bds_qzone" data-cmd="qzone" href="#"></a>
+										<a class="bds_tsina" data-cmd="tsina"></a>
+										<a class="bds_weixin" data-cmd="weixin"></a>
+										<a class="bds_count" onclick="javascript:event.stopPropagation()" data-cmd="count"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<style>
+					.bdshare-button-style0-16:after{display:none;}
+					.bdshare-button-style0-24 a{margin:6px 8px 6px 0}
+					.share-con{display:none;width:155px;box-shadow: 0 0 2px 2px #ccc;background: #fff;padding-left:8px;position: absolute;top:10;right:0}
+					.share-con>a{margin:5px 10px}
+					.bdshare-button-style0-24 .bds_count{font-size:12px}
+					.embedBottom span,.embedBottom i,.embedBottom a{display:inline-block}
+				</style>
+
+				<div class="detailsLeftBottom">
+					<div class="introduceTop clearfix">
+						<div class="author-img"><img src="img/actorimg.png" width="40" height="40" /></div>
+						<div class="author">
+							<span id="nickName"></span><br />
+							上传于<small id="uploadTime"></small>
+						</div>
+						<div class="fl adr">
+							<span><i class="address"></i></span>
+						</div>
+					</div>
+					<div class="introduceBottom">
+						<p class="con"></p>
+						<!--<div class="btm"><button class="white hide">质疑</button><button class="blue" id="uploading">我要上传</button></div>-->
+						<div class="btm"><a href="javascript:void(0)" class="white hide">质疑</a><a href="javascript:void(0)" class="blue" id="uploading">我要上传</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="detailsRight fr sm-hidden">
+				<div class="photoWall">
+					<div class="photoWall-title">更多视频推荐</div>
+					<div id="pics"></div>
+				</div>
+				<!--<div class="photoHref hide">
+					<img src="img/pubu/advertising.jpg" />
+					<p>想知道泡泡如何被点亮？请点击：<a href="javascript:void(0);" />yzltmall.com</a></p>
+				</div>-->
+			</div>
+		</div>
+	
+		<div id="starDialog" class="hide">
+			<div class="star-wrap">
+				<p class="star-t">给<i>SP1001</i>评分<a href="javascript:void(0)" class="close">×</a></p>
+				<div class="star-c">
+					<a href="javascript:void(0)" class="star"  style="margin-right:5px">
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+						<i></i>
+					</a>
+					<span class="level">0</span>分
+				</div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</body>
+</html>
+
+<div class="mask mask4 hide">
+	<div class="zy">
+		<p class="clearfix"><a href="javascript:void(0)" class="close close1">×</a></p>
+		<p class="title ellipsis">输入您对<span>123132</span>的质疑</p>
+		<textarea id="zyContent"></textarea>
+		<p class="btn3"><a href="javascript:void(0)" class="sub">提交</a><a href="javascript:void(0)" class="close close2">关闭</a></p>
+	</div>
+</div>
+
+<div class="mask mask3 hide">
+	<div class="rz">
+		<p class="title">您还没有认证!</p>
+		<p class="btn3">
+			<a href="mSafe.html" class="sub">去认证</a>
+			<a href="javascript:void(0)" class="close close2">关闭</a>
+		</p>
+	</div>
+</div>
+<script type="text/javascript">
+	$(function(){		
+		$("#uploading").on("click",function(event){
+			window.location.href="addPao.html";
+		});
+		
+		$("#shareBtn").click(function(){
+			$(".share-con").toggle();
+		});
+	});
+	//质疑按钮
+	$("a.white").click(function(){
+		if(userid==null||userid==""){
+			alert("您还没有登录");
+			return;
+		}
+		//是否认证
+		if($.cookie("identify")!=1){
+			$(".mask3").removeClass("hide");
+			return
+		}
+		$(".mask4").removeClass("hide");
+	});
+	$(".close").click(function(){
+		$(".mask").addClass("hide")	
+	});
+	$(".star0").click(function(){
+		$("#starDialog").fadeToggle(100);
+	});
+	$("#starDialog .close").click(function(){
+		$("#starDialog").fadeToggle(100);
+	});
+	//评分
+	$("#starDialog .star i").click(function(){
+		$("#starDialog .star i").removeClass("curr");
+		$(this).addClass("curr").prevAll("i").addClass("curr");
+	});
+	var v = request("vidioId");
+	vidioId = v.split("#")[0];//截取从分享回来的路径（去除尾巴的字符串）
+	
+	$(".star-t i,#vidioId").html(vidioId);
+	paopaoDetail();
+	//评分操作
+	$("#starDialog .star i").click(function(){
+		var points = $(this).index()+1;
+		oprPaopao(vidioId,"03",points);
+	});
+	//收藏操作
+	$(".second i").click(function(){
+		oprPaopao(vidioId,"01","");
+	});
+	//支持操作
+	$(".support").click(function(){
+		oprPaopao(vidioId,"00","");
+	});
+	//支持，评分，收藏泡泡
+	function oprPaopao(vidioId,type,points){
+		if(userid==null||userid==""){
+			alert("您还没有登录");
+			return;
+		}
+		$.ajax({
+			type:"post",
+			dataType:dataType, 
+			url:url+"video/addOpers.json",
+			data:{vidioId:vidioId,opersType:type,points:points,isOrNot:true},
+			success:function(data){
+				if(data.respCode=="0000"){
+					if(type=="00"){
+						alert("支持成功");
+					}else if(type=="01"){
+						alert("收藏成功");
+					}else if(type="03"){
+						alert("评分成功");
+					}
+					paopaoDetail();
+				}else{
+					alert(data.respMsg);
+				}
+			}
+		});
+	}
+	//质疑泡泡
+	$(".zy .sub").click(function(){
+		if(userid==null||userid==""){
+			alert("您还没有登录");
+			return;
+		}
+		var content = $("#zyContent").val();
+		if(content==""){
+			alert("请输入质疑的内容...");
+			return;
+		}
+		zyPaoPao(vidioId,content);
+	});
+	function paopaoDetail(){
+		//读取泡泡详情
+		$.ajax({
+			type:"post",
+			dataType:dataType, 
+			url:url+"video/getVideoById.json",
+			data:{vidioId:vidioId,userId:$.cookie("c_member_id")},
+			success:function(data){
+				var obj = data.vidioInfo;
+				$(".zy .title span").html(obj.id);
+				var lev1 = parseFloat(obj.level).toFixed(1);
+				var lev2 = Math.floor(obj.level);
+				$(".star0 span.level").html(lev1);
+				$("a.star i:lt("+lev2+")").addClass("curr");
+				$(".first b").html(obj.pageViews);
+				$("#shareBtn b").html(obj.shareQuantity);
+				//是否收藏
+				if(obj.isCollection=="0"){
+					$(".second b").html(obj.collectionQuantity);
+				}else{
+					$(".second").attr("rel","1").addClass("second2").find("b").html(obj.collectionQuantity);
+				}
+				//是否处于质疑期
+				if(obj.status=="00"){//质疑期
+					$(".btm .white").removeClass("hide");
+					$(".support span").removeClass("hide").html("质疑期不能被支持");
+				}else if(obj.status=="01"){
+					$(".support span").removeClass("hide").html("未被支持");
+				}else if(obj.status=="02"){//已被支持
+					$(".support img").attr("src","img/header-nav.png");
+					$(".support span").removeClass("hide").html(obj.supperUserName+"<br>支持了该视屏");
+				}
+			
+				//设置头像
+				if(obj.portrait){
+					$(".author-img img").attr("src",imgUrl+obj.portrait);
+				}else{
+					$(".author-img img").attr("src","img/actorimg.png");
+				}
+				
+				if(obj.nickName==undefined||obj.nickName==""){
+					$("#nickName").html("未知");
+				}else{
+					$("#nickName").html(obj.nickName);
+				}
+				var vidioSrc = obj.vidioSrc.split(",");
+				var str = '';
+				str +=' <video width="100%" height="400" controls="controls" id="playerIdName" poster="'+imgUrl+obj.vidioPic+'">';
+				str +='	<source id="v1" src="'+imgUrl+vidioSrc[0]+'" type="video/ogg">';
+				str +='	<source id="v2" src="'+imgUrl+vidioSrc[1]+'" type="video/mp4">';
+				str +='	<embed id="v3"  src="'+imgUrl+vidioSrc[1]+'" allowscriptaccess="always"'
+				str +='	 bgcolor="#000" id="playerIdName2" name="playerIdName" quality="high" >';
+				str +='</video>';
+				$("#vv").html(str);
+				
+				$("#uploadTime").html(obj.uploadTime);
+				$(".adr span").html('<i class="address"></i>'+obj.province+obj.city+obj.district+obj.address);
+				$(".introduceBottom .con").html(obj.description);
+				//分享
+				var des = obj.description;
+				if(v.split("#").length>1){
+					$("title").html(des);
+				}
+				window._bd_share_config = {
+					common : {
+						"bdText" : des,	
+						"bdDesc" : des,	
+						//"bdUrl" :  imgUrl+vidioSrc[1],
+						"bdUrl" :  "http://paopao.prosysoft.com:8200/navOneDetail.html?vidioId="+vidioId,
+						"bdPic" : imgUrl+obj.vidioPic
+					},
+					share : [{
+						"bdSize" : 24
+					}],
+					image : [{
+						"viewType" : 'list',
+						"viewPos" : 'top',
+						"viewColor" : 'black',
+						"viewSize" : '16',
+						"viewList" : ['qzone','tsina','huaban','tqq','renren','weixin']
+					}]
+					
+				}
+				with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+			}
+		});
+		//右侧图片
+		$.ajax({
+			type:"post",
+			dataType:dataType, 
+			url:url+"video/getVideosByPage.json",
+			data:{pageSize:12,pageNum:1},
+			success:function(data){
+				var str = '';
+				$.each(data.records, function(idx,el) {
+					str += '<a href="navOneDetail.html?vidioId='+el.id+'"><img src="'+imgUrl+el.vidioPic+'"  /></a>';
+				});
+				$("#pics").html(str);
+			}
+		});
+	}
+</script>

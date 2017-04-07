@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>login</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="header-top sm-hidden">
+				<div class="wd1000">
+					<ul>
+						<li id="userInfo"><a href="login.html">登录</a> / <a href="regist.html">注册</a></li>
+						<li><a href="pindex.html">我的泡泡</a></li>
+						<li><a href="patternTag2.html">泡泡模式</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header-nav clearfix">
+				<h1 class="logo"><a href="index.html"><img src="img/header-nav.png"/></a></h1>
+				<div class="bar hide sm-visible">
+					<span id="userInfo2"><a href="login.html">登陆 </a>&ensp;/&ensp;<a href="regist.html">注册 </a></span>
+					<a href="javascript:void(0)" id="barToggle"><img src="img/bar.png"/></a>
+					<ul id="ulNav" class="hide">
+						<li rel="navOne"><a href="navOne.html" >进步商业</a></li>
+						<li rel="navTwo"><a href="navTwo.html">杜绝童乞</a></li>
+						<li rel="navThree"><a href="navThree.html">雪中送炭</a></li>
+					</ul>
+			</div>
+			<ul class="ul-nav sm-hidden">
+				<li rel="navOne"><a href="navOne.html">进步商业</a></li>
+				<li rel="navTwo"><a href="navTwo.html">杜绝童乞</a></li>
+				<li rel="navThree"><a href="navThree.html">雪中送炭</a></li>
+			</ul>
+			</div>
+			<div class="header-bottom sm-hidden">
+				<div class="wd1000">
+					<p class="header-bottom-t">有知庐</p>
+					<p class="header-bottom-b">集研究、实践、教学为一体，通过筛选出有助于理想未来的愿望型有知需求，促进其转变为公德型有知需求，以推动社会的进步。有知庐使用前沿的商业模式，将盈余100%支持这一事业的理念推广和独立运营。</p>
+					<p class="header-bottom-t">有知需求</p>
+					<p class="header-bottom-b">是指超越个人生存和繁殖的需求，包括对自身，他人、社会、动物或环境的关注， 分为愿望型（个人或少数人的）和公德型（大多数人所共享的）。</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wd1000 clearfix" style="background:#ECECEC;padding:50px 0">
+			
+			<div class="bind clearfix" style="padding-bottom:20px">
+				<div class="bleft">
+					<div class="tt">
+						<p class="weibo hide"><img src="img/login/sina.png" width="24"> <span class="bt">新浪微博</span></p>
+						<p class="qq hide"><img src="img/login/qq.png" width="22"> <span class="bt">QQ登陆</span></p>
+					</div>
+					<img src="img/partten/actorimg.png" class="figureurl" width="50" height="50"><br/><span class="nickname">张三</span>
+				</div>
+				<div class="bright">
+					<p class="tt"><span class="bt">关联账号</span></p>
+					<div class="gl">
+						<a href="javascript:void(0)" id="guanlianNew" class="active">关联新账号</a>
+						<a href="javascript:void(0)" id="guanlianOld">关联已有账号</a>
+					</div>
+				</div>
+				<div class="bright hide" id="cont2">
+					<p class="tt"><a href="javascript:void(0)" class="fr" id="newAccount">关联新账号</a></p>
+					<div class="gl">
+						<p class="clearfix"><input type="text" id="userPhone" maxlength="11" placeholder="请输入手机号码或邮箱" value="13914090763"/></p>
+						<p class="clearfix"><input type="password" id="userPwd" maxlength="11" placeholder="请输入登陆密码" /></p>
+						<p><a href="javascript:void(0)" id="bingOld" class="active">绑定</a></p>
+					</div>
+				</div>
+				<div class="bright hide" id="cont3">
+					<p class="tt"><a href="javascript:void(0)" class="fr" id="oldAccount">关联已有账号</a></p>
+					<div class="gl">
+						<p class="clearfix"><input type="text" id="userPhone2" maxlength="11" placeholder="请输入手机号码" value="15555555555"/></p>
+						<p class="clearfix"><input type="password" id="userPwd2" maxlength="11" placeholder="请设置密码" value="111111ab"/></p>
+						<label class="clearfix">
+							<input type="text" name="" class="code" placeholder="验证码" />
+							<a href="javascript:void(0)" class="send" rel="0">获取验证码</a>
+						</label>
+						<p><a href="javascript:void(0)" id="bingNew" class="active">绑定</a></p>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		<!--公共内容底部-->
+		<div id="footer"></div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var isAuths = request("isAuths");
+		var nickName = decodeURI(request("nickName"));
+		var identityType = request("identityType");
+		var identifier = request("identifier");
+		var figureurl = request("figureurl");
+		
+		if(isAuths=="true"){//是否关联
+			window.location.href="index.html";
+		}else{
+			if(identityType=="05"){
+				$(".tt .qq").removeClass("hide");
+			}else if(identityType=="02"){
+				$(".tt .weibo").removeClass("hide");
+			}
+			$(".figureurl").attr("src",figureurl);
+			$(".nickname").html(nickName);
+		}
+		//关联已有账号
+		$("#guanlianOld,#oldAccount").click(function(){
+			$(this).closest(".bright").addClass("hide");
+			$("#cont2").removeClass("hide");
+		});
+		//关联新账号
+		$("#guanlianNew,#newAccount").click(function(){
+			$(this).closest(".bright").addClass("hide");
+			$("#cont3").removeClass("hide");
+		});
+		
+		//获取验证码
+		$(".send").click(function(){
+			var mobile = $("#userPhone").val();
+			var obj = $(this);
+			if(isMobilePhone(mobile)){
+				send(mobile,obj,"04");
+			}else{
+				alert("请输入正确的手机号")
+			}
+		});
+		
+		//绑定已有账户
+		$("#bingOld").click(function(){
+			var username = $("#userPhone").val();
+			var userpwd = $("#userPwd").val();
+			if(!isMobilePhone(username)){
+				alert("请输入规范的手机号码");
+				return;
+			}
+			if(userpwd==""){
+				alert("请填写登陆密码");
+				return;
+			}
+			var data = {mobileOrEmail:username,password:userpwd,relateType:"00",identityType:identityType,identifier:nickName,credential:identifier}
+			binding(data);
+		});
+		//绑定新的账户
+		$("#bingNew").click(function(){
+			var username = $("#userPhone2").val();
+			var userpwd = $("#userPwd2").val();
+			var smscode = $(".code").val();
+			if(!isMobilePhone(username)){
+				alert("请输入规范的手机号码");
+				return;
+			}
+			if(userpwd==""){
+				alert("请填写登陆密码");
+				return;
+			}
+			var data = {mobile:username,password:userpwd,relateType:"01",smsCode:smscode,identityType:identityType,identifier:nickName,credential:identifier}
+			binding(data);
+		});
+		
+		function binding(data){
+			$.ajax({
+				type:"post",
+				dataType:dataType, 
+				data:data,
+				url:url+"user/userAuths.json",
+				success:function(data){
+					if(data.respCode=="0000"){
+						alert("绑定成功");
+					}else{
+						alert(data.respMsg);
+					}
+				}
+			});
+		}
+	});
+	
+	$(".send").click(function(){
+		var mobile = $("#userPhone2").val();
+		var obj = $(this);
+		if(isMobilePhone(mobile)){
+			send(mobile,obj,"00");
+		}else{
+			alert("请输入正确的手机号")
+		}
+		
+	});
+</script>
+

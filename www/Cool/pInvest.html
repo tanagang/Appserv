@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>个人中心</title>
+<meta name="keywords" content="项目列表页"/>
+<meta name="description" content="项目列表页"/>
+<link rel="stylesheet" href="css/global.css"/>
+<link rel="stylesheet" href="css/center.css"/>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript"/>
+	$(function(){
+		$.ajax({
+			url: "http://192.168.2.21/frontapi/user/invest_info",
+			type: 'POST',
+			dataType: 'json',
+			data:{"user_id":"24","fund_type":"R","page_size":"10","page_num":"1"},
+			success: function (data) {
+				console.log(data);				
+			}
+		})
+	});
+</script>
+</head>
+
+<body>
+	<header id="header"></header>
+  	<header id="header">
+		<div id="top">
+			<span class="fl">累计募集金额：<i>￥60000</i></span>
+			<span class="fr">分配总金额：￥555555555</span>
+		</div>
+		<div id="nav" class="nav">
+			<a href="#" class="fl"><img src="images/logo.png"></a>
+			<div class="log-reg fr">
+				<a href="#" class="login">登录</a>
+				<a href="#" class="reg">注册</a>
+			</div>
+			<ul class="fr">
+				<li><a href="#">首页</a></li>
+				<li><a href="#" class="active">投资中心</a></li>
+				<li><a href="#">个人中心</a></li>
+			</ul>
+		</div>
+	</header>
+	<div class="blank"></div>
+	<div class="container">
+		<div class="info-header">
+			<img src="images/head.png" class="head" />
+			<dl>
+				<dt>ID:<span class="span1">17****625</span></dt>
+			</dl>
+			<div class="toggle">
+				<a href="#"><img src="images/toggle.png" height="28" width="50" alt=""></a><p>会员信息</p>
+			</div>
+			<ul class="clearfix">
+				<li>基本情报</li>
+				<li class="active">投资状况</li>
+				<li>交易记录</li>
+				<li>提现</li>
+				<li>报告下载</li>
+			</ul>
+			<div class="info-a info-active" style="display:none;">
+				<i class="arrow-left"></i>
+				<a href="javascript:void(0)"><img src="images/info1_active.png"/><br/>身份证</a>
+				<a href="javascript:void(0)"><img src="images/info2_active.png"/><br/>My number</a>
+				<a href="javascript:void(0)"><img src="images/info3_active.png"/><br/>银行卡</a>
+				<a href="javascript:void(0)"><img src="images/info4_active.png"/><br/>个人信息</a>
+			</div>
+		</div>
+		<div class="invest-table">
+			<div class="sum-table">
+				<ul class="tab clearfix">
+					<li class="active">正在运行中</li>
+					<li>审核中</li>
+					<li>准备中</li>
+					<li>已完成</li>
+				</ul>
+				<table>
+				  <tr>
+				    <th width="200px">项目名称</th>
+				    <th width="120px">投资金额</th>
+				    <th width="90px">分数</th>
+				    <th width="120px">投资余额</th>
+				    <th width="110px">已偿还</th>
+				    <th width="110px">坏账</th>
+				    <th width="110px">分红</th>
+				    <th width="110px">税额</th>
+				    <th width="90px">年利</th>
+				  </tr>
+				  <tr>
+				    <td>项目名称项目名称项目</td>
+				    <td>￥500,000</td>
+				    <td>2</td>
+				    <td>￥500,000</td>
+				    <td>￥500,000</td>
+				    <td>￥0</td>
+				    <td>￥3,000</td>
+				    <td>￥612</td>
+				    <td>1%</td>
+				  </tr>
+				  <tr>
+				    <td>项目名称项目名称项目</td>
+				    <td>￥500,000</td>
+				    <td>2</td>
+				    <td>￥500,000</td>
+				    <td>￥500,000</td>
+				    <td>￥0</td>
+				    <td>￥3,000</td>
+				    <td>￥612</td>
+				    <td>1%</td>
+				  </tr>
+				  <tr>
+				    <td>项目名称项目名称项目</td>
+				    <td>￥500,000</td>
+				    <td>2</td>
+				    <td>￥500,000</td>
+				    <td>￥500,000</td>
+				    <td>￥0</td>
+				    <td>￥3,000</td>
+				    <td>￥612</td>
+				    <td>1%</td>
+				  </tr>
+				  <tr>
+				    <td>项目名称项目名称项目</td>
+				    <td>￥500,000</td>
+				    <td>2</td>
+				    <td>￥500,000</td>
+				    <td>￥500,000</td>
+				    <td>￥0</td>
+				    <td>￥3,000</td>
+				    <td>￥612</td>
+				    <td>1%</td>
+				  </tr>
+				  <tr>
+				    <td>项目名称项目名称项目</td>
+				    <td>￥500,000</td>
+				    <td>2</td>
+				    <td>￥500,000</td>
+				    <td>￥500,000</td>
+				    <td>￥0</td>
+				    <td>￥3,000</td>
+				    <td>￥612</td>
+				    <td>1%</td>
+				  </tr>
+				  <tr>
+				    <td>项目名称项目名称项目</td>
+				    <td>￥500,000</td>
+				    <td>2</td>
+				    <td>￥500,000</td>
+				    <td>￥500,000</td>
+				    <td>￥0</td>
+				    <td>￥3,000</td>
+				    <td>￥612</td>
+				    <td>1%</td>
+				  </tr>
+				  <tr>
+				    <td>项目名称项目名称项目</td>
+				    <td>￥500,000</td>
+				    <td>2</td>
+				    <td>￥500,000</td>
+				    <td>￥500,000</td>
+				    <td>￥0</td>
+				    <td>￥3,000</td>
+				    <td>￥612</td>
+				    <td>1%</td>
+				  </tr>
+				  <tr>
+				    <td>项目名称项目名称项目</td>
+				    <td>￥500,000</td>
+				    <td>2</td>
+				    <td>￥500,000</td>
+				    <td>￥500,000</td>
+				    <td>￥0</td>
+				    <td>￥3,000</td>
+				    <td>￥612</td>
+				    <td>1%</td>
+				  </tr>
+				  <tr>
+				    <td>项目名称项目名称项目</td>
+				    <td>￥500,000</td>
+				    <td>2</td>
+				    <td>￥500,000</td>
+				    <td>￥500,000</td>
+				    <td>￥0</td>
+				    <td>￥3,000</td>
+				    <td>￥612</td>
+				    <td>1%</td>
+				  </tr>
+				  <tr>
+				    <td>项目名称项目名称项目</td>
+				    <td>￥500,000</td>
+				    <td>2</td>
+				    <td>￥500,000</td>
+				    <td>￥500,000</td>
+				    <td>￥0</td>
+				    <td>￥3,000</td>
+				    <td>￥612</td>
+				    <td>1%</td>
+				  </tr>
+				</table>
+				<div class="page">
+					<span class="total">第1页 共6页</span>
+					<a href="#" class="turn">上一页</a><a href="#" class="num">1</a><a href="#" class="num active">2</a><a href="#" class="num">3</a><a href="#" class="turn">下一页</a><a href="#" class="turn">尾页</a>
+				</div>				
+			</div>
+			<div class="details-table">
+				<ul class="tab clearfix">
+					<li>正在运行中明细</li>
+				</ul>
+				<table>
+				  <tr>
+				    <th width="120px">日期</th>
+				    <th width="220px">商品名称</th>
+				    <th width="150px">交易记录</th>
+				    <th width="120px">金额入</th>
+				    <th width="120px">金额出</th>
+				    <th width="140px">基金余额</th>
+				    <th width="140px">资金余额</th>
+				  </tr>
+				  <tr>
+				    <td>2015-05-27</td>
+				    <td>项目名称项目名称A</td>
+				    <td>利息</td>
+				    <td>￥1.235</td>
+				    <td>￥500,000</td>
+				    <td>￥1,000,000</td>
+				    <td>500,234</td>
+				  </tr>
+				  <tr>
+				    <td>2015-05-27</td>
+				    <td>项目名称项目名称A</td>
+				    <td>利息</td>
+				    <td>￥1.235</td>
+				    <td>￥500,000</td>
+				    <td>￥1,000,000</td>
+				    <td>500,234</td>
+				  </tr>
+				  <tr>
+				    <td>2015-05-27</td>
+				    <td>项目名称项目名称A</td>
+				    <td>利息</td>
+				    <td>￥1.235</td>
+				    <td>￥500,000</td>
+				    <td>￥1,000,000</td>
+				    <td>500,234</td>
+				  </tr>
+				  <tr>
+				    <td>2015-05-27</td>
+				    <td>项目名称项目名称A</td>
+				    <td>利息</td>
+				    <td>￥1.235</td>
+				    <td>￥500,000</td>
+				    <td>￥1,000,000</td>
+				    <td>500,234</td>
+				  </tr>
+				  <tr>
+				    <td>2015-05-27</td>
+				    <td>项目名称项目名称A</td>
+				    <td>利息</td>
+				    <td>￥1.235</td>
+				    <td>￥500,000</td>
+				    <td>￥1,000,000</td>
+				    <td>500,234</td>
+				  </tr>
+				</table>
+				<div class="page">
+					<span class="total">第1页 共6页</span>
+					<a href="#" class="turn">上一页</a><a href="#" class="num">1</a><a href="#" class="num active">2</a><a href="#" class="num">3</a><a href="#" class="turn">下一页</a><a href="#" class="turn">尾页</a>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<footer id="footer">
+		<div class="ft-main">
+			<div class="dl clearfix">
+				<dl>
+					<dt></dt>
+					<dd>各类协议</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>我的账户</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>投资规则</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>个人信息保障</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>合同规范</dd>
+				</dl>
+			</div>
+			<div class="ftm-bottom clearfix">
+				<div class="ft-logo fl">
+					<img src="images/ft-logo.png"/>
+				</div>
+				<div class="infor fl">
+					<p>电话：1254-5621-476</p>
+					<p>地址：日本东京区日本东京区</p>
+					<p>Copyright © 2014 沪ICP备10011451号-20 用时：秒关于我们版权声明</p>
+				</div>
+				<div class="ewm fr">
+					<img src="images/ewm.jpg"/>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
+
+

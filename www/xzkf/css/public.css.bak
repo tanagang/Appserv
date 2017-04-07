@@ -1,0 +1,36 @@
+*{padding:0;margin:0;font-family:微软雅黑,Arial, Helvetica, sans-serif;}
+img{border:none}
+ul{list-style:none}
+.clear{height:0;_height:0;overflow:hidden;clear:both}
+.container{background:url(images/bg.png) no-repeat center center; width:100%;height:870px; position:relative;}
+#header{height:85px; line-height:85px;background:#630; opacity:0.5;width:100%;position:fixed;}
+#header .con{width:870px; margin:0 auto;height:85px; line-height:85px;}
+.h-left{float:left;margin-left:40px}
+.h-left img{margin-top:13px}
+.h-right{float:right;}
+.h-right a{color:#fff;font-size:14px; text-decoration:none;margin-left:20px}
+.wrap{width:870px;height:786px;  margin:0 auto;}
+.content{padding-top:200px;}
+.c-left{width:320px; height:558px;float:left; background:url(images/phone3.png) no-repeat center center; position:relative;}
+.ul-pic{position:absolute;left:56px; top:78px;width:208px;height:368px; overflow:hidden;background:#ccc;position:relative}
+.ul-pic li{float:left; position:absolute;left:0;top:0}
+.c-right{width:540px; float:left; }
+.title{font-size:34px;color:#fff;  font-weight:bold;padding-left:60px;margin-top:50px; letter-spacing:1px; line-height:50px; height:150px;}
+.hidden-title{display:none;}
+.circle{padding-left:65px;padding-top:20px;}
+.circle a{padding:4px; border-radius:4px; display:inline-block; background:#fff;margin:0 4px;}
+#footer{width:100%; height:80px;font-size:14px}
+#footer .p1{height:35px; line-height:45px; text-align:center;color:#fff;}
+#footer .p2{height:30px; line-height:30px; text-align:center;color:#4A4640;}
+@media all and(max-width: 1118px) {
+/*add your css styles here*/
+	#span{color:blue}
+}
+@media all and(min-width: 400px) and (max-width:900px){
+/*add your css styles here*/
+	#span{color:red}
+}
+@media all and(max-width: 400px) {
+/*add your css styles here*/
+	#span{color:green}	
+}

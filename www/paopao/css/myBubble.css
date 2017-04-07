@@ -1,0 +1,421 @@
+/*mMypao*/
+
+.greenColor{
+	color: #00d093;
+}
+.redColor{
+	color: #ed2b35;
+}
+
+.myBubble{
+	position: relative;
+	z-index: 5;
+	margin: 40px auto;
+}
+.myBubble .myBubble-top,
+.myBubble .myBubble-bot{
+	background-color: #fff;
+	border: solid 1px #e3e3e3;
+	padding: 0px 20px;
+}
+.myBubble-title{
+	height: 26px;
+	line-height: 26px;
+	margin-top: 25px;
+	margin-bottom:25px;
+}
+.myBubble-title-l{
+	font-size: 20px;
+	color: #010101;
+	font-weight: bold;
+}
+
+.myBubble-tab{
+	height: 50px;
+	border-bottom: solid 1px #E3E3E3;
+}
+.myBubble-tab li{
+	width: 24%;
+	box-sizing: border-box;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+	font-size: 16px;
+	color: #444;
+	cursor: pointer;
+}
+.myBubble-tab li.on{
+	background-color: #F6F6F6;
+	border: solid 1px #e3e3e3;
+	border-bottom: none;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.myBubble-list{
+	display: none;
+}
+.myBubble-list:first-child{
+	display: block;
+}
+.myBubble-liatAll{
+	/*margin-top: 20px;*/
+}
+.myBubble-liatAll .message{
+	margin:20px auto;
+	border:1px solid #E4E4E4
+}
+.myBubble-liatAll .message .m{width:24px;height:20px;margin-right:5px;background: url(../img/sprite4.png) no-repeat;display: inline-block; vertical-align: -3px;}
+.myBubble-liatAll .message .m2{background-position: -25px 0;}
+.myBubble-liatAll .message .m3{background-position: -48px 0;}
+.myBubble-liatAll .message tr th{height:40px;background: #F6F6F6;}
+.myBubble-liatAll .message tr td input{width:15px;height:15px;vertical-align: -2px;}
+.myBubble-liatAll .message tr:nth-child(even) td{background: #F6F6F6;}
+.myBubble-liatAll .message tbody tr:hover td{background: #E6F0FC;}
+.myBubble-liatAll .message tfoot td{padding-left:20px}
+.myBubble-liatAll .message tfoot td a{color:#000;font-size:14px;margin:0 5px}
+.myBubble-liatAll .message tr td:nth-child(2),.myBubble-liatAll .message tr th:nth-child(2){
+	padding-left:5%;
+}
+.message-t{margin:0 10px;font-size:18px;padding:30px 0 10px 0;text-align: center;color:#000;border-bottom:1px solid #ddd}
+.message-t p{text-align: right;color:#818181;font-size:12px;margin-top:10px}
+.message-c{margin:10px; line-height: 200%; text-indent: 28px;}
+.backMessage{padding:5px 0;text-align: right;}
+.backMessage a{color:#234788}
+
+.myBubble-liatAll .message td{padding:10px 0;}
+.myBubble-list ul>li{
+	border: solid 1px #E3E3E3;
+	border-radius: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.myBubble-list ul>li>img{position: absolute;right:5%;top:0;width:60px;height:50px;}
+.myBubble-list-title{
+	height: 40px;
+	line-height: 40px;
+	background-color: #F6F6F6;
+}
+.myBubble-list-title span{
+	font-size: 14px;
+	color: #777;
+	display: inline-block;
+}
+.myBubble-list-title span:first-child{
+	width:22%;
+	padding-left:2%;
+
+}
+.myBubble-list-title span:last-child{
+	width:70%;
+}
+
+.myBubble-list-con .con-l,
+.myBubble-list-con .con-c{
+	border-right: solid 1px #e3e3e3;
+	width:40%;float: left;
+
+}
+.myBubble-list-con .hide{position: absolute;bottom:5px;right:10px}
+.myBubble-list-con .con-r,
+.myBubble-list-con .con-c{
+	height:148px;
+}
+.myBubble-list-con .con-r span,
+.myBubble-list-con .con-c span{
+	padding-top:55px;
+	display: block;	
+}
+.myBubble-list-con .con-c .tips2{
+	position:absolute;background: rgba(0,0,0,0.5);left:0;right:0;top:auto;display:none;margin:auto;color:#fff;font-size:12px;border-radius:3px
+}
+.myBubble-list-con .con-c .tips2:after{content:"";border:5px solid transparent;border-bottom:5px solid rgba(0,0,0,0.5);width:0;height:0;display: block;position:absolute;top:-10px;margin:auto;left:0;right:0;bottom:auto}
+.myBubble-list-con .con-c span.pr:hover .tips2{display:block}
+.myBubble-list-con .con-l{
+	width: 68%;
+	padding: 1%;
+}
+.myBubble-list-con .con-cr3{
+	width:29%;
+	text-align: center;
+}
+.myBubble-list-con .con-cr3>div{
+	width:48%;
+}
+.myBubble-list-con .con-img-l{width:170px;height:130px;float:left}
+.myBubble-list-con .con-img-l img{width:170px;height:130px}
+
+.myBubble-list-con .con-img-r{
+	max-height: 120px;
+	padding:0 10px;
+	font-size: 14px;
+	color: #000;
+	line-height: 24px;
+	overflow: hidden;
+}
+.myBubble-list-con .con-cr{
+	text-align: center;
+	font-size: 14px;
+	color: #444;
+}
+.myBubble-list-con .con-cr{
+	width:26%;
+	margin-top:55px;
+}
+.myBubble-list-con .con-cr2{
+	width:26%;
+	margin-top:55px;
+	text-align: center;
+}
+
+.myBubble-list-con .con-c{
+	width: 50%;
+}
+
+.myBubble-list-con .con-r>div,
+.myBubble-list-con .con-c>div{
+	margin-top: 5px;
+}
+.myBubble-list-con .con-r>div a,
+.myBubble-list-con .con-c>div a,
+.myBubble-list-con .con-cr>div a{
+	font-size: 14px;
+	color: #444;
+	text-decoration: underline;
+	margin: 0 5px;
+}
+.myBubble-list-con .con-cr>div a,
+.myBubble-list-con .con-r>div a{
+	text-decoration: none;
+}
+.myBubble-list-con .con-r>div a:hover,
+.myBubble-list-con .con-c>div a:hover,
+.myBubble-list-con .con-cr>div a:hover{
+	color: #234788;
+}
+.myBubble-list-con .con-cr>div a:hover,
+.myBubble-list-con .con-r>div a:hover{
+	text-decoration: underline;
+}
+
+.myBubble-bot{
+	margin: 20px auto 90px;
+	
+}
+.myBubble-bot-title{
+	height: 26px;
+	line-height: 26px;
+	margin-top: 30px;
+	font-size: 20px;
+	color: #010101;
+	font-weight: bold;
+}
+.myBubble-bot-title a{
+	font-size: 14px;
+	color: #444;	
+	font-weight: normal;
+}
+.myBubble-bot-con{
+	padding-bottom: 40px;
+}
+.myBubble-bot-con ul{
+	margin: 20px 0;
+}
+.myBubble-bot-con ul li{
+	float: left;
+	margin-left:1%;
+	margin-right: 1%;
+	position: relative;
+	z-index: 3;
+	background-color: #E3E3E3;
+	overflow: hidden;
+}
+.myBubble-bot-con ul li.mr0{
+	margin-right: 0;
+}
+.myBubble-bot-con ul li{
+	width: 23%;
+	height: 161px;
+}
+.myBubble-bot-con ul li img{
+	width:100%;
+	height: 161px;
+}
+.myBubble-bot-con ul li .autoPlay{
+	width: 64px;
+	height: 64px;
+	display: block;
+	background: url(../img/index/autoplay.png) center no-repeat;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top:-32px;
+	margin-left:-32px;
+}
+.myBubble-bot-con ul li a{
+	display: block;
+	font-size: 14px;
+	color: #234788;
+	line-height: 161px;
+	text-align: center;
+	text-decoration: underline;
+}
+
+.myBubble-bot-con ul li p{
+	color: #fff;
+	width: 100%;
+	text-indent: 20px;
+	position: absolute;
+	bottom: -30px;
+	height: 30px;
+	line-height: 30px;
+	background: rgba(0,0,0,0.6);
+	transition: all .3s ease-in-out 0s;
+  	-webkit-transition: all .3s ease-in-out 0s;
+  	-moz-transition: all .3s ease-in-out 0s;
+  	-ms-transition: all .3s ease-in-out 0s;
+  	-o-transition: all .3s ease-in-out 0s;
+	
+}
+.myBubble-bot-con ul li:hover p{
+	bottom: 0;
+}
+.myBubble-list-con .con-cr .bubblesPf i{
+	display: inline-block;
+	width: 16px;
+	height: 15px;
+	background: url(../img/bubblesPf.png) right center no-repeat;
+	position: relative;
+	top: 1px;
+}
+.myBubble-list-con .con-cr .bubblesPf i.curr{
+	background-position: left center; 
+}
+.myBubble-list-con .con-cr .bubblesPf span{
+	padding-left: 5px;
+}
+.myBubble-list-con a .icon-del{
+	width: 14px;
+	height: 17px;
+	display: inline-block;
+	background: url(../img/icon-del.png) left center no-repeat;
+	position: relative;
+	top: 1px;
+}
+.myBubble-list-con .con-r a:hover .icon-del{
+	background: url(../img/icon-del.png) right center no-repeat;
+}
+
+/**安全中心**/
+.table-safe{width:100%;background: #F6F6F6;margin:20px auto}
+i.cpr{display:inline-block;background:url(../img/opr.png) no-repeat; vertical-align: -3px;margin:0 5px}
+i.cpr1{background-position: 0 0;width:18px;height:18px;}
+i.cpr2{background-position: -18px 0;width:18px;height:18px;}
+i.cpr3{background-position: -36px 0;width:18px;height:18px;}
+.table-safe tbody tr td{padding:20px;}
+.table-safe thead tr {border-bottom:1px solid #fff}
+.table-safe thead tr td{height:100px;background: #F6F6F6;padding:0 3%}
+.safet{font-size:16px;font-weight: bold;color:#000;margin-left:5px}
+.table-safe .btn{display:block;width:120px;height:35px;line-height:35px;text-align:center;float:right;background: #777;color:#fff;font-size:14px;}
+.table-safe .btn.active{background:#234788;}
+.table-safe tbody p.tips{font-size:12px;background: #fff;border:1px dotted red;padding:5px 10px;}
+.table-safe tbody tr td{height:auto}
+.opr-safe{width:620px;margin:50px 10px 50px 80px}
+.opr-safe .error{font-size:14px;color:#E62B56}
+.opr-safe p{font-size:16px;margin:15px auto}
+.opr-safe p input{border:1px solid #D4D4D4;padding:8px 5px;margin-left:15px;border-radius: 3px;width:240px}
+.table-safe .sure{color:#fff;background:#234788;margin-left:100px;display:inline-block;width:120px;height:35px; line-height: 35px;text-align: center;}
+.table-safe .step{width:600px;background: #DFDFDF;margin:25px auto; text-align: center;height:2px; position: relative;left:10px}
+.table-safe .step-text{width:640px;margin:28px auto;text-align: center;}
+.table-safe .step:after{content:"";background: #04CA8B;display: block;position: absolute;left:0;top:0;z-index:2;height:2px;}
+.table-safe .step1:after{width:50%}
+.table-safe .step2:after{width:100%}
+.table-safe .step i{position:relative;top:-14px; z-index:3;width:28px;height:28px;line-height: 28px;font-size:18px;color:#fff;text-align: center;display:inline-block;border-radius:100%;background:#DFDFDF;}
+.table-safe .step i.active{background:#04CA8B;}
+.table-safe .btn2{display:inline-block;margin-left:10px;width:120px;height:35px;line-height:35px;text-align:center;background: #234788;color:#fff;font-size:14px;}
+.bindingEmail{padding: 80px 0;text-align: center;}
+.bindingEmail p{color: #444;font-weight: bold;line-height: 30px;}
+/*媒体查询，参考部分Bootstrap 框架*/
+/*当页面大于1200px 时，大屏幕，主要是PC 端*/
+@media (min-width: 1200px){
+	
+}
+/*在992 和1199 像素之间的屏幕里，中等屏幕，分辨率低的PC*/
+@media (min-width: 992px) and (max-width: 1199px){
+	
+}
+/*在768 和991 像素之间的屏幕里，小屏幕，主要是PAD*/
+@media (min-width: 768px) and (max-width: 991px){
+	
+	.myBubble-liatAll .message tr td:nth-child(3),.myBubble-liatAll .message tr th:nth-child(3){width:25%}
+}
+/*在480 和767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+	.myBubble{margin:15px auto;}
+	.myBubble .myBubble-top, .myBubble .myBubble-bot{border:none;padding:0 10px;}
+	.myBubble-tab li{width:33%;font-size:14px;color:#fff;height:35px;line-height: 35px;background: rgba(98,124,167,0.5);border-right:solid 1px #eee}
+	.myBubble-tab li.on{background:#526995; border-top:none;border-left:none;border-radius: 0;}
+	
+	.myBubble-list-con .con-l,
+	.myBubble-list-con .con-c{width:98%;border-right:none}
+	.myBubble-list-con .con-img-l{width:120px;height:100px;float:left}
+	.myBubble-list-con .con-img-l img{width:120px;height:100px}
+	.myBubble-list-con .con-img-r{
+		overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp:3;
+        -webkit-box-orient: vertical;
+	}
+	.myBubble-list-con .con-cr{width:100%;text-align:right;position: absolute;right:10px;bottom:8px;display: block;}
+
+	.myBubble-bot-con .collect{position:absolute;bottom:0;right:10px;}
+	.myBubble-list-con .collect a{background: #25488A;color:#fff;padding:5px 8px;font-size:12px;border-radius:2px}
+	
+	.myBubble-list-title span{font-size:12px}
+	.myBubble-list-con .con-cr2{
+		position:absolute;
+		top:-30px;
+		right:5px;
+		margin-top:0;
+	}
+	.message-t{padding:10px 0}
+	.myBubble .myBubble-top, .myBubble .myBubble-bot2{padding:0;border-top:none;border-bottom: none;}
+	.myBubble-liatAll .message tr td:nth-child(1),.myBubble-liatAll .message tr th:nth-child(1){width:10%}
+	.myBubble-liatAll .message tr td:nth-child(3),.myBubble-liatAll .message tr th:nth-child(3){width:25%}
+}
+/*在小于480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+	.myBubble{margin:15px auto}
+	.myBubble .myBubble-top, .myBubble .myBubble-bot{border:none;padding:0 10px}
+	.myBubble-tab li{width:33%;font-size:14px;color:#fff;height:35px;line-height: 35px;background: rgba(98,124,167,0.5);border-right:solid 1px #eee}
+	.myBubble-tab li.on{background:#526995; border-top:none;border-left:none;border-radius:0;}
+	
+	.myBubble-list-con .con-l,
+	.myBubble-list-con .con-c{width:100%;border-right:none;}
+	.myBubble-list-con .con-img-l{width:120px;height:100px;float:left}
+	.myBubble-list-con .con-img-l img{width:120px;height:100px}
+	.myBubble-list-con .con-img-r{
+		overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+	}
+	.myBubble-list-con .con-cr{width:100%;text-align:right;width:150px;position: absolute;right:10px;bottom:8px;display: block;}
+
+	.myBubble-bot-con .collect{position:absolute;bottom:0;right:10px;}
+	.myBubble-list-con .collect a{background: #25488A;color:#fff;padding:5px 8px;font-size:12px;border-radius:2px}
+	
+	.myBubble-list-title span{font-size:12px}
+	.myBubble-list-con .con-cr2{
+		position:absolute;
+		top:-30px;
+		right:5px;
+		margin-top:0;
+	}
+	.message-t{padding:10px 0}
+	.myBubble .myBubble-top, .myBubble .myBubble-bot2{padding:0;border-top:none;border-bottom: none;}
+	.myBubble-liatAll .message tr td,.myBubble-liatAll .message tr th{font-size:12px}
+	.myBubble-liatAll .message tr td:nth-child(1),.myBubble-liatAll .message tr th:nth-child(1){width:10%}
+	.myBubble-liatAll .message tr td:nth-child(2),.myBubble-liatAll .message tr th:nth-child(2){text-indent:-28px;padding-left:35px}
+	.myBubble-liatAll .message tr td:nth-child(3),.myBubble-liatAll .message tr th:nth-child(3){width:25%;padding-right:5px; text-align: right;}
+}

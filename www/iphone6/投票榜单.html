@@ -1,0 +1,67 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>投票榜单</title>
+<link rel="stylesheet" href="css/index.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript">
+    function giveBmVote(id1,id2,id3,obj){
+        obj.className += " pass";
+        obj.onclick=null;
+    }
+</script>
+</head>
+<body class="eee">
+	<header>微学习活动投票榜单</header>
+    <div class="box bd">
+    	<div class="mc one"></div>
+        <div class="flex">
+        	<img src="images/head.jpg" /> 会飞的鱼
+        </div>
+        <a href="javascript:void(0)" class="num pass">已投票</a>
+    </div>
+    <div class="box bd">
+    	<div class="mc two"></div>
+        <div class="flex">
+        	<img src="images/head.jpg" /> 会飞的鱼
+        </div>
+        <a href="javascript:void(0)" class="num" onclick="giveBmVote(1,2,4,this)">投TA一票</a>
+    </div>
+    <div class="box bd">
+    	<div class="mc three"></div>
+        <div class="flex">
+        	<img src="images/head.jpg" /> 会飞的鱼
+        </div>
+        <a href="javascript:void(0)" class="num"  onclick="giveBmVote(1,2,4,this)">投TA一票</a>
+    </div>
+     <div class="box bd">
+    	<div class="mc">4</div>
+        <div class="flex">
+        	<img src="images/head.jpg" /> 会飞的鱼
+        </div>
+        <a href="javascript:void(0)" class="num"  onclick="giveBmVote(1,2,4,this)">投TA一票</a>
+    </div>
+      <div class="box bd">
+    	<div class="mc">5</div>
+        <div class="flex">
+        	<img src="images/head.jpg" /> 会飞的鱼
+        </div>
+        <a href="javascript:void(0)" class="num"  onclick="giveBmVote(1,2,4,this)">投TA一票</a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+

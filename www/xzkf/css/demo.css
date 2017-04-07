@@ -1,0 +1,12 @@
+﻿	@media  (max-width: 1118px) {
+	/*add your css styles here*/
+		body{color:blue}
+	}
+	@media  (min-width: 400px) and (max-width:900px){
+	/*add your css styles here*/
+		body{color:red}
+	}
+	@media  (max-width: 400px) {
+	/*add your css styles here*/
+		body{color:green}	
+	}

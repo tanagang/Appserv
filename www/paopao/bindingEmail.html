@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>安全设置</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myBubble.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myCenter.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+	</head>
+	<body>
+		<!--公共头部-->
+		<div id="header2"></div>
+
+		<div class="myBubble wd1000 sm-hidden">
+			<!--邮箱绑定成功-->
+			<div class="bindingEmail">
+				<div class="bindSuccess">
+					<img src="img/success.png"/>
+					<p>邮箱绑定成功</p>
+				</div>
+				<div class="hide bindFail">
+					<img src="img/fail.png"/>
+					<p>邮箱绑定失败</p>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="hide sm-visible">
+			<!--邮箱绑定成功-->
+			<div class="bindingEmail">
+				<div class="bindSuccess">
+					<img src="img/success.png"/>
+					<p>邮箱绑定成功</p>
+				</div>
+				<div class="hide bindFail">
+					<img src="img/fail.png"/>
+					<p>邮箱绑定失败</p>
+				</div>
+			</div>
+		</div>
+		<!--公共脚部-->
+		<div id="footer"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		/*绑定邮箱*/
+		var email = request("mail");
+		var code = request("code");
+		var mobile = request("mobile");
+		var memberToken = request("memberToken");
+		$.ajax({
+		    type:"POST",
+		    url:url+"user/bindMail.json",
+		    dataType: 'jsonp',
+		    data: {email:email,checkCode:code,mobile:mobile,memberToken:memberToken},
+		    success: function (data) {console.log(data);
+		    	if(data.respCode==0000){
+		    		$(".bindSuccess").show();
+		    		$(".bindFail").hide();
+		    	}else{
+		        	$(".bindFail").show();
+		        	$(".bindSuccess").hide();
+		        }
+		    },
+		    complete:function(){
+
+		    },
+		    error:function(){}
+		});
+	})	
+</script>

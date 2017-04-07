@@ -1,0 +1,149 @@
+body{background: #eeeeee;} 
+.fc99{font-size: 12px;color: #999;}
+.fc4d{font-size: 12px;color: #4d98b8;}
+.fcf0{font-size: 12px;color: #ff0202;}
+.mr20{margin-right: 20px;}
+header .cancel-order p{font-size: 12px;color: #fff;line-height: 20px;}
+/* 填写订单 */
+.flight-infor{width: 100%;padding: 0 10px;}
+.flight-infor .finfor-main{background: #fff;border-radius: 5px;}
+.flight-infor .finfor-main .top{line-height: 30px;border-bottom: 1px solid #cbcbcb;padding: 0 10px;}
+.finfor-main .top .fr i{margin-right: 3px;}
+.flight-infor .finfor-main .bottom{padding: 10px;}
+.finfor-main .bottom .price{padding-top: 6px;}
+.edit-infor{padding-top: 8px;width: 100%;}
+.edit-infor .cell{margin-top: 10px;width: 100%;background: #fff;}
+.edit-infor .cell li{height: 45px;line-height: 45px;border-bottom: 1px solid #eeeeee;padding: 0 10px;}
+.edit-infor .cell li .label{width: 75px;}
+.edit-infor .cell li .center{padding-left: 20px;}
+.choose{display: block;width: 12px;height: 45px;background: url(../images/choose.png) center no-repeat;}
+.edit-infor .cell li input.center{height: 40px;border: none;width: 200px;}
+.edit-infor .cell li .fc99.type{padding: 0 10px 0 150px;}
+.edit-infor .cell li input.jf{width: 60px;padding-left: 10px;height: 25px;border: 1px solid #999999;}
+.edit-infor .tips{padding: 0 10px;line-height: 18px;}
+.fixed-bottom{height: 60px;line-height: 60px;width: 100%;background: #314e5b;padding: 0 10px;position: fixed;left: 0;bottom: 0;}
+.fixed-bottom .fl{color: #ff8900;font-size: 30px;}
+.fixed-bottom .fr{display: inline-block;width: 90px;height: 45px;line-height: 45px;text-align: center;color: #fff;background: #ff8900;font-size: 19px;border-radius: 5px;margin-top: 10px;}
+.edit-infor .jfdk{display: none;}
+/* 选择乘机人 */
+.choose-passenger .add-passenger{padding: 0 10px;}
+.choose-passenger .add-passenger .add-btn{display: block;width: 100%;height: 45px;line-height: 45px;background: #fff;border-radius: 5px;text-align: center;color: #4c98b8;}
+.choose-passenger .add-passenger .add-btn img{margin: -3px 8px 0 0;}
+.choose-passenger ul{padding-top: 8px;width: 100%}
+.choose-passenger li{height: 45px;line-height: 45px;margin-bottom: 1px;background: #fff;padding: 0 10px;}
+.choose-passenger li .checkbox-con{padding-top: 10px;}
+.choose-passenger .pas-infor{padding: 2px 0;}
+.choose-passenger .pas-infor p{line-height: 20px;}
+.choose-passenger .pas-infor p span{padding: 3px;border: 1px solid #4c98b8;color: #4c98b8;font-size: 12px;border-radius: 5px;}
+.btn{padding: 45px 25px;}
+.confirm-btn{width: 100%;height: 50px;line-height: 50px;text-align: center;font-size: 17px;color: #fff;background: #4c98b8;display: block;border-radius: 5px;}
+/* 新增常用乘机人 */
+.add-often{width: 100%;background: #eeeeee;}
+.add-often .cell>li{height: 45px;line-height: 45px;border-bottom: 1px solid #eeeeee;padding: 0 10px;background: #fff;}
+.add-often li.noborder{border: none;}
+.add-often li .label{width: 75px;}
+.add-often li .center{padding-left: 20px;}
+.add-often li input.center{height: 40px;border: none;width: 200px;}
+.add-often li select{border: none;width: 210px;height: 40px;font-family: "黑体";background: url(../images/choose.png) right center no-repeat;padding-right: 20px;}
+.add-often .tips{padding: 10px;}
+/* 支付方式 */
+.order{width: 100%;padding: 0 10px;}
+.order .order-infor{background: #fff;border-radius: 5px;}
+.order .order-infor .top{line-height: 30px;border-bottom: 1px solid #cbcbcb;padding: 0 10px;}
+.order .order-infor .con{padding: 10px;padding-top: 0;}
+.order .order-infor .con .line{width: 82%;height: 1px;background: #cbcbcb;margin: 3px 0;}
+.order .order-infor .con .se{width:92%;background:url(../images/to.png) center 50% no-repeat;background-size:30% 4px; text-align:center;}
+.order .order-infor .con .se .t{font-size:11px;background:#fff;color: #4d98b8;margin-top: 5px;}
+.order .order-infor .con .se .t i{font-size:11px;color: #4d98b8;}
+.order .order-infor .con .se span{text-align:center;font-size:16px;padding:0 2px;}
+.order .order-infor .con .fly-info{font-size:11px;margin-top:2px;color:#999;}
+.order .order-infor .con .fly-info img{vertical-align:-2px;}
+.order .order-infor .con .fcf8{color: #ff8901;font-size: 20px;margin-top: 15px;}
+.order .tips{font-size: 12px;color: #fff;padding: 10px 0 0;}
+.order .tips a{text-decoration: underline;color: #fff;}
+.pay-type{padding-top: 5px;width: 100%;}
+.pay-type .cell{width: 100%;background: #fff;}
+.pay-type .cell li{height: 45px;line-height: 45px;border-bottom: 1px solid #eeeeee;padding: 0 20px;}
+.pay-type .cell li a{display: block;width: 100%;height: 45px;line-height: 45px;}
+.pay-type .cell li a img{margin-right: 15px;}
+.pay-type .tips{text-align: center;padding: 10px 0;}
+.yhk-tips{font-size: 11px;padding: 20px;line-height: 24px;}
+.yhk-tips .con:before{content: "*";color: #ff0000;font-size: 16px;}
+.yhk-tips .num-name{text-align: center;}
+.yhk-tips .num{margin-right: 26px;}
+.yhk-tips .num,.yhk-tips .name{display: inline-block;width: 60px;background: url(../images/line.png) center no-repeat;}
+.jp-detail{background: #fff;margin:10px;border-radius: 5px;}
+.jp-detail ul{padding: 0 10px 10px;border-bottom: 1px solid #cbcbcb;}
+.jp-detail li{padding-top: 10px;}
+.jp-detail .total{padding: 10px;}
+.jp-detail .total b{color: #4c98b8;display: inline-block;}
+.jp-detail .total .rotate{transform:rotate(90deg);-ms-transform:rotate(90deg);-moz-transform:rotate(90deg);-webkit-transform:rotate(90deg);-o-transform:rotate(90deg);vertical-align: middle;}
+.jp-detail .hz{display:inline-block;font-size:12px;vertical-align: -8px;}
+.jp-detail .cjr{display:inline-block;width:80px;}
+.jp-detail .c2{font-size:12px;}
+.jp-detail .passengers{height: 57px;overflow: hidden;}
+/* 支付方式-信用卡支付 */
+.pay-xyk{width: 100%;padding: 10px;}
+.pay-xyk .xyk-main{background: #fff;border-radius: 5px;}
+.pay-xyk .xyk-main .top{line-height: 30px;border-bottom: 1px solid #cbcbcb;padding: 0 10px;}
+.pay-xyk .xyk-main .top a{font-size: 12px;color: #649cf0;}
+.pay-xyk .xyk-main .con{padding: 10px;}
+.pay-xyk .xyk-main .con .card{margin-right: 5%;width: 30%;float: left;}
+.pay-xyk .xyk-main .con a{display: block;width: 100%;height: 50px;text-align: center;background: #f9fafb;border: 1px solid #bbb;}
+.pay-xyk .xyk-main .con a span{height: 100%;display: inline-block;vertical-align: middle;}
+.pay-xyk .xyk-main .con .flr2{padding-top: 10px;}
+.pay-xyk .xyk-main .card-infor{line-height: 30px;}
+/* 个人中心 */
+.person-center{width: 100%;background: #eeeeee;padding-top: 10px;}
+.person-center li{height: 45px;line-height: 45px;border-bottom: 1px solid #eeeeee;padding: 0 10px;background: #fff;}
+.person-center li .label{position: relative;padding-left: 26px;}
+.person-center li .label b{position: absolute;width: 6px;height: 6px;background: #ff0101;border-radius: 3px;top: 8px;right: -10px;}
+.person-center li .label i{position: absolute;width: 18px;height: 18px;background: url(../images/sprite.png) no-repeat;top: 14px;left: 0;}
+.person-center li:nth-child(1) .label i{background-position: -34px -42px;}
+.person-center li:nth-child(2) .label i{background-position: -58px 0;}
+.person-center li:nth-child(3) .label i{background-position: -58px -21px;}
+.person-center li:nth-child(4) .label i{background-position: -58px -42px;top: 20px;}
+/* 个人信息*/
+.person-infor{width: 100%;padding-top: 10px;}
+.person-infor li{height: 45px;line-height: 45px;border-bottom: 1px solid #eeeeee;padding: 0 10px;background: #fff;overflow: hidden;}
+.person-infor li .label{position: relative;}
+.person-infor li .label a{display: inline-block;width: 40px;height: 24px;line-height: 24px;color: #fff;text-align: center;border-radius: 5px;background: #4c98b8;margin-left: 8px;font-size: 12px;}
+.person-infor li .label i{margin-left: 10px;}
+.person-infor .tips{text-align: center;padding: 10px 0;}
+.person-infor .cell li input{height: 40px;border: none;width: 200px;margin-right: 20px;}
+.person-infor .cell li input.center{height: 40px;border: none;width: 200px;}
+.person-infor .cell li select{border: none;width: 40px;height: 40px;font-family: "黑体";text-align: right;background: url(../images/choose.png) right center no-repeat;}
+.person-infor .cell li select option{text-align: right;}
+/* 常用信息管理*/
+.msg-manage .add-passenger{padding-top: 10px;}
+.msg-manage .add-passenger .add-btn{background: #4c98b8;color: #fff;}
+/* 登录注册 */
+.bgblue{width:100%;height: 100%;background: url(../images/login.jpg) center center no-repeat;background-size: cover;}
+.bgblue header{background: none;}
+.logo{margin-top: 65px;}
+.login{width: 260px;padding: 10px 20px 35px;background: rgba(0,0,0,.4);border-radius: 10px;margin: 0 auto;}
+.login p{color: #fff;font-size: 12px;text-align: center;}
+#formReset input{border:none;border-bottom: 1px solid #fff;height:29px;line-height: 100%;width:100%;margin:10px auto;background: none;color: #fff;padding-left: 30px;}
+#formReset .icon1{position: absolute;left:0px;top:12px;background: url(../images/sprite.png) -34px 0 no-repeat;width:20px;height:20px;}
+#formReset .icon2{position: absolute;left:5px;top:13px;background: url(../images/sprite.png) -34px -22px no-repeat;width:14px;height:17px;}
+#formReset input::-webkit-input-placeholder{color:#fff;}
+#formReset a{color: #fff;}
+#formReset .login-btn{width: 100%;height: 35px;line-height: 35px;text-align: center;color: #fff;background: #4c98b8;display: block;border-radius: 5px;font-size: 14px;}
+#formReset .checkbox-con{color: #fff;}
+#formReset .checkbox-con .checkbox{width: 13px;height: 12px;display: inline-block;cursor: pointer;background: url(../images/ck.png) 2px 2px no-repeat;}
+#formReset .checkbox-con .cur{width: 13px;height: 12px;background:url(../images/cked.png) 0 no-repeat;}
+p.error{font-size:12px;color:#f44;height:20px;line-height: 20px}
+/* 弹窗 */
+#mask{position:fixed;left:0;top:0;background: rgba(0,0,0,0.4);width:100%;height:100%;display:none; z-index: 990}
+#lss{display:none;width:290px;padding:15px 25px;text-align:center;background:#FFF;box-shadow:0 0 2px rgba(0,0,0,0.2);border-radius:8px; position:absolute;top:30%;left:50%;transform:translateX(-50%); z-index:991;}
+
+
+
+
+
+
+
+
+
+
+

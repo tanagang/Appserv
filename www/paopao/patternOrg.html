@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>泡泡模式-合作机构</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/pattern.css"/>
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<script src="js/public.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+	</head>
+	<body>
+		
+	<!--公共头部-->	
+	<div id="header" rel="0"></div>
+
+	<!--公有目标选择-->
+		<div class="partten wd1000">
+			<!--我的泡泡-->
+			<div class="parttenFix parttenFix-l sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgleft" /></a>
+			</div>
+			<div class="parttenFix parttenFix-r sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgright" /></a>
+			</div>
+			<!--我的泡泡-->
+			<div class="partten-nav">
+				<ul class="clearfix">
+					<li><a href="patternTag2.html">公有目标</a></li>
+					<li><a href="patternSelect.html">运作模式</a></li>
+					<li class="pr curr">
+						<div>泡泡团队</div>
+						<dl>
+							<dd><a href="patternTag3.html">参与者</a></dd>
+							<dd><a href="patternOrg.html">合作机构</a></dd>
+							<dd><a href="patternTag1.html">有知庐</a></dd>
+						</dl>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="partten-cont">
+				<div class="partten-actor">
+					<div class="partten-actor-title">合作机构</div>
+					<p class="txt-center"><img src="img/partten/org.png" /></p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="actor-list-out">
+			<div class="actor-list wd1000 hide">
+				<div class="actor-list-title">合作机构</div>
+				<div class="actor-list-con">
+					<ul class="clearfix">
+						<li>
+							<div class="header"><img src="img/partten/actorimg.png"/></div>
+							<div class="intro">
+								<p>选择目前市场上在渠道和广告上有大量投入的产品或服务</p>
+								<p>从我们身边的资源和合作方入手，生产并提供高品质的产品或服务产品或服务的市场潜力大，客户对能用公正的价格购买到高品质的产品或服务感兴趣</p>
+								<p>选择目前市场上在渠道和广告上有大量投入的产品或服务</p>
+								<p>从我们身边的资源和合作方入手，生产并提供高品质的产品或服务产品或服务的市场潜力大，客户对能用公正的价格购买到高品质的产品或服务感兴趣</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="actor-join">
+				<div>
+					<a href="javascript:void(0)">快来加入我们吧</a>
+					<img src="img/partten/sildeDown.png"/>
+				</div>
+				<div style="display: none;">
+					<a href="javascript:void(0)">稍后填写</a>
+					<img src="img/partten/sildeUp.png"/>
+				</div>
+			</div>
+		</div>
+		
+		<!--机构信息-->
+		<div class="actorInfo wd1000">
+			<div class="actorInfo-title">机构信息</div>
+			<form class="actorInfo-con" id="formToUpdate" method="post" action="#" enctype="multipart/form-data">
+				<div class="actorInform">
+					<label><span>*</span>姓名：</label><div class="inp"><input type="text" name="volunteerName" placeholder="请输入您的姓名" /></div>
+				</div>
+				<div class="actorInform">
+					<label><span>*</span>机构名称：</label><div class="inp"><input type="text" name="organization" placeholder="请输入您的机构名称" /></div>
+				</div>
+				<div class="actorInform">
+					<label>职位：</label><div class="inp"><input type="text" name="position" placeholder="请输入您的职位" /></div>
+				</div>
+				<div class="actorInform">
+					<label><span>*</span>邮箱：</label><div class="inp"><input type="text" name="email" placeholder="请输入您的邮箱" /></div>
+				</div>
+				<div class="actorInfotx clearfix">
+					<label>您对有知庐的建议：</label>
+					<div class="inp"><textarea name="proposal"></textarea></div>
+				</div>
+				<div class="actorInform-sure"><a href="javascript:void(0)" class="actorInformSub">确认</a></div>
+			</div>
+		</div>
+	
+		<!--公共脚部-->
+		<div id="footer"></div>
+		
+		<script src="js/actor.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
+<script>
+	$(function(){
+		$.ajax({
+			type:"post",
+			dataType:dataType, 
+			url:url+"article/paopaoSchema.json",
+			data:{schemaType:"04"},
+			success:function(data){
+				$("#userAmount").html(data.userAmount);
+				$("#videoAmount").html(data.videoAmount);
+				$("#poloAmount").html(data.poloAmount);
+				$("#moneyAmount").html(data.moneyAmount);
+				var str = '';
+				$.each(data.records, function(idx,el) {
+					var c = el.content;
+					str += '<li>';
+					str += '	<div class="header">';
+					str += '		<img src="'+imgUrl+el.picture+'"  width="100" height="100" />';
+					str += '	</div>';
+					str += '	<div class="intro">'+c+'</div>';
+					str += '</li>';
+				});
+				$(".actor-list-con ul").html(str);
+			}
+		});
+		
+		//机构建议
+		$(".actorInformSub").click(function(){
+			var type = "00";
+			var volunteerName = $("form.actorInfo-con input[name=volunteerName]").val();
+			var organization = $("form.actorInfo-con input[name=organization]").val();
+			var email = $("form.actorInfo-con input[name=email]").val();
+		
+			if(volunteerName==""){
+				alert("请输入您的姓名");return false;
+			}else if(organization==""){
+				alert("请输入机构名称");return false;	
+			}else if(!checkEmail(email)){
+				alert("请输入正确邮箱格式"); return false;
+			}
+			
+			$("#formToUpdate").ajaxSubmit({
+	            type:'post',
+	            dataType:'json',
+	            url:url+"volunteer/teamEntering.json",
+	            data:{type:"01"},
+	            success:function(data){
+	            	console.log(data);
+	                if(data.respCode=="0000"){
+	                	alert(data.respMsg);
+	                	document.getElementById("formToUpdate").reset(); 
+	                }
+	            },
+	            error:function(XmlHttpRequest,textStatus,errorThrown){
+	                console.log(XmlHttpRequest);
+	                console.log(textStatus);
+	                console.log(errorThrown);
+	            }
+	        });
+	  });
+	});
+	//左右两侧广告图片
+	ad("03,04");
+</script>

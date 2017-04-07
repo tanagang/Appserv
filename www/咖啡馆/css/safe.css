@@ -1,0 +1,14 @@
+section{padding:0 10px;margin-top: 10px;background: #fff;}
+.lock{height:90px;background:#5CB0F3;padding:10px 0; text-align:center;color:#fff;}
+.lock img{width: 55px;height: 55px;margin: 0 auto;display: inline-block;border-radius:100%;border:1px solid #fff;}
+.content li{position: relative;height: 41px;line-height: 41px;border-bottom: 1px solid #efefef;padding: 0 3px;}
+.content li>a{display: block;overflow: hidden; padding-left:35px;}
+.content .conleft{float: left;position: relative;color: #494848;}
+.content .conright{float: right;margin-right: 12px;color: #a8a8a8;font-size: 11px;}
+.content i{position: absolute;right: 3px;top: 0;color: #dfdfdf;}
+.content .conright p:nth-child(1){margin-top: 5px;}
+.content .conright p{line-height: 16px;text-align: right;color: #a8a8a8;}
+.content li:nth-child(1){background:url(../images/sprit.png) no-repeat left 5px; background-size:20px auto;}
+.content li:nth-child(2){background:url(../images/sprit.png) no-repeat left -35px; background-size:21px auto;}
+.content li:nth-child(3){background:url(../images/sprit.png) no-repeat left -70px; background-size:20px auto;}
+.cred{background: #f44!important;}

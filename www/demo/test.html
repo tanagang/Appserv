@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">
+	*{padding:0;margin:0; font-size:14px;}
+	span.hide{display:none;}
+	span.show{display:inline-block;}
+	.span1{display:none;}
+	.con{width:850px;margin:0 auto;}
+	.con .t{font-size:18px;font-family:微软雅黑;font-weight:bold;}
+	.table1{width:100%;margin:10px auto}
+	.table1 td{padding:10px;}
+	.share-name{width:220px;height:25px;line-height:25px;border:1px solid #ccc;}
+	.role{width:320px;height:100px;border:1px solid #ccc;}
+	.table2 *{font-size:12px;}
+	.table2 input,.table2 select{width:65px;height:25px;line-height:25px;border:1px solid #ccc;}
+	#add{font-size:12px;margin-bottom:17px;}
+	#thead{display:none;}
+	.btn-add{color:#fff;background:#0092FF;padding:8px 20px; text-decoration:none}
+</style>
+</head>
+<body>
+	<input type="text" id="copyText" value="bbb" /><a href="javascript:void(0)" onclick="copy(this)">复制</a>
+	<input type="text" />
+</body>
+</html>
+<script type="text/javascript">
+	function copy(obj) 
+	{ 
+	  document.getElementById("copyText").select(); // 选择对象 
+	  document.execCommand("Copy"); // 执行浏览器复制命令 
+	  alert("已复制好，可贴粘。"); 
+	} 
+</script>

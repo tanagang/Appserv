@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+</head>
+<body class="fff">
+	<header>
+		<a href="javascript:void(0)" class="txt">注册</a>
+		登陆
+	</header>
+   <section class="margin-top-20 section4">
+		<div class="box">
+			<span>手机号</span>
+			<input type="text" class="flex" placeholder="请输入验证码">
+		</div>
+		<div class="box">
+			<span>密&emsp;码</span>
+			<input type="text" class="flex" placeholder="请输入密码">
+			<a href="javascript:void(0)" class="see" rel="show"><img src="images/see.png" width="18" /></a>
+		</div>
+		<a href="javascript:void(0)" class="btn" style="margin-top:50px">登 陆</a>
+		<p class="forget"><a href="javascript:void(0)">忘记密码</a></p>
+   </section>
+</body>
+</html>
+<script>
+	window.onload=function(){
+		$(".see").click(function(event) {
+			var that = $(this);
+			var flag = that.attr("rel");
+			if(flag=="show"){
+				that.prev().attr("type","password");
+				that.attr("rel","hide");
+			}else{
+				that.prev().attr("type","text");
+				that.attr("rel","show");
+			}
+			
+		});
+	}
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+.con{position: relative;margin-top:10px}
+.con .edit{position:absolute;right:20px;bottom:35px;color:#fff; background: #6683d5;padding:6px 25px;border-radius: 3px;}
+.con .no-border{border:none}

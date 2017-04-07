@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>个人中心</title>
+<meta name="keywords" content="项目列表页"/>
+<meta name="description" content="项目列表页"/>
+<link rel="stylesheet" href="css/global.css"/>
+<link rel="stylesheet" href="css/center.css"/>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+  	<header id="header">
+		<div id="top">
+			<span class="fl">累计募集金额：<i>￥60000</i></span>
+			<span class="fr">分配总金额：￥555555555</span>
+		</div>
+		<div id="nav" class="nav">
+			<a href="#" class="fl"><img src="images/logo.png"></a>
+			<div class="logout fr">
+				<a href="#"><img src="images/login-out.png"> 退出</a>
+			</div>
+			<ul class="fr">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="projectList.html">投资中心</a></li>
+				<li><a href="pCenter.html" class="active">个人中心</a></li>
+			</ul>
+		</div>
+	</header>
+	<div class="blank"></div>
+	<div class="container">
+		<div class="info-header">
+			<img src="images/head.png" class="head" />
+			<dl>
+				<dt>ID:<span class="span1">17****625</span><span class="span2 hide" id="identify"><img src="images/nopass.png" width="17" height="17" /> 未认证完成</span></dt>
+			</dl>
+			<div class="info-a" id="user_infor">
+				<a href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"></a>
+			</div>
+		</div>
+		<div class="rz-list">
+			<div class="rz" id="safeCode">
+				<img src="images/nopass.png"/>您还没有设置安全码，请设置 <a href="javascript:void(0)" id="scode-btn">立即设置</a>
+			</div>
+			<div class="rz" id="myNumber">
+				<img src="images/pass.png"/>您还没有认证MY Number信息 <a href="javascript:void(0)">立即上传认证</a>
+			</div>
+		</div>
+		<div class="account clearfix">
+			<div class="zjzh fl">
+				<p class="account-title">资金账户</p>
+			</div>
+			<div class="zjqk fr">
+				
+			</div>
+		</div>
+	</div>
+	<footer id="footer">
+		<div class="ft-main">
+			<div class="dl clearfix">
+				<dl>
+					<dt></dt>
+					<dd>各类协议</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>我的账户</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>投资规则</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>个人信息保障</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>合同规范</dd>
+				</dl>
+			</div>
+			<div class="ftm-bottom clearfix">
+				<div class="ft-logo fl">
+					<img src="images/ft-logo.png"/>
+				</div>
+				<div class="infor fl">
+					<p>电话：1254-5621-476</p>
+					<p>地址：日本东京区日本东京区</p>
+					<p>Copyright © 2014 沪ICP备10011451号-20 用时：秒关于我们版权声明</p>
+				</div>
+				<div class="ewm fr">
+					<img src="images/ewm.jpg"/>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- 弹出层 -->
+	<div class="bg" style="display:none;"></div>
+	<!-- 安全码 -->
+	<div class="safe-pop" style="display:none;">
+		<div class="safeCon">
+			<a href="javascript:;" class="close fc-3c">×</a>
+			<div class="cont fc-3c">一次性安全码</div>
+			<div class="conb clearfix">
+				<span class="fl">输入安全码</span>
+				<div class="fr">
+					<input type="password" name="sn1" maxlength="1" id="sn1"><input type="password" name="sn2" maxlength="1" id="sn2"><input type="password" name="sn3" maxlength="1" id="sn3"><input type="password" name="sn4" maxlength="1" id="sn4"><input type="password" name="sn5" maxlength="1" id="sn5"><input type="password" name="sn6" maxlength="1" id="sn6">
+					<input type="password" name="sn7" maxlength="1" id="sn7">
+					<input type="password" name="sn8" maxlength="1" id="sn8">
+				</div>
+			</div>
+			<div class="safe-btn">
+				<a href="javascript:;" class="close-btn">关闭</a>
+				<a href="javascript:;" class="confirm-btn">确定</a>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$("#scode-btn").click(function(event) {
+			$(".bg,.safe-pop").show();
+			$("#sn1").focus();
+	        //自动跳到下一个输入框  
+	        $("input[name^='sn']").each(function() {
+	            $(this).keyup(function(e) {
+	                e = window.event || e;
+	                var k = e.keyCode || e.which;
+	                if (k == 8) {   //8是空格键
+	                    if ($(this).val().length < 1) {
+	                        $(this).prev().focus();
+	                        $(this).prev().focus(function() {
+	                            var obj = e.srcElement ? e.srcElement: e.target;
+	                            if (obj.createTextRange) { //IE浏览器
+	                                var range = obj.createTextRange();
+	                                range.moveStart("character", 1);
+	                                range.collapse(true);
+	                                range.select();
+	                            }
+	                        });
+	                    }
+	                } else {
+	                    if ($(this).val().length > 0) {
+	                        $(this).next().focus();
+	                    }
+	                }
+	            })
+	        });
+		});
+		$(".safe-btn .close-btn").on('click', function(event) {
+			$(".bg,.safe-pop").hide();
+		});
+		$(".safe-pop .close").on('click', function(event) {
+			$(".bg,.safe-pop").hide();
+		});
+		$(".safe-btn .confirm-btn").on('click', function(event) {
+	        var sn = $("#sn1").val() + $("#sn2").val() + $("#sn3").val() + $("#sn4").val()+ $("#sn5").val() + $("#sn6").val();
+	        console.log(sn);
+	        $.ajax({
+			  url:"http://cool.pccb.com/frontapi/user/safe_code",
+			  type: 'POST',
+			  dataType: 'json',
+			  data:{"check_code":sn},
+			  success: function(data){//console.log(data);
+			  		
+			  }
+			});
+		});
+		$.ajax({
+		  url:"http://cool.pccb.com/frontapi/user/center",
+		  type: 'POST',
+		  dataType: 'json',
+		  data:{},
+		  success: function(data){console.log(data);
+		  	if(data.data.check_stat=="0"){
+		  		$("#identify").show();
+		  	}
+		  	if(data.data.safe_code_count=="0"){
+		  		$("#safeCode").show();
+		  	}
+			//身份证
+		  	if(data.data.identity_card_count=="0"){
+		  		$("#user_infor a").eq(0).html('<img src="images/info1.png"/><br/>身份证');
+		  	}else{
+		  		$("#user_infor a").eq(0).html('<img src="images/info1_active.png"/><br/>身份证');
+		  	}
+		  	//My number
+		    if(data.data.mynumber_count=="0"){
+		  		$("#myNumber").show();
+		  		$("#user_infor a").eq(1).html('<img src="images/info2.png"/><br/>My number');
+		  	}else{
+		  		$("#myNumber").hide();
+		  		$("#user_infor a").eq(1).html('<img src="images/info2_active.png"/><br/>My number');
+		  	}
+			//银行卡
+		  	if(data.data.bank_card_count=="0"){
+		  		$("#user_infor a").eq(2).html('<img src="images/info3.png"/><br/>银行卡');
+		  	}else{
+		  		$("#user_infor a").eq(2).html('<img src="images/info3_active.png"/><br/>银行卡');
+		  	}
+			//个人信息
+		  	if(data.data.personal_count=="0"){
+		  		$("#user_infor a").eq(3).html('<img src="images/info4.png"/><br/>个人信息');
+		  	}else{
+		  		$("#user_infor a").eq(3).html('<img src="images/info4_active.png"/><br/>个人信息');
+		  	}
+		  	var str="";
+		  	str+='<p class="account-title clearfix">资金情况<span class="fr">累计收益<b>￥'+data.data.sum_account+'</b></span></p>';
+		  	str+="<div>账户余额<br/><br/>"+data.data.amount+"</div>";
+		  	str+="<div>可用余额<br/><br/>"+(data.data.amount-data.data.freeze_account)+"</div>";
+		  	str+="<div>冻结金额<br/><br/>"+data.data.freeze_account+"</div>";
+			$(".account .zjqk").append(str);	
+		  }
+		});
+		$.ajax({
+		  url:"http://cool.pccb.com/frontapi/user/user_account",
+		  type: 'POST',
+		  dataType: 'json',
+		  data:{},
+		  success: function(data){//console.log(data);
+		  	var str="";
+		  	$.each(data,function(index, el) {
+			  	if(el.status=="2"){
+			  		str+="<div class='no-account'>你暂时没有自己账户，还没有去认证！</div>";
+			  	}else{
+			  		
+			  		str+="<table width='90%'>";
+			  		str+="<tr><td>金融机构："+el.bank_name_01+"</td>";
+			  		str+="<td>科目："+el.bank_type_code+"</td></tr>";
+			  		str+="<tr><td>支店名："+el.branch_name_01+"</td>";
+			  		str+="<td>口座番号："+el.bank_number+"</td></tr>";
+			  		str+="<tr><td>店番："+el.bank_code+"</td>";
+			  		str+="<td>口座名："+el.bank_account+"</td></tr>";
+			  		str+="</table>";
+			  		
+			  	}		  		
+			});
+		  		$(".account .zjzh").append(str);
+		  }
+		});
+	})
+</script>
+

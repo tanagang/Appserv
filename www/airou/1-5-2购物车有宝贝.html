@@ -1,0 +1,155 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script src="js/jquery-2.1.3.min.js"></script>
+</head>
+<style type="text/css">
+	.num{width:90px}
+	.num input{width:22px; height:22px;line-height:22px;}
+	.num .text{width:42px;height:22px}
+</style>
+<body>
+ <section style="margin-bottom:120px">
+	<div class="box p10 bb">
+    	<label class="label" style="width:20px;margin-top:35px" data-rel="0"><span class="radio"></span></label>
+        <img src="images/temp/img1.jpg" width="90" height="90" class="block" />
+        <dl class="font14 flex shopping">
+        	<dt>D-CLINIC 水亮清透超高强防晒霜全新上市</dt>
+            <dd><span>单价：</span>&ensp;￥<i class="price">280</i><input type="hidden" class="xj" value="280" /></dd>
+            <dd>
+            	<span>数量：</span>&ensp;
+                <div class="num">
+                	<input type="button" value="-" class="prev" /><input type="text" value="1" class="text" /><input type="button" value="+" class="next" />
+                </div>
+                    <a href="#"class="fr inline-block"><img src="images/delete.png" width="14" /></a>
+            </dd>
+        </dl>
+    </div>
+   <div class="box p10 bb">
+    	<label class="label" style="width:20px;margin-top:35px" data-rel="0"><span class="radio"></span></label>
+        <img src="images/temp/img2.jpg" width="90" height="90" class="block" />
+        <dl class="font14 flex shopping">
+        	<dt>D-CLINIC 水亮清透超高强防晒霜全新上市</dt>
+            <dd><span>单价：</span>&ensp;￥<i class="price">280</i><input type="hidden" class="xj" value="280" /></dd>
+            <dd>
+            	<span>数量：</span>&ensp;
+                <div class="num">
+                	<input type="button" value="-" class="prev" /><input type="text" value="1" class="text" /><input type="button" value="+" class="next" />
+                </div>
+                    <a href="#"class="fr inline-block"><img src="images/delete.png" width="14" /></a>
+            </dd>
+        </dl>
+    </div>
+    <div class="box p10 bb">
+    	<label class="label" style="width:20px;margin-top:35px" data-rel="0"><span class="radio"></span></label>
+        <img src="images/temp/img3.jpg" width="90" height="90" class="block" />
+        <dl class="font14 flex shopping">
+        	<dt>D-CLINIC 水亮清透超高强防晒霜全新上市</dt>
+            <dd><span>单价：</span>&ensp;￥<i class="price">280</i><input type="hidden" class="xj" value="280" /></dd>
+            <dd>
+            	<span>数量：</span>&ensp;
+                <div class="num">
+                	<input type="button" value="-" class="prev" /><input type="text" value="1" class="text" /><input type="button" value="+" class="next" />
+                </div>
+                    <a href="#"class="fr inline-block"><img src="images/delete.png" width="14" /></a>
+            </dd>
+        </dl>
+    </div>
+    <div class="fff p10">
+    	<label class="label" style="width:60px" data-rel="0"><span class="chk"></span> 全选</label><span class="fr">你已经选择了<i class="theme-color">1</i>件待结算宝贝</span>
+    </div>
+    <div class="fff p10 clear div-total">
+    	总金额：<span class="theme-color" >￥<i class="theme-color font24 total-price">0</i></span><a href="#" class="btn fr" style="width:150px;">结算</a>
+    </div>
+</section>
+ <footer class="box">
+    	<div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/home_active.png" width="22" height="22" /></dt>
+                    <dd class="hover">首页</dd>
+                </dl>
+            </a>
+         </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/category.png"  width="27" height="22"/></dt>
+                    <dd>分类</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#">
+                <dl>
+                    <dt><img src="images/shopping.png"  width="25" height="22" /></dt>
+                    <dd>购物车</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/mine.png"  width="22" height="22"/></dt>
+                    <dd>我的</dd>
+                </dl>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+	$(function(){
+		$(".next").click(function(){
+			var v=parseInt($(this).prev().val());	
+			$(this).prev().val(v+1);
+			var dj = $(this).closest(".box").find(".price").html();
+			$(this).closest(".box").find(".xj").val(dj*(v+1));
+			total();
+		});
+		$(".prev").click(function(){
+			var v = parseInt($(this).next().val());	
+			if(v>0){
+				$(this).next().val(v-1);
+				var dj = $(this).closest(".box").find(".price").html();
+				$(this).closest(".box").find(".xj").val(dj*(v-1));
+				total();
+			}
+		});
+		$(".radio").click(function(){
+			$(this).toggleClass("radio-active");
+			total();
+		});
+		$(".chk").parent().click(function(){
+			var that = $(this).find(".chk");
+			that.toggleClass("chk-active");	
+			if(that.hasClass("chk-active")){
+				$(".radio").addClass("radio-active");	
+			}else{
+				$(".radio").removeClass("radio-active");
+			}
+			total();
+		});
+	});
+	function total(){
+		var total=0;
+		$(".radio").each(function(idx,item){
+			var tag=$(this).hasClass("radio-active");
+			if(tag){
+				total+=parseInt($(this).closest(".box").find(".xj").val());
+			}
+		});
+		$(".total-price").html(total);
+	}
+</script>
+
+

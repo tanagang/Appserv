@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>账户中心-addPao</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+		<style type="text/css">
+		.demo{margin: 20px auto;padding:20px 0 150px 0;width:1000px;border:1px solid #efefef;}
+		.tt{font-size: 20px; color: #010101; font-weight: bold;  height: 26px;  line-height: 26px; padding-left:20px; margin-bottom:50px;}
+		.portrait_left{float:left;height:auto;width:306px;margin-left:200px}
+		#picture{width:240px;min-height:240px;margin:0 auto;border:1px solid #efefef; line-height: 240px;vertical-align: middle;}
+		#avatar{width:100%;vertical-align: middle;border:none}
+		.portrait_revolve{height:auto;padding-top:15px;width:306px;}
+		
+		.setup_but{height:28px;padding-top:40px;width:auto; text-align: center;}
+		.setup_but a{padding:8px 50px;background: #234788;color:#fff}
+		.setup_but input{}
+		.portrait_right{float:left;font-size:12px;height:280px;padding-left:80px;width:320px;}
+		.portrait_right_bottom{color:#666666;height:220px;width:310px;}
+		.portrait1{float:left;height:200px;width:100px;margin-left:50px}
+		.portrait1 .pt{width:200px;font-size:18px;line-height: 160%;}
+		.portrait1 .pt p{font-size:14px;}
+		#img_big_preview{height:180px;margin:0 auto;width:180px;}
+		.img_preview{border:1px solid #000000;overflow:hidden;position:relative;}
+		.img_preview img{margin:0;position:relative;}
+		.nick{margin:50px 0 50px 185px}
+		.nick input{border:1px solid #ccc;width:240px;line-height: 25px;height:25px;}
+		.nick a{ padding: 8px 50px;margin:20px 10px;  background: #234788;  color: #fff!important;}
+		.upl{width:130px;height:30px;line-height: 30px;text-align: center;position: relative;background: #234788;color:#fff;top:-5px;left:15px;}
+		.upl input{position: absolute;top:0;right:0;height:30px;width:130px;display: block; opacity: 0;}
+		</style>
+		
+	</head>
+	<body>
+		<!--公共头部-->	
+		<div id="header2"></div>
+		
+		<div style="clear: both;"></div>
+		<form class="demo clearfix" id="avatarForm" method="post" action="#" enctype="multipart/form-data">
+			<div class="tt">基本信息</div>
+			<div class="clearfix nick">
+				昵称：<input type="text" name="nickName" maxlength="10" />
+			</div>
+			<div class="portrait_left">
+				<div id="picture">
+				
+					<img id="avatar" src="img/actorimg.png" width="100%">
+				</div>
+				<div class="setup_but">
+					<div class="upl fl">
+						<span>上传</span>
+						<input type="file" name="portrait"  onchange="Preview(this)" />
+					</div>
+					<a href="javascript:void(0)" id="sub">确定</a>
+				</div>
+			</div>
+			
+		</form>	
+		
+		<div style="clear:both"></div>
+		<div id="footer" data = "0"></div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+		$.ajax({
+			type:"post",
+			dataType:dataType, 
+			url:url+"user/getMemberInfo.json",
+			data:{},
+			success:function(data){
+				if(data.respCode=="0000"){
+					if(data.memberInfo.nickName!=undefined){
+						$("input[name=nickName]").val(data.memberInfo.nickName).prop({"readonly":true});
+						if(data.memberInfo.portrait){
+							$("#avatar,.headImg").attr("src",imgUrl+data.memberInfo.portrait);
+						}
+					}else{
+						$("#avatar").attr("rel","0");
+						$("input[name=nickName]").prop({"readonly":false});
+					}
+					
+				}else{
+					alert(data.respMsg);
+				}
+			}
+		});
+
+		function Preview(e) {  
+            var ext =$(e).val().split(".")[1].toUpperCase();
+            if ( ext != "PNG" &&  ext != "JPG" && ext != "JPEG") {
+                alert("图片限于png，jpeg，jpg格式！");
+                return false;
+            }else{
+                var url= window.URL.createObjectURL($(e)[0].files[0]);
+                var mb = ($(e)[0].files[0].size/1024)/1024;
+				if(mb>= 10){
+					alert('文件大小大于10M');
+					return;
+				}
+                 $("#avatar").attr({"src":url,"rel":"1"}); 
+            }
+        }
+		//确认上传头像
+		$("#sub").click(function(){
+			var nickname = $("input[name=nickName]").val();
+			var avatar = $("#avatar").attr("rel");
+			var memberToken = $.cookie("c_member_token");
+			var userid = $.cookie("c_member_token");
+			if(nickname==""){
+				alert("请填写昵称");
+				return;
+			}
+			if(avatar=="0"){
+				alert("请选择头像");
+				return;
+			}
+			$("#avatarForm").ajaxSubmit({
+                    type:'post',
+                    dataType:"json",
+                    data:{"memberSessionId":userid,"memberToken":memberToken},
+                    url:url+"user/changeNickNameAndPortrait.json",
+                    success:function(data){
+                    	if(data.respCode=="0000"){
+                    		alert("上传成功");
+                    		$(".headImg").attr("src",imgUrl+data.portraitPath);
+                    	}else{
+                    		alert(data.respMsg);
+                    	}
+                    },
+                    error:function(XmlHttpRequest,textStatus,errorThrown){
+                        console.log(XmlHttpRequest);
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                    }
+                });
+		});
+</script>

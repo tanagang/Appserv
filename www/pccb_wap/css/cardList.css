@@ -1,0 +1,9 @@
+section{padding:0 15px;margin-top: 20px;}
+.content li{height: 68px;border: 2px solid #dfdfdf;padding: 11px 16px;border-radius: 5px;overflow: hidden;margin-top: 15px;background: #fff;cursor: pointer;width: 100%;}
+.content li.active{border-color: #ff5757;}
+.content .conleft{float: left;padding-right: 15px;height:42px;line-height:42px;vertical-align: middle;width: 47px;}
+.content .conleft img{width: 32px;}
+.content .conright{float: left;padding-left: 15px;border-left: 1px solid #dfdfdf;}
+.content .conright p{line-height:20px;}
+.content .conright p:nth-child(2){font-size: 11px;color: #a8a8a8;}
+.cred{background: #f44!important;}

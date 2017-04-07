@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>修改登录密码</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			body{background: #F5F5F5;max-width: 640px;margin:0 auto;}
+			.hh{height:40px;line-height: 40px;background:#fff;border-bottom:1px solid #DCDCDC; text-align: center;color:#000;font-size:15px}
+			.hh .fl{padding:0 12px;}
+			.mm{margin:30px 15px}
+			.mm>div{margin:15px auto;font-size:12px}
+			.mm input{width:100%;height:35px;line-height: 35px;border:1px solid #E4E4E4;border-radius:3px;background: #fff;text-indent:5px}
+			a.code{display:inline-block;width:120px; margin-left:15px;text-align: center;height:40px;line-height: 40px;background: #244789;color:#fff;border-radius:5px}
+			a.bind{width:100%;margin-left:0;margin-top:30px}
+		</style>
+	</head>
+	<body>
+		<div class="hh">
+			<a class="fl" href="javascript:window.history.back()"><img src="img/arrowleft.png" width="10"/></a>
+			修改登录密码
+		</div>
+		<div class="mm">
+			<div>
+				<input type="password" class="oldPassword" placeholder="输入当前登录密码" />
+				<span></span>
+			</div>
+			<div>
+				<input type="password" class="newPassword" placeholder="请输入新密码" />
+				<span></span>
+			</div>
+			<div>
+				<input type="password" class="repeatPassword" placeholder="确认新密码" />
+				<span></span>
+			</div>
+			<div>
+				为了保证您的有知庐账户安全，建议您每三个月修改一次密码
+			</div>
+		<div>
+		<a href="javascript:void(0)" class="code bind passwordSub">确认</a>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		/*登录密码修改*/
+		$('.passwordSub').click(function(){
+			$.ajax({
+			    type:"POST",
+			    url:url+"/user/modifyPassword.json",
+			    dataType: 'jsonp',
+			    data: {oldPassword:$('.oldPassword').val(),password:$('.newPassword').val()},
+			    beforeSend:function(){
+			    	if($('.oldPassword').val()==""){
+						$('.oldPassword').siblings("span").html('<i class="cpr cpr2"></i><span class="error">原密码不能为空！</span>');
+						return false;
+					}
+			    	if($('.newPassword').val()==""){
+						$('.newPassword').siblings("span").html('<i class="cpr cpr2"></i><span class="error">新密码不能为空！</span>');
+						return false;
+					}
+			    	if($('.newPassword').val().length>21||$('.newPassword').val().length<6){
+						$('.newPassword').siblings("span").html('<i class="cpr cpr2"></i><span class="error">密码格式不正确！</span>');
+						return false;
+					}
+			    	if($('.newPassword').val()!=$('.repeatPassword').val()){
+						$('.repeatPassword').siblings("span").html('<i class="cpr cpr2"></i><span class="error">密码不一致</span>');
+						return false;
+					}
+			    },
+			    success: function (data) {
+			    	console.log(data);
+			    	if(data.respCode==0000){
+			    		alert("密码修改成功！");
+			    		window.location.href="mSafe.html";
+			    	}else{
+			        	alert(data.respMsg);
+			        }
+			    },
+			    complete:function(){
+	
+			    },
+			    error:function(){}
+			});
+		});	
+	})
+</script>	
+

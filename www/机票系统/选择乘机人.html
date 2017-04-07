@@ -1,0 +1,394 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/lq_style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script src="js/swipe.js"></script>
+</head>
+<body class="body2">
+    <header class="box">
+        <a href="javascript:void(0)"><img src="images/back.png" /></a>
+        <p class="flex ellipsis">选择乘机人</p>
+        <a href="javascript:void(0)"></a>
+    </header>
+    <section class="choose-passenger">
+        <div class="add-passenger">
+            <a href="#" class="add-btn"><img src="images/add.png">新增乘机人</a>
+        </div>
+        <ul>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>   
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>    
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>            
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>            
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>                    
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>                    
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+        </ul>
+        <div class="btn">
+            <a href="#" class="confirm-btn">确   定</a>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<script>
+	/*if (window.DeviceMotionEvent) {
+	    window.addEventListener("devicemotion", function() {
+	    	window.history.go(1);
+	    }, false);
+	}*/
+
+</script>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/lq_style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/md5.js"></script>
+<script>
+	cookies();
+</script>
+</head>
+<body class="body2">
+    <header class="box">
+        <a href="javascript:void(0)" onclick="javascript:history.go(-1);"><img src="images/back.png" /></a>
+        <p class="flex ellipsis">${i18n.getValue('D20001')}</p>
+        <a href="javascript:void(0)"></a>
+    </header>
+    <section class="flight-infor">
+        <div class="finfor-main">
+            <div class="top">
+                <p class="clearfix"><span class="fl"><span class="startDate"></span> <span id="week1"></span> <span class="startCity"></span>—<span class="endCity"></span></span>
+                <span class="fr fc99"><i class="clock"></i><span class="flightTime"></span></p>
+            </div>
+            <div class="bottom">
+                <p class="clearfix">
+                    <span class="fl shippingSpace"></span>
+                    <span class="fr"><span class="Total"></span></span>
+                </p>
+                <p class="price fc99">${i18n.getValue('H50011')} <span class="baseFareTotal"></span>  ${i18n.getValue('D10058')} <span class="totalTaxTotal">538</span></p>
+                <p class="price fc99">${i18n.getValue('D10059')} <span class="fee"></span>  ${i18n.getValue('M10008')}<span class="favorablePrice"></span></p>
+                <a href="javascript:void(0)" id="return" class="fc4d">${i18n.getValue('D00002')}</a>
+            </div>
+        </div>
+    </section>
+    <section class="edit-infor">
+        <ul class="cell rideType">
+            
+        </ul>
+        <ul class="cell">
+            <li>
+                <span class="fl label">${i18n.getValue('D10079')}${i18n.getValue('D20020')}</span>
+                <input type="text" placeholder="${i18n.getValue('H50015')}" value=""  class="center surName" onkeyup="dothis(this);" onpaste="dothis(this)" onblur="dothis(this)" oncontextmenu="dothis(this)">
+            </li>
+            <li>
+                <span class="fl label">${i18n.getValue('D10079')}${i18n.getValue('D20021')}</span>
+                <input type="text" placeholder="${i18n.getValue('H50016')}" value="" class="center name" onkeyup="dothis(this);" onpaste="dothis(this)" onblur="dothis(this)" oncontextmenu="dothis(this)">
+            </li>
+            <li>
+                <span class="fl label">${i18n.getValue('H50019')}</span>
+                <input type="text" placeholder="${i18n.getValue('H50017')}" value=""  class="center telePhone" maxlength='11' onkeyup='keyUp(this)' onafterpaste='afterPaste(this)'>
+            </li>
+        </ul>
+        <!-- 优惠方式-优惠券 -->
+        <style>
+        	.yhq select{width:70%;text-align:right;height:42px;line-height:42px;background:transparent;border:none;padding-right:30px;color:#999;position:relative;z-index:3}
+        	.yhq .arrow{position:absolute;right:10;top:0;background:url(images/choose.png) center center no-repeat;width:12px;height:45px;z-index:2}
+        	.yhfs span{font-size:12px;color:#aaa}
+        	.yhfs span b{color:#FF2020}
+        	.yhfs input{width:60px;margin-left:20px;padding:5px 2px;border:1px solid #ccc}
+        	.yhfs i{color:#FF2020}
+        	.jff{border-bottom:1px solid #eee}
+        	.jff span:first-child{width:30%;float:left}
+        	.jff span:last-child{width:70%;float:left;line-height:normal;padding-top:10px;padding-left:20px;display:block;font-size:10px;color:#aaa}
+        	.jff span i{color:#FF2020}
+        	#yhq i{color:#FF2020;font-size:10px}
+        	#dk2{color:#FF2020;font-size:10px}
+        	#inCount2{border:1px solid #ccc;width:90px;padding:0;height:30px;line-height:30px}
+        	#use,#use2{padding:5px 8px;background:green;border-radius:2px;color:#fff;font-size:12px;margin:0 5px}
+        </style>
+        <ul class="cell yhq clearfix">
+            <li class="pr">
+                <span class="fl label" style="width:30%">${i18n.getValue('M10019')}</span>
+                <select dir="rtl" id="chooseS">
+                	<option value="0">无</option>
+                	<option value="1">${i18n.getValue('M10037')}</option>
+                	<option value="2">${i18n.getValue('M10020')}</option>
+                </select>
+				<span class="arrow"></span>
+            </li>
+            <li id="jf" class="hide" style="height:auto;">
+                <div class="jff clearfix">
+                	<span class="fl label">${i18n.getValue('M10037')}</span>
+                	<span>${i18n.getValue('M10043')}：<i id="curPoint">0</i>${i18n.getValue('M10021')}<br>
+                		${i18n.getValue('M10044')}
+                	</span>
+                </div>
+               <div class="yhfs">
+                  <span class="fl label">${i18n.getValue('M10021')}${i18n.getValue('M10042')}</span>
+                  <span><input type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"  id="inCount"  /> ×1000${i18n.getValue('M10021')}，<a href="javascript:void(0)" id="use">使用</a></span>
+                  <p style="padding-left:90px;font-size:12px"><i>${i18n.getValue('M10024')}<b id="dk">0</b>円</i></p>
+                </div> 
+            </li>
+            <li id="yhq" class="clearfix hide">
+            	<span class="fl label">${i18n.getValue('M10020')}</span>
+            	<input type="text" placeholder="${i18n.getValue('M10006')}" id="inCount2"  class="center"><a href="javascript:void(0)" id="use2">使用</a><i>抵扣<b id="dk2">0</b>円</i>
+            </li>
+        </ul>
+        <div class="tips">
+            <p class="fcf0">${i18n.getValue('H50067')},</p>
+            <p class="fcf0">${i18n.getValue('H50018')}。</p>
+        </div>
+    </section>
+    <div style='height:120px'></div>
+    <section class="fixed-bottom" >
+        <span class="fl">￥<span class="Total TT"></span></span>
+        <a href="javascript:void(0)" class="fr payfor">${i18n.getValue('D10038')}</a>
+    </section>
+    <script>
+    	$(document).on('focus', 'input[type="text"],select', function () {
+            $(".fixed-bottom").css("position","static");
+            //alert("static");
+        });
+        $(document).on('blur', 'input[type="text"],select', function () {
+            $(".fixed-bottom").css("position","fixed");
+           // alert("fixed");
+        });
+    </script>
+    <div class="error"></div>
+    <div id="mask"></div>
+	<div id="lss">
+		<p>${i18n.getValue('D00003')}</p>
+		<a href="javascript:void(0)" id="continue">${i18n.getValue('H50002')}</a>
+		<a href="tel:03-5159-3806" id="tel">${i18n.getValue('H50022')}</a>
+	</div>	
+	<div class="seat_fail">
+		<p>${i18n.getValue('H50062')}</p>
+		<a href="javascript:void(0)" id="backAll">${i18n.getValue('H50063')}</a>
+		<a href="tel:03-5159-3806">${i18n.getValue('H50064')}</a>
+	</div>	
+	<div id="mask2">
+		<span><img src="images/load.gif" width="24" height="24"><br>loading</span>
+	</div>
+</body>
+</html>
+
+<style>
+
+</style>
+
+
+<section class="choose-passenger" id="chooseList">
+        <div class="add-passenger">
+            <a href="#" class="add-btn"><img src="images/add.png">新增乘机人</a>
+        </div>
+        <ul>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>   
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>    
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>            
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>            
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>                    
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+            <li class="clearfix">
+                <div class="checkbox-con fl">
+                   <span>                    
+                    <label class="checkbox cbox"></label>
+                   </span>                          
+                </div>
+                <div class="pas-infor fl">
+                    <p>gu/jie <span>儿童</span></p>
+                    <p class="fc99">护照  294384932423</p>
+                </div>
+                <div class="fr">
+                    <a href="#" class="choose"></a>
+                </div>
+            </li>
+        </ul>
+        <div class="btn">
+            <a href="#" class="confirm-btn">确   定</a>
+        </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+

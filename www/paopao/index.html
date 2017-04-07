@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Expires" CONTENT="0">        
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache"> 
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<script src="js/public.js" type="text/javascript"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=rmSaO6w6dlOolPDnf1ApAXL8xE61cBq5"></script>
+	</head>
+	<body>	
+	<!--公共头部-->	
+	<div id="header"></div>
+		<!--上部地图部分加公告-->
+   	<div class="index-top">
+   		<div class="pr">
+   			<div id="allmap"></div>
+   				<!--<img src="img/index/index-map.jpg" alt="" width="1920" height="494"/>-->
+	   			<div class="wd1000 countInfo sm-hidden hide" style="min-height:50px">
+	   				<ul class="index-map-title">
+		   				<li><span><i id="userAmount">0</i>个</span><span>用户注册</span></li>
+		   				<li style="border:none"><span><i id="videoAmount">0</i>条</span><span>视频</span></li>
+	   				</ul>
+	   			</div>
+   		</div>
+   	</div>
+   	<div class="f-flAll sm-hidden">
+		  <div class="f-fls">
+		    	
+		  </div>
+		  <div class="f-2">
+		  	<a href="news3.html" >我们的活动</a>
+		  </div>
+	 </div>
+
+	<!--中间内容部分-->
+   	<div class="wd1000">
+   		<div class="index-content" >
+   			<h5 class="clearfix">
+   				<span>生活观察</span>
+   				<a href="moreVedio.html">MORE 》</a>
+   			</h5>
+   			<div class="hotvideo clearfix">	   				
+   				
+   			</div>		
+   		</div>
+   		<div class="index-content">
+   			<h5 class="clearfix">
+   				<span>实践</span>
+   				<a href="news.html">MORE 》</a>
+   			</h5>
+   			<div class="news clearfix">
+   				<div class="news-left fl videoWrap2" style="background: #000;">
+					
+   				</div>
+   				<div class="news-right fr sm-hidden">
+   					<ul>
+   						<li style="margin-top: 0;">
+   							<a class="newsl a" href="news.html"></a>
+   							<a href="news.html" class="newsa">
+   								<img src="img/index/news-right-01.jpg" alt="" />
+   								<span>个人实践</span>
+   							</a>
+   						</li>
+   						<li>
+   							<a class="newsl b" href="news2.html"></a>
+   							<a href="news2.html" class="newsa">
+   								<img src="img/index/news-right-02.jpg" alt="" />
+   								<span>团队实践</span>
+   							</a>
+   						</li>
+   						<li>
+   							<a class="newsl c" href="news3.html"></a>
+   							<a href="news3.html" class="newsa">
+   								<img src="img/index/news-right-03.jpg" alt="" />
+   								<span>我们的活动</span>
+   							</a>
+   						</li>
+   					</ul>
+   				</div>
+   			</div>	   			
+   		</div>
+	</div>
+   	
+	<!--公共脚部-->
+	<div id="footer"></div>
+	<script src="js/map.js"></script>
+</body>
+</html>
+<script>
+	 $(function() {
+	    
+	    
+	    //热门视频
+		$.ajax({
+			type:"post",
+			dataType:dataType, 
+			url:url+"video/hotVidios.json",
+			data:{count:"3"},
+			success:function(data){
+				var str = '';
+				$.each(data.records, function(idx,el) {
+					var ss = "";
+					if(el.vidioType=="D"){
+						ss="进步商业";
+					}else if(el.vidioType=="C"){
+						ss="杜绝童乞";
+					}else{
+						ss="雪中送碳";
+					}
+					
+					str += '<div class="video playvideo">';
+	   				str += '	<a class="video-top" href="navOneDetail.html?vidioId='+el.id+'">';
+	   				str += '		<img src="'+imgUrl+el.vidioPic+'" />';
+	   				str += '		<i></i>';
+	   				str += '		<span class="ellipsis">'+ss+'</span>';
+	   				str += '	</a>';
+	   				str += '	<div class="video-bottom">';
+	   				str += '		<span class="fl">'+el.id+'</span>';
+	   				str += '		<div class="listTop2 fr">    ';	
+	   				str += '			<span><i class="firsting"></i>'+el.pageViews+'</span>  ';  
+	   				str += '			<span><i class="seconding"></i>'+el.collectionQuantity+'</span>  ';
+	   				//str += '			<span><i class="thirding"></i>'+el.shareQuantity+'</span>';
+	   				str += '			<span><i class="thirding"></i></span>';
+	   				str += '		</div>';			   						
+	   				str += '	</div>';
+	   				str += '</div>';
+				});
+				$(".hotvideo").html(str);
+			}
+		});
+		
+		//新闻报道
+		$.ajax({
+			type:"post",
+			dataType:dataType, 
+			url:url+"article/homeNews.json",
+			success:function(data){
+				var str2 = '';
+				$.each(data.records, function(idx,el) {
+					var str = el.newsTitle;
+					if(el.newsTitle){
+						if(el.newsTitle.length>50){
+							str = el.newsTitle.substr(0,50)+"...";
+						}
+					}
+					if(el.newsType=="11"){
+						$(".a").html(str).attr("href",'newsDetail.html?newsId='+el.newsId+'&newsType=11');
+					}else if(el.newsType=="12"){
+						$(".b").html(str).attr("href",'newsDetail.html?newsId='+el.newsId+'&newsType=12');
+					}else if(el.newsType=="13"){
+						$(".c").html(str).attr("href",'newsDetail.html?newsId='+el.newsId+'&newsType=13');
+						str2 += '<div class="f-fl index-notice-l"><a href="newsDetail.html?newsId='+el.newsId+'&newsType=13">'+data.records[idx].newsTitle+'<span class="fr">'+data.records[idx].publishTime.substr(0,10)+'</span></a></div>';
+					}else if(el.newsType=="14"){
+						var src = el.newsContent;
+						var str = '';
+						str +=' <video width="100%" height="400" controls="controls" id="playerIdName" poster="'+imgUrl+el.vidioPic+'">';
+						str +='	<source id="v1" src="'+src+'" type="video/ogg">';
+						str +='	<source id="v2" src="'+src+'" type="video/mp4">';
+						str +='	<embed id="v3"  src="'+src+'" allowscriptaccess="always"'
+						str +='	 bgcolor="#000" id="playerIdName2" name="playerIdName" quality="high" >';
+						str +='</video>';
+						$(".news-left").append(str);
+					}
+				});
+				$(".f-fls").html(str2);
+				//执行广告轮播
+				var num=0;
+			    var speed=500;
+			    $(".f-flAll .f-fls .f-fl:first").clone().appendTo($(".f-flAll .f-fls"));
+			    var time=setInterval(autoPlay, 3000);
+			
+			    function autoPlay(){
+			      num++;
+			      if(num>$(".f-flAll .f-fls .f-fl").length-1){
+			        num=1;
+			        $(".f-flAll .f-fls").css("top",0);
+			      }
+			      $(".f-flAll .f-fls").stop().animate({"top":-num*$(".f-flAll").height()},speed);
+			    }
+				
+				
+			}
+		});
+		
+	});
+	
+</script>

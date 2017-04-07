@@ -1,0 +1,208 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>大转盘</title>
+<meta name="keywords" content="大转盘"/>
+<meta name="description" content="大转盘"/>
+<link rel="stylesheet" href="css/global.css"/>
+<link rel="stylesheet" href="css/index.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jQueryRotate.2.2.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<style>
+	body{background:#047BD5;min-width:1160px;margin:0 auto}
+	.hide{display:none!important;}
+	.pt15{padding-top:15px!important}
+	.pt20{padding-top:20px!important;}
+	.pt30{padding-top:30px!important;}
+	.pt40{padding-top:40px!important;}
+	.mt10{margin-top:10px!important;}
+	.mt15{margin-top:15px!important;}
+	.mt20{margin-top:20px!important;}
+	.mt30{margin-top:30px!important;}
+	.header{background:url('images/topbg.png') no-repeat top center;height:707px;width:100%;}
+	.footer{background:url('images/footerbg.png') no-repeat bottom center;height:325px;width:100%;}
+	.contain{width:1160px;margin:0 auto}
+	.hr{font-size:20px;color:#fff;font-family:"黑体";border-bottom:1px solid #74BCE7;padding:0 0 35px 70px}
+	.hr span{font-size:28px;color:#fbc523}
+	.con{padding:30px 70px;margin:0 auto;}
+	.conl{width:550px;float:left;}
+	.conr{width:470px;float:right; position: relative}
+	.conl2,.conr2{width:404px;border:8px solid #0369B3;height:500px;padding:0 40px;margin:80px auto;background:#004684;}
+	.conl2>span,.conr2>span{color:#fbc523;font-size:30px;display:block;margin:-38px auto 0 auto;width:230px;height:70px;line-height:70px;text-align:center;background:#0369B3}
+	.conl2{margin-right:10px;float:left;}
+	.conr2{margin-left:10px;float:right;}
+	.content{height: 400px;margin: 35px auto 0px auto;overflow: hidden;}
+	.content p{padding:10px 0;font-size:16px;color:#fff;}
+	.content p:before{content:"";width:8px;height:8px;border-radius: 4px;background: #ECCE4D;display:inline-block;margin-right:10px; vertical-align: 1px}
+	
+	a.no-data{font-size:24px;color:#fff;display:block;text-align: center;text-decoration: underline;margin-top:200px;}
+
+	.bg1{background: url('images/dd.png') no-repeat center center;width:458px;height:458px;margin:0 auto; position: absolute;left:8px;top:-35px;display: none}
+	.bg1 .dd{width:400px;height:350px;margin:50px auto;text-align: center}
+	.bg1 .dd .c{padding:30px 0;font-size: 20px;line-height: 180%}
+	.bg1 .dd b{color:#7D2F1E;font-size: 26px}
+	.bg1 .dd img{display:block;margin:15px auto;}
+	.bg1 .btns{margin:0 auto;}
+	.bg1 .btns a{width:140px;height:48px;display: inline-block;line-height: 48px;text-align: center;font-size: 14px;color:#fff;background: #D8DEE3;text-decoration: none}
+	.bg1 .btns a.active{background: #8792A3}
+
+	.mask{width:100%;height:100%;background:rgba(0,0,0,0.3); position: fixed;left:0;top:0;display:none;}
+
+</style>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="contain">
+		<p class="hr">我的积分：<span>600分</span></p>
+		<div class="con clearfix">
+			<div class="conl"><img src="images/rule.png" /></div>
+			<div class="conr">
+				<div class="ly-plate">
+				   <div class="rotate-bg"></div>
+				   <div class="lottery-star"><img src="images/rotate-static2.png" id="lotteryBtn"></div>
+				</div>
+				<!--遮罩层-->
+				<div class="mask"></div>
+				<!--模态框-->
+				<div class="bg1">
+					<div class="dd hide">
+						<div class="c">
+							<b>恭喜您获得了</b><br>VIP续费一个月
+							<img src="images/vip.png">
+						</div>
+						<div class="btns">
+							<a href="javascript:void(0)" class="close">取消</a>&ensp;<a href="javascript:void(0)" class="active">再来一次</a>
+						</div>
+					</div>
+					<div class="dd hide">
+						<div class="c">
+							<img src="images/point.png">
+							抽奖将扣除1000积分！
+						</div>
+						<div class="btns">
+							<a href="javascript:void(0)" class="close">取消</a>&ensp;<a href="javascript:void(0)" class="active">确定</a>
+						</div>
+					</div>
+					<div class="dd" style="margin:100px auto">
+						<div class="c" style="font-size:18px">
+							<b>对不起，当前积分不足</b><br>
+							您可通过投资、发帖、签到等形式赚取积分！
+						</div>
+						<div class="btns">
+							<a href="javascript:void(0)" class="close">我知道了</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<p class="hr"></p>
+		<div class="con clearfix">
+			<p><img src="images/record.png" /></p>
+			<div class="conl2">
+				<span>抽奖记录</span>
+				<div class="content c1">
+					<div class="wrap1">
+						<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+						<p>2PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+						<p>3PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+						<p>4PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+						<p>5PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+						<p>6PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+						<p>7PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+						<p>8PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+						<p>9PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					</div>
+				</div>
+			</div>
+			<div class="conr2">
+				<span>我的奖品</span>
+				<div class="myjp">
+					<div class="content c2">
+						<div class="wrap1">
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+							<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+						</div>
+					</div>
+					<a href="#" class="no-data hide">还未中奖，赶紧去抽奖吧</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer"></div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$("a.close").click(function(){
+			$(this).closest(".bg1").fadeOut("fast");
+			$(".mask").fadeOut("fast");
+		});
+
+		//-----大转盘抽奖活动游戏自动结束js
+	   var rotateFunc = function(awards,angle,text){  //awards:奖项，angle:奖项对应的角度
+	      $('#lotteryBtn').stopRotate();
+	      $("#lotteryBtn").rotate({
+	         angle:200, 
+	         duration: 3000, 
+	         animateTo: angle+1440, //angle是图片上各奖项对应的角度，1440是我要让指针旋转4圈。所以最后的结束的角度就是这样子^^
+	         callback:function(){
+	           alert(awards+"======"+text);
+	           $(".bg1,.mask").fadeIn("fast");
+	         }
+	      }); 
+	   };   
+	   $("#lotteryBtn").rotate({ 
+	      bind: 
+	       { 
+	         click: function(){
+	               var data = [1,2,3,4,5,6,7,8,9]; //返回的数组
+	                   data = data[Math.floor(Math.random()*data.length)];
+	               if(data==1){
+	                  rotateFunc(1,20,'Iphone7')
+	               }
+	               if(data==2){
+	                  rotateFunc(2,60,'10元无杠杆抵用券')
+	               }
+	               if(data==3){
+	                  rotateFunc(3,100,'100M流量')
+	               }
+	               if(data==4){
+	                  rotateFunc(4,140,'VIP续费一个月')
+	               }
+	               if(data==5){
+	                  rotateFunc(5,180,'10元抵用券')
+	               }
+	               if(data==6){
+	                  rotateFunc(6,220,'500M流量')
+	               }
+	               if(data==7){
+	                  rotateFunc(7,260,'500元京东卡')
+	               }
+	               if(data==8){
+	                  rotateFunc(8,300,'50元抵用券')
+	               }
+	               if(data==9){
+	                  rotateFunc(9,340,'1G全国流量')
+	               }
+	         }
+	       } 
+	      
+	   });
+		autoscroll($(".c1"),2000);
+		autoscroll($(".c2"),2000);
+	});
+</script>

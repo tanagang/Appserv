@@ -1,0 +1,152 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script src="js/jquery-1.7.2.min.js"></script>
+<style type="text/css">
+.label{width:50px; text-align:center;height:50px;padding:20px 10px; display:block;overflow:hidden}
+.chk{display:inline-block;width:18px; height:18px; line-height:16px; text-align:center;border:1px solid #FF6500;border-radius:9px;color:#fff;}
+.chk-active{background:#FF6500;font-size:14px;}
+.chk-active:after{content:"✓"}
+.gwc{border-bottom:1px solid #ccc;margin-top:10px}
+.gwc>dl{font-size:14px;margin-left:10px; position: relative;left:0;top:0;min-height:70px}
+.gwc>dl dt{ line-height:150%}
+.gwc>dl dd{position:absolute;bottom:10px;width:100%}
+.price{color:red;display:inline-block;padding-top:3px}
+.price span{color:red;}
+.num2{ text-align:right;display:inline-block;float:right;color:#999}
+.num2 input{width:22px; height:22px;background:#ccc; text-align:center;border:1px solid #eee;}
+.num2 .text{width:40px!important;background:#fff!important;font-size:14px}
+.gwc-total{margin:20px 10px;}
+.gwc-total span{color:red}
+</style>
+</head>
+
+<body class="eee">
+ <section id="section5" >
+ 	<div class="box box5 gwc">
+    	<label class="label" data-rel="0"><span class="chk"></span></label>
+        <div style="width:60px">
+        	<img src="images/temp/img1.jpg" width="60" height="60" />
+        </div>
+        <dl class="flex">
+        	<dt>御泥坊 金桂花矿物眼膜贴金桂贴60片装买五送三</dt>
+            <dd><label class="price">￥<span>1.2</span></label> <div class="num2">数量 <input type="button" value="-" class="cut" /><input type="text" value="1" class="text" /><input type="button" value="+" class="add" /></div></dd>
+        </dl>
+    </div>
+    <div class="box box5 gwc">
+    	<label class="label" data-rel="0"><span class="chk"></span></label>
+        <div style="width:60px">
+        	<img src="images/temp/img1.jpg" width="60" height="60" />
+        </div>
+        <dl class="flex">
+        	<dt>御泥坊 金桂花矿物眼膜贴金桂贴60片装买五送三</dt>
+            <dd><label class="price">￥<span>2.5</span></label> <div class="num2">数量 <input type="button" value="-" class="cut" /><input type="text" value="1" class="text" /><input type="button" value="+" class="add" /></div></dd>
+        </dl>
+    </div>
+    
+    <!--<div class="box box5 gwc">
+    	<div>
+        	 <img src="images/temp/img1.jpg" width="50" height="50" />
+       		 <p class="rdo label"><input type="checkbox" class="chk" /></p>
+        </div>
+        <div class="flex">
+        	<dl>
+                <dt>御泥坊 金桂花矿物眼膜贴60片装买五送三</dt>
+                <dd class="clear"><span>规格：</span>佳节快乐</dd>
+                <dd><span>价格：</span><label class="price">68</label>元</dd>
+                <dd class="clear">
+                	<div>
+                    	<span class="cut">-</span><input type="text" value="1" maxlength="10" /><span class="add">+</span>
+                    </div>
+                    <span><img src="images/delete.png" height="18" /></span>
+                </dd>
+                <dd>小计：<span class="xj" rel="68">￥68</span></dd>
+             </dl>
+        </div>
+    </div>-->
+    <div class="gwc-total">
+    	<p>订单金额：<span>￥0</span></p>
+     </div>
+    <p class="padding10" style="margin:30px auto"><a href="#" class="btn btn-active">提交</a></p>
+ </section>
+ <footer class="box">
+    	<div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/sc_active.png" width="22" height="22" /></dt>
+                    <dd class="hover">商城</dd>
+                </dl>
+            </a>
+         </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/ss.png"  width="27" height="22"/></dt>
+                    <dd>搜索</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#">
+                <dl>
+                    <dt><img src="images/gwc.png"  width="25" height="22" /></dt>
+                    <dd>购物车</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/wd.png"  width="22" height="22"/></dt>
+                    <dd>我的</dd>
+                </dl>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>
+	$(function(){
+		$(".add").click(function(){
+			var v = parseInt($(this).prev().val());	
+			var p = parseFloat($(".gwc .price").html());
+			$(this).prev().val(v+1);
+			total();
+		});
+		$(".cut").click(function(){
+			var v = parseInt($(this).next().val());	
+			var p = parseFloat($(".gwc .price").html());
+			if(v>0){
+				$(this).next().val(v-1);
+				var v2 = parseInt($(this).next().val());
+				total();
+			}
+		});
+		$(".label").click(function(){
+			$(this).find(".chk").toggleClass("chk-active");
+			total();
+		})	
+	});
+	function total(){
+		var total=0;
+		$(".chk").each(function(idx,item){
+			var tag = $(this).hasClass("chk-active");
+			if(tag){
+				var sl = parseFloat($(this).closest(".gwc").find(".text").val());
+				var dj = parseFloat($(this).closest(".gwc").find(".price").find("span").html());
+				total += sl*dj;
+			}
+		});
+		$(".gwc-total span").html("￥"+total.toFixed(1));
+	}
+</script>

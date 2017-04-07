@@ -1,0 +1,109 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script src="js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+	<header class="vip-info">
+    	<p>会员卡号：13131313212313</p>
+    </header>
+	<section>
+    	<div class="box text-center" style="height:50px;">
+        	<div class="flex" style="border-right:1px solid #FEBFC7">
+            	<span class="theme-color font24 block" style="margin-top:6px">￥2980</span>
+                <span class="font14">当前余额</span>
+            </div>
+            <div class="flex">
+            	<span class="theme-color font24 block" style="padding-top:6px">2980</span>
+                <span class="font14">可用积分</span>
+            </div>
+        </div>
+        <p class="m20">
+        	<a href="#" class="btn">会员卡充值</a>
+        </p>
+        <dl class="fff">
+        	<dt class="h35 bb pl10 dt-vip"><a href="javascript:void(0)" class="block">我的会员特权<img src="images/arrow_down.png" width="12" class="category-img rotate180" /></a></dt>
+            <dd class="hide p10 font14">
+            	<p>您还没有充值，无法获取特权哦！<br/>点击会员卡充值查看可获得的会员特权。</p>
+            </dd>
+            <style type="text/css">
+                .hy-table{width:100%; border-collapse:collapse;border:1px solid #eee;}
+                .hy-table th{background:#F7EAF5;height:25px; line-height:25px;font-weight:auto;color:#555;font-size:14px}
+                .hy-table td{text-align:center;padding:5px 0;color:#555;font-size:14px}
+            </style>
+            <table border="1" class="hy-table">
+                <tr>
+                    <th>菜品名称</th>
+                    <th>原价</th>
+                    <th>份数</th>
+                </tr>
+                <tr>
+                    <td>1.好滋味经典招牌菜</td>
+                    <td>128元</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1.好滋味经典招牌菜</td>
+                    <td>128元</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>1.好滋味经典招牌菜</td>
+                    <td>128元</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </dl>
+         <dl class="fff">
+        	<dt class="h35 bb pl10 dt-vip"><a href="javascript:void(0)" class="block">个人资料<img src="images/arrow_down.png" width="12" class="category-img rotate180" /></a></dt>
+            <dd class="hide">
+               <a href="#" class="block p10 fff">
+                <table class="fff table-dd" width="100%" >
+                    <tr>
+                        <td width="80">姓 名：</td>
+                        <td>张笑</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>性 别：</td>
+                        <td>131313131313</td>
+                        <td width="20"><img src="images/edit.png" width="20" /></td>
+                    </tr>
+                    <tr>
+                        <td>电 话：</td>
+                        <td>13132131231</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </a>
+            </dd>
+        </dl>
+    </section>
+</body>
+</html>
+<script>
+	$(function(){
+		$(".dt-vip").click(function(){
+			var img = $(this).find("img");
+			if(img.hasClass("rotate180")){
+				img.removeClass("rotate180");
+				$(this).next().removeClass("hide").addClass("show");
+			}else{
+				img.addClass("rotate180");
+				$(this).next().removeClass("show").addClass("hide");
+			}
+		});		
+	});
+</script>
+
+
+

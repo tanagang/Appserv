@@ -1,0 +1,80 @@
+@charset "utf-8";
+a,span{display: inline-block;}
+.loginstyle-wb,.loginstyle-wx,.loginstyle-tb{background: url(../img/login/login-spirit.png) no-repeat;}
+.loginSystem{background: #ececec;padding:33px 40px 55px;max-width: 1000px;}
+.loginSystem-l{width: 60%;}
+.loginSystem-l h3{height: 133px;line-height: 133px;font-size: 20px;color: #000;font-weight: normal;}
+.loginSystem-l ul{margin-bottom: 34px;}
+.loginSystem-l ul li{line-height: 26px;color: #777;text-indent:14px;}
+.loginSystem-l ul li.loginSystem-l-t{height: 30px;line-height: 30px;font-size: 18px;color: #444;text-indent:0;}
+
+.other-way{margin:50px auto 30px auto;text-align: center;}
+.other-way .pp{border-top:1px solid #efefef; text-align: center;}
+.other-way .pp span{position: relative;top:-15px;padding:5px 10px;background: #fff;color:#333}
+.other-way .login-icon a{margin:0 15px}
+/*login框*/
+.loginSystem-r{width: 32%;background: #fff;padding:46px 3% 69px;}
+.loginSystem-r .change{width: 100%;text-align: center;}
+.loginSystem-r .change a{padding:0 15px;}
+.loginSystem-r .change  a{heigth:25px;line-height: 25px;font-size: 18px;color: #444;}
+.loginSystem-r .change a.on{border-bottom:2px solid #444 ;}
+.login{margin-top: 20px;}
+.login form input[type=text],.login form input[type=password]{border:1px solid #e0e0e1;margin-top: 17px;margin-bottom: 12px;width: 100%;height: 27px;padding:3px 0; text-indent:3px;border-top-width:2px;-moz-border-top-colors:#e3e9ef #c4c4c4 ; }
+.login form .forgot{font-size: 12px;text-decoration: underline;float: right;}
+.loginstyle{margin-top: 38px;height: 58px;line-height: 58px;border-top: 1px dashed #c9c9c9;}
+.loginstyle li{float: left;margin-right:10px}
+.loginstyle a{margin-left: 10px;margin-right:-10px;height: 16px;width: 20px;}
+.loginstyle-wb{background-position: 0 0;}
+.loginstyle-wx{background-position: 0 -30px;}
+.loginstyle-tb{background-position: 0 -60px;}
+#toLogin,#toRegister{height: 40px;line-height: 40px;color: #fff;font-size: 18px;width: 100%;background: #234788; text-align: center;border-radius: 3px;}
+.register #verify{width: 150px;float: left;}
+.register label{display: block;}
+.register .send{width:108px;text-align:center; text-decoration:none;background: #234788;height: 35px;line-height: 35px;float: right;color: #FFFFFF;margin:17px 0 12px 20px}
+.register label a{color: #234788;text-decoration: underline;font-size:12px}
+.register input[type=checkbox]{margin-right: 10px;width:14px;height:14px; vertical-align: -2px;}
+.register .agreen{font-size:12px;margin:12px 0}
+
+
+
+.bind{width:70%;margin:0 auto;background: #fff;padding:20px 0}
+.bleft{width:30%;text-align: center;float: left;}
+.bind .tt{margin-bottom:40px;font-size:16px}
+.bleft .nickname{line-height: 340%;font-size:12px;}
+.bright{float:left;width:60%;padding-left:5%;border-left:1px dotted #ccc}
+.bind .gl a{width:50%;border:1px solid #ccc;margin-bottom:10px;height:32px;line-height:32px;text-align: center;}
+.bind .gl a.active{background: #234788;color:#fff}
+.bind .gl p{margin:15px 0}
+.bind .gl input[type="text"]{width:80%;height:25px;}
+.bind .gl input[type="password"]{width:80%;border:1px solid #e0e0e1;height:30px;line-height: 30px;padding:0 1%}
+.bind .gl label{display:block;padding-top:15px}
+.bind .gl label input.code{width:40%;float:left;}
+.bind .gl label .send{width:35%;float:left;margin-left:5%;}
+#newAccount,#oldAccount{font-size:14px;color:#234788}
+/*媒体查询，参考部分Bootstrap 框架*/
+/*当页面大于1200px 时，大屏幕，主要是PC 端*/
+@media (min-width: 1200px){
+	
+}
+/*在992 和1199 像素之间的屏幕里，中等屏幕，分辨率低的PC*/
+@media (min-width: 992px) and (max-width: 1199px){
+	
+}
+/*在768 和991 像素之间的屏幕里，小屏幕，主要是PAD*/
+@media (min-width: 768px) and (max-width: 991px){
+	
+}
+/*在480 和767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+	.loginSystem-r{width:90%;padding-left:5%;padding-right:5%;}
+	.loginSystem{padding:0}
+	.login form .forgot{margin:15px auto}
+	.bind{width:100%;margin:0 auto;background: #fff;padding:20px 0}
+}
+/*在小于480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+	.loginSystem-r{width:94%}
+	.loginSystem{padding:0}
+	.login form .forgot{margin:15px auto}
+	.bind{width:100%;margin:0 auto;background: #fff;padding:20px 0}
+}

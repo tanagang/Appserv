@@ -1,0 +1,474 @@
+/*泡泡模式*/
+.partten{
+	margin-top: 1%;
+	position: relative;
+	z-index: 5;
+}
+.partten-nav{
+	margin:0 10px;
+}
+.partten-nav2{height:50px;overflow:hidden;width:100%;background: #fff;margin-top:30px;}
+.partten-nav2 a{height:50px;line-height: 50px;display:block;float:left;text-align: center;width:250px;font-size:30px}
+.partten-nav2 a.active{background: #91A3C3;color:#fff;}
+.partten-nav li{
+	float: left;
+	background-color: #91A3C3;
+	height: 50px;
+	line-height: 50px;
+}
+.partten-nav li,
+.partten-nav li a{
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+	display: block;
+	cursor: pointer;
+}
+.partten-nav li{
+	width:33.33%;
+	box-sizing: border-box;
+	border-right: solid 2px #C8D1E1;
+	text-align: center;
+}
+.partten-nav li:hover,
+.partten-nav li.curr
+{
+	background-color: #526895;
+}
+.partten-nav li.pr{
+	border-right: none;
+	position: relative;
+	z-index: 3;
+}
+.partten-nav li.pr:hover dl{
+	display: block;
+}
+.partten-nav li.pr dl{
+	position: absolute;
+	top: 50px;
+	left: 0;
+	width: 100%;
+	display: none;
+}
+.partten-nav li.pr dl dd{
+	background-color: #D5DDEA;
+}
+
+.partten-nav li.pr dl dd a{
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	font-weight: normal;
+}
+.partten-nav li.pr dl dd a:hover{
+	color: #234788;
+	background-color: #BEC9DC;
+	font-weight: bold;
+}
+.partten-cont{padding:0 10px}
+.partten-cont .partten-know{
+	text-align: center;
+	padding: 50px 0;
+}
+.partten-cont img,.Selection img,.Knowledge img,.Fair img{max-width: 100%;margin:0 auto;}
+.parttenFix{
+	position: absolute;
+	top: 0px;
+	width: 100px;
+	height: 465px;
+	background-color: #F1F1F1;
+	text-align: center;
+	z-index: 6;
+}
+.parttenFixClose{
+	margin: 10px;
+	width: 12px;
+	height: 12px;
+	background: url(../img/partten/close.png) center no-repeat;
+}
+.parttenFix-con{
+	font-size: 60px;
+	color: #234788;
+	line-height: 74px;
+	margin-top: 50px;
+}
+.parttenFix-l{
+	left: -110px;
+}
+.parttenFix-r{
+	right: -110px;
+}
+
+.SelectionOut,
+.FairOut{
+	padding: 80px 0;
+	margin:0 10px;
+	background-color: #F3F3F3;
+}
+.Selection{
+	text-align: center;
+	height: auto;
+	margin:0 10px
+
+}
+.KnowledgeOut{
+	width:100%;
+	background-color: #FAFAFA;
+	padding: 80px 0;
+	margin:0 auto;
+}
+.Knowledge{
+	max-width:1000px;
+	height: auto;
+	text-align: center;
+	padding:0 10px;
+	margin: 0 auto;
+}
+.Knowledge img{width:30%;}
+
+/*产品选择*/
+.FairOut{
+	background-color: #F9F9F9;
+}
+.productSevrOut{
+	background-color: #fff;
+	width: 100%;
+	max-width: 1000px;
+	margin:0 auto;
+}
+.productSevr{
+	height: 487px;
+	overflow: hidden;
+	background: url(../img/partten/partten_05.png) 50% 70% no-repeat;
+	background-size: contain;
+	color: #444444;
+	text-align: center;
+	margin:0 10px;
+}
+.productSevr-title{
+	font-size: 40px;
+	font-weight: bold;
+	height: 46px;
+	line-height: 46px;
+	margin-top: 80px;
+}
+.productSevr-cont{
+	font-size: 14px;
+	line-height: 35px;
+	margin-top: 100px;
+}
+.paoductKindOut{
+	background-color: #F9F9F9;
+	margin:0 auto;
+}
+.paoductKind{
+	padding-top: 2%;
+}
+.hot-product a{display:block;width:21%;margin:3% 2%;text-align:center;float:left;height:210px; line-height:210px;}
+.hot-product a img{max-width: 100%;vertical-align: middle;}
+.paoductKind-title{
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	color: #444;
+	height: 46px;
+	line-height: 46px;
+	margin: 2% 0 4% 0;
+}
+.productgo{
+	background: url(../img/partten/partten_10.png) left center no-repeat;
+	font-size: 14px;
+	color: #444;
+	padding-left: 85px;
+	display: inline-block;
+	margin: 0 auto;
+}
+.productgo>div{
+	text-align: left;
+}
+.productgo a{
+	color: #234788;
+	text-decoration: underline;
+}
+.productgout{
+	text-align: center;
+	margin-top: 78px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+/*志愿者*/
+.partten-actor{
+	border: solid 2px #444;
+	margin: 80px 0 80px;
+	padding-bottom:50px;
+	background-color: #F9F9F9;
+}
+.partten-actor-title{
+	text-align: center;
+	font-size: 40px;
+	color: #444;
+	font-weight: bold;
+	height: 46px;
+	line-height: 46px;
+	padding:50px 0;
+}
+.partten-actor ul{
+	margin:0 10px;
+}
+.partten-actor ul li{
+	font-weight: bold;
+	font-size: 14px;
+	color: #444;
+	float: left;
+	width: 33.33%;
+	margin:10px 0;
+	border-left: solid 2px #444444;
+	box-sizing: border-box;
+	text-align: center;
+}
+.partten-actor ul li:first-child{
+	border-left: none;
+}
+.partten-actor ul li span{
+	font-weight: bold;
+	color: #234788;
+	font-size: 24px;
+}
+
+.actor-list-out{
+	margin:20px auto;
+	width: 100%;
+	background-color: #F9F9F9;
+}
+.actor-list-title{
+	font-size: 40px;
+	font-weight: bold;
+	color: #444;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	padding-top: 50px;
+}
+.actor-list-con{
+	margin-top: 50px;
+}
+.actor-list-con li{
+	float: left;
+	width:44%;
+	padding:1%;
+	margin:1%;
+	height:110px;
+}
+.actor-list-con li.mr0{
+	margin-right: 0;
+}
+.actor-list-con li .header{
+	float: left;
+	width: 30%;
+
+}
+.actor-list-con li .header{
+	border-radius:100%;
+	overflow: hidden;
+	width:100px;
+	float:left;
+}
+.actor-list-con li .header img{
+	width: 100%;
+	vertical-align: middle;
+}
+.actor-list-con li .intro{
+	padding:10px 0;
+	padding-left:10px;
+	height:90px;
+	overflow: hidden;
+	font-size: 14px;
+	color: #444;
+	overflow: hidden;
+}
+.actor-list-con li .zindex{
+	z-index: 2;
+	height: auto;
+	background-color: red;
+	height: 348px;
+}
+
+.actor-join{
+	text-align: center;
+	padding: 30px 0;
+}
+.actor-join a{
+	color: #444;
+	font-size: 14px;
+	text-decoration: underline;
+}
+
+/*志愿者信息录入*/
+.actorInfo{
+	margin: 75px auto;
+	display: none;
+}
+.actorInfo-title{
+	text-align: center;
+	font-size: 40px;
+	color: #444;
+	font-weight: bold;
+	margin-top: 15px;
+	height: 46px;
+	line-height: 46px;
+}
+
+.actorInform{
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 30px;
+}
+.actorInform label,
+.actorInfotx label{
+	width: 30%;
+	text-align: right;
+	font-size: 18px;
+	color: #444;
+	display: block;
+	float: left;
+}
+.actorInform label span{
+	color: #ed2b35;
+}
+.actorInfo .inp{width:70%;float:right;}
+
+.actorInform input,
+.actorInform select{
+	height: 32px;
+	line-height: 32px;
+	border: solid 1px #E3E9EF;
+	width: 90%;
+	font-size: 14px;
+	color: #777;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+}
+
+.actorInfotx label{width:30%;float:left}
+.actorInfotx .inp{width:70%;float: right;}
+.actorInfotx textarea{
+	width:88%;
+	padding:5px 1%;
+	border: solid 1px #E3E9EF;
+	height: 158px;
+}
+.actorInform-sure{
+	text-align: center;
+	margin-top: 45px;
+}
+.actorInform-sure .actorInformSub{
+	width: 260px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	font-size: 18px;
+	display: inline-block;
+	background-color: #234788;
+}
+.actorInfo-con{
+	padding: 70px 0;
+}
+
+
+/*有知庐*/
+.actor-Knowing-con{
+	padding: 35px 10px;
+	
+}
+.actor-Knowing-con .Knowing{
+	text-align: center;
+	font-size: 16px;
+	color: #444;
+	line-height: 30px;
+}
+.actor-Knowing-con .Knowing-img{
+	padding-top: 50px;
+	text-align: center;
+}
+
+
+/*媒体查询，参考部分Bootstrap 框架*/
+/*当页面大于1200px 时，大屏幕，主要是PC 端*/
+@media (min-width: 1200px){
+	
+}
+/*在992 和1199 像素之间的屏幕里，中等屏幕，分辨率低的PC*/
+@media (min-width: 992px) and (max-width: 1199px){
+	
+}
+/*在768 和991 像素之间的屏幕里，小屏幕，主要是PAD*/
+@media (min-width: 768px) and (max-width: 991px){
+	
+}
+/*在480 和767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+	.partten-nav li,.partten-nav li a{height:45px; line-height: 45px;font-size:16px}
+	.partten-nav li.pr dl {top:45px}
+	.SelectionOut, .FairOut,.KnowledgeOut {padding:40px 0}
+	.productSevr{height:300px}
+	.productSevr-cont,.productSevr-title{margin-top:50px}
+	.hot-product a{width:21%;height:150px;line-height: 150px;}
+	.productgout{margin-top:20px}
+	
+	.partten-actor{border:none;margin:0;background: #fff;padding-bottom: 0;}
+	.partten-actor-title{font-size:24px;margin:15px 0;padding:15px 0}
+	.partten-actor ul{background: rgba(98,124,167,0.5);}
+	.partten-actor ul li{color:#fff;width:40%;text-align: left;padding-left:8%;border-left:1px solid #fff}
+	.partten-actor ul li span{color:#fff}
+	.partten-actor ul li:nth-child(2){border-left:none}
+	
+	.actorInfo-title,.actor-list-title{font-size:32px}
+	.actor-list-con{margin-top: 20px;}
+	.actor-list-con li{width:94%}
+	
+	.actorInform label,.actorInfotx label{font-size:16px;}
+	.actor-Knowing-con .Knowing{font-size:16px}
+	
+	.partten-nav2{height:30px;overflow:hidden;width:100%;background: #fff;margin-top:20px;}
+	.partten-nav2 a{height:30px;line-height: 30px;display:block;float:left;text-align: center;width:150px;font-size:20px}
+	.partten-nav2 a.active{background: #91A3C3;color:#fff;}
+	
+}
+/*在小于480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+	.partten-nav li,.partten-nav li a{height:35px; line-height: 35px;font-size:14px}
+	.partten-nav li.pr dl {top:35px}
+	.SelectionOut,.FairOut,.KnowledgeOut {padding:30px 0}
+	.productSevr{height:270px}
+	.productSevr-title{font-size:20px;}
+	.productSevr-cont,.productSevr-title{margin-top:20px}
+	.paoductKind-title{font-size:20px}
+	.hot-product a{width:46%;height:150px;line-height: 150px;}
+	.productgout{margin-top:10px}
+	.Knowledge img{width:100%}
+	
+	.partten-actor{border:none;margin:0;background: #fff;padding-bottom: 0;}
+	.partten-actor-title{font-size:16px;margin:12px 0;padding:0}
+	.partten-actor ul{background: rgba(98,124,167,0.5);}
+	.partten-actor ul li{font-size:12px;color:#fff;width:45%;text-align: left;padding-left:3%;border-left:1px solid #fff}
+	.partten-actor ul li span{color:#fff;font-size:16px}
+	.partten-actor ul li:nth-child(2){border-left:none}
+	
+	.actorInfo-title,.actor-list-title{font-size:20px;padding-top:20px}
+	.actor-list-con{margin-top: 20px;}
+	.actor-list-con li{width:94%}
+	
+	.actorInform label,.actorInfotx label{font-size:14px;}
+	.actor-Knowing-con .Knowing{font-size:14px}
+	
+	.partten-nav2{height:30px;overflow:hidden;width:100%;background: #fff;margin-top:20px;}
+	.partten-nav2 a{height:30px;line-height: 30px;display:block;float:left;text-align: center;width:50%;font-size:20px}
+	.partten-nav2 a.active{background: #91A3C3;color:#fff;}
+}

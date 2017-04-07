@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+  <meta charset="utf-8">
+  <link href="site-assets/site.css" rel="stylesheet" />
+  <link href="../dist/photoswipe.css" rel="stylesheet" />
+  <link href="../dist/default-skin/default-skin.css" rel="stylesheet" />
+  <script src="../dist/jquery.js"></script>
+  <script src="../dist/photoswipe.min.js"></script>
+  <script src="../dist/photoswipe-ui-default.min.js"></script>
+</head>
+<body>
+
+<div class="my-simple-gallery" itemscope>
+<ul>
+  <li><a href="test/1.jpg" data-size="1200x1200">
+    <img src="test/1.jpg" style="width: 100px;" />
+  </a></li>
+  <li><a href="test/2.jpg" data-size="1024x683">
+    <img src="test/2.jpg" style="width: 100px;"  />
+  </a></li>
+</ul>
+
+</div>
+<div class="my-simple-gallery" itemscope >
+  <ul>
+
+    <li><a href="test/4.jpg" data-size="253x249">
+      <img src="test/4.jpg" style="width: 100px;"  />
+    </a></li>
+  </ul>
+
+</div>
+<div class="my-simple-gallery" itemscope >
+  <ul>
+
+    <li><a href="test/4.jpg" data-size="253x249">
+      <img src="test/4.jpg" style="width: 100px;"  />
+    </a></li>
+    <li><a href="test/4.jpg" data-size="253x249">
+      <img src="test/4.jpg" style="width: 100px;"  />
+    </a></li>
+    <li><a href="test/1.jpg" data-size="1600x1600">
+      <img src="test/1.jpg" style="width: 100px;"  />
+    </a></li>
+    <li><a href="test/4.jpg" data-size="253x249">
+      <img src="test/4.jpg" style="width: 100px;"  />
+    </a></li>
+  </ul>
+
+</div>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe.
+       It's a separate element, as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg"></div>
+
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+
+    <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+    <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+
+      <div class="pswp__top-bar">
+
+        <!--  Controls are self-explanatory. Order can be changed. -->
+
+        <div class="pswp__counter"></div>
+
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+        <button class="pswp__button pswp__button--share" title="Share"></button>
+
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip"></div>
+      </div>
+
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+      <div class="pswp__caption">
+        <div class="pswp__caption__center"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var initPhotoSwipeFromDOM = function(gallerySelector) {
+    var parseThumbnailElements = function(el) {
+      var thumbElements = el.childNodes,
+        numNodes = thumbElements.length,
+        items = [],
+        figureEl,
+        childElements,
+        linkEl,
+        size,
+        item;
+
+      for(var i = 0; i < numNodes; i++) {
+        figureEl = thumbElements[i]; // <figure> element
+        // include only element nodes
+        if(figureEl.nodeType !== 1) {
+          continue;
+        }
+        linkEl = figureEl.children[0]; // <a> element
+        size = linkEl.getAttribute('data-size').split('x');
+        // create slide object
+        item = {
+          src: linkEl.getAttribute('href'),
+          w: parseInt(size[0], 10),
+          h: parseInt(size[1], 10)
+        };
+
+
+
+        if(figureEl.children.length > 1) {
+          // <figcaption> content
+          item.title = figureEl.children[1].innerHTML;
+        }
+
+        if(linkEl.children.length > 0) {
+          // <img> thumbnail element, retrieving thumbnail url
+          item.msrc = linkEl.children[0].getAttribute('src');
+        }
+
+        item.el = figureEl; // save link to element for getThumbBoundsFn
+        items.push(item);
+      }
+
+      return items;
+    };
+
+    // find nearest parent element
+    var closest = function closest(el, fn) {
+      return el && ( fn(el) ? el : closest(el.parentNode, fn) );
+    };
+
+    // triggers when user clicks on thumbnail
+    var onThumbnailsClick = function(e) {
+      e = e || window.event;
+
+      e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+      var eTarget = e.target || e.srcElement;
+
+      var clickedListItem = closest(eTarget, function(el) {
+        return (el.tagName && el.tagName.toUpperCase() === 'LI');
+      });
+
+      if(!clickedListItem) {
+        return;
+      }
+
+
+      // find index of clicked item
+      var clickedGallery = clickedListItem.parentNode,
+        childNodes = clickedListItem.parentNode.childNodes,
+        numChildNodes = childNodes.length,
+        nodeIndex = 0,
+        index;
+
+      for (var i = 0; i < numChildNodes; i++) {
+        if(childNodes[i].nodeType !== 1) {
+          continue;
+        }
+
+        if(childNodes[i] === clickedListItem) {
+          index = nodeIndex;
+          break;
+        }
+        nodeIndex++;
+      }
+      if(index >= 0) {
+        openPhotoSwipe( index, clickedGallery );
+      }
+      return false;
+    };
+
+    var openPhotoSwipe = function(index, galleryElement, disableAnimation) {
+      var pswpElement = document.querySelectorAll('.pswp')[0],
+        gallery,
+        options,
+        items;
+
+      items = parseThumbnailElements(galleryElement);
+      // define options (if needed)
+      options = {
+        index: index,
+
+        // define gallery index (for URL)
+        galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+        getThumbBoundsFn: function(index) {
+          // See Options -> getThumbBoundsFn section of docs for more info
+          var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+            pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+            rect = thumbnail.getBoundingClientRect();
+          return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+        },
+
+        // history & focus options are disabled on CodePen
+        // remove these lines in real life:
+        historyEnabled: false,
+        shareEl: false,
+        fullscreenEl: false,
+        focus: false
+
+      };
+
+      if(disableAnimation) {
+        options.showAnimationDuration = 0;
+      }
+      // Pass data to PhotoSwipe and initialize it
+      gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+      gallery.init();
+    };
+
+    // loop through all gallery elements and bind events
+    var galleryElements = document.querySelectorAll( gallerySelector );
+    for(var i = 0, l = galleryElements.length; i < l; i++) {
+      galleryElements[i].onclick = onThumbnailsClick;
+    }
+
+  };
+  // execute above function
+  initPhotoSwipeFromDOM('.my-simple-gallery');
+
+
+</script>
+</body>
+</html>

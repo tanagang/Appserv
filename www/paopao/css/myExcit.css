@@ -1,0 +1,197 @@
+/*addPao*/
+.myExcit{
+	position: relative;
+	z-index: 5;
+	max-width: 958px;
+	border: solid 1px #E3E3E3;
+	margin: 42px auto 90px;
+	background-color: #fff;
+	padding: 0px 20px;
+}
+.myExcit-title{
+	font-size: 20px;
+	color: #010101;
+	font-weight: bold;
+	height: 26px;
+	line-height: 26px;
+	margin-top: 25px;
+	margin-bottom: 35px;
+}
+.myExcit-get,
+.myExcit-mine{
+	border: solid 1px #E3E3E3;
+	padding: 0px 25px;
+	margin-bottom: 20px;
+}
+.myExcit-get-title{
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+	height: 26px;
+	line-height: 26px;
+	margin-top: 35px;
+}
+.myExcit-get-order{
+	line-height: 35px;
+	padding: 25px 35px;
+}
+.myExcit-get-order label{
+	font-size: 14px;
+	color: #444;
+	margin-right: 50px;
+}
+.myExcit-get-order input{
+	border: solid 1px #e3e3e3;
+	padding: 3px 10px;
+	width: 328px;
+	height: 27px;
+	line-height: 27px;
+}
+.myExcit-get-order .myExcitOrderSub{
+	display: block;
+	width: 260px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	background-color: #234788;
+	font-size: 18px;
+	margin-top: 10px;
+	margin-left: 112px;
+}
+.productgo{
+	background: url(../img/partten_10.png) left center no-repeat;
+	font-size: 14px;
+	color: #444;
+	padding-left: 85px;
+	display: inline-block;
+	margin: 0 auto;
+	height:55px;
+}
+.productgo>div{
+	text-align: left;
+}
+.productgo a{
+	color: #234788;
+	text-decoration: underline;
+}
+.productgout{
+	
+	margin: 56px auto;
+}
+.myExcit-mine-intr{
+	border: solid 1px #ECECEC;
+	background-color: #F6F6F6;
+	border-left: none;
+	margin-top: 25px;
+}
+.myExcit-mine-intr ul li{
+	float: left;
+	border-left: solid 1px #ECECEC;
+	width:25%;
+	padding-top: 15px;
+	height: 85px;
+}
+.myExcit-mine-intr ul li>div{
+	height: 36px;
+	line-height: 36px;
+	padding-left: 20px;
+}
+.myExcit-mine-intr ul li span{
+	font-size: 24px;
+	color: #00d093;
+	margin-right: 5px;
+}
+.myExcit-mine-tab{
+	margin-top: 30px;
+}
+.myExcit-mine-tab ul li{
+	height: 35px;
+	line-height: 35px;
+	font-size: 16px;
+	color: #444;
+	float: left;
+	margin-right: 15px;
+	padding: 0px 12px;
+	cursor: pointer;
+}
+.myExcit-mine-tab ul li.on{
+	color: #fff;
+	background-color: #234788;
+	
+}
+.myExcit-mine-list{
+	display: none;
+}
+.myExcit-mine-list:first-child{
+	display: block;
+}
+.myExcit-mine-all{
+	border-top: solid 2px #00D093;
+	margin-bottom:25px
+}
+.myExcit-mine-list table tr th,
+.myExcit-mine-list table tr td{
+	font-size: 12px;
+	height: 41px;
+	text-align: center;
+}
+.myExcit-mine-list table {
+	width: 100%;
+	box-shadow: 0px 3px 3px #F4F4F4;
+}
+.myExcit-mine-list table tr th{
+	color: #444;
+}
+.myExcit-mine-list table tr td{
+	color: #777;
+}
+.myExcit-mine-list table thead tr{
+	background-color: #F6F6F6;
+}
+.myExcit-mine-list table tbody tr:nth-child(even){
+	background-color: #F6F6F6;
+}
+.myExcit-mine-list .page{
+	margin: 35px 0;
+}
+
+/*媒体查询，参考部分Bootstrap 框架*/
+/*当页面大于1200px 时，大屏幕，主要是PC 端*/
+@media (min-width: 1200px){
+	
+}
+/*在992 和1199 像素之间的屏幕里，中等屏幕，分辨率低的PC*/
+@media (min-width: 992px) and (max-width: 1199px){
+	
+}
+/*在768 和991 像素之间的屏幕里，小屏幕，主要是PAD*/
+@media (min-width: 768px) and (max-width: 991px){
+	
+	
+}
+/*在480 和767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+	.pad-hidden{display:none;}
+	.pad-visible{display:block}
+	.myExcit{border:none;margin:15px auto;padding:0 5px}
+	.myExcit-get, .myExcit-mine{padding:0 5px;border: none;}
+	.myExcit-get-order{padding:10px 0}
+	.myExcit-get-order input{width:80%}
+	.myExcit-get-order .myExcitOrderSub{width:50%;margin:20px auto}
+	.productgout{margin:10px auto}
+	.myExcit-mine-intr ul li{box-sizing: border-box;width:50%}
+	.myExcit-mine-tab ul li{width:33.33%;margin:0;padding:0;text-align: center;;font-size:14px;}
+}
+/*在小于480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+	.myExcit{border:none;margin:15px auto;padding:0 5px}
+	.myExcit-get, .myExcit-mine{padding:0 5px;border: none;}
+	.myExcit-get-order{padding:10px 0}
+	.myExcit-get-order input{width:80%}
+	.myExcit-get-order .myExcitOrderSub{width:50%;margin:20px auto}
+	.productgout{margin:10px auto}
+	.myExcit-mine-intr ul li{box-sizing: border-box;width:50%}
+	.myExcit-mine-tab ul li{width:33.33%;margin:0;padding:0;text-align: center;;font-size:12px;}
+	.lx>p{float: none;}
+}

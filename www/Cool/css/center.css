@@ -1,0 +1,146 @@
+.container{width:1100px;margin:0 auto;min-height:680px}
+.info-header{height:125px;background: #cfbc9b;margin-top:15px}
+.info-header .head{float:left;padding:30px 15px 0 20px}
+.info-header dl{padding-top:45px;float: left;}
+.info-header dl dt{font-size:18px;color:#333;margin:5px 0}
+.info-header .span1{font-size:18px;color:#333;}
+.info-header .span2{font-size:14px;color:#c92c26;margin-left:10px}
+.info-header .span2 img{vertical-align: -3px;}
+.info-header dl dd{font-size: 12px;color:#333;}
+.info-a{float:left; text-align: center;padding:25px 20px 0 100px; line-height: 260%;}
+.info-a a{display:inline-block;margin:0 20px;color:#333;}
+.rz-list{margin-top:30px}
+.rz{height:70px;line-height: 70px;background: #fff;font-size:16px;margin:5px auto;border:1px solid #fff}
+.rz:hover{border:1px solid #cfbc9b}
+.rz img{margin:0 10px 0 140px}
+.rz>a{float:right;margin-right:170px;color:#fff;background: #ddca9d;display:block;width:180px;height:45px;line-height:45px;text-align: center;margin-top:12px;border-radius:5px}
+.account{margin-top:10px}
+.account .zjqk,.account .zjzh{height:140px;width:515px;padding:15px;background: #fff;}
+.account-title{font-size:16px;font-weight: bold;margin:2px 0 10px;}
+.no-account{height:100px;line-height: 100px;color:#717DAD}
+.account-title .fr{margin-right:50px;}
+.account-title .fr b{color:#c92c26}
+.zjqk>div{font-size:16px;font-weight:bold;width:33%;float:left;margin-right:0.33%;background: #edeae5;height:90px;text-align: center;padding-top:20px;}
+.zjzh table{margin-top:15px}
+.zjzh table td{padding:3px 0;}
+
+.con{background: #fff;margin:10px auto;padding:20px 10px}
+.table-card{width:80%;margin:0 auto; position: relative;}
+.table-card td{padding:20px 0;}
+.table-card2 td{padding:10px 0}
+.table-card .input2 input:first-child{width:210px;margin-right:10px}
+.table-card .input2 input:last-child{width:100px;height:38px;border:1px solid #C9C9C9;border-radius: 2px;background: #fff;}
+.table-card .input3 div:first-child{width:155px;margin-right:10px;float:left}
+.table-card .input3 div:last-child{width:155px;float:left}
+.table-card .input3 div select{width:155px;font-size:16px;text-indent: 15px;}
+.table-card .f{line-height: 107px;display: block;margin:0 20px}
+.table-card input[type=text]{border:1px solid #C9C9C9;height:38px;line-height: 38px;width:320px;text-indent:5px}
+.table-card .choose{width:320px; cursor: pointer;}
+.table-card .choose2{width:320px; cursor: pointer; }
+.table-card .choose2 select{position: relative;border:1px solid #C9C9C9;height:38px;line-height: 30px;width:320px; z-index: 3;background: transparent; cursor: pointer;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;}
+.table-card .choose2 input[type="text"]{position: relative; z-index: 3;background: transparent; cursor: pointer;}
+.table-card .choose:after{background:#fff;position:absolute;right:0;top:0;content:"选择";font-size:12px;height:39px;line-height: 39px;width:38px;text-align: center;display:block;border-left:1px solid #C9C9C9}
+.table-card .choose2:after{background:#fff;position:absolute;z-index:2;right:0;top:0;content:url(../images/arrow.png);font-size:12px;height:39px;line-height: 45px;width:38px;text-align: center;display:block;border-left:1px solid #C9C9C9}
+.table-card .choose input{cursor: pointer;}
+#save{padding:10px 65px;background:#DDCA9D;color:#fff;font-size:18px;border-radius:5px;}
+#zheng,#fan{width:159px;height:107px;background: url(../images/upload.png) no-repeat center center;float:left;text-align: center;}
+#zheng input,#fan input{width:159px;height:107px;opacity: 0;}
+.license{position:absolute;right:0;top:25%;width:280px;font-size:12px;color:#333}
+.red-star:before{content: "*";color:darkred;padding:2px}
+input[type=text].half-input{width:135px;height:38px;line-height: 38px;}
+/* 银行选择弹层 */
+.bg{z-index: 9998;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;opacity:0.5;filter:alpha(opacity=50);}
+.bank-pop{width:800px; z-index:9999;position:fixed;top:50%;left:50%;margin:-280px 0 0 -400px;background: #fff;border-radius: 5px;border: 4px solid rgba(0,0,0,.3);background-clip: padding-box;}
+.bank-pop .bankCon{position: relative;padding-bottom: 45px;}
+.bank-pop .bankCon .close{position: absolute;right: 20px;top: 20px;font-size: 40px;font-weight: bold;}
+.bank-pop .bankCon .cont{height: 55px;line-height: 55px;padding-left: 25px;background: #f2f2f2;font-size: 16px;}
+.bank-pop .bankCon .conb{padding: 20px 45px 0 90px;}
+.bank-pop .bankCon .conb input[type=text]{padding-left: 30px;width: 294px;height: 40px;border: 1px solid #d0d0d0;}
+.bank-pop .bankCon .conb .show{padding-top: 20px;}
+.bank-pop .bankCon .conb .show .fl{width: 382px;}
+.bank-pop .bankCon .conb .show .cell{width: 75px;height: 55px;line-height: 55px;border: 1px solid #dcdcdc;background: #f2f2f2;box-sizing: border-box;float: left;}
+.bank-pop .bankCon .conb .show .cell .box{width: 58px;height: 40px;line-height: 40px;box-shadow:0px 0px 5px rgba(0,0,0,.4);background: #eadfcc;border-radius: 3px;margin: 8px auto 0;text-align: center;font-size: 16px;}
+.bank-pop .bankCon .conb .show .cell .box.active{background: #ddca9d;}
+.bank-pop .bankCon .conb .show .fr{width: 213px;border: 1px solid #dcdcdc;max-height: 413px;padding-left: 20px;overflow-y: auto;}
+.bank-pop .bankCon .conb .show .fr p{padding-top: 15px;}
+.bank-pop .bankCon .conb .show .fr p.active{color: #6683d5;}
+.bank-pop .bankCon .conb .bank-btn{padding-top: 50px;text-align: center;}
+.bank-pop .bankCon .conb .bank-btn a{display: inline-block;width: 132px;height: 45px;line-height: 45px;text-align: center;font-size: 20px;border-radius: 5px;}
+.bank-pop .bankCon .conb .bank-btn a.confirm-btn{background: #cfbc9b;color: #fff;margin-right: 80px;}
+.bank-pop .bankCon .conb .bank-btn a.close-btn{background: #cbcbcb;color: #3c3c3c;}
+/* 基本情报 */
+.info-header .toggle{margin-left: 100px;float: left;padding-top: 45px;width: 58px;text-align: center;}
+.info-header .toggle p{line-height: 30px;}
+.info-header ul{float: left;border-left: 1px dashed #fff;height: 74px;margin: 10px 0 10px 25px;padding: 30px 0 0 20px;}
+.info-header li{float: left;width: 114px;height: 42px;line-height: 42px;text-align: center;border-radius: 5px;font-size: 18px;background: rgba(255,255,255,.5);float: left;margin-right: 20px;}
+.info-header li.active{background: rgba(255,255,255,1);}
+.info-header li a{display: block;}
+.record-list{margin-bottom: 20px;}
+.record-list .title{margin-top: 8px;height: 40px;line-height: 40px;padding-left: 10px;background: #fff;}
+.record-list span{display: block;}
+.record-list .note{float: left;width: 250px;height: 40px;}
+.record-list .money{float: left;margin-left: 260px;}
+.record-list .triangle{width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent; border-top:10px solid #999999;text-align: right;float: right;margin-top: 13px;margin-right: 45px;}
+.record-list .record-con .rdcot{height: 40px;line-height: 40px;padding-left: 10px;background: #f0e5d2;}
+.record-list .record-con .cancel{float: right;margin-right: 142px;width: 57px;height: 22px;line-height: 22px;color: #fff;text-align: center;background: #6683d5;border-radius: 3px;margin-top: 10px;}
+.record-list .record-con .rdcoc-list{height: 40px;line-height: 40px;padding-left: 10px;background: #f2ebdf;}
+.record-list .record-con .rdcoc .money{margin-left: 510px;}
+.info-active{background: #ddca9d;height: 100px;margin-left: 20px;position: relative;width: 604px;}
+.arrow-left {width:0; height:0; border-top:15px solid transparent; border-bottom:15px solid transparent; border-right:15px solid #ddca9d;position: absolute;top: 48px;left: -15px;}
+.term-pop{width:586px; z-index:9999;position:fixed;top:50%;left:50%;margin:-280px 0 0 -293px;background: #fff;border-radius: 5px;border: 4px solid rgba(0,0,0,.3);background-clip: padding-box;}
+.term-pop .termCon{position: relative;padding-bottom: 45px;}
+.term-pop .termCon .close{position: absolute;right: 20px;top: 20px;font-size: 40px;font-weight: bold;}
+.term-pop .termCon .cont{height: 55px;line-height: 55px;background: #f2f2f2;color: #6683d5;text-align: center;}
+.term-pop .termCon .conb{padding: 15px 0 0 30px;}
+.term-pop .termCon .conb .check{width: 275px;margin: 50px auto 0;}
+.term-pop .termCon .conb .check span{color: #e11818;}
+.term-pop .termCon .conb .term-btn{padding-top: 20px;text-align: center;}
+.term-pop .termCon .conb .term-btn a{display: inline-block;width: 132px;height: 45px;line-height: 45px;text-align: center;font-size: 20px;border-radius: 5px;}
+.term-pop .termCon .conb .term-btn a.confirm-btn{background: #cfbc9b;color: #fff;}
+.term-pop .termCon .conb .term-btn a.close-btn{background: #cbcbcb;color: #3c3c3c;margin-right: 35px;}
+.invest-table{margin-top: 10px;padding: 0 15px;background: #fff;}
+.invest-table .tab{height: 49px;border-bottom: 1px dashed #d0d0d0;}
+.invest-table table{width: 100%;}
+.invest-table .tab li{float: left;margin-right: 40px;height: 38px;line-height: 38px;cursor: pointer;text-align: center;color: #3c3c3c;}
+.invest-table .tab li.active{border-bottom: 1px solid #ddca9d;}
+.invest-table tr{height: 34px;border-bottom: 1px solid #afb3b5;}
+.invest-table th,.invest-table td{text-align: center;}
+.trade-table{padding-bottom: 20px;}
+.trade-table .tradeTop{height: 49px;border-bottom: 1px dashed #d0d0d0;line-height: 49px;}
+.trade-table .tradeTop span{float: left;}
+.trade-table .tradeTop .export{float: right;margin-right: 20px;height: 32px;width: 252px;padding-top: 10px;}
+.trade-table .tradeTop .sel{width: 145px;margin-right: 20px;cursor: pointer;float: left;height: 32px;line-height: 32px;}
+.trade-table .tradeTop .sel select{width:145px;text-indent: 10px;position: relative;border:1px solid #C9C9C9;height:30px;line-height: 24px;cursor: pointer; z-index: 3;background: transparent; cursor: pointer;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;-o-appearance:none;appearance:none;}
+.trade-table .tradeTop .sel:after{background:#fff;position:absolute;z-index:2;right:0;top:0;content:url(../images/arrow.png);font-size:12px;height:30px;line-height: 34px;width:30px;text-align: center;display:block;border-left:1px solid #C9C9C9}
+.trade-table .tradeTop .exp-btn{display: inline-block;width: 84px;height: 32px;line-height: 32px;text-align: center;color: #fff;font-size: 16px;background: #6683d5;border-radius: 5px;float: right;}
+.pCash .cash{height: 140px; width: 525px; padding: 15px; background: #fff; }
+.pCash .cash p.mt35{margin-top: 35px;}
+.pCash .cash p.mt25{margin-top: 25px;}
+.pCash .cash .cash-btn{margin: 60px 45px 0 0;display: block;width: 84px;height: 32px;line-height: 32px;text-align: center;color: #fff;font-size: 20px;background: #6683d5;border-radius: 5px;}
+/* 提现确定 */
+.cash-pop{width:586px; z-index:9999;position:fixed;top:50%;left:50%;margin:-215px 0 0 -293px;background: #fff;border-radius: 5px;border: 4px solid rgba(0,0,0,.3);background-clip: padding-box;}
+.cash-pop .cashCon{position: relative;padding-bottom: 45px;}
+.cash-pop .cashCon .close{position: absolute;right: 20px;top: 20px;font-size: 40px;font-weight: bold;}
+.cash-pop .cashCon .cont{height: 55px;line-height: 55px;padding-left: 25px;background: #f2f2f2;font-size: 16px;}
+.cash-pop .cashCon .conb{text-align: center;font-size: 16px;}
+.cash-pop .cashCon .conb p{padding-top: 40px;}
+.cash-pop .cashCon .conb .confirm-btn{margin-top: 40px;display: inline-block;width: 132px;height: 45px;line-height: 45px;text-align: center;font-size: 20px;border-radius: 5px;background: #cfbc9b;color: #fff;}
+/* 交易取消 */
+.cancel-pop{width:586px; z-index:9999;position:fixed;top:50%;left:50%;margin:-215px 0 0 -293px;background: #fff;border-radius: 5px;border: 4px solid rgba(0,0,0,.3);background-clip: padding-box;}
+.cancelCon{position: relative;padding-bottom: 45px;}
+.cancelCon .close{position: absolute;right: 20px;top: 20px;font-size: 40px;font-weight: bold;}
+.cancelCon .cont{height: 55px;line-height: 55px;padding-left: 25px;background: #f2f2f2;font-size: 16px;}
+.cancelCon .conb{text-align: center;font-size: 16px;width: 300px;margin: 0 auto;}
+.cancelCon .conb div{padding-top: 25px;}
+.cancel-pop .cancelCon .conb span{display: inline-block;}
+.cancel-pop .cancelCon .conb .label{width: 130px;text-align: right;margin-right: 30px;float: left;}
+.cancel-pop .cancelCon .conb .desc{text-align: left;width: 130px;}
+.cancel-pop .cancelCon .conb a{display: inline-block;width: 132px;height: 45px;line-height: 45px;text-align: center;font-size: 20px;border-radius: 5px;}
+.cancel-pop .cancelCon .conb .confirm-btn{background: #cfbc9b;color: #fff;}
+.cancel-pop .cancelCon .conb .close-btn{background: #cbcbcb;color: #3c3c3c;margin-right: 35px;}
+.cancel-confirm{width:586px; z-index:9999;position:fixed;top:50%;left:50%;margin:-215px 0 0 -293px;background: #fff;border-radius: 5px;border: 4px solid rgba(0,0,0,.3);background-clip: padding-box;}
+.cancel-confirm .cancelCon .conb div{padding-top: 35px;}
+.cancel-confirm .chose-btn a{display: inline-block;width: 89px;height: 45px;line-height: 45px;text-align: center;font-size: 16px;border-radius: 5px;color: #fff;}
+.cancel-confirm .chose-btn .yes{background: #639c5e;margin-right: 70px;}
+.cancel-confirm .chose-btn .no{background: #c92c26;}
+

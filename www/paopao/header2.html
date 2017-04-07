@@ -1,0 +1,120 @@
+<div class="header">
+	<div class="header-top sm-hidden">
+		<div class="wd1000">
+			<ul>
+				<li id="userInfo"><a href="login.html">登录</a> / <a href="regist.html">注册</a></li>
+				<li class="mp hide"><a href="pindex.html">我的泡泡</a></li>
+				<li><a href="patternTag2.html">泡泡模式</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="header-nav clearfix">
+		<div class="logo clearfix">
+			<a href="index.html"><img src="img/header-nav.png"/></a>
+			<div class="sm-hidden infomation">有知庐集研究、实践、教学为一体，通过筛选出有助于理想未来的愿望型有知需求，促进其转变为公德型有知需求，以推动社会的进步。有知庐使用前沿的商业模式，将盈余100%支持这一事业的理念推广和独立运营。</div>
+		</div>
+	</div>
+</div>
+<!--账户中心导航-->
+		<div class="myCenter-nav-out sm-hidden">
+			<div class="myCenter-nav wd1000">
+				<ul class="clearfix" id="pNav">
+					<li rel="pindex"><a href="pindex.html">账户首页</a></li>
+					<li rel="mMypao mMypao mMycollect mSpread mMymark mMysupport">
+						<a href="javascript:void(0)">泡泡管理</a>
+						<dl>
+							<dd><a href="mMypao.html">我的泡泡</a></dd>
+							<dd><a href="mMysupport.html">我支持的泡泡</a></dd>
+							<dd><a href="mMycollect.html">我的收藏</a></dd>
+							<dd><a href="mSpread.html">我的传播</a></dd>
+							<dd><a href="mMymark.html">我的评分</a></dd>
+						</dl>
+					</li>
+					<li class="cur" rel="addPao"><a href="addPao.html">分享泡泡</a></li>
+					<li class="head">
+						<a href="upload.html">
+							<img src="img/actorimg.png" class="headImg" alt="" />
+							<!--<div class="head-bg"></div>-->
+						</a>
+					</li>
+					<li rel="motivatePao"><a href="motivatePao.html">激励泡泡</a></li>
+					<li rel="mSafe"><a href="mSafe.html">安全设置</a></li>
+					<li rel="message"><a href="message.html">站内信</a></li>
+				</ul>
+			</div>
+		</div>
+<script>
+	var userid=""
+	$(function(){
+		var arrUrl = {
+			"0":["navOne.html","navTwo.html","navThree.html"],
+			"1":["pindex.html","mMycollect.html","mMymark.html","mMypao.html","mMysupport.html","addPao.html","mSpread.html","message.html","motivatePao.html","mSafe.html"]
+		};
+		
+		var splitArr = window.location.pathname.split("/");
+		var pageName = splitArr[splitArr.length-1];
+		
+		for(var i in arrUrl){
+			var f = arrUrl[i].indexOf(pageName);
+			if(f>=0){
+				var rel = pageName.split(".")[0];
+				$("#pNav li[rel~="+rel+"]").addClass("curr");
+			}
+		}
+		//判断用户是否登录
+		userid = $.cookie("c_member_mobile");
+		if(userid){
+			userid = userid.substring(0,3)+"****"+userid.substring(7,11);
+			$(".mp").removeClass("hide");
+		}
+		if(userid==null||userid==""){
+			window.location.href="login.html";
+			$(".mp").addClass("hide");
+		}else{
+			$("#userInfo").html('<a href="pindex.html">'+userid+'</a> / <a href="javascript:void(0)" id="loginOut">退出</a>');
+			$(".mp").removeClass("hide");
+			$.ajax({
+				type:"post",
+				dataType:dataType, 
+				url:url+"user/getMemberInfo.json",
+				data:{},
+				success:function(data){
+					if(data.respCode=="0000"){
+						var obj = data.memberInfo;
+						if(obj.portrait!=undefined){
+							if(obj.portrait){
+								$(".headImg").attr("src",imgUrl+obj.portrait);
+							}
+							if(obj.nickName){
+								$(".headNick").html(obj.nickName);
+							}else{
+								$(".headNick").html(obj.mobile);
+							}
+						}
+					}else{
+						alert(data.respMsg);
+					}
+				}
+			});
+		}
+		//登出
+		$(document).on("click","#loginOut",function(){
+			$.ajax({
+				type:"post",
+				dataType:dataType, 
+				url:url+"/user/logout.json",
+				data:{},
+				success:function(data){
+					if(data.respCode=="0000"){
+						alert("退出成功！");
+						$.cookie("c_member_mobile",null);
+						window.location.reload();
+						var url2 = location.href; 
+						$.cookie("url2",url2);
+						window.location.href="login.html";
+					}
+				}
+			});
+		});
+	});
+</script>

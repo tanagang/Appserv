@@ -1,0 +1,97 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+</head>
+<body>
+<section id="section1">
+	<a href="javasctipt:void(0)">
+		<table width="100%" class="table-info mt0">
+			<tr>
+				<td colspan="2" class="font12">10/1778856 <span class="fr">2015-02-05 10：06</span></td>
+			</tr>
+			<tr>
+				<td colspan="2">海尔内部员工采购系统报错</td>
+			</tr>
+			<tr>
+				<td width="40%" class="br"><img src="images/set.png" width="24"  />&emsp;正在处理</td>
+				<td><img src="images/user.png" width="22" style="vertical-align:-6px" alt="">&emsp;综合管理部 张三</td>
+			</tr>
+		</table>
+	</a>
+	<div class="box p10 mt15">
+		<img src="images/temp/head.jpg" width="38" style="border-radius:5px">
+		<dl class="flex ml5 msg-detail">
+			<dt><b>测试工程师</b>&emsp;<i>2015-05-2-05 10：06</i><a href="javascript:void(0)" class="green fr" >用户确认</a></dt>
+			<dd>您好，电话打不通，如果没有问题请关闭消息吧，如果有什么疑问，建议来电咨询吧。</dd>
+		</dl>
+	</div>
+	<div class="box p10 mt15">
+		<dl class="flex mr5 msg-detail">
+			<dt class="clear"><a href="javascript:void(0)" class="blue" >简单回复</a>&emsp;<i>2015-05-2-05 10：06</i><b class="fr">我</b></dt>
+			<dd class="pb10">你好，重启一下电脑就可以了</dd>
+			<dd>
+				<a href="#" class="box block p10 bt">
+					<div class="flex">海尔物流系统操作手册.doc</div>
+					<img src="images/download.png" width="24" alt="">
+				</a>
+				<a href="#" class="box block p10 bt">
+					<div class="flex">海尔物流系统操作手册.doc</div>
+					<img src="images/download.png" width="24" alt="">
+				</a>
+			</dd>
+		</dl>
+		<img src="images/temp/head2.jpg" width="38" style="border-radius:5px">
+	</div>
+</section>
+<p class="sel-os"><a href="#" class="sureOrcancel cancel">关闭</a><a href="#" class="sureOrcancel sure">回复</a></p>
+<style>
+	#screen{position: fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);}
+	.alert{width:90%;padding:8px 10px;height:165px;background:#fff; position: absolute;margin:auto;top:0;left:0;right:0;bottom:0;max-width: 500px;box-shadow: 0 0 5px #000}
+	.alert textarea{width:100%;padding:5px;margin:15px 0;height:90px;resize:none;border-radius: 5px;border:1px solid #ddd;}
+	#close{position: absolute;right:0;top:0;width:20px;height:30px; text-align: center; font-size: 24px}
+	#bad,#good{padding:8px 30px;color:#fff;font-size:14px;border-radius: 5px}
+	#bad{background:#DC504D;}
+	#good{background:#00853F}
+</style>
+<div id="screen">
+	<div class="alert">
+		<a href="#" id="close">x</a>
+		<textarea placeholder="写下你给工程师的留言（不满意时必填）"></textarea>
+		<p class="text-center">
+			<a href="javascript:void(0)" id="bad">不满意</a>&ensp;
+			<a href="javascript:void(0)" id="good">满意</a>
+		</p>
+	</div>
+</div>
+</body>
+</html>
+<script>
+	$(function(){
+		$(".cancel").tap(function(){
+			$("#screen").css("display","block");
+		});
+		$("#bad").tap(function(){
+			$("#screen").css("display","none");
+		});
+		$("#good").tap(function(){
+			$("#screen").css("display","none");
+		});
+		$("#close").tap(function(){
+			$("#screen").css("display","none");
+		});
+	});
+</script>
+
+
+
+

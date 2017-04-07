@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>navOne</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/pubu.css" />
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=rmSaO6w6dlOolPDnf1ApAXL8xE61cBq5"></script>
+	</head>
+	<body>
+		<!--公共头部-->	
+		<div id="header"></div>
+		<!--公共头部-->
+	   	<div class="index-content">
+			<div id="allmap"></div>
+	   		<div class="index-map hide">
+	   			<!--<img src="img/index/index-map.jpg" alt="" width="1920" height="494"/>-->
+	   			<div class="wd1000">
+	   				<ul class="index-map-title">
+		   				<li><span><i>500</i>个</span><span>用户注册</span></li>
+		   				<li><span><i>100</i>条</span><span>视频</span></li>
+		   				<li><span><i>800</i>件</span><span>POLO</span></li>
+		   				<li style="border: none;"><span><i>2400</i>元</span><span>奖励金额</span></li>
+	   				</ul>
+	   				<div class="index-map-tips">
+		   				<ul class="index-map-tips-top">
+		   					<li ><a href="javascript:void(0);">进步商业</a></li>
+		   					<li><a href="javascript:void(0);">杜绝童乞</a></li>
+		   					<liclass="on"><a href="javascript:void(0);">雪中送炭</a></li>
+		   				</ul>
+		   				<div class="index-map-tips-list">
+		   					<p>我们把奖励送到了哪里</p>
+		   					<ul>
+		   						<li><span></span>新疆16个县市</li>
+		   						<li><span></span>云南10个县市</li>
+		   						<li><span></span>青海、四川、甘肃10个县市</li>
+		   						<li><span></span>贵西、江西、山西15个县市</li>
+		   					</ul>
+		   				</div>
+	   				</div>
+	   			</div>
+	   		</div>
+	   	</div>
+	   	<!--main-->
+		<div class="pubuMain wd1000">
+			<div class="title">公有目标：推动建立“帮助那些急需帮助的人，尽管对自己没有好处”的理念</div>
+			<hr style="border:none;border-top:2px solid #dfdfdf;margin-bottom:15px">
+			<div id="con1_1">
+			    <div class="product_list hide">
+			    	<a href="navOneDetail.html" class="listImg clearfix">
+			    		<img src="img/pubu/img1.jpg">
+			    		<i>4.5</i>
+			    	</a>
+			    	<div class="listTop">
+			    		<span class="name">SPID1234</span>
+			    		<span><i class="firsting"></i>82</span>
+			    		<span><i class="seconding"></i>82</span>
+			    		<span><i class="thirding"></i>82</span>
+			    	</div>
+			    	<div class="listMain">
+						<p class="mainText">在哪里？具体地址在哪里？</p>
+						<p class="address"><i></i>上海市浦东新区世纪大道1500号东方大厦</p>
+			    		<p class="time">2016-045-19 15:36</p>
+			    	</div>
+			    	<div class="listBottom">
+						<img src="img/headImg.jpg" class="fl" />
+						<div class="fl">
+							<p class="blue">一切都过去了</p>
+						</div>
+						<button class="fr">质疑</button>
+			    	</div>
+			    </div>
+			</div>
+		</div>
+		<!--公共脚部-->
+		<div id="footer"></div>
+	</body>
+</html>
+<div class="mask mask4 hide">
+	<div class="zy">
+		<p class="clearfix"><a href="javascript:void(0)" class="close close1">×</a></p>
+		<p class="title ellipsis">输入您对<span>123132</span>的质疑</p>
+		<textarea id="zyContent"></textarea>
+		<p class="btn3"><a href="javascript:void(0)" class="sub">提交</a><a href="javascript:void(0)" class="close close2">关闭</a></p>
+	</div>
+</div>
+<div class="mask mask3 hide">
+	<div class="rz">
+		<p class="title">您还没有认证!</p>
+		<p class="btn3">
+			<a href="mSafe.html" class="sub">去认证</a>
+			<a href="javascript:void(0)" class="close close2">关闭</a>
+		</p>
+	</div>
+</div>
+<script type="text/javascript" src="js/pubu.js"></script>
+<script src="js/map.js"></script>
+<script>
+		//瀑布流
+		liuxiaofan();
+	  	$(window).scroll(function(){
+	  		var obj = $("#con1_1 .product_list:last");
+	  		var lastH = Math.floor(obj.offset().top+obj.height()/2);
+	  		var scrollT = $(document).scrollTop()+ $(window).height();
+	  		if(scrollT>lastH){
+		    	//$("#con1_1").append("<div class='product_list' style='height:300px;background:#f60;'>aaa</div>");
+		    	//ajax再次操作
+		    	liuxiaofan();
+		    }
+	  	});
+	  	
+	  	loadVedio("G");
+   		function loadVedio(vidioType){
+   			$.ajax({
+				type:"post",
+				dataType:dataType, 
+				url:url+"video/getVideosByPage.json",
+				data:{vidioType:vidioType,gender:"",ageGroup:"",province:"",pageSize:1000000,pageNum:1},
+				success:function(data){
+					var str = '';
+					$.each(data.records, function(idx,el) {
+						str += '<div class="product_list">';
+					    str += '	<a href="navOneDetail.html?vidioId='+el.id+'" class="listImg clearfix">';
+					    str += '		<img src="'+imgUrl+el.vidioPic+'">';
+					    if(el.level=="0"){
+					    	 str += '		<i>0</i>';
+					    }else{
+					    	 str += '		<i>'+parseFloat(el.level).toFixed(1)+'</i>';
+					    }
+					    str += '	</a>';
+				        if(el.status=="00"){
+					    	str += ' 	<a href="javascript:void(0)" class="support2" class="txt-center" ><img src="img/footer-bg.png" width="24" />';
+							str += '		<br><span style="color:#fff">质疑期<br>不能被支持</span>';
+							str += '	</a>';
+					    }else if(el.status=="01"){
+					    	 str += ' 	<a href="javascript:void(0)" class="support2" class="txt-center" ><img src="img/footer-bg.png" width="24" />';
+							 str += '		<br><spanstyle="color:#fff">未被支持</span>';
+							 str += '	</a>';
+					    }else if(el.status=="02"){
+					    	 str += ' 	<a href="javascript:void(0)" class="support2" class="txt-center" ><img src="img/header-nav.png" width="24" />';
+							 str += '		<br><span style="color:#fff">'+el.supperUserName+'<br/>支持了该视屏</span>';
+						     str += '	</a>';
+					    }
+					    str += '	<div class="listTop clearfix">';
+					    str += '		<span class="name fl">'+el.id+'</span>';
+					    str += '		<div class="fr">';
+						str += '    		<span><i class="firsting"></i>'+el.pageViews+'</span>';
+						str += '    		<span><i class="seconding"></i>'+el.collectionQuantity+'</span>';
+						//str += '    		<span><i class="thirding"></i>'+el.shareQuantity+'</span>';
+						str += '    		<span><i class="thirding"></i></span>';
+					    str += '		</div>';
+					    str += '	</div>';
+					    str += '	<div class="listMain sm-hidden">';
+						str += '		<p class="mainText clearfix">'+el.description+'</p>';
+						str += '		<p class="address ellipsis"><i></i>'+el.province+el.city+el.district+el.address+'</p>';
+					    str += '		<p class="time">'+el.uploadTime+'</p>';
+					    str += '	</div>';
+					    str += '	<div class="listBottom sm-hidden">';
+						if(el.portrait){
+					    	str += '		<img src="'+imgUrl+el.portrait+'" class="fl" />';
+					    }else{
+					    	str += '		<img src="img/actorimg.png" class="fl" />';
+					    }
+						str += '		<div class="fl">';
+						if(el.nickName==undefined||el.nickName==""){
+							str += '			<p class="blue">未知</p>';
+						}else{
+							str += '			<p class="blue">'+el.nickName+'</p>';
+						}
+						str += '		</div>';
+						if(el.status=="00"){
+							str += '		<button class="fr white" rel="'+el.id+'">质疑</button>';
+						}
+					    str += '	</div>';
+					    str += '</div>';
+					});
+					$("#con1_1").html(str);
+				},
+				complete:function(){
+					liuxiaofan();
+				}
+			});
+   		}
+		//质疑按钮
+		$(document).on("click","button.white",function(){
+			if(userid==null||userid==""){
+				alert("您还没有登录");
+				return;
+			}
+			//是否认证
+			if($.cookie("identify")!=1){
+				$(".mask3").removeClass("hide");
+				return
+			}
+			$(".mask4").removeClass("hide");
+			var vid = $(this).attr("rel")
+			$(".zy .title span").html(vid);
+			$(".zy .sub").attr("rel",vid);
+		});
+		//提交质疑泡泡
+		$(".zy .sub").click(function(){
+			var content = $("#zyContent").val();
+			var vidioId = $(this).attr("rel");
+			if(content==""){
+				alert("请输入质疑的内容...");
+				return;
+			}
+			zyPaoPao(vidioId,content);
+		});
+		$(".close").click(function(){
+			$(".mask").addClass("hide")	
+		});
+		
+</script>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>fullPage - Demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="fullPage:For desktop(ie5.5+) or mobile webApp without jQuery,create full screen pages fast and simple.">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<!--[if lte IE 7]>      
+<body scroll="no"> 
+<![endif]-->
+<!--[if gt IE 7]><!--> 
+<body> 
+<!--<![endif]-->
+	<div id="article">
+		
+		<div class="page section1 current">
+			<div class="contain">
+				<img src="images/001.jpg">
+			</div>
+		</div>
+
+		<div class="page section2">
+			<div class="contain">
+				<img src="images/002.jpg">
+			</div>
+		</div>
+
+		<div class="page section3">
+			<div class="contain">
+				<img src="images/003.jpg">
+			</div>
+		</div>
+
+		<div class="page section4">
+			<div class="contain">
+				<img src="images/004.jpg">
+			</div>
+		</div>
+
+        <div class="page section5">
+            <div class="contain">
+                <img src="images/005.jpg">
+            </div>
+        </div>
+
+        <div class="page section6">
+            <div class="contain">
+                <img src="images/006.jpg">
+            </div>
+        </div>
+        
+        <div class="page section7">
+            <div class="contain">
+                <img src="images/007.jpg">
+            </div>
+        </div>
+
+        <div class="page section8">
+            <div class="contain">
+                <img src="images/008.jpg">
+            </div>
+        </div>
+
+        <div class="page section9">
+            <div class="contain">
+                <img src="images/009.jpg">
+            </div>
+        </div>
+
+        <div class="page section10">
+            <div class="contain">
+                <img src="images/010.jpg">
+            </div>
+        </div>
+
+        <div class="page section11">
+            <div class="contain">
+                <img src="images/011.jpg">
+            </div>
+        </div>
+
+        <div class="page section12">
+            <div class="contain">
+                <img src="images/012.jpg">
+            </div>
+        </div>
+
+        <div class="page section13">
+            <div class="contain">
+                <img src="images/013.jpg">
+            </div>
+        </div>
+
+        <div class="page section14">
+            <div class="contain">
+                <img src="images/014.jpg">
+            </div>
+        </div>
+
+        <div class="page section15">
+            <div class="contain">
+                <img src="images/015.jpg">
+            </div>
+        </div>
+
+        <div class="page section16">
+            <div class="contain">
+                <img src="images/016.jpg">
+            </div>
+        </div>
+
+        <div class="page section17">
+            <div class="contain">
+                <img src="images/017.jpg">
+            </div>
+        </div>
+
+        <div class="page section18">
+            <div class="contain">
+                <img src="images/018.jpg">
+            </div>
+        </div>
+        
+        <div class="page section19">
+            <div class="contain">
+                <img src="images/019.jpg">
+            </div>
+        </div>
+
+        <div class="page section20">
+            <div class="contain">
+                <img src="images/020.jpg">
+            </div>
+        </div>
+
+        <div class="page section21">
+            <div class="contain">
+                <img src="images/021.jpg">
+            </div>
+        </div>
+	</div>
+<script type="text/javascript" src="js/fullPage.min.js"></script>
+<script type="text/javascript">
+	
+runSection = new FullPage({
+
+	id : 'article',                            // id of contain
+	slideTime : 800,                               // time of slide
+    effect : {                                     // slide effect
+        transform : {
+        	translate : 'Y',					   // 'X'|'Y'|'XY'|'none'
+        	scale : [0, 1],					   // [scalefrom, scaleto]
+        	rotate : [0, 0]					   // [rotatefrom, rotateto]
+        },
+        opacity : [0, 1]                           // [opacityfrom, opacityto]
+    },                           
+	mode : 'touch,wheel',               // mode of fullpage
+	easing : [0, .93, .39, .98],
+	callback : function(index, thisPage) {     // callback when pageChange
+    }
+});
+
+</script>
+
+
+	<!--[if lte IE 6]>
+	<script type="text/javascript" src="http://mat1.gtimg.com/cd/201108/app/DD_belatedPNG_0.0.8a.js" charset="utf-8"></script>
+	<script type="text/javascript">
+	DD_belatedPNG.fix("*");
+	</script>
+	<![endif]--> 
+
+</body>
+</html>

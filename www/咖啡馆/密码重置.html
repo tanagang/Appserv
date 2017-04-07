@@ -1,0 +1,60 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>pccb</title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/tz_style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+</head>
+<body class="fff">
+    <header class="box">
+        <a href="javascript:void(0)"><img src="images/back.png" height="16" width="9"></a>
+        <p class="flex ellipsis">密码重置</p>
+        <a href="javascript:void(0)"></a>
+    </header>
+    <section class="mt0 mb5">
+       <form id="formReset" name="formReset" action="">
+            <div class="box">
+                 <p class="pr flex"><input type="password" class="no" placeholder="请输入验证码" /></p>
+                 <a href="javascript:void(0)" class="code code2" rel="0" onclick="send(this)">发送验证码</a>
+            </div>
+        </form>
+        <p class="txt-center f12 mt5" style="color:#a8a8a8">动态验证码已发送到<span style="color:#494848">尾号3721</span>手机上</p>
+    </section>
+    <p class="m10"><input type="submit" value="下一步" class="btn" form="formReset"></p>
+</body>
+</html>
+<script type="text/javascript">
+    function send(obj){
+       var rel = obj.getAttribute("rel");
+       var time = 60;
+       var obj = $(obj);
+       if(rel==0){
+           var clr = setInterval(function(){
+                time--;
+                if(time>0){
+                    //这里先执行短信发送的代码
+                    //some code......
+                    console.log(time);
+                    obj.html(time+"秒后重新发送").addClass('resend').attr("rel",1);
+                }else{
+                    obj.html("重新发送").removeClass('resend').attr("rel",0);
+                    clearInterval(clr);
+                }
+
+            }, 1000);
+       }
+    }
+</script>
+
+
+
+
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>小资咖啡</title>
+	<script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+    <style type="text/css">
+		*{padding:0;margin:0;font-family:微软雅黑,Arial, Helvetica, sans-serif;}
+		img{border:none}
+		ul{list-style:none}
+		.clear{height:0;_height:0;overflow:hidden;clear:both}
+		.container{background:url(images/bg.png) no-repeat center center; background-size:100% 100%; position:relative;}
+		#header{height:85px; line-height:85px;background:rgba(111,94,69,0.6);width:100%;position:fixed;}
+		#header .con{width:870px; margin:0 auto;height:85px; line-height:85px;}
+		.h-left{float:left;margin-left:40px}
+		.h-left img{margin-top:13px}
+		.h-right{float:right;}
+		.h-right a{color:#fff;font-size:14px; text-decoration:none;margin-left:20px}
+		.wrap{width:870px;height:786px;  margin:0 auto;position:relative;}
+		.content{padding-top:150px; position:fixed; z-index:998}
+		.c-left{width:320px; height:558px;float:left; background:url(images/phone3.png) no-repeat center center;}
+		.ul-pic{position:absolute;left:56px; top:78px;width:208px;height:368px; overflow:hidden;background:#ccc;position:relative}
+		.ul-pic li{float:left; position:absolute;left:0;top:0}
+		.c-right{width:540px;margin-left:330px}
+		.title{font-size:34px;color:#fff;  font-weight:bold;padding-left:60px;margin-top:50px; letter-spacing:1px; line-height:50px; height:150px;}
+		.hidden-title{display:none;}
+		.circle{padding-left:65px;padding-top:20px;}
+		.circle a{padding:4px; border-radius:4px; display:inline-block; background:#fff;margin:0 4px;}
+		#footer{width:100%; height:80px;font-size:14px;background:#000}
+		#footer .p1{height:35px; line-height:45px; text-align:center;color:#fff;}
+		#footer .p2{height:30px; line-height:30px; text-align:center;color:#4A4640;}
+		.floor{background:url(images/floor.png) no-repeat center center;height:129px; width:100%; background-size:100% 100%;position:fixed;bottom:0; z-index:999}
+	</style>
+	<!--[if lt IE 9]>
+		<script type="text/javascript" src="js/html5shiv.js"></script>
+		<script type="text/javascript" src="js/respond.min.js"></script>
+	<![endif]-->
+	<script type="text/javascript">
+		$(function(){
+			var width=$(".wrap").width();
+			var size=$(".c-left li").size();
+			var i;
+			var str='<p class="circle">';
+			for(var i=0;i<size;i++){
+				str+='<a href="javascript:void(0)" ></a>';
+			}
+			str+='</p>';
+			$(".title").after(str);
+			setInterval(function(){
+				settime();
+			},5000);
+			
+			$(".circle").delegate("a","click",function(){
+				i=$(this).index();
+				settime();
+			});	
+			$(".circle a").first().click();
+			
+			
+			function settime(){
+				$(".circle a").css("background","#fff");
+				$(".circle a").eq(i).css("background","#B3E0CC");
+				$(".ul-pic li").stop(true,false).animate({opacity:0},200);
+				$(".ul-pic li").eq(i).stop(true,false).animate({opacity:1},1000);	
+				$(".title div").html($(".hidden-title p").eq(i).html()).fadeOut(1).slideDown(600);
+				i++;
+				if(i==size){
+					i=0;	
+				}
+			}
+		});
+	</script>
+</head>
+
+<body>
+    <div class="container" style="height:683px">
+		<div id="header">
+			<div class="con">
+				<div class="h-left"><img src="images/icon.png" height="65" /></div>
+				<div class="h-right"><a href="#">关于我们</a><a href="#"><img src="images/sina.png" align="absmiddle"/></a></div>
+			</div>
+		</div>
+		<div class="wrap">	
+			<div class="content">
+					<div class="c-left">
+						<ul class="ul-pic">
+							<li><img  src="images/1.png" width="208" height="368"  /></li>
+							<li><img  src="images/2.png" width="208" height="368"  /></li>
+							<li><img  src="images/3.png" width="208" height="368"  /></li>
+							<li><img  src="images/4.png" width="208" height="368"  /></li>
+							<li><img  src="images/5.png" width="208" height="368"  /></li>
+						</ul>
+					</div>
+					<div class="c-right">
+						<div class="title">
+							<div></div>
+						</div>
+						<div style="padding:20px 0 20px 60px">
+							<p><a href="#"><img src="images/iphone_download.png" /></a>&nbsp;&nbsp;<a href="#"><img src="images/andriod_download.png" /></a></p>
+							<p style="margin-top:10px"><img src="images/ewm.png" /></p>
+						</div>
+					</div>	
+					<div class="clear"></div>
+				</div>
+				<div class="hidden-title">
+					<p>沪上专业媒体精选百家咖啡厅<br />绝对不会错</p>
+					<p>多维度咖啡主题推荐<br />满足你的全部小心思</p>
+					<p>店内特色全攻略<br />绝不放过任何心动小确幸</p>
+					<p>精选咖啡店地图指引<br />好品味再也不怕迷路</p>
+					<p>人气特色至上<br />你没有理由不去的Top25咖啡厅</p>
+				</div>	
+					
+		</div>
+	</div>
+	<div class="floor"></div>
+	<div id="footer">
+		<p class="p1">上海小资美食出品</p>
+		<p class="p2">版权所有  2014 上海小资美食 沪ICP备11004807号-2</p>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+/*
+	$(function(){
+			$(window).resize(function(){
+				var width=$(window).width();
+				var height=$(window).height();
+				if(width<=1280){
+					$(".container").css("width","1280px").css("height",(height-129));	
+					$(".floor").css("width","1280px");	
+				}else{
+					$(".container").css("width","100%").css("height",(height-129));	
+					$(".floor").css("width","100%");		
+				}
+			});
+				
+		
+	});
+	*/
+</script>

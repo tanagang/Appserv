@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>绑定手机</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			body{background: #F5F5F5;max-width: 640px;margin:0 auto;}
+			.hh{height:40px;line-height: 40px;background:#fff;border-bottom:1px solid #DCDCDC; text-align: center;color:#000;font-size:15px}
+			.hh .fl{padding:0 12px;}
+			.mm{margin:30px 15px}
+			.mm>div{margin:15px auto;}
+			.mm input{width:100%;height:35px;line-height: 35px;border:1px solid #E4E4E4;border-radius:3px;background: #fff;text-indent:5px}
+			a.code{display:inline-block;width:120px; margin-left:15px;text-align: center;height:40px;line-height: 40px;background: #244789;color:#fff;border-radius:5px}
+			a.bind{width:100%;margin-left:0;margin-top:50px}
+		</style>
+	</head>
+	<body>
+		<div class="hh">
+				<a class="fl" href="javascript:window.history.back()"><img src="img/arrowleft.png" width="10"/></a>
+				修改绑定手机
+		</div>
+		<div class="firstPhone">
+			<div class="mm">
+				<div>
+					<input type="text" id="oldPhone" placeholder="已绑定手机" readonly="readonly" />
+				</div>
+				<div class="box">
+		            <input type="text" placeholder="请输入验证码" class="flex inputYzm1">
+		            <a href="javascript:void(0)" class="code getYzm1" rel="0" >获取验证码</a>
+		        </div>
+		        <span id="firstError"></span>
+			</div>
+			<a href="javascript:void(0)" class="code bind nextStep">下一步</a>			
+		</div>
+		<div class="hide secondPhone">
+			<div class="mm">
+				<div>
+					<input type="text" class="inputPhone" placeholder="请输入新手机号" />
+					<span id="secondError"></span>
+				</div>
+				<div class="box">
+		            <input type="text"placeholder="请输入验证码" class="flex inputYzm2">
+		            <a href="javascript:void(0)" class="code getYzm2" rel="0">获取验证码</a>
+		        </div>
+		        <span id="thirdError"></span>
+			</div>
+			<a href="javascript:void(0)" class="code bind bindPhone">绑定</a>	
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		/*修改绑定手机--获取原手机号*/
+		var oldPhone = $.cookie("c_member_mobile");
+		oldPhone = oldPhone.substr(0,3)+"****"+oldPhone.substr(7,11);
+		$("#oldPhone").val(oldPhone);
+		/*绑定手机--获取验证码1*/
+		$(".getYzm1").click(function(){
+			var mobile = $.cookie("c_member_mobile");
+			var obj = $(this);
+			send(mobile,obj,"02");
+		});
+		/*绑定手机--下一步*/
+		$(".nextStep").click(function(){
+			var yzm = $('.inputYzm1').val();		
+			$.ajax({
+			    type:"POST",
+			    url:url+"/user/checkOldMobileSmsCode.json",
+			    dataType: 'jsonp',
+			    data: {smsCode:yzm},
+			    beforeSend:function(){	
+					if(yzm==""){
+						$('#firstError').html('<i class="cpr cpr2"></i><span class="error">验证码不能为空！</span>');
+						return false;
+					}
+			    },
+			    success: function (data) {//console.log(data);
+			    	if(data.checkResult){
+			    		$('.firstPhone').hide().siblings('.secondPhone').show();
+			    	}else{
+			    		$('#firstError').html('<i class="cpr cpr2"></i><span class="error">验证码不正确！</span>');
+			    	}
+			    },
+			    complete:function(){
+	
+			    },
+			    error:function(){}
+			});
+		});
+		/*绑定手机--获取验证码2*/
+		$(".getYzm2").click(function(){
+			var mobile = $('.inputPhone').val();
+			var obj = $(this);
+	    	if(mobile==""){
+				$('#secondError').html('<i class="cpr cpr2"></i><span class="error">手机号不能为空！</span>');
+				return false;
+			}		
+			if(isMobilePhone(mobile)){
+				send(mobile,obj,"03");
+			}else{
+				$('#secondError').html('<i class="cpr cpr2"></i><span class="error">手机号格式不正确！</span>');
+				return false;
+			}
+			
+		});
+		/*修改绑定手机--绑定新手机号*/
+		$(".bindPhone").click(function(){
+			var mobile = $('.inputPhone').val();
+			var yzm = $('.inputYzm2').val();		
+			$.ajax({
+			    type:"POST",
+			    url:url+"/user/changeMobile.json",
+			    dataType: 'jsonp',
+			    data: {mobile:mobile,smsCode:yzm},
+			    beforeSend:function(){
+			    	if(mobile==""){
+			    		console.log(111);
+						$('#secondError').html('<i class="cpr cpr2"></i><span class="error">手机号不能为空！</span>');
+						return false;
+					}		
+					if(yzm==""){
+						$('#thirdError').html('<i class="cpr cpr2"></i><span class="error">验证码不能为空！</span>');
+						return false;
+					}
+			    },
+			    success: function (data) {console.log(data);
+			    	if(data.respCode==0000){
+			    		alert("手机号绑定成功！");
+			    		window.location.href="mSafe.html";
+			    	}else{
+			        	alert(data.respMsg);
+			        }
+			    },
+			    complete:function(){
+	
+			    },
+			    error:function(){}
+			});
+			
+		});	
+	});
+
+</script>
+

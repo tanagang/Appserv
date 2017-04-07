@@ -1,0 +1,84 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script src="js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<section id="section7">
+     <p class="title">填写发票信息</p>
+     <p class="fplx"><span>发票类型：</span><label class="label" data-rel="0"><span class="chk"></span> 普通发票</label>&nbsp;&nbsp;<label class="label" data-rel="1"><span class="chk"></span> 增值税发票</label></p>
+     <ul id="ul-pt">
+     	<li><span>发票抬头：</span><input type="text" placeholder="请填写发票抬头" /></li>
+     </ul>
+     <ul id="ul-zzs">
+     	<li><span>单位名称：</span><input type="text" placeholder="请填写单位名称" /></li>
+        <li><span style="letter-spacing:0">纳税人识别号：</span><input type="text" placeholder="请填写纳税人识别号" /></li>
+        <li><span>注册地址：</span><input type="text" placeholder="请填写注册地址" /></li>
+        <li><span>注册电话：</span><input type="text" placeholder="请填写注册电话" /></li>
+        <li><span>开户银行：</span><input type="text" placeholder="请填写开户银行" /></li>
+        <li><span>银行帐户：</span><input type="text" placeholder="请填写银行帐户" /></li>
+     </ul>
+     
+     <p class="padding10" style="margin-top:30px; text-align:center">
+     	<a href="#" class="sureOrcancel cancel">取消</a>	
+        <a href="#" class="sureOrcancel sure">确定</a>	
+     </p>
+</section>
+ <footer class="box">
+    	<div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/wxsc_active.png" width="22" height="22" /></dt>
+                    <dd class="hover">微信商城</dd>
+                </dl>
+            </a>
+         </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/jfsc.png"  width="27" height="22"/></dt>
+                    <dd>积分商城</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#">
+                <dl>
+                    <dt><img src="images/ddzx.png"  width="25" height="22" /></dt>
+                    <dd>订单中心</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/grzx.png"  width="22" height="22"/></dt>
+                    <dd>个人中心</dd>
+                </dl>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$("#section7 .label").click(function(){
+			$("#section7 .chk").removeClass("chk-active");
+			$(this).find(".chk").addClass("chk-active");
+			var idx=$(this).attr("data-rel");
+			$("#section7 ul").css("display","none");
+			$("#section7 ul").eq(idx).fadeIn(1);
+		}).first().trigger("click");	
+		
+	});
+</script>
+

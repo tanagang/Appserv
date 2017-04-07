@@ -1,0 +1,78 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>pccb</title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/notice.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+    <header class="box">
+        <a href="javascript:void(0)"><img src="images/back.png" height="16" width="9"></a>
+        <p class="flex ellipsis">消息通知</p>
+        <a href="javascript:void(0)"></a>
+    </header>
+</body>
+</html>
+<script type="text/javascript">
+   
+    $(function() {
+    $.ajax({
+        type:"POST",
+        url: 'http://192.168.2.111:8578/service?channel=QueryMsgPage&jsonp=?',
+        dataType: 'jsonp',
+        data: {userId:""},
+        success: function (data) {
+            var str = '';
+            $.each(data.msgBoList,function(index, el) {
+                console.log(data);
+                if(index==0){
+                   str += '<section class="mt0">\
+                              <dl>\
+                                <dt>'+el.title+'</dt>\
+                                <dd class="hidden"><span class="fc4">摘要：</span>'+el.content+'</dd>\
+                                <dd class="clearfix">\
+                                    <a href="#" class="toggle">\
+                                        <span class="dleft">'+el.gmtCreate+'</span>\
+                                        <span class="dright">展开</span>\
+                                        <i>&gt;</i>\
+                                    </a>\
+                                </dd>\
+                              </dl>\
+                            </section>' ;
+                }else{
+                    str += '<section>\
+                              <dl>\
+                                <dt>'+el.title+'</dt>\
+                                <dd class="hidden"><span class="fc4">摘要：</span>'+el.content+'</dd>\
+                                <dd class="clearfix">\
+                                    <a href="#" class="toggle">\
+                                        <span class="dleft">'+el.gmtCreate+'</span>\
+                                        <span class="dright">展开</span>\
+                                        <i>&gt;</i>\
+                                    </a>\
+                                </dd>\
+                              </dl>\
+                            </section>' ;
+                }
+                
+            });
+            $("body").append(str);
+        },
+        error:function(){}
+    });
+    $(".toggle").click(function(event) {
+            $(this).parent("dd").siblings('dd').toggleClass('hidden');
+            $(this).children('.dright').html($(this).parent("dd").siblings('dd').is('.hidden')?"展开":"收起");
+            $(this).children('i').toggleClass('down');
+        });
+});
+</script>

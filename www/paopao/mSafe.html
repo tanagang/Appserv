@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>安全设置</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myBubble.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myCenter.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+	</head>
+	<body>
+		<!--公共头部-->
+		<div id="header2"></div>
+
+		<div class="myBubble wd1000 sm-hidden">
+			<!--我的泡泡-->
+			<div class="parttenFix parttenFix-l sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgleft" /></a>
+			</div>
+			<div class="parttenFix parttenFix-r sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgright" /></a>
+			</div>
+			<!--安全设置-->
+			<div class="myBubble-top">
+				<div class="myBubble-title clearfix sm-hidden">
+					<div class="myBubble-title-l fl">安全设置</div>
+				</div>
+				<table class="table-safe">
+					<thead>
+						<tr>
+							<td width="20%" class="showCon"><i class="cpr cpr1"></i><span class="safet">登陆密码</span></td>
+							<td>安全性高的密码可以使您的账号更安全，有知庐建议您定期更换密码。
+	密码包含数字和字母，区分大小写，密码长度6~14位</td>
+							<td width="20%"><a href="javascript:void(0)" class="btn active">修改密码</a></td>
+						</tr>
+					</thead>
+					<tbody class="hide">
+						<tr>
+							<td colspan="3">
+								<p class="tips">为了保证您的有知庐账户安全，建议您每三个月修改一次密码</p>
+								<div class="opr-safe">
+									<p>&emsp;&emsp;当前密码<input type="password" class="oldPassword" placeholder="请输入原密码" /><span></span></p>
+									<p>&emsp;&emsp;&emsp;新密码<input type="password" class="newPassword" placeholder="请输入新密码" /><span></span></p>
+									<p>&emsp;确认新密码<input type="password" class="repeatPassword" placeholder="确认新密码" /><span></span></p>
+									<p><a href="javascript:void(0);" class="sure passwordSub">确认</a></p>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="table-safe">
+					<thead>
+						<tr>
+							<td width="20%" class="showCon"><i class="cpr cpr1"></i><span class="safet">绑定手机</span></td>
+							<td>绑定手机，修改密码将必须要通过手机验证，避免他人恶意修改您的密码</td>
+							<td width="20%"><a href="javascript:void(0)" class="btn active" id="modifyPhone">修改绑定</a></td>
+						</tr>
+					</thead>
+					<tbody class="hide">
+						<tr class="firstPhone">
+							<td colspan="3">
+								<div class="step step1">
+									<p class="clearfix">
+										<i class="fl active">1</i>
+										<i>2</i>
+										<i class="fr">3</i>
+									</p>
+								</div>
+								<p class="clearfix step-text">
+									<span class="fl">验证绑定手机</span>
+									<span>绑定手机</span>
+									<span class="fr">绑定成功</span>
+								</p>
+								<div class="opr-safe">
+									<p>已绑定手机号 &emsp;<span id="oldPhone"></span> <a href="javascript:void(0)" class="btn2 getYzm1" rel="0">获取验证码</a></p>
+									<p>&emsp;验证码&emsp;&emsp;<input type="text" class="inputYzm1" placeholder="请输入验证码" /><span></span></p>
+									<p><a href="javascript:void(0);" class="sure nextStep">下一步</a></p>
+								</div>
+							</td>
+						</tr>
+						<tr class="hide secondPhone">
+							<td colspan="3">
+								<div class="step step2">
+									<p class="clearfix">
+										<i class="fl active">1</i>
+										<i class="active">2</i>
+										<i class="fr">3</i>
+									</p>
+								</div>
+								<p class="clearfix step-text">
+									<span class="fl">验证绑定手机</span>
+									<span>绑定手机</span>
+									<span class="fr">绑定成功</span>
+								</p>
+								<div class="opr-safe">
+									<p>新手机号<input type="text" class="inputPhone" placeholder="请输入新手机号" /><a href="javascript:void(0)" class="btn2 getYzm2" rel="0">获取验证码</a><span></span></p>
+									<p>&emsp;验证码<input type="text" class="inputYzm2" placeholder="请输入验证码" /><span></span></p>
+									<p><a href="javascript:void(0);" class="sure bindPhone">提交</a></p>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="table-safe">
+					<thead>
+						<tr>
+							<td width="20%" class="showCon"><i class="cpr cpr3"></i><span class="safet">绑定邮箱</span></td>
+							<td>邮箱绑定可用于找回密码</td>
+							<td width="20%" class="bindingEmailing"><a href="javascript:void(0)" class="btn active">立即绑定</a></td>
+							<td width="20%" class="bindingEmailed hide"><a href="javascript:void(0)" class="btn">绑定完成</a></td>
+						</tr>
+					</thead>
+					<tbody class="hide">
+						<tr>
+							<td colspan="3">
+								<p class="tips">
+									1.点击邮箱链接完成绑定<br>
+									2.验证邮件可能会在垃圾箱或广告邮件中，请仔细查收
+								</p>
+								<div class="opr-safe">
+									<p style="color:#000">请输入能正常接收邮件的邮箱</p>
+									<p>邮箱<input type="text" class="inputEmail" placeholder="请输入邮箱" /><a href="javascript:void(0)" class="btn2 bangEmail">发送邮件</a><span class="eMailError"></span></p>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="table-safe">
+					<thead>
+						<tr>
+							<td width="20%" class="showCon"><i class="cpr cpr3"></i><span class="safet">实名认证</span></td>
+							<td>实名认证可以上传视频</td>
+							<td width="20%" class="certificationing"><a href="javascript:void(0)" class="btn active">立即认证</a></td>
+							<td width="20%" class="hide certificationed"><a href="javascript:void(0)" class="btn">认证完成</a></td>
+						</tr>
+					</thead>
+					<tbody class="hide">
+						<tr>
+							<td colspan="3">
+								<p class="tips">
+									1、有知庐承诺不会将您的信息传播给其他第三方<br>
+									2、实名认证通过才能分享泡泡，帮助更多需要帮助的人
+								</p>
+								<div class="opr-safe">
+									<p>&emsp;&emsp;姓名<input type="text" class="idCardName" placeholder="请输入您的姓名" /><span class="idCardNameError"></span></p>
+									<p>身份证号<input type="text" class="idCardNum" placeholder="请输入您的身份证号" /><span class="idCardNumError"></span></p>
+									<p><a href="javascript:void(0);" class="sure idCard">确认</a></p>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+		<div class="hide sm-visible">
+			<div class="m-head pr">
+				<p><img src="img/actorimg.png" class="headImg" width="55" height="55" /><br /><span class="headNick"></span></p>
+				<div class="m-bar">
+					<a href="javascript:void(0)"><i class="auditing">0</i><br/>我的分享</a>
+					<a href="javascript:void(0)"><i class="myShare">0</i><br/>我的传播</a>
+					<a href="javascript:void(0)"><i class="mMymark">0</i><br/>我的评分</a>
+					<a href="javascript:void(0)"><i class="myCollection">0</i><br/>我的收藏</a>
+				</div>
+			</div>
+			<div class="m-con mt10">
+				<dl>
+					<dt><a href="#"><span class="p-icon p-icon1"></span>泡泡管理<span class="ar"></span></a></dt>
+					<dd><a href="mMypao.html">我的泡泡<span></span></dd>
+					<dd><a href="mMysupport.html">我支持的泡泡<span></span></a></dd>
+					<dd><a href="mMycollect.html">我的收藏<span></span></a></dd>
+					<dd><a href="mSpread.html">我的传播<span></span></a></dd>
+					<dd><a href="mMymark.html">我的评分<span></span></a></dd>
+				</dl>
+				<dl>
+					<dt><a href="addPao.html"><span class="p-icon p-icon2"></span>分享泡泡<span class="ar"></span></a></dt>
+				</dl>
+				<dl>
+					<dt><a href="motivatePao.html"><span class="p-icon p-icon3"></span>激励泡泡<span class="ar"></span></a></dt>
+				</dl>
+				<dl>
+					<dt><a href="#"><span class="p-icon p-icon4"></span>安全设置<span class="ar"></span></a></dt>
+					<dd><a href="safePwd.html">登录密码<span></span></a></dd>
+					<dd><a href="safePhone.html">手机绑定<span></span></a></dd>
+					<dd id="bindEmail"><a href="safeEmail.html">邮箱绑定<span></span></a></dd>
+					<dd id="nameIdentify"><a href="safeRz.html">实名认证<span></span></a></dd>
+				</dl>
+				<dl>
+					<dt><a href="message.html"><span class="p-icon p-icon5"></span>站内信<span class="ar"></span></a></dt>
+				</dl>
+			</div>
+		</div>
+		<!--公共脚部-->
+		<div id="footer"></div>
+		<script src="js/mSafe.js"></script>
+	</body>
+</html>
+<script>
+	$(function(){
+		$(".table-safe .btn").click(function(){
+			$(this).closest("thead").next().slideToggle(10);
+		});
+		$(".m-con dl dt").click(function(){
+			$(this).closest("dl").find("dd").slideToggle(100);
+		});
+		/*查询当前绑定状态*/
+		$.ajax({
+		    type:"POST",
+		    url:url+"user/getMemberInfo.json",
+		    dataType: 'jsonp',
+		    data: {},
+		    beforeSend:function(){
+	
+		    },
+		    success: function (data) {console.log(data);
+		    	/*判断是否实名认证*/
+		        if(data.memberInfo.isRealName=="1"){
+					$("#nameIdentify").html("<a href='javascript:void(0)'>实名认证<s>认证中</s></a>");
+		        }
+		        if(data.memberInfo.isRealName=="2"){
+					$("#nameIdentify").html("<a href='javascript:void(0)'>实名认证<s>已认证</s></a>");
+		        }
+		        /*判断是否绑定邮箱*/
+		       if(data.memberInfo.isBindEmail){
+					$("#bindEmail").html("<a href='javascript:void(0)'>邮箱绑定<s>已绑定</s></a>");
+		        }
+		    },
+		    complete:function(){
+	
+		    },
+		    error:function(){}
+		});		
+		/*绑定手机--获取验证码1*/
+		$(".getYzm1").click(function(){
+			var mobile = $.cookie("c_member_mobile");
+			var obj = $(this);
+			send(mobile,obj,"02");
+		});
+		/*绑定手机--下一步*/
+		$(".nextStep").click(function(){
+			var mobile = $.cookie("c_member_mobile");
+			var yzm = $('.inputYzm1').val();		
+			$.ajax({
+			    type:"POST",
+			    url:url+"user/checkOldMobileSmsCode.json",
+			    dataType: 'jsonp',
+			    data: {smsCode:yzm},
+			    beforeSend:function(){	
+					if(yzm==""){
+						$('.inputYzm1').siblings("span").html('<i class="cpr cpr2"></i><span class="error">验证码不能为空！</span>');
+						return false;
+					}
+			    },
+			    success: function (data) {
+			    	if(data.checkResult){
+			    		$('.firstPhone').hide().siblings('.secondPhone').show();
+			    	}else{
+			    		$('.inputYzm1').siblings("span").html('<i class="cpr cpr2"></i><span class="error">验证码不正确！</span>');
+			    	}
+			    },
+			    complete:function(){
+	
+			    },
+			    error:function(){}
+			});
+		});
+		/*绑定手机--获取验证码2*/
+		$(".getYzm2").click(function(){
+			var mobile = $('.inputPhone').val();
+			var obj = $(this);
+	    	if(mobile==""){
+				$('.inputPhone').siblings("span").html('<i class="cpr cpr2"></i><span class="error">手机号不能为空！</span>');
+				return false;
+			}		
+			if(isMobilePhone(mobile)){
+				send(mobile,obj,"03");
+			}else{
+				$('.inputPhone').siblings("span").html('<i class="cpr cpr2"></i><span class="error">手机号格式不正确！</span>');
+				return false;
+			}
+		});
+		//我的泡泡分类个数
+		$.ajax({
+			type:"post",
+			dataType:dataType, 
+			url:url+"video/myVideosCount.json",
+			data:{},
+			success:function(data){
+				$(".auditing").html(data.auditing);
+				$(".question").html(data.question);
+				$(".mMymark").html(data.myLevel);
+				$(".myShare").html(data.myShare);
+				$(".myCollection").html(data.myCollection);
+			}
+		});
+	});
+	//左右两侧广告图片
+	ad("00,01");
+</script>

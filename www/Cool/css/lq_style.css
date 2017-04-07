@@ -1,0 +1,22 @@
+/* 404-500-503 */
+.bg2{background: #fff;}
+.miss{width: 100%;}
+.miss .m404{width: 550px;padding-top: 100px;margin: 0 auto;}
+.miss .m404 .back{padding-top: 130px;margin-left: 20px;}
+.miss .m404 .fz24{font-size: 24px;line-height: 38px;}
+.miss .m404 .fz26{font-size: 26px;}
+.miss .m404 .toIndex{display: block;width: 204px;height: 54px;line-height: 54px;text-align: center;background: #6683d5;color: #fff;font-size: 26px;border-radius: 5px;margin-top: 12px;}
+.miss .m404 .fz72{color: #3c3c3c;font-size: 72px;line-height: 46px;}
+.miss .m404 .toIndex503{margin-left: 100px;}
+/* 合同规范 */
+.pl-main {width:1100px;margin:0 auto;padding:0 0 45px 0;}
+.pl-crumb {font-size:16px;font-family: "微软雅黑";padding: 36px 0;line-height: 22px;}
+.pl-crumb .bl{border-left: 3px solid #ddca9d;padding: 0 5px;}
+.pl-crumb .current {color:#426ace;}
+.agreement{width: 1070px;background: #fff;padding: 35px 15px 100px;}
+.agreement .agree-title{text-align: center;color: #3c3c3c;border-bottom: 1px dashed #b4b8ba;}
+.agreement .agree-title .fz20{font-size: 20px;}
+.agreement .agree-title .pd15{padding: 15px 0;}
+.agreement .agree-content{width: 855px;margin: 0 auto;padding-top: 30px;line-height: 26px;}
+.notice{display: inline-block;width: 56px;height: 24px;line-height: 24px;text-align: center;background: #f55d6b;color: #fff;font-size: 16px;border-radius: 3px;}
+.agreement .agree-content .tit{text-indent: 2em;}

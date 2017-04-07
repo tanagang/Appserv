@@ -1,0 +1,111 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  overflow-y: hidden;
+}
+.bg {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.bg1 {
+  background:#f2f2f2 url(../images/bg1.jpg) center 50% no-repeat;
+  background-size: cover;
+}
+.bg2 {
+  background:#f2f2f2;
+  background-size: cover;
+}
+.bg3 {
+  background:#f2f2f2;
+  background-size: cover;
+}
+.bg4 {
+  background:#F2F2F2;
+  background-size: cover;
+}
+#btn {
+  position: fixed;
+  right: 30px;
+  top: 40%;
+  width: 18px;
+  height: 100px;
+}
+#btn li {
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 9px;
+  margin: 18px 0;
+  cursor: pointer;
+}
+#btn li.on {
+  background: #fff;
+}
+
+#down{position:fixed;bottom:20px;left:50%;margin-left:-30px;z-index: 5;}
+.page1{position: absolute;left:0;right:0;bottom:0;top:0;margin:auto;height:300px; font-size:34px;color:#fff; line-height: 260%; text-align: center;width:1100px;}
+.page1 .font1{font-size: 50px;}
+.page1 .font2{font-size: 74px;}
+.page1 .font3{font-size: 98px;}
+.btns a{font-size:20px;border:1px solid #d9bb75;display:inline-block;width:205px;height:45px;line-height: 45px;margin:0 15px;color:#3c3c3c;background: #fff;border-radius: 3px;}
+.btns a.active{background:#d9bb75;color:#fff;}
+
+.bg2 .c{height:200px;background: #fff;width:820px;margin:0 auto;padding:0 140px}
+.circle{width:150px;height:50px;float:left;margin:20px 60px;text-align: center;padding-top:100px;font-size:20px;font-weight: bold;}
+.circle1{background: url(../images/circle1.png) center center no-repeat;}
+.circle2{background: url(../images/circle2.png) center center no-repeat;}
+.circle3{background: url(../images/circle3.png) center center no-repeat;}
+.title{margin:10px auto;border-left:3px solid #DDCA9D;font-size:16px;width:1080px;padding-left:5px}
+.title .fr{font-size:15px;border:1px solid #DDCA9D;border-radius: 15px;padding:2px 8px}
+.projects{width:1100px;margin:0px auto}
+.project{width:340px;float:left;height:510px;padding:10px;background: #fff;}
+.project>dl{position:relative}
+.project>dl img{width:100%;height:320px}
+.project>dl .syl{text-indent:20px;color:#fff;position:absolute;bottom:0px;width:100%;background: rgba(0,0,0,0.2);height:50px; line-height: 50px;}
+.project>dl .syl span{color:#fff;font-size:44px}
+.project>dl .syl span i{color:#fff;font-size:28px}
+.project2,.project3{margin-left:10px}
+.pt{height:50px;line-height:50px;background: #ddca9d;padding:0 15px;font-size:24px;color:#fff}
+.pt span{font-size:14px;color:#fff;float:left;width: 50%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.text1{padding:20px 0 10px 0}
+.text2{font-weight: bold;}
+.text2 span{color:#c92c26;font-size:18px}
+.project .yysj{width:45%; font-weight: bold;}
+.project .bar{width:55%;height:15px;line-height:15px;background: #afb3b5;position:relative;}
+.per-text{position:absolute;width:100%;top:0;left:0;text-align: center; z-index: 3;color:#fff}
+.project .per{position: absolute;top:0;left:0;height:15px;background: #c92c26; z-index: 2; transition: all 1s ease}
+.look{width:60%;height:45px; line-height: 45px;border-radius:5px;display: block;margin:15px auto;text-align:center;color:#fff!important;font-size:18px;background:#ddca9d;}
+
+.bg3 .title{margin-top:25px;font-size:16px;color:#333}
+.bg3 .con{width:1100px;margin:0 auto;background: #fff;border-top:1px solid #ddca9d;}
+.notice-p{height:50px;line-height: 60px;margin:0 10px;font-size:18px;font-weight: bold;border-bottom:1px dashed  #ccc;}
+.notice-p>a{width:45px;margin-right:45px;text-align: center;}
+.notice-p>a.active{color:#ddca9d}
+.bg3 .con>ul{padding:0 10px;}
+.bg3 .con>ul li{border-bottom:1px dashed  #ccc;padding:10px 0;}
+.bg3 .con>ul li a{display: block;}
+.bg3 .tag{font-size:16px;color:#fff;padding:2px 6px;border-radius:3px}
+.bg3 .tag1{background: #f55d6b;}
+.bg3 .tag2{background: #e1c483;}
+.bg3 .tag3{background: #5bc359;}
+.news{text-align: center;margin:25px auto}
+.news>a{margin:15px}
+
+.bg4 .con{width:1100px;margin:126px auto; line-height: 200%;}
+/* 登录弹层 */
+.login-bg{z-index: 9998;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;opacity:0.5;filter:alpha(opacity=50);}
+.login-pop{width:540px;height: 466px; z-index:9999;position:fixed;top:50%;left:50%;margin:-233px 0 0 -270px;background: rgba(0,0,0,.7);border-radius: 3px;}
+.login-pop .con{padding: 35px 95px 100px 95px;position: relative;}
+.login-pop .con .close{position: absolute;right: 20px;top: 15px;font-size: 20px;width: 22px;height: 22px;background: url(../images/close.png) no-repeat;}
+.login-pop .con .conTitle{font-size: 20px;color: #fff;text-align: center;line-height: 46px;}
+.login-pop .con input{width: 300px;height: 46px;background: #fff;margin-top: 30px;padding: 0 20px;}
+.login-pop .con a.forget{text-align: right;color: #fff;font-size: 12px;display: block;padding: 10px 15px 0 0;}
+.login-pop .con .pop-btn{display: block;width: 340px;height: 46px;line-height: 46px;text-align: center;font-size: 24px;color: #fff;border-radius: 5px;}
+.login-pop .con .login-btn{background: #ddca9d;margin-top: 40px;}
+.login-pop .con .reg-btn{background: #7698f8;margin-top: 20px;}
+/*# sourceMappingURL=index.css.map */

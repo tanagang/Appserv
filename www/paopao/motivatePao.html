@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>账户中心-addPao</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myExcit.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+	</head>
+	<body>
+		
+		<!--公共头部-->	
+		<div id="header2"></div>
+		
+		<div class="myExcit">
+			<!--我的泡泡-->
+			<div class="parttenFix parttenFix-l sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgleft" /></a>
+			</div>
+			<div class="parttenFix parttenFix-r sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgright" /></a>
+			</div>
+			<!--我的泡泡-->
+			<div class="myExcit-title sm-hidden">激励泡泡</div>
+			<div class="myExcit-get">
+				<div class="myExcit-get-title">获取奖励</div>
+				<div class="myExcit-get-order">
+					<label>POLO衫编号：<input type="text" id="poloId" value="" placeholder="请输入您购买POLO衫编号" /></label><br><br>
+					<style>
+						.lx label{margin-right:15px}
+						.lx input{width:auto;height:16px;line-height: 16px;width:16px;margin-right:5px;vertical-align: -2px;}
+					</style>
+					<div class="mclearfix lx">
+						<p class="fl">希望支持泡泡类型：</p>
+						<label><input type="radio" name="t" value="00" >进步商业</label>
+						<label><input type="radio" name="t" value="01" >杜绝童乞</label>
+						<label><input type="radio" name="t" value="02" >救急精神</label>
+					</div>
+					<p class="error hidden" style="padding-left:100px">fd</p>
+					<a href="javascript:void(0)" class="myExcitOrderSub">提交</a>
+				</div>
+				
+				<div class="myExcit-get-title hide">购买POLO衫</div>
+				<div class="productgout hide">
+					<div class="productgo">
+						<div>快去天猫泡泡店购买POLO支持视频，</div>
+						<div class="productgohf">帮助更多需要帮助的人吧 &nbsp;<a href="https://paopao.tmall.com">https://paopao.tmall.com</a></div>
+					</div>
+				</div>
+			</div>
+			<div class="myExcit-mine">
+				<div class="myExcit-get-title">泡泡积分：<span id="countPoint">0</span>分</div>
+				
+				<div class="myExcit-mine-tab">
+					<ul class="clearfix">
+						<li class="on">激励流水</li>
+					</ul>
+				</div>
+				<div class="myExcit-mine-all">
+					<div class="myExcit-mine-list">
+						<table cellpadding="0" cellspacing="0" >
+							<thead>
+								<tr>
+									<th width="20%">时间</th>
+									<th width="20%" class="sm-hidden pad-hidden">类型</th>
+									<th width="30%" >POLO衫编号</th>
+									<th width="15%">泡泡积分ID</th>
+									<th width="15%">支持泡泡ID</th>
+								</tr>
+								</thead>
+							<tbody>
+								
+								<tr>
+									<td >2015-10-22 14:07:02</td>
+									<td class="sm-hidden pad-hidden">支出</td>
+									<td>--</td>
+									<td>--</td>
+									<td class="sm-hidden pad-hidden">--</td>
+								</tr>
+								
+							</tbody>
+						</table>
+						<p class="noData hide">暂无数据...</p>
+						<div class="page hide">
+							<span class="count sm-hidden">记录总数：23条</span>
+							<span class="curPage">当前：1/3页</span>
+							<a href="javascript:void(0)" rel="0">首页</a><span>|</span>
+							<a href="javascript:void(0)" rel="prev">上页</a><span>|</span>
+							<a href="javascript:void(0)" rel="next">下页</a><span>|</span>
+							<a href="javascript:void(0)" rel="1">尾页</a>
+							<input type="text" id="pageGo" class="sm-hidden"><a href="javascript:void(0)" id="go" class="sm-hidden"> Go</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div id="footer"></div>
+		<script src="js/myCenter.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
+<script>
+	var pagenum = 1;
+	var pagesize = 10;
+	$(function(){
+		//获取奖励
+		$(".myExcitOrderSub").click(function(){
+			var poloId = $("#poloId").val();
+			var expectType = $(".lx input:checked").val();
+			if(expectType==undefined){
+				alert("希望支持泡泡类型");return;
+			}
+			if(poloId==""){alert("请输入polo衫编号！");return}
+			$.ajax({
+				type:"post",
+				dataType:dataType, 
+				url:url+"rewarded/getRewardedByOrder.json",
+				data:{orderId:poloId,expectType:expectType},
+				success:function(data){
+					if(data.respCode=="9999"){
+						$("p.error").removeClass("hidden").html(data.respMsg);
+					}else if(data.respCode=="0000"){
+						alert("泡泡积分获取成功");
+						$("#countPoint").html(data.currentPoins);
+						$("#poloId").val("");
+						$("p.error").addClass("hidden");
+						getMypaopao(pagenum,pagesize);
+					}
+				}
+			});
+		});
+		getMypaopao(pagenum,pagesize);
+	});
+	function getMypaopao(pagenum,pagesize){
+		//激励流水
+		$.ajax({
+			type:"post",
+			dataType:dataType, 
+			url:url+"rewarded/myRewarded.json",
+			data:{pageNum:pagenum,pageSize:pagesize},
+			success:function(data){
+				console.log(data);
+				var str = '';
+				$.each(data.records,function(idx,el){
+					setPage(data,pagenum,pagesize);
+					var s = el.pointsType=="00" ? "获得" : "消费"; //积分类型
+					var s2 = el.orderId==undefined ? "--" : el.orderId;//polo衫编号
+					var s3 = el.vidioId==undefined ? "--" : el.vidioId;//支持泡泡ID
+					
+					str += '<tr>';
+					str += '	<td>'+el.createdTime+'</td>';
+					str += '	<td class="sm-hidden pad-hidden">'+s+'</td>';
+					str += '	<td>'+s2+'</td>';
+					str += '	<td>'+el.pointsId+'</td>';
+					str += '	<td>'+s3+'</td>';
+					str += '</tr>';
+				});
+				$("#countPoint").html(data.countPoins);
+				$(".myExcit-mine-list table tbody").html(str);
+			}
+		});
+	}
+	goPage('getMypaopao',pagenum,pagesize)
+	//左右两侧广告图片
+	ad("00,01");
+</script>

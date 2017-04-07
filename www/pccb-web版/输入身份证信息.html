@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/style.css" />
+<link href="css/mobiscroll.custom-2.5.0.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/mobiscroll.js" ></script>
+<script type="text/javascript" src="js/mobiscroll.datetime.js" ></script>
+</head>
+<body class="fff">
+	<header>
+		<a href="javascript:void(0)"><img src="images/back.png" height="20" width="12"></a>
+		开通易极付
+	</header>
+	<img src="images/banner.png" class="banner">
+   <section>
+   		<nav>
+   			<a href="javascript:void(0)" class="active">1.输入身份证信息</a>
+   			<a href="javascript:void(0)">2.确认信息</a>
+   		</nav>
+   		<form class="form-open" id="formOpen" action="确认信息.html">
+   			<div>
+   				<input type="text" placeholder="手机号" required pattern="^[0-9]*[1-9][0-9]*$"/>
+   				<p class="error">提示用户输入的格式（如果不需要，可以不填）</p>
+   			</div>
+			<div>
+   				<input type="text" placeholder="真实姓名" required />
+   				<p class="error"></p>
+   			</div>
+   			<div>
+   				<input type="text" placeholder="身份证号码" required />
+   				<p class="error"></p>
+   			</div>
+   			<div class="box">
+   				<input type="text" placeholder="年/月/日"  required class="dateInput flex"  />
+   				<label class="chk label-cq"><span><input type="checkbox" /></span>长期</label>
+   			</div>
+   			<p class="info">
+               到期时间以距今为止最后一次办理时间为准<br/>
+               没有到期时间，选择长期；若有，必须填写</p>
+   			<p><input type="submit" class="btn" value="下一步">
+            </p>
+   			<p class="xy"><label class="chk"><span><input type="checkbox" /></span>同意</label><a href="#">易极付托管协议</a></p>
+   		</form>
+   </section>
+</body>
+</html>
+<script>
+    $(function(){
+         $(".chk input").click(function(e){
+             var flag = $(this).prop("checked");
+             var chk = $(this).closest('.chk');
+             flag===true ? chk.addClass("chk-active"):chk.removeClass("chk-active");
+         });
+        var newjavascript={
+            plugdatetime:function ($dateTxt,type) {
+                  //var curr = new Date().getFullYear();
+                  var opt = {}
+                  opt.time = {preset : type};
+                  opt.date = {
+                     preset : type, 
+                     minDate: new Date(2010,02,02,00,00), 
+                     maxDate: new Date(2020,11,30,24,59), 
+                     stepMinute: 1  
+                  };
+                  opt.datetime = { 
+                     preset : type, 
+                     minDate: new Date(2010,02,02,00,00), 
+                     maxDate: new Date(2020,12,31,24,59), 
+                     stepMinute: 1  
+                  };
+                  $dateTxt.scroller('destroy').scroller($.extend(opt[type], {
+                     theme: "android-ics light",//default,android-ics light,android-ics,ios,sense-ui,wp light,wp
+                     mode: "scroller",
+                     display: "modal",
+                     lang: "zh",
+                     monthText: "月",
+                     dayText: "日",
+                     yearText: "年",
+                     hourText: "时",
+                     minuteText: "分",
+                     ampmText:"上午/下午",
+                     timeFormat: 'HH:ii',
+                     timeWheels: 'HHii',
+                     setText: '确定',
+                     cancelText: '取消',
+                     dateFormat: 'yyyy-mm-dd', // 日期格式
+                     dateOrder: 'yymmdd' //面板中日期排列格
+                  })
+               );
+            }
+         }
+      newjavascript.plugdatetime($(".dateInput"), "date");
+    });
+</script>
+
+
+
+
+
+
+
+
+
+

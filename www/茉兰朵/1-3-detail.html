@@ -1,0 +1,131 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/swipe.js"></script>
+</head>
+
+<body class="eee">
+<header>
+	<div id='mySwipe' class='swipe'>
+      <ul class='swipe-wrap'>
+        <li><img src="images/temp/img2.jpg" style="width:100%;" title="0"></li>
+        <li><img src="images/temp/img2.jpg" style="width:100%;" title="1"></li>
+		<li><img src="images/temp/img2.jpg" style="width:100%;" title="2"></li>
+        <li><img src="images/temp/img2.jpg" style="width:100%;" title="3"></li>
+      </ul>
+       <p id="dot" class="bg"></p>
+    </div>
+    <p class="detail">茉兰朵　恋蔷薇活性亲肤纯棉四件套</p>
+</header>
+ <section id="section2">
+ 	<div class="block-rmpl">
+ 		<p class="title">热门评论<a href="#">全部评论(228)</a></p>
+        <dl>
+        	<dt>小李<time>2014.11.28</time></dt>
+            <dd>宝贝手感很好，盖在身上舒服透气。</dd>
+        </dl>
+        <dl>
+        	<dt>老王<time>2014.11.28</time></dt>
+            <dd>第二次购买，正好闺蜜过生日，送她做礼物，闺蜜好开心，微信上买这个真划算！</dd>
+        </dl>
+    </div>
+    
+    <div class="block-bbxj">
+    	 <p class="title">宝贝细节</p>
+         <img src="images/temp/img3.jpg" />
+    </div>
+    <style type="text/css">
+		.shop-car{padding:20px 10px;font-size:14px;background:#fff}
+		.shop-car .flex{ text-align:center}
+		.shop-car a{border:1px solid #eee;width:90px; text-align:center;height:30px; line-height:30px;display:block;border-radius:5px;color:#CB2A7F; box-shadow:0px 2px 2px #ccc}
+		.shop-car .flex:last-child a{background:#CB2A7F;color:#fff}
+		.shop-car .flex:first-child{height:30px; line-height:30px;color:#CB2A7F;font-size:16px }
+	</style>
+     <div class="box shop-car">
+     	<div class="flex">￥2198.00</div>
+        <div class="flex"><a href="#">加入购物车</a></div>
+        <div class="flex"><a href="#">购买</a></div>
+     </div>
+ </section>
+ <footer class="box">
+    	<div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/sc_active.png" width="22" height="22" /></dt>
+                    <dd class="hover">商城</dd>
+                </dl>
+            </a>
+         </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/ss.png"  width="27" height="22"/></dt>
+                    <dd>搜索</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#">
+                <dl>
+                    <dt><img src="images/gwc.png"  width="25" height="22" /></dt>
+                    <dd>购物车</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/wd.png"  width="22" height="22"/></dt>
+                    <dd>我的</dd>
+                </dl>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+	var elem = document.getElementById('mySwipe');
+	var size=$(".swipe-wrap li").size();
+	
+	var str='';
+   	for(var i=0;i<size;i++){
+	   str+='<img src="images/dot2.png" width="8" />';
+	}
+	str+='<a href="#" id="collect" data-rel="0"><img src="images/collect.png" width="25" /></a>';
+	$("#dot").html(str);
+	$("#dot img").eq(1).attr("src","images/dot1.png");
+	window.mySwipe = Swipe(elem, {
+	  startSlide:1,
+	  auto: 5000,
+	  continuous: true,
+	   disableScroll: true,
+	  // stopPropagation: true,
+	   callback: function(index, element) {
+		   var idx=$(element).find("img").attr("title");
+		   $("#dot>img").attr("src","images/dot2.png");
+		   $("#dot>img").eq(idx).attr("src","images/dot1.png");
+		},
+	  // transitionEnd: function(index, element) {}
+	});
+	$(document).on("click","#collect",function(){
+		var rel=$(this).attr("data-rel");
+		if(rel==0){
+			$(this).attr("data-rel",1);
+			$(this).find("img").attr("src","images/collect_active.png");	
+		}else{
+			$(this).attr("data-rel",0);
+			$(this).find("img").attr("src","images/collect.png");
+		}
+	});
+</script>
+

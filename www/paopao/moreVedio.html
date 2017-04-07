@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>moreVedio</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/pubu.css" />
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/public.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<!--公共头部-->	
+		<div id="header"></div>
+	   	<!--main-->
+		<div class="pubuMain wd1000">
+			<div class="sift hide sm-hidden">
+				<p class="fl" id="ss">
+					筛选条件 >
+					<span class="s1 hide"><i></i><a href="javascript:void(0)">×</a></span>
+					<span class="s2 hide"><i></i><a href="javascript:void(0)">×</a></span>
+					<span class="s3 hide"><i></i><a href="javascript:void(0)">×</a></span>
+					<span class="s4 hide"><i></i><a href="javascript:void(0)">×</a></span>
+				</p>
+				<a href="javascript:void(0)" class="fr" id="clearC">全部清除</a>
+			</div>
+			<div class="choose pr clearfix sm-hidden">
+				<ul id="btnChoose">
+					<li><a href="javascript:void(0)">∨ 分类</a></li>
+					<li><a href="javascript:void(0)">∨ 性别</a></li>
+					<li><a href="javascript:void(0)">∨ 年龄</a></li>
+					<li><a href="javascript:void(0)">∨ 地区</a></li>
+				</ul>
+				<div class="ch ch1 hide">
+					<a href="javascript:void(0)" vidioType="D">进步商业</a>
+					<a href="javascript:void(0)" vidioType="C">杜绝童乞</a>
+					<a href="javascript:void(0)" vidioType="G">救急精神</a>
+				</div>
+				<div class="ch ch2 hide">
+					<a href="javascript:void(0)" gender="M">男</a>
+					<a href="javascript:void(0)" gender="F">女</a>
+					<a href="javascript:void(0)" gender="O">不确定</a>
+				</div>
+				<div class="ch ch3 hide">
+					<a href="javascript:void(0)" ageGroup="00">0~4岁</a>
+					<a href="javascript:void(0)" ageGroup="01">5~9岁</a>
+					<a href="javascript:void(0)" ageGroup="02">10~14岁</a>
+				</div>
+				<div class="ch ch4 hide">
+					<div class="clearfix">
+						<a href="javascript:void(0)" code="110000">北京市</a>
+						<a href="javascript:void(0)" code="310000">上海市</a>
+						<a href="javascript:void(0)" code="120000">天津市</a>
+						<a href="javascript:void(0)" code="500000">重庆市</a>
+					</div>
+					<div class="province clearfix">
+						<a href="javascript:void(0)" code="230000">黑龙江省</a>
+						<a href="javascript:void(0)" code="220000">吉林省</a>
+						<a href="javascript:void(0)" code="210000">辽宁省</a>
+						<a href="javascript:void(0)" code="130000">河北省</a>
+						<a href="javascript:void(0)" code="610000">陕西省</a>
+						<a href="javascript:void(0)" code="140000">山西省</a>
+						<a href="javascript:void(0)" code="370000">山东省</a>
+						<a href="javascript:void(0)" code="320000">江苏省</a>
+						<a href="javascript:void(0)" code="330000">浙江省</a>
+						<a href="javascript:void(0)" code="350000">福建省</a>
+						<a href="javascript:void(0)" code="410000">河南省</a>
+						<a href="javascript:void(0)" code="340000">安徽省</a>
+						<a href="javascript:void(0)" code="420000">湖北省</a>
+						<a href="javascript:void(0)" code="360000">江西省</a>
+						<a href="javascript:void(0)" code="430000">湖南省</a>
+						<a href="javascript:void(0)" code="4420000">广东省</a>
+						<a href="javascript:void(0)" code="530000">云南省</a>
+						<a href="javascript:void(0)" code="520000">贵州省</a>
+						<a href="javascript:void(0)" code="510000">四川省</a>
+						<a href="javascript:void(0)" code="620000">甘肃省</a>
+						<a href="javascript:void(0)" code="630000">青海省</a>
+						<a href="javascript:void(0)" code="460000">海南省</a>
+						<a href="javascript:void(0)" code="710000">台湾省</a>
+					</div>
+					<div class="clearfix zzq">
+						<a href="javascript:void(0)" code="640000">宁夏自治区</a>
+						<a href="javascript:void(0)" code="540000">西藏自治区</a>
+						<a href="javascript:void(0)" code="150000">内蒙古自治区</a>
+						<a href="javascript:void(0)" code="450000">广西壮族自治区</a>
+						<a href="javascript:void(0)" code="650000">新疆维吾尔族自治区</a>
+					</div>
+					<div class="clearfix xzq">
+						<a href="javascript:void(0)" code="810000">香港特别行政区</a>
+						<a href="javascript:void(0)" code="820000">澳门特别行政区</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="choose choose2 pr clearfix hide sm-visible">
+				<ul id="btnChoose2">
+					<li><a href="javascript:void(0)">分类<i>▼</i></a></li>
+					<li><a href="javascript:void(0)">性别<i>▼</i></a></li>
+					<li><a href="javascript:void(0)">年龄<i>▼</i></a></li>
+					<li><a href="javascript:void(0)">地区<i>▼</i></a></li>
+				</ul>
+
+				<div class="ch-m">
+					<div class="chm ch-m1 hide clearfix">
+						<a href="javascript:void(0)" vidioType="D">进步商业</a>
+						<a href="javascript:void(0)" vidioType="C">杜绝童乞</a>
+						<a href="javascript:void(0)" vidioType="G">救急精神</a>
+					</div>
+					<div class="chm ch-m2 hide clearfix">
+						<a href="javascript:void(0)" gender="M">男</a>
+						<a href="javascript:void(0)" gender="F">女</a>
+						<a href="javascript:void(0)" gender="O">不确定</a>
+					</div>
+					<div class="chm ch-m3 hide clearfix">
+						<a href="javascript:void(0)" ageGroup="00">0~4岁</a>
+						<a href="javascript:void(0)" ageGroup="01">5~9岁</a>
+						<a href="javascript:void(0)" ageGroup="02">10~14岁</a>
+					</div>
+					<div class="chm ch-m4 hide clearfix">
+							<p class="clearfix">直辖市</p>
+							<div class="clearfix">
+								<a href="javascript:void(0)" code="110000">北京市</a>
+								<a href="javascript:void(0)" code="310000">上海市</a>
+								<a href="javascript:void(0)" code="120000">天津市</a>
+								<a href="javascript:void(0)" code="500000">重庆市</a>
+							</div>
+							<p class="clearfix">其他省份</p>
+							<div class="clearfix">
+								<a href="javascript:void(0)" code="230000">黑龙江省</a>
+								<a href="javascript:void(0)" code="220000">吉林省</a>
+								<a href="javascript:void(0)" code="210000">辽宁省</a>
+								<a href="javascript:void(0)" code="130000">河北省</a>
+								<a href="javascript:void(0)" code="610000">陕西省</a>
+								<a href="javascript:void(0)" code="140000">山西省</a>
+								<a href="javascript:void(0)" code="370000">山东省</a>
+								<a href="javascript:void(0)" code="320000">江苏省</a>
+								<a href="javascript:void(0)" code="330000">浙江省</a>
+								<a href="javascript:void(0)" code="350000">福建省</a>
+								<a href="javascript:void(0)" code="410000">河南省</a>
+								<a href="javascript:void(0)" code="340000">安徽省</a>
+								<a href="javascript:void(0)" code="420000">湖北省</a>
+								<a href="javascript:void(0)" code="360000">江西省</a>
+								<a href="javascript:void(0)" code="430000">湖南省</a>
+								<a href="javascript:void(0)" code="4420000">广东省</a>
+								<a href="javascript:void(0)" code="530000">云南省</a>
+								<a href="javascript:void(0)" code="520000">贵州省</a>
+								<a href="javascript:void(0)" code="510000">四川省</a>
+								<a href="javascript:void(0)" code="620000">甘肃省</a>
+								<a href="javascript:void(0)" code="630000">青海省</a>
+								<a href="javascript:void(0)" code="460000">海南省</a>
+								<a href="javascript:void(0)" code="710000">台湾省</a>
+							</div>
+							<p>自治区</p>
+							<div class="clearfix zzq">
+								<a href="javascript:void(0)" code="640000">宁夏自治区</a>
+								<a href="javascript:void(0)" code="540000">西藏自治区</a>
+								<a href="javascript:void(0)" code="150000">内蒙古自治区</a>
+								<a href="javascript:void(0)" code="450000">广西壮族自治区</a>
+								<a href="javascript:void(0)" code="650000">新疆维吾尔族自治区</a>
+							</div>
+							<p>特别行政去</p>
+							<div class="clearfix xzq">
+								<a href="javascript:void(0)" code="810000">香港特别行政区</a>
+								<a href="javascript:void(0)" code="820000">澳门特别行政区</a>
+							</div>
+					</div>
+					<div class="btnSet hide">
+						<a href="javascript:void(0)" id="reset">重置</a>
+						<a href="javascript:void(0)" id="sub" class="active">关闭</a>
+					</div>
+				</div>
+			</div>
+			<div id="con1_1" >
+			    <div class="product_list">
+			    	<a href="navOneDetail.html" class="listImg clearfix">
+			    		<img src="img/pubu/img1.jpg">
+			    		<i>4.5</i>
+			    	</a>
+			    	<a href="javascript:void(0)" class="support" class="txt-center" ><img src="img/footer-bg.png" width="32" />
+						<br><span class="hide" style="color:#fff"></span>
+					</a>
+			    	<div class="listTop clearfix">
+			    		<span class="name fl">SPID1234</span>
+			    		<div class="fr">
+				    		<span><i class="firsting"></i>82</span>
+				    		<span><i class="seconding"></i>82</span>
+				    		<span><i class="thirding"></i>82</span>
+			    		</div>
+			    	</div>
+			    	<div class="listMain sm-hidden">
+						<p class="mainText clearfix">在哪里？具体地址在哪里？</p>
+						<p class="address ellipsis"><i></i>上海市浦东新区世纪大道1500号东方大厦</p>
+			    		<p class="time">2016-045-19 15:36</p>
+			    	</div>
+			    	<div class="listBottom sm-hidden">
+						<img src="img/headImg.jpg" class="fl" />
+						<div class="fl">
+							<p class="blue">一切都过去了</p>
+						</div>
+						<button class="fr">质疑</button>
+			    	</div>
+			    </div>
+		</div>
+		<div class="mask2 sm-hidden md-hidden"></div>
+		</div>
+		<!--公共脚部-->
+		<div id="footer"></div>
+	</body>
+</html>
+<div class="mask mask4 hide">
+	<div class="zy">
+		<p class="clearfix"><a href="javascript:void(0)" class="close close1">×</a></p>
+		<p class="title ellipsis">输入您对<span>123132</span>的质疑</p>
+		<textarea id="zyContent"></textarea>
+		<p class="btn3"><a href="javascript:void(0)" class="sub">提交</a><a href="javascript:void(0)" class="close close2">关闭</a></p>
+	</div>
+</div>
+<div class="mask mask3 hide">
+	<div class="rz">
+		<p class="title">您还没有认证!</p>
+		<p class="btn3">
+			<a href="mSafe.html" class="sub">去认证</a>
+			<a href="javascript:void(0)" class="close close2">关闭</a>
+		</p>
+	</div>
+</div>
+<script type="text/javascript" src="js/pubu.js"></script>
+<script>
+	/*这里一定要用onload，因为图片不加载完就不知道高度值*/
+	window.onload = function() {
+		//瀑布流
+		liuxiaofan();
+	  	$(window).scroll(function(){
+	  		var obj = $("#con1_1 .product_list:last");
+	  		var lastH = Math.floor(obj.offset().top+obj.height()/2);
+	  		var scrollT = $(document).scrollTop()+ $(window).height();
+	  		if(scrollT>lastH){
+		    	//$("#con1_1").append("<div class='product_list' style='height:300px;background:#f60;'>aaa</div>");
+		    	//ajax再次操作
+		    	liuxiaofan();
+		    }
+	  	});
+	};
+</script>
+<script>
+	   	$(function(){
+	   		/*大屏使用的筛选方法*/
+	   		$("#btnChoose li a").click(function(){
+	   			var idx = $(this).closest("li").index()+1;
+	   			$("#btnChoose li a").removeClass("active");
+	   			$(this).addClass("active");
+	   			$(".ch.ch"+idx).slideDown(200).siblings(".ch").slideUp(0);
+	   		});
+	   		//子条件选择
+	   		$(".ch a").click(function(){
+	   			var idx = $(this).closest(".ch").index();
+	   			var text = $(this).text();
+	   			$(".sift").removeClass("hide");
+	   			$(this).closest(".ch").find("a").removeClass("active");
+	   			$(this).addClass("active");
+	   			$("#ss .s"+idx).addClass("inline").removeClass("hide").find("i").html($(this).html());
+	   			//同步小屏
+	   			$("#btnChoose2 li").eq(idx-1).find("a").addClass("on");
+	   			$(".ch-m"+idx).find("a").each(function(){
+	   				if($(this).text()==text){
+	   					$(this).addClass("active");
+	   				}
+	   			});
+	   			
+	   			var vidiotype=$(".ch1 a[class=active]").attr("vidioType");
+	   			var gender = $(".ch2 a[class=active]").attr("gender");
+	   			var agegroup = $(".ch3 a[class=active]").attr("agegroup");
+	   			var province = $(".ch4 a[class=active]").attr("code");
+	   			loadVedio(vidiotype,gender,agegroup,province);
+	   		
+	   		});
+	   		//单个标签删除
+	   		$("#ss span a").click(function(){
+	   			$(this).closest("span").addClass("hide").removeClass("inline");
+	   			var idx = $(this).closest("span").index()+1;
+	   			$(".ch.ch"+idx).find("a").removeClass("active");
+	   			var flag = false;
+	   			$("#ss span").each(function(idx,el){
+	   				if($(el).hasClass("inline")){
+	   					flag = true;
+	   				}
+	   			});
+	   			if(!flag){
+	   				$(".sift").addClass("hide");
+	   			}
+	   			//同步小屏
+	   			$("#btnChoose2 li").eq(idx-1).find("a").removeClass("on")
+	   			$(".ch-m"+idx).find("a").removeClass("active");
+	   			$("#ss .s"+idx).addClass("hide").removeClass("inline");
+	   			
+	   			var vidiotype=$(".ch1 a[class=active]").attr("vidioType");
+	   			var gender = $(".ch2 a[class=active]").attr("gender");
+	   			var agegroup = $(".ch3 a[class=active]").attr("agegroup");
+	   			var province = $(".ch4 a[class=active]").attr("code");
+	   			loadVedio(vidiotype,gender,agegroup,province);
+	   		});
+	   		//全部清除
+	   		$("#clearC").click(function(){
+	   			$("#ss span").removeClass("inline").addClass("hide");
+	   			$(".ch").find("a").removeClass("active");
+	   			$(".sift").addClass("hide");
+	   			//同步小屏
+	   			$("#btnChoose2 li").find("a").removeClass("on")
+	   			$(".chm").find("a").removeClass("active");
+	   			$("#ss span").addClass("hide").removeClass("inline");
+	   			loadVedio();
+	   		});
+	   		//阻止事件冒泡
+	   		$(".choose").click(function(){
+	   			return false;
+	   		});
+	   		//选中空白部分收起下拉
+	   		$("body:not(.choose)").click(function(){
+	   			$(".ch").slideUp(50);
+	   		});
+	   		
+	   		
+	   		/*中小屏和手机使用的筛选方法*/
+	   		//条件选择
+			$("#btnChoose2 li a").click(function(){
+	   			var idx = $(this).closest("li").index()+1;
+	   			$("#btnChoose2 li a").removeClass("active");
+	   			$(this).addClass("active");
+	   			$(".ch-m"+idx).slideDown(100).siblings(".chm").slideUp(0);
+	   			$(".btnSet").removeClass("hide");
+	   			$(".mask2").removeClass("sm-hidden");
+	   		});
+	   		//子条件选择
+	   		$(".chm a").click(function(){
+	   			var idx2 = $(this).closest(".chm").index();
+	   			$(this).closest(".chm").find("a").removeClass("active");
+	   			$(this).addClass("active");
+	   			$(".ch-m"+(idx2+1)).find("a").each(function(idx,el){
+	   				if($(el).hasClass("active")){
+	   					$("#btnChoose2 a:eq("+idx2+")").addClass("on");
+	   				}
+	   			});
+	   			//同步大屏
+	   			var i = idx2+1;
+	   			$("#ss .s"+i).removeClass("hide").addClass("inline").find("i").html($(this).html());
+	   			var flag = false;
+	   			$("#ss span").each(function(idx,el){
+	   				if($(el).hasClass("inline")){
+	   					flag = true;
+	   				}
+	   			});
+	   			if(!flag){
+	   				$(".sift").addClass("hide");
+	   			}else{
+	   				$(".sift").removeClass("hide");
+	   			}
+	   			
+	   			var vidiotype=$(".ch-m1 a[class=active]").attr("vidioType");
+	   			var gender = $(".ch-m2 a[class=active]").attr("gender");
+	   			var agegroup = $(".ch-m3 a[class=active]").attr("agegroup");
+	   			var province = $(".ch-m4 a[class=active]").attr("code");
+	   			loadVedio(vidiotype,gender,agegroup,province);
+	   		});
+	   		//重置
+	   		$("#reset").click(function(){
+	   			var idx = $("#btnChoose2 li a[class~=active]").removeClass("on").closest("li").index()+1;
+	   			$(".ch-m"+idx).find("a").removeClass("active");
+	   			//同步大屏
+	   			$("#ss .s"+idx).addClass("hide").removeClass("inline");
+	   			
+	   			var vidiotype=$(".ch1 a[class=active]").attr("vidioType");
+	   			var gender = $(".ch2 a[class=active]").attr("gender");
+	   			var agegroup = $(".ch3 a[class=active]").attr("agegroup");
+	   			var province = $(".ch4 a[class=active]").attr("code");
+	   			loadVedio(vidiotype,gender,agegroup,province);
+	   		});
+	   		//确定
+	   		$("#sub").click(function(){
+	   			$(".chm").slideUp(100);
+	   			$(".btnSet").addClass("hide");
+	   			$("#btnChoose2 li a").removeClass("active");
+	   			$(".mask2").addClass("sm-hidden");
+	   		});	 
+	   		
+	   		loadVedio();
+	   		function loadVedio(vidioType,gender,ageGroup,province){
+	   			$.ajax({
+					type:"post",
+					dataType:dataType, 
+					url:url+"video/getVideosByPage.json",
+					data:{vidioType:vidioType,gender:gender,ageGroup:ageGroup,province:province,pageSize:1000000,pageNum:1},
+					success:function(data){
+						var str = '';
+						console.log(data);
+						$.each(data.records, function(idx,el) {
+							str += '<div class="product_list">';
+						    str += '	<a href="navOneDetail.html?vidioId='+el.id+'" class="listImg clearfix">';
+						    str += '		<img src="'+imgUrl+el.vidioPic+'">';
+						    if(el.level=="0"){
+						    	 str += '		<i>0</i>';
+						    }else{
+						    	 str += '		<i>'+parseFloat(el.level).toFixed(1)+'</i>';
+						    }
+						    str += '	</a>';
+						    
+						    if(el.status=="00"){
+						    	str += ' 	<a href="javascript:void(0)" class="support2" class="txt-center" ><img src="img/footer-bg.png" width="24" />';
+								str += '		<br><span style="color:#fff">质疑期<br>不能被支持</span>';
+								str += '	</a>';
+						    }else if(el.status=="01"){
+						    	 str += ' 	<a href="javascript:void(0)" class="support2" class="txt-center" ><img src="img/footer-bg.png" width="24" />';
+								 str += '		<br><spanstyle="color:#fff">未被支持</span>';
+								 str += '	</a>';
+						    }else if(el.status=="02"){
+						    	 str += ' 	<a href="javascript:void(0)" class="support2" class="txt-center" ><img src="img/header-nav.png" width="24" />';
+								 str += '		<br><span style="color:#fff">'+el.supperUserName+'<br/>支持了该视屏</span>';
+							     str += '	</a>';
+						    }
+						    str += '	<div class="listTop clearfix">';
+						    str += '		<span class="name fl">'+el.id+'</span>';
+						    str += '		<div class="fr">';
+							str += '    		<span><i class="firsting"></i>'+el.pageViews+'</span>';
+							str += '    		<span><i class="seconding"></i>'+el.collectionQuantity+'</span>';
+							//str += '    		<span><i class="thirding"></i>'+el.shareQuantity+'</span>';
+							str += '    		<span><i class="thirding"></i></span>';
+						    str += '		</div>';
+						    str += '	</div>';
+						    str += '	<div class="listMain sm-hidden">';
+							str += '		<p class="mainText clearfix">'+el.description+'</p>';
+							str += '		<p class="address ellipsis"><i></i>'+el.province+el.city+el.district+el.address+'</p>';
+						    str += '		<p class="time">'+el.uploadTime+'</p>';
+						    str += '	</div>';
+						    str += '	<div class="listBottom sm-hidden">';
+							if(el.portrait){
+						    	str += '		<img src="'+imgUrl+el.portrait+'" class="fl" />';
+						    }else{
+						    	str += '		<img src="img/actorimg.png" class="fl" />';
+						    }
+							str += '		<div class="fl">';
+							if(el.nickName==undefined||el.nickName==""){
+								str += '			<p class="blue">未知</p>';
+							}else{
+								str += '			<p class="blue">'+el.nickName+'</p>';
+							}
+							str += '		</div>';
+							if(el.status=="00"){
+								str += '		<button class="fr white" rel="'+el.id+'">质疑</button>';
+							}
+						    str += '	</div>';
+						    str += '</div>';
+						});
+						$("#con1_1").html(str);
+					},
+					complete:function(){
+						liuxiaofan();
+					}
+				});
+	   		}
+	   		
+	   	});
+	   	//质疑按钮
+		$(document).on("click","button.white",function(){
+			if(userid==null||userid==""){
+				alert("您还没有登录");
+				return;
+			}
+			//是否认证
+			if($.cookie("identify")!=1){
+				$(".mask3").removeClass("hide");
+				return
+			}
+			$(".mask4").removeClass("hide");
+			var vid = $(this).attr("rel")
+			$(".zy .title span").html(vid);
+			$(".zy .sub").attr("rel",vid);
+		});
+		//提交质疑泡泡
+		$(".zy .sub").click(function(){
+			var content = $("#zyContent").val();
+			var vidioId = $(this).attr("rel");
+			if(content==""){
+				alert("请输入质疑的内容...");
+				return;
+			}
+			zyPaoPao(vidioId,content);
+		});
+		$(".close").click(function(){
+			$(".mask").addClass("hide")	
+		});
+</script>

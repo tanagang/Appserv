@@ -1,0 +1,12 @@
+@media all and(max-width: 1118px) {
+/*add your css styles here*/
+	#span{color:blue}
+}
+@media all and(min-width: 400px) and (max-width:900px){
+/*add your css styles here*/
+	#span{color:red}
+}
+@media all and(max-width: 400px) {
+/*add your css styles here*/
+	#span{color:green}	
+}

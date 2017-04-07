@@ -1,0 +1,19 @@
+section{padding:0 10px;margin-top: 10px;background: #fff;}
+header{padding-bottom: 15px;box-sizing: content-box;}
+.person{border-bottom: 1px solid #dfdfdf;padding-bottom: 15px;}
+.img{position: relative;}
+.img img{width: 56px;height: 56px;border-radius: 50%;border: 2px solid #fff;position: absolute;top:-16px;left: 10px;}
+.img input{width: 56px;height: 56px;position: absolute;top:-16px;left: 10px;opacity: 0;}
+.infor{margin-left: 75px;}
+.name p{color: #3674cc;float: left;margin-right: 5px;}
+.name img{width: 16px;height: 12px;float: left;}
+.phone{color: #a8a8a8;font-size: 11px;}
+.content li{position: relative;height: 41px;line-height: 41px;border-bottom: 1px solid #dfdfdf;padding: 0 3px;}
+.content li>a{display: block;overflow: hidden;}
+.content .conleft{float: left;position: relative;color: #494848;}
+.content .conleft small{position: absolute;height: 12px;background: #ff4444;color: #fff;font-size: 9px;line-height: 12px;padding: 0 3px;border-radius: 2px;top: 13px;left: 58px;}
+.content .conright{float: right;margin-right: 12px;color: #a8a8a8;font-size: 11px;}
+.content i{position: absolute;right: 3px;top: 0;color: #dfdfdf;}
+.content .conright p:nth-child(1){margin-top: 5px;}
+.content .conright p{line-height: 16px;text-align: right;color: #a8a8a8;}
+.cred{background: #f44!important;}

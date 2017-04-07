@@ -1,0 +1,130 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>pccb</title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/free.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+    <header class="box">
+        <a href="javascript:void(0)"><img src="images/back.png" height="16" width="9"></a>
+        <p class="flex ellipsis">e投资福利1号</p>
+        <a href="javascript:void(0)"><img src="images/share.png" height="16" width="16"></a>
+    </header>
+    <section>
+        <div class="txt">
+        	<p class="call">30元移动通话费（移动、联通、电信）</p>
+        	<p class="hot">热销10亿，仅限3天，销完即止</p>
+        </div>
+        <div class="img">
+        	<img src="images/phone.jpg">
+        	<div class="price">
+        		<span>300元/1年</span>
+        		<span class="hot">1,000元/3月</span>
+        		<span>10,000元/7天</span>
+        		<a href="#" class="get">免费获取</a>
+        	</div>
+        </div>
+        <div class="ensure clearfix">
+            <div class="yen">
+                <p>本金保障</p>
+                <p>100%兑付</p>
+            </div>
+            <div class="safe">
+                <p>抵押保障</p>
+            </div>
+            <div class="income">
+                <p>稳定收益</p>
+            </div>
+        </div>
+    </section>
+    <nav class="clearfix" rel="3">
+        <a href="javascript:void(0)" class="active">福利信息</a>
+        <a href="javascript:void(0)">详细信息</a>
+        <i></i>
+    </nav>
+    <div class="wrap">
+        <article id="tabCon">
+            <section class="section">
+                <div class="list">
+                    <p class="title"><span>★</span> 优质航空</p>
+                    <p class="content">国际段选用阿提哈德航空公司（EY），现代化机上服务，由上海直飞阿联酋首都阿布扎比，享受轻松亲切之旅。</p>
+                    <dl style="margin-right:8px">
+                    	<dt><img src="images/p1.jpg" height="105" width="140"></dt>
+                    	<dd>撒哈拉大沙漠</dd>
+                    </dl>
+                    <dl>
+                    	<dt><img src="images/p2.jpg" height="105" width="140"></dt>
+                    	<dd>开罗</dd>
+                    </dl>
+                </div>
+            </section>
+             <section class="section">
+                <ul class="detail">
+            		<li>
+            		    <a href="#">
+            		        <span class="conleft">交易记录</span>
+            		        <span class="conright">88888888 笔</span>
+            		        <i>&gt;</i>
+            		    </a>
+            		</li>
+            		<li>
+            		        <span class="conleft">投资期限</span>
+            		        <span class="conright">120 天</span>
+            		</li>
+            		<li>
+            		    <span class="conleft">起购金额</span>
+            		    <span class="conright">5 万元</span>
+            		</li>
+            		<li>
+            		        <span class="conleft">起息日期</span>
+            		        <span class="conright">2015-5-12 (周三)</span>
+            		</li>
+            		<li>
+            		        <span class="conleft">到期日期</span>
+            		        <span class="conright">2015-5-13 (周四)</span>
+            		</li>
+            		<li>
+            		        <span class="conleft">预计到账</span>
+            		        <span class="conright">到期日起2个工作日内</span>
+            		</li>
+            		<li>
+            		        <span class="conleft">相关文件</span>
+            		        <span class="conright">8 个</span>
+            		        <i>&gt;</i>
+            		</li>
+            		<li>
+            		    <a href="#">
+            		        <span class="conleft">担保说明</span>
+            		        <i>&gt;</i>
+            		    </a>
+            		</li>
+        		</ul>
+            </section>
+        </article>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $("nav a").click(function(event) {
+            /* Act on the event */
+            var idx = $(this).index();
+            $(this).closest('nav').find("i").css({
+                left: idx*33.33+"%"
+            });
+            $("#tabCon").css({
+                "transform": 'translateX(-'+idx*33.33+'%)'
+            });
+        });
+    });
+</script>

@@ -1,0 +1,147 @@
+/*addPao*/
+.myShare{
+	position: relative;
+	z-index: 5;
+	width: 958px;
+	border: solid 1px #E3E3E3;
+	margin: 42px auto 90px;
+	background-color: #fff;
+	padding: 0px 20px;
+}
+.myShare-title{
+	font-size: 20px;
+	color: #010101;
+	font-weight: bold;
+	height: 26px;
+	line-height: 26px;
+	margin-top: 25px;
+}
+.myShare-chose{
+	margin-top: 35px;
+	height: 33px;
+	line-height: 33px;
+	border: dotted 1px #E3E9EF;
+	padding: 0px 20px;
+}
+.myShare-chose li{
+	float: left;
+	margin-right: 70px;
+	font-size: 14px;
+	color: #444;
+	cursor: pointer;
+}
+.myShare-chose li i{
+	float: left;
+	width: 14px;
+	height: 14px;
+	background: url(../img/myShare/radio.png) right center no-repeat;
+	margin-top: 10px;
+	margin-right: 8px;
+}
+.myShare-chose li.on i{
+	background: url(../img/myShare/radio.png) left center no-repeat;
+}
+.myShare-chose-all{
+	padding: 35px 0 84px;
+}
+.myShare-chose-list:first-child{
+	display: block;
+}
+.myShare-chose-list{
+	display: none;
+}
+.myShare-chose-list .ipt{
+	overflow: hidden;
+	margin-bottom: 22px;
+}
+.myShare-chose-list .ipt label{
+	float: left;
+	font-size: 14px;
+	color: #444;
+	width: 120px;
+	text-indent: 10px;
+	height: 35px;
+	line-height: 35px;
+}
+.myShare-chose-list .ipt select,
+.myShare-chose-list .ipt input,
+.myShare-chose-list .ipt textarea{
+	padding: 3px 10px;
+	font-size: 14px;
+	color: #777;
+	border: solid 1px #E3E9EF;
+}
+.myShare-chose-list .ipt select{
+	width: 330px;
+	height: 35px;
+	line-height: 35px;
+}
+.myShare-chose-list .ipt input{
+	width: 310px;
+	height: 27px;
+	line-height: 27px;
+}
+.myShare-chose-list .ipt textarea{
+	width: 808px;
+	height: 150px;
+}
+.myShare-chose-list .address label{
+	background: url(../img/myShare/address.png) 10px 50% no-repeat;
+	text-indent: 25px;
+}
+.myShare-chose-list .address select{
+	width: 160px;
+  	margin-right: 6px;
+  	float: left;
+}
+.myShare-chose-list .upVideo{
+	margin-bottom: 22px;
+	border: dotted 1px #E3E9EF;
+	margin-left: 120px;
+}
+.myShare-chose-list .upVideo-title{
+	height: 48px;
+	line-height: 48px;
+	text-indent: 56px;
+	font-size: 14px;
+	color: #444;
+	background: url(../img/myShare/video.png) 20px center no-repeat;
+}
+.myShare-chose-list .upVideo-con{
+	display: none;
+	padding: 23px 20px;
+	border-top: dotted 1px #E3E9EF;
+}
+.myShare-chose-list .radioSelect input{
+	width: auto;
+	display: none;
+}
+.myShare-chose-list .radioSelect{
+	float: left;
+	margin-right: 70px;
+	height: 35px;
+	line-height: 35px;
+	
+}
+.myShare-chose-list .radioSelect i{
+	float: left;
+	width: 14px;
+	height: 35px;
+	margin-right: 6px;
+	background: url(../img/myShare/radio.png) right center no-repeat;
+}
+.myShare-chose-list .radioSelect i.curr{
+	background: url(../img/myShare/radio.png) left center no-repeat;
+}
+.myShare-chose-list .myShareSub{
+	margin-left: 120px;
+	display: block;
+	width: 260px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #234788;
+	font-size: 18px;
+	margin-top: 70px;
+}

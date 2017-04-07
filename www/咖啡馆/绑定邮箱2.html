@@ -1,0 +1,80 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>pccb</title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/tz_style.css" />
+</head>
+<body class="fff">
+    <header class="box">
+         <a href="javascript:void(0)"><img src="images/back.png" height="16" width="9"></a>
+         <p class="flex ellipsis">绑定邮箱</p>
+         <a href="javascript:void(0)"></a>
+    </header>
+    <section class="mt0">
+       <p class="txt-center mt10 mb20 f12"><img src="images/email.png" width="69"></p>
+       <p class="txt-center">1234567@126.com <br><span style="color:#f44">尚未激活</span></p>
+       <form id="formReset" class="mt10" name="formReset" action="">
+            <p class="f12" style="color:#a8a8a8">1. 如果长时间没有收到，请继续点击；</p>
+            <p class="f12" style="color:#a8a8a8">2. 有时候邮件会个别邮箱被屏蔽，请在垃圾中试试。</p>
+            <input type="submit" value="更改邮箱发送" class="btn no-border mt20" >
+            <input type="submit" value="再次发送（剩余时间3分钟）" class="btn no-bg" style="color:#a8a8a8">
+        </form>
+    </section>
+</body>
+
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript">
+$(function(){
+	var account = returnValue(account);
+	var mail = returnValue(mail);
+$('.no-bg').click(function(){
+	var mail = $('.mail').val();
+    $.ajax({
+        url: 'http://192.168.1.198:8086/service?channel=SaveMail&jsonp=?',
+        type: 'POST',
+        dataType: 'jsonp',
+        data: {account: 'c',mail:mail},
+		//在请求之前调用的函数
+		beforeSend:function(){
+			var reg = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/;
+ 			if(reg.test(mail) == false){
+				$('.mail').addClass('no');
+				return false;
+			}else{
+				$('.mail').removeClass('no');
+				$('.mail').addClass('yes');
+				return true;
+			}
+
+		},
+        success: function(data){
+           console.log(data);
+           if(data.code == 1){
+			   location.href ='./绑定邮箱2.html?cacount=18607355002&mail='+mail;
+		   }
+		   else{
+			   alert('绑定失败！');
+		   }
+           
+        },
+    })
+	
+})
+
+
+})
+</script>
+</html>
+
+
+
+

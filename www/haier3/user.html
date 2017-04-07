@@ -1,0 +1,135 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+</head>
+<body>
+<header class="fff">
+     <p class="h50 theme-bg font18 color-fff text-center">
+        <a href="#" class="fl" style="width:40px;">&nbsp;<img src="images/arrow_left2.png" width="11" alt="">&nbsp;</a>
+            掌上ESP
+        <a href="#" class="fr block" style="width:40px;">&nbsp;</a>
+    </p>
+    <div class="pl10 pr10 fff">
+	    <div class="box h45 font16 wait-do">
+	    	<span class="flex block text-center" data-rel="1">待办</span>
+	    	<span class="flex block text-center" data-rel="2">消息</span>
+	    	<span class="flex block text-center" data-rel="3">知识库</span>
+	    </div>
+	    <p class="b-line"></p>
+	</div>
+</header>
+<section id="section1">
+	<a href="#">
+		<table width="100%" class="table-info">
+			<tr>
+				<td colspan="2" class="font12">10/1778856 <span class="fr">2015-02-05 10：06</span></td>
+			</tr>
+			<tr>
+				<td colspan="2">海尔物流系统的成品出入库模块出现数据录入时异常报错</td>
+			</tr>
+			<tr>
+				<td width="40%" class="br"><img src="images/email.png" width="24" style="vertical-align:-4px" />&emsp;等待接收</td>
+				<td><img src="images/user.png"width="22" alt=""></td>
+			</tr>
+		</table>
+	</a>
+	<a href="#">
+		<table width="100%" class="table-info">
+			<tr>
+				<td colspan="2" class="font12">10/1778856 <span class="fr">2015-02-05 10：06</span></td>
+			</tr>
+			<tr>
+				<td colspan="2">海尔内部员工采购系统报错</td>
+			</tr>
+			<tr>
+				<td width="40%" class="br"><img src="images/set.png" width="24"  />&emsp;正在处理</td>
+				<td><img src="images/user.png" width="22" style="vertical-align:-6px" alt="">&emsp;综合管理部 张三</td>
+			</tr>
+		</table>
+	</a>
+	<a href="javascript:void(0)" class="more">加载更多...</a>
+</section>
+<section id="section2">
+	<a href="#">
+		<table width="100%" class="table-info">
+			<tr>
+				<td colspan="2" class="font12">10/1778856 <span class="fr">2015-02-05 10：06</span></td>
+			</tr>
+			<tr>
+				<td colspan="2">海尔物流系统的成品出入库模块出现数据录入时异常报错</td>
+			</tr>
+			<tr>
+				<td width="40%" class="br"><img src="images/email.png" width="24" style="vertical-align:-4px" />&emsp;等待接收</td>
+				<td><img src="images/user.png"width="22" alt=""></td>
+			</tr>
+		</table>
+	</a>
+	<a href="#">
+		<table width="100%" class="table-info">
+			<tr>
+				<td colspan="2" class="font12">10/1778856 <span class="fr">2015-02-05 10：06</span></td>
+			</tr>
+			<tr>
+				<td colspan="2">海尔内部员工采购系统报错</td>
+			</tr>
+			<tr>
+				<td width="40%" class="br"><img src="images/set.png" width="24"  />&emsp;正在处理</td>
+				<td><img src="images/user.png" width="22" style="vertical-align:-6px" alt="">&emsp;综合管理部 张三</td>
+			</tr>
+		</table>
+	</a>
+	<a href="#">
+		<table width="100%" class="table-info">
+			<tr>
+				<td colspan="2" class="font12">10/1778856 <span class="fr">2015-02-05 10：06</span></td>
+			</tr>
+			<tr>
+				<td colspan="2">海尔内部员工采购系统报错</td>
+			</tr>
+			<tr>
+				<td width="40%" class="br"><img src="images/close.png" width="22"  />&emsp;已关闭</td>
+				<td><img src="images/user.png" width="22" style="vertical-align:-6px" alt="">&emsp;综合管理部 张三</td>
+			</tr>
+		</table>
+	</a>
+	<a href="javascript:void(0)" class="more">加载更多...</a>
+</section>
+<section id="section3">
+	<form action="" class="form-os">
+		<a href="#" class="sel"><i>选择系统</i> <img src="images/arrow_right2.png" width="10" class="fr" alt=""></a>
+		<input type="text" placeholder="输入问题关键词" class="text-indent5">
+		<p>
+			<a href="#" class="btn mt20 font16">搜 索</a>
+		</p>
+	</form>
+</section>
+<a href="javascript:void(0)" style="position:fixed;right:10px;bottom:10px"><img src="images/add.png" width="54" height="56" alt=""></a>
+</body>
+</html>
+<script>
+	$(function(){
+		var idx = 0;//0代表待办页面，1代表消息页面，2代表知识库页面
+		$(".wait-do>span").tap(function(){
+			var rel = $(this).attr("data-rel");
+			$(".wait-do>span").removeClass("theme-color");
+			$(this).addClass("theme-color");
+			$("section").css("display","none");
+			$("#section"+rel).css("display","block");
+			$(".b-line").removeClass("trans1 trans2 trans3").addClass("trans"+rel);
+		}).eq(idx).trigger("tap");
+	});
+</script>
+
+
+
+

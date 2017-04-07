@@ -1,0 +1,86 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/lq_style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script src="js/swipe.js"></script>
+</head>
+<body class="bgblue">
+   <header class="box">
+        <a href="javascript:void(0)"><img src="images/back.png" /></a>
+        <p class="flex ellipsis">注册</p>
+        <a href="javascript:void(0)"></a>
+    </header>
+    <section class="mt0" style="padding-bottom:0;margin-bottom:0">
+       <p class="txt-center mb25 logo"><img src="images/logo.png" width="174"></p>
+       <form id="formReset" name="formReset" action="">
+            <div class="login" style="padding-bottom:20px">
+                <p class="pr"><i class="icon1"></i><input type="text" id="account" placeholder="请输入邮箱" /></p>
+                <p class="pr"><i class="icon2"></i><input type="password" id="password" placeholder="请输入密码" /></p>
+                <p class="pr"><i class="icon2"></i><input type="password" id="password2" placeholder="请再次输入密码" /></p>
+                <p class="mt15">
+                    <div class="checkbox-con"> 
+                        <label class="checkbox cbox"></label>
+                        同意<a href="#">《注册会员协议》</a>                    
+                    </div>
+                </p>
+                <p class="mt20"><a href="javascript:void(0)" class="login-btn" id="reg"></a></p>
+                <p class="error" style="text-align: left"></p>
+            </div>
+        </form>
+    </section>
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $("#reg").click(function(event) {
+            var account = $.trim($("#account").val());
+            var password = $.trim($("#password").val());
+            var password = $.trim($("#password2").val());
+
+           //if(reg(account,password,password2)){
+                regUser(account,password);
+            //}
+        });
+       /* //验证
+        function reg(account,password,code){
+            if(!checkEmail(account)){
+                $(".error").html("邮箱格式错误...");
+                return false;
+            }
+            if(password!=password2){
+            	$(".error").html("两次密码不一致...");
+            	return false;
+            }
+            return true;
+        }*/
+        //登录
+        function regUser(account,password){
+            $.ajax({
+                url: 'test.jtrips.com:8080/xiaochunAPI/user/regUser.htm',
+                type: 'GET',
+                dataType: 'json',
+                data: {regName: account,regPwd:password,qrRegPwd:"123"},
+                success: function(data){
+                  console.log(data);
+                }
+            })
+        }
+       
+    });
+</script>
+
+
+
+
+

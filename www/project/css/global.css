@@ -1,0 +1,56 @@
+@charset "utf-8";
+/* CSS Document */
+html,body{height:100%;}
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu {margin:0;padding:0;}
+table {border-collapse:collapse;border-spacing:0;}
+b,i,strong,em{font-style: normal; font-weight: normal; font-size:14px;}
+caption,th {text-align:left;font-weight:normal;}
+form,img,input {border:0;}
+ul,li {list-style:none;}
+textarea {overflow:auto;resize:none;}
+label {cursor:default;}
+h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
+del,ins,u,s,a,a:hover{text-decoration:none;}
+select{height:22px;line-height:18px; padding:2px 0;}
+body,textarea,input,button,select,keygen,legend{color:#666;outline:0;font: 400 14px/20px 'microsoft yahei';}
+input{border:none;}
+img {vertical-align:middle}
+.clearfix{ *zoom:1;}
+a,a:link,a:visited{color:#666;text-decoration:none;outline:0 none}
+a:hover{text-decoration:none}
+.clearfix:after{visibility: hidden;display: block;font-size: 0;content:" ";clear: both;height: 0;}
+.clearfix {*zoom:1;}
+.bg-tips{background:relative;}
+/*输入框*/
+input[type="text"]{padding:3px;border:1px solid #e0e0e1;}
+/*按钮*/
+button{cursor:pointer;border-radius:2px;}
+/* 超出隐藏 */
+.overflow{overflow:hidden;}
+/* float */
+.fl{float:left;}
+.fr{float:right;}
+/* The default style of the mouse */
+.cursor{cursor:pointer;}
+/* 文字居中 */
+.txt-center{text-align:center;}
+.txt-left{text-align:left;}
+.txt-right{text-align:right;}
+.txt-justify{text-align:justify;text-justify:inter-ideograph;}
+/* 自动换行 */
+.word-auto{word-wrap:break-word;word-break:normal;}
+/* 常用 */
+.ml10{margin-left:10px;}
+.ml20{margin-left:20px;}
+.mt10{margin-top:10px;}
+.mt20{margin-top:20px;}
+
+/* clearfix */
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clearfix{*zoom:1;}
+/* transtion-Hover */
+.transition{transition:all ease 0.3s;-moz-transition:all ease 0.3s;-ms-transition:all ease 0.3s;-o-transition:all ease 0.3s;-webkit-transition:all ease 0.3s;}
+.wd1200{width: 1200px;margin:0 auto;}
+.ft16{font-size: 16px;}
+.ft14{font-size: 14px;}
+

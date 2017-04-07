@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>账户中心-addPao</title>
+		<link rel="stylesheet" type="text/css" href="../css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myShare.css"/>
+		<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="../js/public.js"></script>
+	</head>
+	<body>
+		
+	<!--公共头部-->	
+	<div class="header">
+		<div class="header-top sm-hidden">
+			<div class="wd1000">
+				<ul>
+					<li><a href="login.html">登录</a>/<a href="login.html">注册</a></li>
+					<li><a href="账户中心/index.html">我的泡泡</a></li>
+					<li><a href="patternTag2.html">泡泡模式</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="header-nav clearfix">
+			<h1 class="logo"><a href="../index.html"><img src="../img/header-nav.png"/></a></h1>
+			<div class="bar hide sm-visible">
+				<span><a href="#">登陆 </a>&ensp;/&ensp;<a href="#">注册 </a></span>
+				<a href="javascript:void(0)" id="barToggle"><img src="../img/bar.png"/></a>
+				<ul id="ulNav" class="hide">
+					<li class="active"><a href="#">navOne</a></li>
+					<li><a href="#">杜绝童乞</a></li>
+					<li><a href="#">雪中送炭</a></li>
+				</ul>
+			</div>
+			<ul class="ul-nav sm-hidden">
+				<li><a href="navOne.html" class="on">navOne</a></li>
+				<li><a href="javascript:void(0);">杜绝童乞</a></li>
+				<li><a href="javascript:void(0);">雪中送炭</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--公共头部-->
+	
+	<!--账户中心导航-->
+		<div class="myCenter-nav-out">
+			<div class="myCenter-nav wd1000">
+				<ul class="clearfix">
+					<li><a href="index.html">账户首页</a></li>
+					<li>
+						<a href="mMypao.html">泡泡管理</a>
+						<dl>
+							<dd><a href="mMypao.html">我的泡泡</a></dd>
+							<dd><a href="mMysupport.html">我支持的泡泡</a></dd>
+							<dd><a href="mMycollect.html">我的收藏</a></dd>
+							<dd><a href="mSpread.html">我的传播</a></dd>
+							<dd><a href="mMymark.html">我的评分</a></dd>
+						</dl>
+					</li>
+					<li class="curr"><a href="addPao.html">addPao</a></li>
+					<li class="head">
+						<a href="#">
+							<img src="img/actorimg.png" alt="" />
+							<!--<div class="head-bg"></div>-->
+						</a>
+						
+						
+					</li>
+					<li><a href="motivationPao.html">motivationPao</a></li>
+					<li><a href="#">安全设置</a></li>
+					<li><a href="#">站内信</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="myShare">
+			<!--我的泡泡-->
+			<div class="parttenFix parttenFix-l sm-hidden md-hidden">
+				<div class="clearfix"><a class="fr parttenFixClose" href="javascript:void(0)"></a></div>
+				<div class="parttenFix-con">我的泡泡</div>
+			</div>
+			<div class="parttenFix parttenFix-r sm-hidden md-hidden">
+				<div class="clearfix"><a class="fr parttenFixClose" href="javascript:void(0)"></a></div>
+				<div class="parttenFix-con">我的泡泡</div>
+			</div>
+			<!--我的泡泡-->
+			<div class="myShare-title">addPao</div>
+			<div class="myShare-chose">
+				<ul class="clearfix">
+					<li class="on"><i></i>navOne</li>
+					<li><i></i>杜绝童乞</li>
+					<li><i></i>雪中送炭</li>
+				</ul>
+			</div>
+			<div class="myShare-chose-all">
+				<div class="myShare-chose-list">
+					<div class="ipt">
+						<label>性别</label>
+						<select name="">
+							<option value="">请选择</option>
+							<option value="">男</option>
+							<option value="">女</option>
+						</select>
+					</div>
+					<div class="ipt">
+						<label>年龄</label>
+						<select name="">
+							<option value="">请选择</option>
+							<option value="">18岁</option>
+							<option value="">19岁</option>
+							<option value="">20岁</option>
+							<option value="">21岁</option>
+							<option value="">22岁</option>
+							<option value="">23岁</option>
+							<option value="">24岁</option>
+							<option value="">25岁</option>
+						</select></div>
+					<div class="ipt">
+						<label>职业</label>
+						<input type="text" placeholder="请描述navOne职业" />
+					</div>
+					<div class="ipt">
+						<label>说点儿什么吧：</label>
+						<textarea name="">请描述navOne的详细情况以及您想表达的话</textarea>
+					</div>
+					<div class="ipt address">
+						<label>坐标：</label>
+						<select name="">
+							<option value="">请选择省</option>
+						</select>
+						<select name="">
+							<option value="">请选择市</option>
+						</select>
+						<select name="">
+							<option value="">请选择县/区</option>
+						</select>
+						<input type="" placeholder="请填写详细地址"  />
+					</div>
+					<div class="upVideo">
+						<div class="upVideo-title">视频</div>
+						<div class="upVideo-con"></div>
+					</div>
+					<div class="ipt">
+						<label>激励类型</label>
+						<div class="radioSelect"><input type="radio" name="radioKind" value="1" checked="checked" /> <i class="curr"></i> 泡泡积分</div>
+						<div class="radioSelect"><input type="radio" name="radioKind" value="2" /> <i></i> 抵用券</div>
+					</div>
+					<a href="javascript:void(0)" class="myShareSub">确定上传</a>
+				</div>
+				<div class="myShare-chose-list">
+					<div class="ipt">
+						<label>性别</label>
+						<select name="">
+							<option value="">请选择</option>
+							<option value="">男</option>
+							<option value="">女</option>
+						</select>
+					</div>
+					<div class="ipt">
+						<label>年龄</label>
+						<select name="">
+							<option value="">请选择</option>
+							<option value="">18岁</option>
+							<option value="">19岁</option>
+							<option value="">20岁</option>
+							<option value="">21岁</option>
+							<option value="">22岁</option>
+							<option value="">23岁</option>
+							<option value="">24岁</option>
+							<option value="">25岁</option>
+						</select></div>
+					<div class="ipt">
+						<label>职业</label>
+						<input type="text" placeholder="请描述navOne职业" />
+					</div>
+					<div class="ipt">
+						<label>说点儿什么吧：</label>
+						<textarea name="">请描述navOne的详细情况以及您想表达的话</textarea>
+					</div>
+					<div class="ipt address">
+						<label>坐标：</label>
+						<select name="">
+							<option value="">请选择省</option>
+						</select>
+						<select name="">
+							<option value="">请选择市</option>
+						</select>
+						<select name="">
+							<option value="">请选择县/区</option>
+						</select>
+						<input type="" placeholder="请填写详细地址"  />
+					</div>
+					<div class="upVideo">
+						<div class="upVideo-title">视频</div>
+						<div class="upVideo-con"></div>
+					</div>
+					<div class="ipt">
+						<label>激励类型</label>
+						<div class="radioSelect"><input type="radio" name="radioKind" value="1" checked="checked" /> <i class="curr"></i> 泡泡积分</div>
+						<div class="radioSelect"><input type="radio" name="radioKind" value="2" /> <i></i> 抵用券</div>
+					</div>
+					<a href="javascript:void(0)" class="myShareSub">确定上传</a>
+				</div>
+				<div class="myShare-chose-list">
+					<div class="ipt">
+						<label>性别</label>
+						<select name="">
+							<option value="">请选择</option>
+							<option value="">男</option>
+							<option value="">女</option>
+						</select>
+					</div>
+					<div class="ipt">
+						<label>年龄</label>
+						<select name="">
+							<option value="">请选择</option>
+							<option value="">18岁</option>
+							<option value="">19岁</option>
+							<option value="">20岁</option>
+							<option value="">21岁</option>
+							<option value="">22岁</option>
+							<option value="">23岁</option>
+							<option value="">24岁</option>
+							<option value="">25岁</option>
+						</select></div>
+					<div class="ipt">
+						<label>职业</label>
+						<input type="text" placeholder="请描述navOne职业" />
+					</div>
+					<div class="ipt">
+						<label>说点儿什么吧：</label>
+						<textarea name="">请描述navOne的详细情况以及您想表达的话</textarea>
+					</div>
+					<div class="ipt address">
+						<label>坐标：</label>
+						<select name="">
+							<option value="">请选择省</option>
+						</select>
+						<select name="">
+							<option value="">请选择市</option>
+						</select>
+						<select name="">
+							<option value="">请选择县/区</option>
+						</select>
+						<input type="" placeholder="请填写详细地址"  />
+					</div>
+					<div class="upVideo">
+						<div class="upVideo-title">视频</div>
+						<div class="upVideo-con"></div>
+					</div>
+					<div class="ipt">
+						<label>激励类型</label>
+						<div class="radioSelect"><input type="radio" name="radioKind" value="1" checked="checked" /> <i class="curr"></i> 泡泡积分</div>
+						<div class="radioSelect"><input type="radio" name="radioKind" value="2" /> <i></i> 抵用券</div>
+					</div>
+					<a href="javascript:void(0)" class="myShareSub">确定上传</a>
+				</div>
+			</div>
+			
+		</div>
+	
+		<div id="footer" data = "0"></div>
+		<script src="js/myCenter.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

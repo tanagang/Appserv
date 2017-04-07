@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/swipe.js"></script>
+</head>
+<body class="eee">
+	<div id='mySwipe' class='swipe'>
+      <ul class='swipe-wrap'>
+        <li><img src="images/img1.jpg" style="width:100%;" title="0"></li>
+        <li><img src="images/img1.jpg" style="width:100%;" title="1"></li>
+		<li><img src="images/img1.jpg" style="width:100%;" title="2"></li>
+      </ul>
+       <div id="dot">
+       </div>
+    </div>
+    <section>
+    	<a href="#">
+	    	<div class="box dynamic">
+	    		<dl class="flex">
+					<dt class="clamp2">P2P行业还能走多久经纪商的服务方案</dt>
+					<dd>15/08/2015</dd>
+	    		</dl>
+	    		<img src="images/img_thumb.jpg" width="85">
+	    	</div>
+	    </a>
+	    <a href="#">
+	    	<div class="box dynamic">
+	    		<dl class="flex">
+					<dt class="clamp2">钙盐即溶美丽新事件家嘴</dt>
+					<dd>15/08/2015</dd>
+	    		</dl>
+	    		<img src="images/img_thumb.jpg" width="85">
+	    	</div>
+	    </a>
+    	<a href="#">
+	    	<div class="box dynamic">
+	    		<dl class="flex">
+					<dt class="clamp2">路要怎么才能走呢？</dt>
+					<dd>15/08/2015</dd>
+	    		</dl>
+	    		<img src="images/img_thumb.jpg" width="85">
+	    	</div>
+	    </a>
+    	<a href="#">
+	    	<div class="box dynamic">
+	    		<dl class="flex">
+					<dt class="clamp2">经纪商的服务方案如何确定</dt>
+					<dd>15/08/2015</dd>
+	    		</dl>
+	    		<img src="images/img_thumb.jpg" width="85">
+	    	</div>
+	    </a>
+    	<a href="#">
+	    	<div class="box dynamic">
+	    		<dl class="flex">
+					<dt class="clamp2">文件中转站</dt>
+					<dd>15/08/2015</dd>
+	    		</dl>
+	    		<img src="images/img_thumb.jpg" width="85">
+	    	</div>
+	    </a>
+	    <a href="#">
+	    	<div class="box dynamic">
+	    		<dl class="flex">
+					<dt class="clamp2">文件中转站</dt>
+					<dd>15/08/2015</dd>
+	    		</dl>
+	    		<img src="images/img_thumb.jpg" width="85">
+	    	</div>
+	    </a>
+	    <a href="#">
+	    	<div class="box dynamic">
+	    		<dl class="flex">
+					<dt class="clamp2">文件中转站</dt>
+					<dd>15/08/2015</dd>
+	    		</dl>
+	    		<img src="images/img_thumb.jpg" width="85">
+	    	</div>
+	    </a>
+	    <a href="#">
+	    	<div class="box dynamic">
+	    		<dl class="flex">
+					<dt class="clamp2">文件中转站</dt>
+					<dd>15/08/2015</dd>
+	    		</dl>
+	    		<img src="images/img_thumb.jpg" width="85">
+	    	</div>
+	    </a>
+    </section>
+</body>
+</html>
+<script>
+	var elem = document.getElementById('mySwipe');
+	var size=$(".swipe-wrap li").size();
+	var startIndex = 0;
+	var str='';
+	if(size>1){
+		startIndex = 0;
+		for(var i=0;i<size;i++){
+		   //str+='<img src="images/dot2.png" width="10" />';
+		   str+='<span class="dot1"></span>';
+		}
+		$("#dot").append(str);
+		$("#dot span").eq(startIndex).attr("class","dot2");
+	}
+	window.mySwipe = Swipe(elem, {
+	  startSlide:startIndex,
+	  auto: 5000,
+	  continous: true,
+	  disableScroll: true,
+	  // stopPropagation: true,
+	   callback: function(index, element) {
+		   var idx=$(element).find("img").attr("title");
+		   $("#dot span").attr("class","dot1");
+		   $("#dot span").eq(idx).attr("class","dot2");
+		},
+	  // transitionEnd: function(index, element) {}
+	});
+</script>
+
+
+
+

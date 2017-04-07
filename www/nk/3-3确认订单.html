@@ -1,0 +1,107 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script src="js/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<header>
+	<table class="table-tjyy"  style="width:100%;">
+    	<tr>
+        	<td rowspan="4" align="right" width="140"><img src="images/temp/img6.jpg" width="118" /></td>
+            <td colspan="2">中国移动100元充值卡</td>
+        </tr>
+         <tr>
+            <td class="td">所需积分：</td>
+            <td class="td2" align="right"><span class="price">880</span></td>
+        </tr>
+         <tr>
+            <td class="td">修改数量：</td>
+            <td class="td2 num" align="right">
+            	<input type="button" value="-" id="prev" /><input type="text" value="1" class="text" /><input type="button" value="+" id="next" />
+            </td>
+        </tr>
+         <tr>
+            <td class="td">积分合计：</td>
+            <td class="td2 total-price" align="right"><span>880</span></td>
+        </tr>
+    </table>
+</header>
+<section id="section2">
+	<p class="title fff">客户服务信息</p>
+    <div class="box padding10">
+        <ul class="flex">
+            <li>罗大春 1365469878</li>
+            <li>上海市 浦东新区 盛夏路200号 </li>
+        </ul>
+        <a href="#" class="switch">切换</a>
+     </div>
+     <p class="title fff">销售员</p>
+     <div class="padding10 xsy" >
+     	<span>李小珂</span>
+     </div>
+     <p class="padding10" style="margin-top:30px"><a href="#" class="btn btn-active">提交</a></p>
+</section>
+ <footer class="box">
+    	<div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/wxsc_active.png" width="22" height="22" /></dt>
+                    <dd class="hover">微信商城</dd>
+                </dl>
+            </a>
+         </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/jfsc.png"  width="27" height="22"/></dt>
+                    <dd>积分商城</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#">
+                <dl>
+                    <dt><img src="images/ddzx.png"  width="25" height="22" /></dt>
+                    <dd>订单中心</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/grzx.png"  width="22" height="22"/></dt>
+                    <dd>个人中心</dd>
+                </dl>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var v=$(".text").val();
+		$("#next").click(function(){
+			$(".text").val(++v);
+			var price=parseInt($(".price").html());
+			var totalPrice=v*price;
+			$(".total-price span").html(totalPrice);
+		});
+		$("#prev").click(function(){
+			if(v>1){
+				$(".text").val(--v);
+				var price=parseInt($(".price").html());
+				var totalPrice=v*price;
+				$(".total-price span").html(totalPrice);
+			}
+		});
+	});
+</script>

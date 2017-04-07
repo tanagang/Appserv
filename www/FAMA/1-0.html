@@ -1,0 +1,172 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script src="js/jquery-1.7.2.min.js"></script> 
+<script src="js/swipe.js"></script>
+<style type="text/css">
+.swipe { overflow: hidden; position: relative; max-width:640px; margin:0 auto;	}
+.swipe-wrap { overflow: hidden; list-style:none; position: relative;}
+.swipe-wrap li{ float:left; width:100%; position: relative;}
+#dot{width:100%;height:25px; line-height:25px; text-align:right; position:absolute;bottom:0;}
+#dot img{display:inline-block;margin-right:10px; text-align:right; margin-top:8px}
+</style>   
+</head>
+<body>
+    <header>
+       <!-- <div class="box-img eee">
+            <img src="images/banner.jpg" alt="" class="img1" >
+            <img src="images/banner.jpg" alt="" class="img2">
+            <img src="images/open.png" width="18"  class="open" />
+            <img src="images/brand.png" width="48" class="brand" />
+            <img src="images/open.png" width="16"  class="open2" />
+            <img src="images/brand.png" width="48" class="brand2" />
+        </div>-->
+        <div id='mySwipe' class='swipe'>
+          <ul class='swipe-wrap'>
+            <li>
+            	<div class="box-img eee">
+                    <img src="images/banner.jpg" alt="" class="img1" >
+                    <img src="images/banner.jpg" alt="" class="img2">
+                    <img src="images/open.png" width="18"  class="open" />
+                    <img src="images/brand.png" width="48" class="brand" />
+                    <img src="images/open.png" width="16"  class="open2" />
+                    <img src="images/brand.png" width="48" class="brand2" />
+                </div>
+            </li>
+            <li>
+            	<div class="box-img eee">
+                    <img src="images/banner.jpg" alt="" class="img1" >
+                    <img src="images/banner.jpg" alt="" class="img2">
+                    <img src="images/open.png" width="18"  class="open" />
+                    <img src="images/brand.png" width="48" class="brand" />
+                    <img src="images/open.png" width="16"  class="open2" />
+                    <img src="images/brand.png" width="48" class="brand2" />
+                </div>
+            </li>
+            <li>
+                <div class="box-img eee">
+                    <img src="images/banner.jpg" alt="" class="img1" >
+                    <img src="images/banner.jpg" alt="" class="img2">
+                    <img src="images/open.png" width="18"  class="open" />
+                    <img src="images/brand.png" width="48" class="brand" />
+                    <img src="images/open.png" width="16"  class="open2" />
+                    <img src="images/brand.png" width="48" class="brand2" />
+                </div>
+            </li>
+           
+          </ul>
+           <p id="dot"></p>
+        </div>
+    </header>
+    <section>
+    	<p class="title fff bb">选择图库图片</p>
+        
+        <div class="slide-tag fff" >
+        	<div id="p-tag" >
+            	<a href="javascript:void(0)">风景</a>
+                <a href="javascript:void(0)" class="active">情趣</a>
+                <a href="javascript:void(0)">萌宠</a>
+                <a href="javascript:void(0)">搞笑</a>
+                <a href="javascript:void(0)">新奇放大</a>
+                <a href="javascript:void(0)">性感</a>
+                <a href="javascript:void(0)">山水</a>
+                <a href="javascript:void(0)">山水反复打</a>
+            </div>
+        </div>
+        
+        <div class="slide-img fff pb10">
+        	<p id="p-img" style="margin:0 auto">
+                <span>
+                    <img src="images/vip.png" width="78" height="78" />
+                    <a href="javascript:void(0)" class="closeImg">-</a>
+                </span>
+                <span class="active"><img src="images/vip.png" width="78" height="78"/></span>
+                <span><img src="images/vip.png" width="78" height="78" /></span>
+            </p>
+        </div>
+        
+        <p class="title fff bb">使用本地图片</p>
+        <div class="box p10">
+        	<div class="flex mt5 mb5"><a href="#" class="btn no-radius" style="height:27px; line-height:27px">上传图片</a></div>
+            <div class="mt5 mb5" style="width:80px;padding-left:10px; text-align:center"><img src="images/camera.png" width="32" /></div>
+        </div>
+      <style>
+            .slide-tag{padding:15px 0 5px 0;}
+            .slide-tag a{padding:5px 10px;display:block;float:left;font-size:14px;border:1px solid #E5E5E5; box-sizing:border-box;margin-left:10px;}
+            .slide-tag .active{border:1px solid #F5A989;color:#EF7348}
+
+            .slide-img{padding-top:5px;}
+            .slide-img span{width:80px;height:80px;border:1px solid #eee;margin-left:8px;display: block;float:left; position: relative;left:0;top:0;}
+            .slide-img span>a{display: block;width:20px; height:20px; line-height: 20px; text-align: center;background:#fff;border:2px solid #f60;position: absolute;right:-5px;top:-5px;border-radius: 100%;color:#f60;font-size: 22px; font-weight: bold;}
+            .slide-img .active{border-color:#666;}
+            .slide-img .active:after{border-color:#F5A989;content:url(images/ok.png);text-align:center;padding-top:15px;color:#fff;display: block;width:78px;height:63px;position: absolute;left:0;top:0;background: rgba(0,0,0,.5)}
+            .slide-tag,.slide-img{overflow-x:scroll;}
+            .slide-tag::-webkit-scrollbar,.slide-img::-webkit-scrollbar{display: none;}
+      </style>
+    </section>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		/*var imgW = $("#p-img>img").outerWidth(true);
+		var tagW = 0;
+        $("#p-tag>a").each(function(idx,ele){
+            tagW+=($(this).outerWidth(true)+8);
+        });
+		var imgSize =  $("#p-img>img").size();
+		$("#p-img").width((imgW+8)*imgSize);
+		$("#p-tag").width(tagW);*/
+
+        var tagW = 0;
+        $("#p-tag>a").each(function(idx,ele){
+            tagW+=($(this).outerWidth(true));
+        });
+        $("#p-tag").width(tagW);
+
+        var imgSize =  $("#p-img>span").size();
+        var imgW = $("#p-img>span").outerWidth(true);
+        $("#p-img").width(imgSize*imgW);
+
+        $("#p-img>span").click(function(){
+            var src = $(this).find("img").attr("src");
+            $(".img1,.img2").attr("src",src);
+        });
+		
+		
+		var elem = document.getElementById('mySwipe');
+		var size=$(".swipe-wrap li").size();
+		var startIndex = 0;
+		var str='';
+		if(size>1){
+			startIndex = 1;
+			for(var i=0;i<size;i++){
+			   str+='<img src="images/dot2.png" width="10" />';
+			}
+			$("#dot").html(str);
+			$("#dot img").eq(1).attr("src","images/dot1.png");
+		}
+		window.mySwipe = Swipe(elem, {
+		  startSlide:startIndex,
+		  auto: 50000,
+		  continuous: true,
+		   disableScroll: true,
+		  // stopPropagation: true,
+		   callback: function(index, element) {
+			   var idx=$(element).find("img").attr("title");
+			   $("#dot img").attr("src","images/dot2.png");
+			   $("#dot img").eq(idx).attr("src","images/dot1.png");
+			},
+		  // transitionEnd: function(index, element) {}
+		});
+	}
+</script>
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>站内信</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myBubble.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+	</head>
+	<body>
+		<!--公共头部-->	
+		<div id="header2" rel="0" txt="详情"></div>
+		
+		<div class="myBubble wd1000">
+			<!--我的泡泡-->
+			<div class="parttenFix parttenFix-l sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgleft" /></a>
+			</div>
+			<div class="parttenFix parttenFix-r sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgright" /></a>
+			</div>
+			<!--我的泡泡-->
+			
+			<div class="myBubble-top myBubble-top2">
+				<div class="myBubble-liatAll">
+					<div class="message-t">
+						<span>恭喜您成为有知庐会员</span>
+						<p>发布时间 2016-06-25</p>
+					</div>
+					<div class="message-c">
+						<p class="msg-con">全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项
+						复杂的系统工程全面深化改革是一项复杂的系统工程全面深化改革是一项复杂的系统工程</p>
+						<p class="backMessage sm-hidden"><a href="message.html">&gt;&gt;返回消息列表</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+		<!--公共脚部-->
+		<div id="footer"></div>
+		<script src="js/myCenter.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function(){
+				$(".edit").click(function(){
+					$(".message .fd").toggleClass("sm-hidden");
+				});
+				//全选
+				$(".allSelect").click(function(){
+					var rel = $(this).attr("rel");
+					if(rel==0){
+						$(".message .fd input").prop("checked",true);
+						$(".allSelect").attr("rel",1).html("全不选");
+					}else{
+						$(".message .fd input").prop("checked",false);
+						$(".allSelect").attr("rel",0).html("全选");
+					}
+					
+				});
+				var newsId = request("id");
+				var messageList = JSON.parse(storage.getItem("messageList"));
+				$.each(messageList.records, function(idx,el) {
+					if(el.id==newsId){
+						$(".message-t span").html(el.title);
+						$(".message-t p").html("发布时间"+el.sendTime);
+						$(".msg-con").html(el.msgContent);
+						//设为已读
+						$.ajax({
+							type:"post",
+							dataType:dataType, 
+							url:url+"/message/read.json",
+							data:{msgId:newsId},
+							success:function(data){
+								
+							}
+						});
+					}
+				});
+				
+			});
+			//左右两侧广告图片
+			ad("00,01");
+		</script>
+	</body>
+</html>

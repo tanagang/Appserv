@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>项目详情页</title>
+<meta name="keywords" content="项目详情页"/>
+<meta name="description" content="项目详情页"/>
+<link rel="stylesheet" href="css/global.css"/>
+<link rel="stylesheet" href="css/project.css"/>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+</head>
+
+<body>
+  	<header id="header"></header>
+	<div class="h130"></div>
+	<div class="pl-main">
+		<div class="pl-crumb">
+	     	<span class="bl">您所在的位置:</span><a href="projectList.html" class="current">投资中心</a> <span>>></span> <span>项目详情</span>
+	  	</div> 
+	  	<div class="pl-details">
+	  		<div class="pld-top clearfix">
+	  			<div class="pldt-left fl">
+	  				<img src="images/pdpic.jpg" height="301" width="266" alt="">
+	  				<div class="pjinfor">
+	  					<p class="name fc-3c id" >基金宝-天天利</p>
+	  					<p class="money">筹资金额 <span class="fc-c92 establish">￥99,999,999</span></p>
+	  					<div class="process"><s style="width:0%" class="percent"><span ></span></s></div>
+	  					<div class="time">剩余筹集时间 <span class="fz18">45</span> 天 <span class="fz18">09</span> 小时 <span class="fz18">45</span> 分</div>
+	  				</div>
+	  				<div class="calculator fc-3c">
+	  					<div class="calt">
+	  						<p class="title">投资计算器</p>
+	  						<div class="con">
+	  							<p>请输入预定投资额</p>
+	  							<input type="text" placeholder="请输入" class="investment">
+	  							<div class="tar">(￥99—￥99,999,999)</div>
+	  						</div>
+	  					</div>
+	  					<div class="income">
+	  						<p class="title">投资收益</p>
+	  						<div class="con">
+	  							<div class="list clearfix">
+	  								<span class="label fl">税前收入: </span>
+	  								<span class="fr">￥<s class=" pretaxIncome">999,999,999</s></span>
+	  							</div>
+	  							<div class="list clearfix">
+	  								<span class="label fl">税金: </span>
+	  								<span class="fr">￥<s class=" taxes">999,999</s></span>
+	  							</div>
+	  							<div class="list clearfix">
+	  								<span class="label fl">税后收入: </span>
+	  								<span class="fr fc-c92">￥<s class="aftertaxIncome">999,999,99</s></span>
+	  							</div>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+	  			<div class="pldt-right fr">
+					<div class="prt">
+		  				<div class="tips">
+		  					<span id="collateral"></span>
+		  					<span id="guarantee"></span>
+		  				</div>
+		  				<p class="fz18 fc-3c description">[5/8]本基金  保全性高魅力的利息的投资机会，为您提供的同时，国内的中小企业的资金方面的支援的事作为目的。</p>
+		  				<p class="pt10 fc-77 risk">本基金是用户的各位，保全性高魅力的利息的投资机会，为您提供的同时，国内的中小企业的资金方面的支援的事作为目的。低门槛，只需100元起投，风险等级低，回报率可观。</p>
+		  				<div class="intro">
+		  					<p class="t fc-3c">项目的背景介绍:</p>
+		  					<p class="b fc-77 summary">项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介,项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介绍项目的背景介</p>
+		  				</div>
+					</div>
+					<div class="prc">
+						<div class="prc-list clearfix">
+							<div class="fl clearfix">
+								<span class="fl">利率（税前）</span>
+								<span class="fr fz30r yield">12.99%</span>
+							</div>
+							<div class="fr">
+								<span class="fl">筹资金额</span>
+								<span class="fr fz30r establish">￥99,999,999</span>
+							</div>
+						</div>
+						<div class="prc-list clearfix">
+							<div class="fl clearfix">
+								<span class="fl">运用时间</span>
+								<span class="fr fz18 fund_time" ></span>
+							</div>
+							<div class="fr">
+								<span class="fl">最低成立金额</span>
+								<span class="fr fz30r establishmin">￥100</span>
+							</div>
+						</div>
+						<div class="prc-list clearfix">
+							<div class="fl clearfix">
+								<span class="fl" >筹集开始时间</span>
+								<span class="fr recruit">2016/05/11 10:00</span>
+							</div>
+							<div class="fr">
+								<span class="fl">每人最低投资</span>
+								<span class="fr fz30r unit_min">￥100</span>
+							</div>
+						</div>
+						<div class="prc-list clearfix">
+							<div class="fl clearfix">
+								<span class="fl">筹集结束时间</span>
+								<span class="fr recruit_end">2016/05/30 10:00</span>
+							</div>
+							<div class="fr">
+								<span class="fl">起息日期</span>
+								<span class="fr operation">2016/08/11 </span>
+							</div>
+						</div>
+					</div>
+					<div class="prb">
+						<a href="javascript:void(0)" class="imd-btn" style="display: none">立即登录注册</a>
+						<a href="javascript:void(0)" class="invest-btn" style="display: none">立即购买</a>
+					</div>
+	  			</div>
+
+	  		</div>
+	  		<div class="pld-bottom">
+	  			<ul class="tabTitle clearfix">
+	  				<li class="active">项目介绍</li>
+	  				<li>风险说明</li>
+	  				<li>Q&A</li>
+	  				<li>投资记录</li>
+	  			</ul>
+	  			<div class="tabCon">
+	  				<div class="main">
+	  					<div class="intro">
+	  						<p class="pjtt">项目简介</p>
+	  						<p>本项目为深圳前海**金融服务有限公司推荐并通过严格风控审核的分期消费个人借款集合项目，品牌名称为即有分期，类似淘宝花呗。 深圳前海**金融服务有限公司成立于2014年7月，致力于为年轻时尚的客户群体提供简单、快捷、便利的消费金融服务，包括商品小额分期业务、小额现金贷等服务。截止至2016年1月初，已在全国范围内拓展至80多个城市，合作门店超18000家，累计服务客户超100万人。 资产包情况  集合项目情况： 本次转让的债权涉及的借款本金余额约为300万元。</p>
+	  					</div>
+	  					<div class="item">
+	  						<div class="list">
+	  							<p class="lit">1.信用リスク</p>
+	  							<p class="lic">対象債権の債務者からの返済が遅延する等、対象債権の債務者の信用状況の悪化により、お客様の出資した元本額の欠損その他の損失が発生する場合があります。また、保証人による連帯保証が差し入れられている場合、対象債権の債務者からの返済が遅延したり、対象債権の債務者の信用状況が悪化した場合には、保証人が保証債務の履行を行いますが、保証人の信用状況が悪化した場合には、保証債務の履行ができなくなり、その結果、お客様の出資した元本額の欠損その他の損失が発生する場合があります。</p>
+	  						</div>
+	  						<div class="list">
+	  							<p class="lit">2.担保価値の低下等のリスク</p>
+	  							<p class="lic">不動産担保型ローンファンドでは、原則として、日本国内の不動産に担保を取得しますが、一般的に不動産の価値は不動産市況に対応して変動します。不動産市場が悪化した場合、担保対象となる不動産を売却しても対象債権の全額を回収できず、その結果、お客様の出資した元本額の欠損その他の損失が発生する場合があります。また、不動産市況によっては売却先が見つからず、担保対象となる不動産の売却ができず、その結果、お客様の出資した元本額の欠損その他の損失が発生する場合があります。</p>
+	  						</div>
+	  						<div class="list">
+	  							<p class="lit">3.先順位担保が既設定済み又は担保権が登記されない貸付にかかるリスク</p>
+	  							<p class="lic">不動産担保型ローンファンドでは、先順位で担保権が設定されているあるいは担保権が登記されない不動産担保貸付を対象債権とすることがありますが、これらの場合、法律の制限に従う結果、対象債権の担保権に優先する権利が存在し、また対象債権の担保権を第三者に対抗できない可能性があります。かかる場合、対象債権が当該担保権を失い、対象債権の債務者からの返済が遅延する等、対象債権の債務者の信用状況の悪化により、予定された金利の支払がなされず、また、元本の返済がなされない結果、お客様の出資した元本額の欠損その他の損失が発生する場合があります。</p>
+	  						</div>
+	  						<div class="list">
+	  							<p class="lit">4.金利変動リスク</p>
+	  							<p class="lic">対象債権については、変動金利により付利されるものが含まれることがありますが、金利の変動によって将来受け取る利息が変動し、また市場金利とは一致しないこともあります。また、対象債権の金利水準は、各国の中央銀行が決定する政策金利、市場金利の水準や金融機関の貸出金利等の変化等に対応して変動します。また、金利の変動により、対象債権のその時々の評価額が変動し、対象債権の評価額や売却額が減少し、その結果、お客様の出資した元本額の欠損その他の損失が発生する場合があります。</p>
+	  						</div>
+	  					</div>
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	</div>
+
+	<footer id="footer"></footer>
+	<!-- 弹出层 -->
+	<div class="bg" style="display:none;"></div>
+	<!-- 购买信息 -->
+	<div class="buy-pop pjd-pop" style="display: none">
+		<div class="con">
+			<a href="javascript:;" class="close fc-3c">×</a>
+			<div class="cont fc-3c">购买信息</div>
+			<div class="conb">
+				<div class="conbt">
+					<div class="cell">
+						<span class="label name">项目名称：</span>
+						<span class="desc name">[5/8]天天利，基金  保全性高魅力的利息的投资机会</span>
+					</div>
+					<div class="cell clearfix">
+						<div class="scell">
+							<span class="label">利率(税前)：</span>
+							<span class="desc yield">11.5%</span>
+						</div>
+						<div class="scell">
+							<span class="label">收益方式：</span>
+							<span class="desc">每月付息</span>
+						</div>
+					</div>
+					<div class="cell clearfix">
+						<div class="scell">
+							<span class="label">运用时间：</span>
+							<span class="desc fund_time">12个月</span>
+						</div>
+						<div class="scell">
+							<span class="label">剩余时间：</span>
+							<span class="desc surplus">7个月20天</span>
+						</div>
+					</div>
+				</div>
+				<div class="conbb">
+					<div class="cbuy">
+						<span class="dj">每份单价：</span>
+						<span class="fc-c92"><b id="price">1000</b>円</span>
+					</div>
+					<div class="cbuy">
+						<span class="dj">购买份数输入：</span>
+						<span class="sum">
+							<a href="javascript:;" class="minus">-</a><input type="text" id="number" value="1"><a href="javascript:;" class="plus">+</a>
+						</span>
+						<span class="tip">(当前资金最大可购买份数<s class="fc-c92">10</s>份)</span>
+						<input type="hidden" value="10" id="max-share">
+					</div>
+					<div class="cbuy">
+						<span class="dj">购买总价：</span>
+						<span class="fc-c92"><b  id="totalAmout">99,899,999</b>円</span>
+					</div>
+					<div class="check">
+						<input type="checkbox" checked="checked" id="isread"> 条约条款条约条款条约条款
+					</div>
+					<div class="cb-btn">
+						<a href="javascript:void(0)" class="close-btn">关闭</a>
+						<a href="javascript:void(0)" class="buy-btn">购买</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 购买信息确定 -->
+	<div class="pjd-pop confrim-pop" style="display:none;">
+		<div class="con">
+			<a href="javascript:;" class="close fc-3c">×</a>
+			<div class="cont fc-3c">购买信息</div>
+			<div class="conb">
+				<div class="conbt">
+					<div class="cell">
+						<span class="label">项目名称：</span>
+						<span class="desc">[5/8]天天利，基金  保全性高魅力的利息的投资机会</span>
+					</div>
+					<div class="cell clearfix">
+						<div class="scell">
+							<span class="label">利率(税前)：</span>
+							<span class="desc">11.5%</span>
+						</div>
+						<div class="scell">
+							<span class="label">收益方式：</span>
+							<span class="desc">每月付息</span>
+						</div>
+					</div>
+					<div class="cell clearfix">
+						<div class="scell">
+							<span class="label">运用时间：</span>
+							<span class="desc">12个月</span>
+						</div>
+						<div class="scell">
+							<span class="label">剩余时间：</span>
+							<span class="desc">7个月20天</span>
+						</div>
+					</div>
+				</div>
+				<div class="conbb">
+					<div class="cbuy">
+						<span class="dj">每份单价：</span>
+						<span class="fc-c92">99,899,999円</span>
+					</div>
+					<div class="cbuy">
+						<span class="dj">购买份数输入：</span>
+						<span class="sum">
+							<s class="fz20">5</s>份
+						</span>
+					</div>
+					<div class="cbuy">
+						<span class="dj">购买总价：</span>
+						<span class="fc-c92">99,899,999円</span>
+					</div>
+					<div class="check">
+						<input type="checkbox" checked="checked"> 条约条款条约条款条约条款
+					</div>
+					<div class="cb-btn">
+						<a href="javascript:void(0)" class="close-btn">关闭</a>
+						<a href="javascript:void(0)" class="buy-btn">确定</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 购买成功 -->
+	<div class="pjd-pop success-pop" style="display:none;">
+		<div class="con">
+			<a href="javascript:;" class="close fc-3c">×</a>
+			<div class="cont fc-3c">购买成功</div>
+			<div class="conb">
+				<div class="fz30 fc-c92"><img src="images/easyicon.png">购买成功</div>
+				<p class="fz16">您已经成功购买【基金宝】产品</p>
+				<div class="skip"><span class="count">3</span> s后自动跳转到  个人中心 页面</div>
+				<div class="cb-btn">
+					<a href="javascript:void(0)" class="close-btn">关闭</a>
+					<a href="javascript:void(0)" class="center-btn">去个人中心</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 弹出层 -->
+	<div class="login-bg" style="display: none;"></div>
+	<!-- 登录 -->
+	<div class="login-pop" style="display: none;">
+		<div class="con" style="position: relative">
+			<a href="javascript:;" class="close"></a>
+			<p class="conTitle">登录 Cool</p>
+			<span style="color: red;display: none;position: absolute;top:75px" class="tips"></span>
+			<input type="text" placeholder="请输入邮箱或手机号" class="username">
+			<span style="color: red;display: none;"  class="tips"></span>
+			<input type="password" placeholder="请输入密码" class="password" >
+			<a href="setPwd.html" class="forget">忘记登录密码？</a>
+			<a href="javascript:void(0)" class="pop-btn login-btn">登录</a>
+			<a href="register.html" class="pop-btn reg-btn">去注册</a>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+
+
+
+$(function () {
+	var $price = $('#price');
+	var $number = $('#number');
+	var $totalAmout=$("#totalAmout");
+	var borrow_id=request("id");
+	var rate = 0;
+
+	//根据登录状态显示按钮
+	if(userid){
+		$('.invest-btn').show();
+
+	}else {
+		$('.imd-btn').show().click(function (event) {
+			$(".login-bg,.login-pop").show();
+			/*document.location.href="register.html";*/
+		});
+	}
+//购买框功能
+	$(" .invest-btn").click(function(event) {
+		$(".bg,.buy-pop").show();
+	});
+	$(".pjd-pop .con .close").click(function(event) {
+		$(this).parent().parent().hide();
+		$(".bg").hide();
+	});
+	$(".pjd-pop .con .close-btn").click(function(event) {
+		$(".pjd-pop,.bg").hide();
+	});
+
+	$('.minus').click(function (event) {
+		var num = $number.val();
+		if(num>=2){
+			$number.val(--num);
+		}
+		computeTotal(num);
+	});
+
+	$('.plus').click(function (event) {
+		var num = $number.val();
+		if(num<+$("#max-share").val()){
+			$number.val(++num);
+		}
+		computeTotal(num);
+	});
+
+	function computeTotal(number) {
+		var total = $price.html()*number;
+		$totalAmout.html(total);
+	}
+
+
+	//购买框后台数据
+	$('.cb-btn .buy-btn').click(function () {
+		var number = $number.val();
+		var isread = $("#isread").prop("checked")==true ? 1:0;
+		var price = $price.html();
+		//console.log(borrow_id+":"+userid+":"+isread);
+
+		$.ajax({
+			url: "http://cool.pccb.com/frontapi/buyfund",
+			type: 'POST',
+			dataType: 'json',
+			data: {fund_id: borrow_id,uid:userid,number:number,isread:isread,unit_amount:price},
+			success:function (data) {
+				console.log(data);
+
+			}
+		});
+	});
+
+//页面获取后台数据
+	$.ajax({
+		url:window.api.changeUrl+"/frontapi/investdesc",
+		type: 'POST',
+		dataType: 'json',
+		data:{"fund_id":borrow_id},
+		success: function(data){console.log(data);
+			$("#collateral").html(data.data.collateral_code=="Y"?"有担保":$(this).hide());
+			$("#guarantee").html(data.data.guarantee_code=="Y"?"有保证":$(this).hide());
+			$('.description').html(data.data.pjttype_code);
+			$('.risk').html(data.data.fund_risk);
+			$('.summary').html(data.data.fund_summary);
+			$('.yield').html(data.data.fund_plan_yield_max);
+			$(".establish").html(data.data.fund_establish_max);
+			$('.fund_time').html(data.data.fund_time);
+			$('.establishmin').html(data.data.fund_establish_min);
+			$('.recruit').html(data.data.fund_recruit_term_start);
+			$('.unit_min').html(data.data.unit_min);
+			$('.recruit_end').html(data.data.fund_recruit_term_end);
+			$('.operation').html(data.data.fund_operation_term_start);
+			$('.id').html(data.data.fund_id);
+			$('.percent').html(data.data.fund_percent+'%').css('width',data.data.fund_percent+'%');
+			$('.name').html(data.data.fund_name);
+			$('.surplus').html(data.data.fund_surplus_time);
+			rate = data.data.fund_plan_yield_max;
+
+
+
+		}
+	});
+
+	//投资计算器
+	var  $preTax = $(".pretaxIncome");
+	var $taxes = $(".taxes");
+	var $afterTax = $(".aftertaxIncome");
+	var $investMent = $(".investment");
+
+	$investMent.keyup(function (event) {
+		var benifitLimit=1000;//基金预期收益上限可替换
+				var invest = $investMent.val();
+		var mouth=6;//投资月数（运用时间）
+		var max = 99999999;
+		if(invest>=max){
+			invest = max;
+			$investMent.val(max);
+		}
+		var pretaxIncome = invest*benifitLimit*mouth/12;
+		$preTax.html(pretaxIncome);
+		var taxes = pretaxIncome*rate;
+		$taxes.html(taxes);
+		$afterTax.html(pretaxIncome-taxes);
+	})
+
+
+});
+
+</script>
+

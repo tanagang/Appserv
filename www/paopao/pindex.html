@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>账户中心</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myCenter.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+	</head>
+	<body>
+		
+		<!--公共头部-->	
+		<div id="header2"></div>
+
+		<div class="myCenter sm-hidden">
+			<!--我的泡泡-->
+			<div class="parttenFix parttenFix-l sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgleft" /></a>
+			</div>
+			<div class="parttenFix parttenFix-r sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgright" /></a>
+			</div>
+			<!--我的泡泡-->
+			
+			<div class="myCenter-top clearfix">
+				<div class="myCenter-top-l fl">
+					<div class="myCenter-top-title">我分享的泡泡</div>
+					<div class="myCenter-top-con clearfix">
+						<div class="myCenter-status bdr fl">
+							<div class="myCenter-status-top">审核中</div>
+							<div class="myCenter-status-btom clearfix">
+								<div class="fl"><span class="auditing">0</span>条</div>
+								<a href="mMypao.html?auditStatus=B" class="fr">立即查看</a>
+							</div>
+						</div>
+						<div class="myCenter-status bdr fl">
+							<div class="myCenter-status-top" title="">质疑期</div>
+							<div class="myCenter-status-btom clearfix">
+								<div class="fl"><span class="question">0</span>条</div>
+								<a href="mMypao.html?paopaoStatus=00" class="fr">立即查看</a>
+							</div>
+						</div>
+						<div class="myCenter-status fl">
+							<div class="myCenter-status-top">被支持</div>
+							<div class="myCenter-status-btom clearfix">
+								<div class="fl"><span class="suppered">0</span>条</div>
+								<a href="mMypao.html?paopaoStatus=02" class="fr">立即查看</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="myCenter-top-c fl">
+					<div class="myCenter-top-title">我评分的泡泡</div>
+					<div class="myCenter-top-con">
+						<div class="myCenter-status">
+							<div class="myCenter-status-btom clearfix">
+								<div class="fl"><span class="myLevel">0</span>条</div>
+								<a href="mMymark.html" class="fr">立即查看</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="myCenter-top-r fl">
+					<div class="myCenter-top-title">我收藏的泡泡</div>
+					<div class="myCenter-top-con">
+						<div class="myCenter-status">
+							<div class="myCenter-status-btom clearfix">
+								<div class="fl"><span class="myCollection">0</span>条</div>
+								<a href="mMycollect.html" class="fr">立即查看</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="myCenter-btom">
+				<div class="myCenter-btom-title">我支持的泡泡</div>
+				<ul class="clearfix">
+					<li class="mr0">
+						<a href="moreVedio.html">继续支持更多有知需求>></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="hide sm-visible">
+			<div class="m-head pr">
+				<p><img src="img/actorimg.png" class="headImg" width="55" height="55" /><br /><span class="headNick"></span></p>
+				<div class="m-bar">
+					<a href="javascript:void(0)"><i class="myVideos">0</i><br/>我的分享</a>
+					<a href="javascript:void(0)"><i class="myVideos">0</i><br/>我的传播</a>
+					<a href="javascript:void(0)"><i class="myLevel">0</i><br/>我的评分</a>
+					<a href="javascript:void(0)"><i class="myCollection">0</i><br/>我的收藏</a>
+				</div>
+			</div>
+			<div class="m-con mt10">
+				<dl>
+					<dt><a href="#"><span class="p-icon p-icon1"></span>泡泡管理<span class="ar"></span></a></dt>
+					<dd><a href="mMypao.html">我的泡泡<span></span></dd>
+					<dd><a href="mMysupport.html">我支持的泡泡<span></span></a></dd>
+					<dd><a href="mMycollect.html">我的收藏<span></span></a></dd>
+					<dd><a href="mSpread.html">我的传播<span></span></a></dd>
+					<dd><a href="mMymark.html">我的评分<span></span></a></dd>
+				</dl>
+				<dl>
+					<dt><a href="addPao.html"><span class="p-icon p-icon2"></span>分享泡泡<span class="ar"></span></a></dt>
+				</dl>
+				<dl>
+					<dt><a href="motivatePao.html"><span class="p-icon p-icon3"></span>激励泡泡<span class="ar"></span></a></dt>
+				</dl>
+				<dl>
+					<dt><a href="#"><span class="p-icon p-icon4"></span>安全设置<span class="ar"></span></a></dt>
+					<dd><a href="safePwd.html">登录密码<span></span></a></dd>
+					<dd><a href="safePhone.html">手机绑定<span></span></a></dd>
+					<dd id="bindEmail"><a href="safeEmail.html">邮箱绑定<span></span></a></dd>
+					<dd id="nameIdentify"><a href="safeRz.html">实名认证<span></span></a></dd>
+				</dl>
+				<dl>
+					<dt><a href="message.html"><span class="p-icon p-icon5"></span>站内信<span class="ar"></span></a></dt>
+				</dl>
+			</div>
+		</div>
+		<img src="" id="aaa" />
+		<!--公共脚部-->
+		<div id="footer"></div>
+		
+		<script src="js/myCenter.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
+<script>
+	$(function(){
+		$(".m-con dl dt").click(function(){
+			$(this).closest("dl").find("dd").slideToggle(100);
+		});
+		
+		//我的泡泡分类个数
+		$.ajax({
+			type:"post",
+			dataType:dataType, 
+			url:url+"video/myVideosCount.json",
+			data:{},
+			success:function(data){
+				$(".auditing").html(data.auditing);
+				$(".myVideos").html(data.myVideos);
+				$(".question").html(data.question);
+				$(".suppered").html(data.suppered);
+				$(".myLevel").html(data.myLevel);
+				$(".myCollection").html(data.myCollection);
+			}
+		});
+		//我支持的泡泡
+		$.ajax({
+			type:"post",
+			dataType:dataType, 
+			url:url+"video/myVideos.json",
+			data:{videoType:"",operateType:"00",pageSize:"3",pageNum:"1"},
+			success:function(data){
+				var str = '';
+				$.each(data.records, function(idx,el) {
+					str += '<li>';
+					str += '	<img src="'+imgUrl+el.vidioPic+'"/>';
+					str += '	<a class="autoPlay" href="navOneDetail.html?vidioId='+el.vidioId+'"></a>';
+					str += '	<p>'+el.description+'</p>';
+					str += '</li>';
+				});
+				$(".myCenter-btom ul").prepend(str);
+			}
+		});
+		/*查询当前绑定状态*/
+		$.ajax({
+		    type:"POST",
+		    url:url+"user/getMemberInfo.json",
+		    dataType: dataType,
+		    success: function (data) {console.log(data);
+		    	/*判断是否实名认证*/
+		        if(data.memberInfo.isRealName=="1"){
+					$("#nameIdentify").html("<a href='javascript:void(0)'>实名认证<s>认证中</s></a>");
+		        }
+		        if(data.memberInfo.isRealName=="2"){
+					$("#nameIdentify").html("<a href='javascript:void(0)'>实名认证<s>已认证</s></a>");
+		        }
+		        /*判断是否绑定邮箱*/
+		       if(data.memberInfo.isBindEmail){
+					$("#bindEmail").html("<a href='javascript:void(0)'>邮箱绑定<s>已绑定</s></a>");
+		        }
+		    }
+		});		
+		//左右两侧广告图片
+		ad("00,01");
+		
+	});
+</script>

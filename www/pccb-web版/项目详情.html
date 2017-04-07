@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+</head>
+<body class="eee">
+	<header>
+		<a href="javascript:void(0)" class="txt">返回列表</a>
+		项目详情
+	</header>
+	<p class="hot"><img src="images/hot.png" width="20" >华企通第一期</p>
+    <article>
+    	<p class="time"><span id="h"></span>时<span id="m"></span>分<span id="s"></span>秒</p>
+    	<div class="progress2">
+    		<div class="per2" rel="45"></div>
+    	</div>
+    	<p class="clearfix margin-top-20"><span class="float-left font12">已投：￥2,000</span><span class="float-right font12">还余：￥11,0000</span></p>
+    	<p class="txt-center font12">990人关注&emsp;195人投资</p>
+		<div class="a-info2 clearfix">
+			<dl>
+				<dt><span>13.5</span>%</dt>
+				<dd>逾期年化利率</dd>
+			</dl>
+			<dl>
+				<dt><span>6</span>个月</dt>
+				<dd>项目期限</dd>
+			</dl>
+			<dl>
+				<dt><span>30</span>万</dt>
+				<dd>投资上限</dd>
+			</dl>
+		</div>
+    </article>
+	<article class="art2">
+		<p>发布时间&emsp;2014年11月21日 11时00分</p>
+		<p>收益方式&emsp;每月付息，到期还本</p>
+		<p>起投金额&emsp;100元</p>
+		<p>退出方式&emsp;可转让</p>
+	</article>
+	<div class="tz">
+		<a href="javascript:void(0)" class="btn unopen">投资暂未开放</a>
+		<p>您可以通过APP或登录PC端去投资</p>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload = function(){
+		$("div.per2").each(function(index, el) {
+			var that = $(this);
+			var per = that.attr("rel");
+			that.css("width",per+"%");
+		});
+	}
+	function FreshTime()
+	{
+	        var endtime=new Date("2015/12/17,12:20:12");//结束时间
+	        var nowtime = new Date();//当前时间
+	        var lefttime=parseInt((endtime.getTime()-nowtime.getTime())/1000); 
+	        d=parseInt(lefttime/3600/24);
+	        h=parseInt((lefttime/3600)%24);
+	        m=parseInt((lefttime/60)%60);
+	        s=parseInt(lefttime%60);
+	        $("#h").html(h);
+	        $("#m").html(m);
+	        $("#s").html(s);
+	        if(lefttime<=0){
+	       		clearInterval(sh);
+	        }
+	}
+	FreshTime()
+	var sh;
+	sh=setInterval(FreshTime,1000);
+</script>
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<style>
+    .wrap{width:58px;height:58px;display:inline-block;border:1px solid #eee; position: relative;left:0;top:0; margin:5px 3px;}
+    .wrap>span{width:20px;height:20px; line-height:16px; text-align:center;display:block;background:rgba(0,0,0,0.5);border-radius: 100%;color:#fff; position: absolute;right:-8px;top:-8px;}
+    .wrap>input{position:absolute;top:0;right:0;width:56px;height:56px;opacity:0}
+</style>
+</head>
+<body>
+<section id="section3">
+	<form action="" class="form-os" style="margin:0;">
+		<p class="title bb-theme mt0">操作类型</p>
+        <div class="fff clear radio-opr">
+            <label class="label" ><span class="radio"></span>&ensp;简单回复</label>
+            <label class="label" ><span class="radio"></span>&ensp;未能解决</label>
+            <label class="label" ><span class="radio"></span>&ensp;已解决-满意</label>
+            <label class="label" ><span class="radio"></span>&ensp;已解决-不满意</label>
+        </div>
+        <div class="pb10">
+    		<div class="pl10 pr10"><textarea name="" id="" placeholder="输入消息内容" class="textarea"></textarea></div>
+            <div class="mt5 p10">
+                <div class="wrap">
+                    <img src="images/temp/vip.png" width="56" height="56" />
+                    <span onclick=closeImg(this)>x</span>
+                </div>
+                <div class="wrap">
+                    <img src="images/temp/vip.png" width="56" height="56" />
+                    <span onclick=closeImg(this)>x</span>
+                </div>
+
+                <div class="wrap">
+                    <img src="images/temp/head2.jpg" width="56" height="56" />
+                    <span onclick=closeImg(this)>x</span>
+                </div>
+                <div class="wrap">
+                    <img src="images/image_upload.png" width="56" height="56" />
+                    <input type="file" >
+                </div>
+            </div>
+        </div>
+		
+	</form>
+</section>
+<p style="position:fixed;bottom:0;width:100%;background:#fff;max-width:640px;padding:10px;border-top:1px solid #D2E4F7">
+			<a href="#" class="btn font16">回复</a>
+		</p>
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $(".radio-opr>label").tap(function(){
+            $(".radio-opr>label span").removeClass("radio-active");
+            $(this).find("span").addClass("radio-active");
+        });
+    });
+    //删除上传的图片
+    function closeImg(obj){
+        $(obj).closest(".wrap").remove();
+    }
+</script>
+
+
+
+

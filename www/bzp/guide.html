@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Expires" CONTENT="0">           
+  <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+  <meta http-equiv="Pragma" CONTENT="no-cache"> 
+  <title>Demo</title>
+  <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+  <style>
+    html,body{height: 100%;}
+    body{max-width:640px;margin:0 auto;}
+    *{padding: 0;margin: 0;}
+    .flex{height:100%;overflow:hidden;background: url('img/bg.png') center center no-repeat;background-size: 100% 100%}
+    .stars{position:relative;width:100%;height:90%;-webkit-transform:rotate(-45deg);transform:rotate(-45deg);}
+    .stars img{position: absolute;opacity:0;-webkit-transform:rotate(45deg);transform:rotate(45deg);-webkit-animation: myfirst 3s infinite;animation: myfirst 3s infinite;width:66px;height:68px;}
+    .stars .img1{top:20%;left:100%;-webkit-animation-delay:1s;animation-delay:1s;}
+    .stars .img2{top:30%;left:100%;-webkit-animation-delay:2s;animation-delay:2s;}
+    .stars .img3{top:50%;left:100%;-webkit-animation-delay:1.5s;animation-delay:1.5s;}
+    .stars .img4{top:60%;left:100%;}
+    @keyframes myfirst
+    {
+        from {transform:translateX(0) rotate(45deg);opacity:0.8;}
+        to {transform:translateX(-500px) rotate(45deg);opacity: 0;width:60px;}
+    }
+    @-webkit-keyframes myfirst
+    {
+        from {-webkit-transform:translateX(0) rotate(45deg);opacity:0.8;}
+        to {-webkit-transform:translateX(-500px) rotate(45deg);opacity: 0;width:60px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="flex">
+      <div class="stars" id="stars">
+        <img src="img/star1.png" class="img1" />
+        <img src="img/star2.png" class="img2" />
+        <img src="img/star1.png" class="img3" />
+        <img src="img/star1.png" class="img4" />
+      </div>
+    </div>
+</body>
+</html>

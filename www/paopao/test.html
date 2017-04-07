@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+	</head>
+	<body>	
+		<div style="width:500px; background:#000;height:400px;display:none">
+			<video width="100%" height="400" controls="controls">
+				<source src="img/vedio/movie.ogg" type="video/ogg">
+				<source src="img/vedio/movie.mp4" type="video/mp4">
+				<embed src="img/vedio/movie.mp4" allowscriptaccess="always"
+				 bgcolor="#000" id="playerIdName" name="playerIdName" quality="high"  style="width:500px;height:400px">
+			</video>
+		</div>
+		<form id="formToUpdate" method="post" action="#" enctype="multipart/form-data">
+		    <input type="file"  name="videoFile">
+
+		    <select name="city" class="hide">
+		    	<option>中国</option>
+		    	<option>俄罗斯</option>
+		    </select>
+		    <input id="ajaxSubmit" type="button" value="异步提交">
+		</form>
+	</body>
+</html>
+<script>
+	var url = 'http://192.168.4.58/video/addVideo1.json'; 
+	$(function(){
+		  $("#ajaxSubmit").on("click",function(){
+                $("#formToUpdate").ajaxSubmit({
+                    type:'post',
+                    dataType:'json',
+                    url:url,
+                    data:{city:$("#city").val()},//file可以不用传，但是需要有name属性
+                    success:function(data){
+                        console.log(data);
+                    },
+                    error:function(XmlHttpRequest,textStatus,errorThrown){
+                        console.log(XmlHttpRequest);
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                    }
+                });
+            });
+	});
+</script>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>学业指导中心 - 温州大学</title>
+<link rel="stylesheet" href="css/index.css" />
+<script src="js/jquery-2.1.3.min.js"/></script>
+</head>
+<body class="fff">
+	<div class="body">
+        <div class="top-img">
+            <img src="images/banner.jpg" />
+            <p>欢迎，请选择下面菜单进行查询</p>
+        </div>
+        <section>
+            <div class="box tips">
+                <div class="vol"><img src="images/vol.png"  />公告：</div>
+                <div class="flex wrap">
+                    <ul class="ul pr">
+                        <li class="box"> <div class="flex">工程师正在玩命开发中，晚点再来</div><span>2015-09-11</span></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="title">查询</p>
+            <div class="tag clearfix">
+                <a href="#"><img src="images/img1.png" /></a>
+                <a href="#"><img src="images/img2.png" /></a>
+                <a href="#"><img src="images/img3.png" /></a>
+                <a href="#"><img src="images/img4.png" /></a>
+                <a href="#"><img src="images/img5.png" /></a>
+                <a href="#"><img src="images/img6.png" style="height:90%" /></a>
+                <a href="#" style="width:25%"><img src="images/img7.png" style="height:88%;" /></a>
+            </div>
+            <p class="title">互动</p>
+            <div class="tag clearfix">
+                <a href="#"><img src="images/img8.png" /></a>
+                <a href="#"><img src="images/img9.png" /></a>
+                <a href="#"><img src="images/img10.png" /></a>
+                <a href="#"><img src="images/img11.png" /></a>
+            </div>
+            <p class="title">个人</p>
+            <div class="tag clearfix">
+                <a href="#" id="unbind"><img src="images/img12.png" /></a>
+                <a href="#"><img src="images/img13.png" /></a>
+            </div>
+        </section>
+    </div>
+    <div class="dialog">
+        <div class="con">
+            <p class="d-title">提示</p>
+            <div class="d-con">
+                确定要解除绑定吗？
+            </div>
+            <div class="box">
+                <a href="javascript:void(0)" class="flex" id="close">取消</a>
+                <a href="javascript:void(0)" class="flex">确定</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+    	温州大学 &copy; 版权所有&emsp;&emsp; Powered By <span><a href="http://www.bianguo.com.cn">BianGuo</a></span> 
+    </footer>
+</body>
+</html>
+<script type="text/javascript">
+    $(function() {
+        var num=0;
+        var speed=3000;
+        $(".wrap .ul li:first").clone().appendTo($(".wrap .ul"));
+        var time=setInterval(autoPlay, speed);
+        function autoPlay(){
+            num++;
+            if(num>$(".wrap .ul li").length-1){
+                num=1;
+                $(".wrap .ul").css("top",0);
+            }
+
+            $(".wrap .ul").stop().animate({"top":-num*$(".wrap").height()},500);
+        }
+
+        //解除绑定
+        $("#unbind").click(function(event) {
+            $(".dialog").fadeIn(200);
+        });
+        //取消
+        $("#close").click(function(event) {
+           $(".dialog").fadeOut(200);
+        });
+    });
+</script>
+
+
+
+
+
+
+

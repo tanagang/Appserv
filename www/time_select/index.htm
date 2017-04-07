@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手机日历选择器</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link href="css/mobiscroll.custom-2.5.0.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="js/mobiscroll.js" ></script>
+<script type="text/javascript" src="js/mobiscroll.datetime.js" ></script>
+<script type="text/javascript">
+$(function () {
+	var newjavascript={
+		plugdatetime:function ($dateTxt,type) {
+				//var curr = new Date().getFullYear();
+				var opt = {}
+				opt.time = {preset : type};
+				opt.date = {preset : type};
+				opt.datetime = { 
+					preset : type, 
+					minDate: new Date(2010,1,01,00,00), 
+					maxDate: new Date(2020,12,31,24,59), 
+					stepMinute: 1  
+				};
+				$dateTxt.scroller('destroy').scroller($.extend(opt[type], {
+					theme: "android-ics light",
+					mode: "scroller",
+					display: "modal",
+					lang: "zh",
+					monthText: "月",
+					dayText: "日",
+					yearText: "年",
+					hourText: "时",
+					minuteText: "分",
+					ampmText:"上午/下午",
+		            timeFormat: 'HH:ii',
+		            timeWheels: 'HHii',
+					setText: '确定',
+					cancelText: '取消',
+		            dateFormat: 'yyyy-mm-dd', // 日期格式
+		            dateOrder: 'yymmdd' //面板中日期排列格
+				})
+			);
+		}
+	}
+	newjavascript.plugdatetime($("#text"), "date")
+});
+</script>
+
+</head>
+<body>
+
+<div>手机点击输入框</div>
+
+<input type="text" id="text" />
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>大转盘</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="stylesheet" href="css/index.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jQueryRotate.2.2.js"></script>
+<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<style>
+	*{padding:0;margin:0;}
+	html,body{height:100%;font-size:14px; font-weight: "黑体";min-width: 320px}
+	body{background:#047BD5;max-width:640px;margin:0 auto;width:100%;}
+	.hide{display:none;}
+	.pt15{padding-top:15px!important}
+	.pt20{padding-top:20px!important;}
+	.pt30{padding-top:30px!important;}
+	.pt40{padding-top:40px!important;}
+	.mt10{margin-top:10px!important;}
+	.mt15{margin-top:15px!important;}
+	.mt20{margin-top:20px!important;}
+	.mt30{margin-top:30px!important;}
+	.header{background:url('images/topbg2.png') no-repeat top center;width:100%;height:3rem;background-size: 100% 100%}
+	.footer{background:url('images/footerbg2.png') no-repeat bottom center;height:1.4rem;width:100%;background-size: 100% 100%}
+	.contain{margin:0 15px;}
+	.mypoint{text-align: center;color:#fff;font-size:15px;font-weight: bold;margin-top:-40px;}
+	.mypoint>span{color:#fbc523;font-weight: bold}
+
+	.bg1{height:300px;background: url('images/bg1.png') no-repeat center center;background-size:100% 100%;padding:80px 15px 15px 20px}
+	.bg2{height:454px;margin:50px 0px;background: url('images/bg2.png') no-repeat center center;background-size:100% 100%;}
+	.content{height: 260px;margin: 35px auto 0px auto;overflow: hidden;}
+	.content p{padding:5px 0;font-size:12px;color:#fff;}
+	.content p:before{content:"";width:4px;height:4px;border-radius: 4px;background: #ECCE4D;display:inline-block;margin-right:10px; vertical-align: 1px}
+	.myjp{background: url('images/shadow.png') no-repeat center center;background-size: 100% 100%;height:60px; line-height: 60px;text-align: right;}
+	.myjp a{color:#fbc523;font-size:15px;}
+
+	.mask{width:100%;height:100%;background:rgba(0,0,0,0.3); position: fixed;left:0;top:0;display: none}
+	.dialog{
+			background: url('images/dialog1.png') no-repeat center center;width:240px;height:450px;background-size: 100% 100%;margin-left:-110px;
+			-webkit-transform: translateY(-100%);
+			transform: translateY(-100%);
+			-webkit-transition:transform 0.5s ease;
+			transition:transform 0.5s ease;
+			position: fixed;top: 0;left: 50%;
+		}
+
+	.dialog2{
+		background:  url('images/dialog2.png') no-repeat center center;width:220px;height:480px;background-size: 100% 100%;
+		margin-left:-110px;
+		-webkit-transform: translateY(-100%);
+		transform: translateY(-100%);
+		-webkit-transition:transform 0.5s ease;
+		transition:transform 0.5s ease;
+		position: fixed;top: 0;left:50%;
+
+	}
+	.dialog2 .con{padding-top:235px;}
+	.dialog2 .t3{color:#7D2F1E;font-weight: bold}
+	.idx{font-size:12px;margin:10px 10px 0 10px;text-align:left;color:#7D2F1E;}
+	.idx span{font-size:12px;float:right;color:#7D2F1E;}
+	
+	.dialog2 ul{text-align: left;list-style:none;margin:0 10px 10px 10px;font-size:10px;}
+	.dialog2 ul li{padding:5px 0;}
+	.dialog2 ul li span{float:right;}
+	.dialog2 ul li:before{content:"";width:4px;height:4px;border-radius: 4px;background: #ECCE4D;display:inline-block;margin-right:5px; vertical-align: 1px}
+	.con{width:180px;text-align: center;padding:250px 10px 20px 10px;margin:0 auto;}
+	.con .t{font-size:10px; line-height: 180%;}
+	.con .t2{font-size:15px; line-height: 180%;color:#333;margin:15px auto;}
+    .con .t2 a{color:#7D2F1E;}
+    .con .t span{font-size:14px;font-weight: bold;color:#7D2F1E;}
+    .quan{background:url('images/quan.png') no-repeat center center; width:92px;height:48px;line-height:48px;color:#fff;  background-size: 100% 100%;margin:10px auto;font-size:32px;text-align: center;}
+    .quan small{font-size:12px;vertical-align: 3px;}
+
+    .ddd .btns{margin:10px auto;}
+    .ddd .btns a{width:70px;height:30px;display: inline-block;line-height: 30px;text-align: center;font-size: 12px;color:#fff;  background: #D8DEE3;text-decoration: none}
+    .ddd .btns a.active{background: #8792A3}
+	.dialog2 ul{height:145px;overflow-y:scroll}
+	.dialog2 ul::-webkit-scrollbar{display: none;}
+	.wrap1::-webkit-scrollbar{display: none;}
+</style>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="contain">
+		<p class="mypoint">我的积分：<span>600分</span></p>
+		<div class="ly-plate" style="width:225px;height:225px;margin-top:30px">
+		   <div class="rotate-bg" style="background-size:100% 100%"></div>
+		   <div class="lottery-star" style="width:75px;top:45px;left:132px"><img src="images/rotate-static2.png" id="lotteryBtn" style="width:75px"></div>
+		</div>
+		<p class="myjp"><a href="javascript:void(0)">我的奖品</a></p>
+		<div class="bg1">
+			<div class="content c3">
+				<div class="wrap1">
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+					<p>1PCCB****123&emsp;&emsp;抽中了20元无杠杆抵用券</p>
+				</div>
+			</div>
+		</div>
+		<div class="bg2"></div>
+	</div>
+	<div class="footer"></div>
+
+	<!--遮罩层-->
+	<div class="mask"></div>
+	<!--模态框-->
+	<div class="ddd dialog">
+		<div class="con">	
+			<p class="t">恭喜您获得了<br><span>50元抵用券</span></p>
+			<div class="quan"><small>￥</small>50</div>
+			<div class="btns">
+				<a href="javascript:void(0)" class="close">取消</a>&nbsp;<a href="javascript:void(0)" class="active">再来一次</a>
+			</div>
+		</div>
+
+		<div class="con hide">	
+			<p class="t pt30"><span>对不起，当前积分不足</span><br>您可通过投资、发帖、签到等形式赚取积分</p>
+			<div class="btns"> 
+				<a href="javascript:void(0)" class="close">我知道了</a>
+			</div>
+		</div>
+
+		<div class="con hide">	
+			<p class="t pt15"><img src="images/point.png" width="50" /><br>抽奖将扣除1000积分</p>
+			<div class="btns">
+				<a href="javascript:void(0)" class="close">取消</a>&nbsp;<a href="javascript:void(0)" class="active">确定</a>
+			</div>
+		</div>
+
+		<div class="con hide">	
+			<p class="t2 pt30"><span>对不起，请先<a href="#">登录</a></span></p>
+			<div class="btns">
+				<a href="javascript:void(0)"  class="close">我知道了</a>
+			</div>
+		</div>
+	</div>
+	<!--模态框抽奖列表-->
+	<div class="ddd dialog2">
+		<div class="con">	
+			<p class="t3">我的奖品</p>
+			<p class="idx">序号<span>奖品名称</span></p>
+			<ul>
+				<li>10元抵用券<span>1</span></li>
+				<li>10元无杠杆抵用券<span>3</span></li>
+				<li>10元无杠杆抵用券<span>2</span></li>
+				<li>10元无杠杆抵用券<span>4</span></li>
+				<li>10元无杠杆抵用券<span>4</span></li>
+				<li>10元无杠杆抵用券<span>4</span></li>
+				<li>10元无杠杆抵用券<span>4</span></li>
+			</ul>
+			<div class="btns">
+				<a href="javascript:void(0)"  class="close">我知道了</a>
+			</div>
+		</div>
+
+		<div class="con hide">	
+			<p class="t3">
+				<img src="images/no.png" width="70">
+			</p>
+			<div class="btns mt30">
+				<a href="javascript:void(0)" class="close">我知道了</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+	$(function(){
+		//我的奖品列表
+		$(".myjp").click(function(event) {
+			$(".mask").fadeIn(100);
+			$(".dialog2").removeClass("hide").css("webkitTransform","translateY(0)");
+		});
+		
+		//关闭弹窗
+		$(".ddd a.close").click(function(){
+			$(".mask").fadeOut(100);	
+			$(this).closest('.ddd').css("webkitTransform","translateY(-100%)");
+			
+		});
+
+		//-----大转盘抽奖活动游戏自动结束js
+	   var rotateFunc = function(awards,angle,text){  //awards:奖项，angle:奖项对应的角度
+	      $('#lotteryBtn').stopRotate();
+	      $("#lotteryBtn").rotate({
+	         angle:200, 
+	         duration: 3000, 
+	         animateTo: angle+1440, //angle是图片上各奖项对应的角度，1440是我要让指针旋转4圈。所以最后的结束的角度就是这样子^^
+	         callback:function(){
+	           //alert(awards+"======"+text);
+	           $(".mask").fadeIn(100);
+			   $(".dialog").removeClass("hide").css("webkitTransform","translateY(0)");
+	         }
+	      }); 
+	   };   
+	   $("#lotteryBtn").rotate({ 
+	      bind: 
+	       { 
+	         click: function(){
+	               var data = [1,2,3,4,5,6,7,8,9]; //返回的数组
+	                   data = data[Math.floor(Math.random()*data.length)];
+	               if(data==1){
+	                  rotateFunc(1,20,'Iphone7')
+	               }
+	               if(data==2){
+	                  rotateFunc(2,60,'10元无杠杆抵用券')
+	               }
+	               if(data==3){
+	                  rotateFunc(3,100,'100M流量')
+	               }
+	               if(data==4){
+	                  rotateFunc(4,140,'VIP续费一个月')
+	               }
+	               if(data==5){
+	                  rotateFunc(5,180,'10元抵用券')
+	               }
+	               if(data==6){
+	                  rotateFunc(6,220,'500M流量')
+	               }
+	               if(data==7){
+	                  rotateFunc(7,260,'500元京东卡')
+	               }
+	               if(data==8){
+	                  rotateFunc(8,300,'50元抵用券')
+	               }
+	               if(data==9){
+	                  rotateFunc(9,340,'1G全国流量')
+	               }
+	         }
+	       } 
+	      
+	   });
+   	   autoscroll($(".c3"),2000);
+	});	
+</script>

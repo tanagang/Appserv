@@ -1,0 +1,141 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>pccb</title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+    <header class="box">
+        <a href="javascript:void(0)"><img src="images/back.png" height="16" width="9"></a>
+        <p class="flex ellipsis">e投资产品名称不宜太长</p>
+        <a href="javascript:void(0)"><img src="images/share.png" height="16" width="16"></a>
+    </header>
+    <section class="mt0">
+        <p class="p1">年化收益率<span>限时抢购</span></p>
+        <dl class="yield">
+            <dt id="rate"></dt>
+            <dd>已完成<span id="progress"></span>，剩余可投金额 <span id="remainingAmount"></span> 元</dd>
+            <dd>
+                <div class="progress">
+                    <div class="per"></div>
+                </div>
+            </dd>
+        </dl>
+        <div class="ensure clearfix">
+            <div class="yen">
+                <p>本金保障</p>
+                <p>100%兑付</p>
+            </div>
+            <div class="safe">
+                <p>抵押保障</p>
+            </div>
+            <div class="income">
+                <p>稳定收益</p>
+            </div>
+        </div>
+        <div class="invest clearfix">
+            <div class="inleft">
+                <input type="text">份，总金额 <small id="issuanceAmount">500</small> 万元
+            </div>
+            <div class="inright">
+                <a href="#" class="inbtn">立刻投资</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <ul class="content" id="record">
+            <li>
+                <a href="#">
+                    <span class="conleft">交易记录</span>
+                    <span class="conright" id="transactionCount"></span>
+                    <i>&gt;</i>
+                </a>
+            </li>
+            <li>
+                    <span class="conleft">投资期限</span>
+                    <span class="conright" id="deadline"></span>
+            </li>
+            <li>
+                <span class="conleft">起购金额</span>
+                <span class="conright" id="saleAmount"></span>
+            </li>
+            <li>
+                    <span class="conleft">起息日期</span>
+                    <span class="conright" id="startDate"></span>
+            </li>
+            <li>
+                    <span class="conleft">到期日期</span>
+                    <span class="conright" id="endDate"></span>
+            </li>
+            <li>
+                    <span class="conleft">预计到账</span>
+                    <span class="conright" id="expectedDate"></span>
+            </li>
+            <li>
+                    <span class="conleft">相关文件</span>
+                    <span class="conright" id="fileCount"></span>
+                    <i>&gt;</i>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="conleft">担保说明</span>
+                    <i>&gt;</i>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="footer clearfix">
+        <div class="ftleft">
+            <input type="text">份，总金额 <small>500</small> 万元
+        </div>
+        <div class="ftright">
+            <a href="#" class="ftbtn">已售罄</a>
+        </div>
+    </section>
+</body>
+</html>
+<script type="text/javascript">
+   
+    $(function() {
+    var code = request("productCode");
+    //alert(code);
+    $.ajax({
+        type:"POST",
+        url: 'http://192.168.2.111:8578/service?channel=queryProductDetailByCodeRequest&jsonp=?',
+        dataType: 'jsonp',
+        data: {productCode:"LC20151223000010"},
+        success: function (data) {
+            var data = eval(data);
+            console.log(data);
+            $("#rate").html(data.rate+"<small>%</small>");
+            $("#progress").html((data.alreadyAmount/data.issuanceAmount)*100+"%");
+            $("div.per").each(function(index, el) {
+                var that = $(this);
+                var per = (data.alreadyAmount/data.issuanceAmount)*100+"%";
+                that.css("width",per);
+            });
+            $("#remainingAmount").html(data.issuanceAmount-data.alreadyAmount);
+            $("#issuanceAmount").html(data.issuanceAmount/10000);
+            $("#transactionCount").html(data.transactionCount+" 笔");
+            $("#deadline").html(data.deadline+" 天");
+            $("#saleAmount").html(data.saleAmount+" 万元");
+            $("#startDate").html(data.valueDate);
+            $("#endDate").html(data.expiryDate);
+            $("#expectedDate").html("到期日起"+data.expectedDate+"个工作日内");
+            $("#fileCount").html(data.fileCount+" 个");
+        },
+        error:function(){}
+    });
+    
+});
+</script>

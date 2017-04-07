@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>项目列表页</title>
+<meta name="keywords" content="项目列表页"/>
+<meta name="description" content="项目列表页"/>
+<link rel="stylesheet" href="css/global.css"/>
+<link rel="stylesheet" href="css/project.css"/>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="js/jqPaginator.min.js"></script>
+</head>
+
+<body>
+  	<header id="header"></header>
+	<div class="h130"></div>
+	<div class="pl-main clearfix">
+		<div class="pl-crumb">
+	     	<span class="bl">您所在的位置:</span><a href="index.html" class="current">首页</a> <span>>></span> <span>项目列表</span>   
+	  	</div> 
+	  	<div class="pl-table">
+			<ul class="title clearfix">
+				<li style="width: 180px;"></li>
+				<li style="width: 190px;">基金名称</li>
+				<li style="width: 190px;">募集情况</li>
+				<li style="width: 120px;">还款时间</li>
+				<li style="width: 150px;">利息</li>
+				<li style="width: 150px;">剩余时间</li>
+				<li style="width: 120px;">担保/保证</li>
+			</ul>
+			<!--<ul class="content clearfix">
+				<li style="width: 175px;" class="tal"><img src="images/plpic.jpg"/></li>
+				<li style="width: 189px;" class="pt20">
+					<p class="pjname">基金宝-天天利 基金基金</p>
+					<p class="pjdb">本基金是用户的各位机会，为您提供的同时.....</p>
+				</li>
+				<li style="width: 189px;" class="pt20">
+					筹资金额 <span class="fc-c92">￥99,999,999</span><br /><span class="fc-c92">/￥99,999</span>
+					<div class="process"><s style="width:30%"><span>30%</span></s></div>
+				</li>
+				<li style="width: 120px;" class="linht">12月</li>
+				<li style="width: 150px;" class="linht">12.99%</li>
+				<li style="width: 150px;" class="linht">30天5小时10分</li>
+				<li style="width: 120px;" class="pt20">
+					<div class="ensure">有担保</div>
+					<div class="ensure">有保证</div>
+				</li>
+			</ul>
+			<ul class="content mt2 clearfix">
+				<li style="width: 175px;" class="tal"><img src="images/plpic.jpg"/></li>
+				<li style="width: 189px;" class="pt20">
+					<p class="pjname">基金宝-天天利 基金基金</p>
+					<p class="pjdb">本基金是用户的各位机会，为您提供的同时.....</p>
+				</li>
+				<li style="width: 189px;" class="pt20">
+					筹资金额 <span class="fc-c92">￥99,999,999</span><br /><span class="fc-c92">/￥99,999</span>
+					<div class="process"><s style="width:30%"><span>30%</span></s></div>
+				</li>
+				<li style="width: 120px;" class="linht">12月</li>
+				<li style="width: 150px;" class="linht">12.99%</li>
+				<li style="width: 150px;" class="linht">30天5小时10分</li>
+				<li style="width: 120px;" class="pt20">
+					<div class="ensure">有担保</div>
+					<div class="ensure">有保证</div>
+				</li>
+			</ul>
+			<ul class="content mt2 clearfix">
+				<li style="width: 175px;" class="tal"><img src="images/plpic.jpg"/></li>
+				<li style="width: 189px;" class="pt20">
+					<p class="pjname">基金宝-天天利 基金基金</p>
+					<p class="pjdb">本基金是用户的各位机会，为您提供的同时.....</p>
+				</li>
+				<li style="width: 189px;" class="pt20">
+					筹资金额 <span class="fc-c92">￥99,999,999</span><br /><span class="fc-c92">/￥99,999</span>
+					<div class="process"><s style="width:30%"><span>30%</span></s></div>
+				</li>
+				<li style="width: 120px;" class="linht">12月</li>
+				<li style="width: 150px;" class="linht">12.99%</li>
+				<li style="width: 150px;" class="linht">30天5小时10分</li>
+				<li style="width: 120px;" class="pt20">
+					<div class="ensure">有担保</div>
+					<div class="ensure">有保证</div>
+				</li>
+			</ul>
+			<ul class="content mt2 clearfix">
+				<li style="width: 175px;" class="tal"><img src="images/plpic.jpg"/></li>
+				<li style="width: 189px;" class="pt20">
+					<p class="pjname">基金宝-天天利 基金基金</p>
+					<p class="pjdb">本基金是用户的各位机会，为您提供的同时.....</p>
+				</li>
+				<li style="width: 189px;" class="pt20">
+					筹资金额 <span class="fc-c92">￥99,999,999</span><br /><span class="fc-c92">/￥99,999</span>
+					<div class="process"><s style="width:30%"><span>30%</span></s></div>
+				</li>
+				<li style="width: 120px;" class="linht">12月</li>
+				<li style="width: 150px;" class="linht">12.99%</li>
+				<li style="width: 150px;" class="linht">30天5小时10分</li>
+				<li style="width: 120px;" class="pt20">
+					<div class="ensure">有担保</div>
+					<div class="ensure">有保证</div>
+				</li>
+			</ul>
+			<ul class="content mt2 clearfix">
+				<li style="width: 175px;" class="tal"><img src="images/plpic.jpg"/></li>
+				<li style="width: 189px;" class="pt20">
+					<p class="pjname">基金宝-天天利 基金基金</p>
+					<p class="pjdb">本基金是用户的各位机会，为您提供的同时.....</p>
+				</li>
+				<li style="width: 189px;" class="pt20">
+					筹资金额 <span class="fc-c92">￥99,999,999</span><br /><span class="fc-c92">/￥99,999</span>
+					<div class="process"><s style="width:30%"><span>30%</span></s></div>
+				</li>
+				<li style="width: 120px;" class="linht">12月</li>
+				<li style="width: 150px;" class="linht">12.99%</li>
+				<li style="width: 150px;" class="linht">30天5小时10分</li>
+				<li style="width: 120px;" class="pt20">
+					<div class="ensure">有担保</div>
+					<div class="ensure">有保证</div>
+				</li>
+			</ul>
+			<ul class="content mt2 clearfix">
+				<li style="width: 175px;" class="tal"><img src="images/plpic.jpg"/></li>
+				<li style="width: 189px;" class="pt20">
+					<p class="pjname">基金宝-天天利 基金基金</p>
+					<p class="pjdb">本基金是用户的各位机会，为您提供的同时.....</p>
+				</li>
+				<li style="width: 189px;" class="pt20">
+					筹资金额 <span class="fc-c92">￥99,999,999</span><br /><span class="fc-c92">/￥99,999</span>
+					<div class="process"><s style="width:30%"><span>30%</span></s></div>
+				</li>
+				<li style="width: 120px;" class="linht">12月</li>
+				<li style="width: 150px;" class="linht">12.99%</li>
+				<li style="width: 150px;" class="linht">30天5小时10分</li>
+				<li style="width: 120px;" class="pt20">
+					<div class="ensure">有担保</div>
+					<div class="ensure">有保证</div>
+				</li>
+			</ul>-->
+		   </div>
+
+			<div class="page-container clearfix">
+				<span class="total">第<i id="currentpage"></i>页 共<i id="countindex"></i>页</span>
+				<ul class="pagination" id="pagination">
+				</ul>
+				<input type="hidden" id="PageCount" />
+				<input type="hidden" id="PageSize"  value="6" />
+	<!--			<input type="hidden" id="countindex" value="10"/>-->
+				<!--设置最多显示的页码数 可以手动设置 默认为7-->
+				<input type="hidden" id="visiblePages" value="3" />
+			</div>
+	</div>
+			<!--<div class="page">
+
+				<a href="javascript:void(0)" class="turn">上一页</a><a href="javascript:void(0)" class="num">1</a><a href="javascript:void(0)" class="num active">2</a><a href="javascript:void(0)" class="num">3</a><a href="javascript:void(0)" class="turn">下一页</a><a href="javascript:void(0)" class="turn">尾页</a>
+			</div>-->
+
+
+	<footer id="footer">
+		<div class="ft-main">
+			<div class="dl clearfix">
+				<dl>
+					<dt></dt>
+					<dd>各类协议</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>我的账户</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>投资规则</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>个人信息保障</dd>
+				</dl>
+				<dl>
+					<dt></dt>
+					<dd>合同规范</dd>
+				</dl>
+			</div>
+			<div class="ftm-bottom clearfix">
+				<div class="ft-logo fl">
+					<img src="images/ft-logo.png"/>
+				</div>
+				<div class="infor fl">
+					<p>电话：1254-5621-476</p>
+					<p>地址：日本东京区日本东京区</p>
+					<p>Copyright © 2014 沪ICP备10011451号-20 用时：秒关于我们版权声明</p>
+				</div>
+				<div class="ewm fr">
+					<img src="images/ewm.jpg"/>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- 弹出层 -->
+	<div class="login-bg" style="display: none;"></div>
+	<!-- 登录 -->
+	<div class="login-pop" style="display: none;">
+		<div class="con" style="position: relative">
+			<a href="javascript:;" class="close"></a>
+			<p class="conTitle">登录 Cool</p>
+			<span style="color: red;display: none;position: absolute;top:75px" class="tips"></span>
+			<input type="text" placeholder="请输入邮箱或手机号" class="username">
+			<span style="color: red;display: block"  class="tips"><i style="border-radius: 8px;height:16px;width:16px;border:1px solid red;">!</i></span>
+			<input type="password" placeholder="请输入密码" class="password"  maxlength="6">
+			<a href="setPwd.html" class="forget">忘记登录密码？</a>
+			<a href="javascript:void(0)" class="pop-btn login-btn">登录</a>
+			<a href="register.html" class="pop-btn reg-btn">去注册</a>
+		</div>
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function() {
+		/*$(".pl-table .content").click(function(event) {
+			location.href="projectDetails.html?id="+fund_id;
+		});*/
+		$(" #nav .log-reg .login").click(function(event) {
+			$(".bg,.login-pop").show();
+		});
+		$(".login-pop .con .close").click(function(event) {
+			$(".bg,.login-pop").hide();
+		});
+	});
+	
+	function getInvestlist(page) {
+		$.ajax({
+			url:window.api.changeUrl+"/frontapi/investlist",
+			type:'POST',
+			dataType:'json',
+			data:{page:page,num:6},
+			success:function (data) {
+				str='';
+				$.each(data.data,function (index,el) {console.log(data);
+					str+='<a href="projectDetails.html?id='+el.fund_id+'" class="investlist-item">';
+					str+='<ul class="content mt2 clearfix">';
+					str+='<li style="width: 175px;" class="tal"><img src="'+ el.fund_icon +'"></li>';
+					str+='<li style="width: 189px;" class="pt20">';
+					str+='<p class="pjname">'+el.fund_name+'</p>';
+					str+='<p class="pjdb">'+el.pjttype_code+'</p>';
+					str+='</li>';
+					str+='<li style="width: 189px;" class="pt20">筹资金额 <span class="fc-c92">'+el.fund_establish_max+'</span><br /><span class="fc-c92"></span><div class="process"><s style="width:'+el.fund_percent+'%"><span>'+el.fund_percent+'%</span></s></div> </li>';
+					str+='<li style="width: 120px;" class="linht">'+el.fund_replay_time+'</li>';
+					str+='<li style="width: 150px;" class="linht">'+el.fund_plan_yield_max+'</li>';
+					str+='<li style="width: 150px;" class="linht">'+el.fund_time+'</li>';
+					str+='<li style="width: 120px;" class="pt20">';
+					if(el.collateral_code=="Y") {
+						str += '<div class="ensure">有担保</div>';
+					}
+					if(el.guarantee_code=="Y") {
+						str += '<div class="ensure">有保证</div>';
+					}
+					str+='</li>';
+					str+='</ul></a>';
+				});
+				$('.pl-table .investlist-item').remove();
+				$('.pl-table').append(str);
+
+				exeData(100,page); // 100 总共多少条
+			}
+
+		})
+	}
+	getInvestlist(1);
+
+	function exeData(num,page) {
+		loadData(num);
+		loadpagination(page);
+	}
+	function loadData(total) {
+		$("#PageCount").val(total);
+	}
+	function loadpagination(page) {
+		var myPageCount = parseInt($("#PageCount").val());//获取总共多少条
+		var myPageSize = parseInt($("#PageSize").val());//获取每页显示多少条
+		var countindex = myPageCount % myPageSize > 0 ? Math.floor((myPageCount / myPageSize)) + 1 : (myPageCount / myPageSize);//计算一共多少页
+		if(page){
+			$("#countindex").html(countindex);
+		}
+
+		$("#currentpage").html(page);
+
+		$.jqPaginator('#pagination', {
+			totalPages: +countindex,
+			visiblePages: parseInt($("#visiblePages").val()),
+			currentPage: page,
+			first: '<li class="first"><a href="javascript:;">首页</a></li>',
+			prev: '<li class="prev btnpage"><a href="javascript:;" >上一页</a></li>',
+			next: '<li class="next btnpage"><a href="javascript:;" >下一页</a></li>',
+			last: '<li class="last"><a href="javascript:;">尾页</a></li>',
+			page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+			onPageChange: function (num, type) {
+				if (type == "change") {
+					getInvestlist(num);
+					exeData(num);
+				}
+			}
+		});
+	}
+
+
+
+
+
+
+
+
+</script>
+

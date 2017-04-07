@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Expires" CONTENT="0">           
+  <meta http-equiv="Cache-Control" CONTENT="no-cache">           
+  <meta http-equiv="Pragma" CONTENT="no-cache"> 
+  <title>Demo</title>
+  <link rel="stylesheet" href="css/idangerous.swiper.css">
+  <style>
+/* Demo Styles */
+html {
+  height: 100%;
+}
+body {
+  margin: 0 auto;
+  max-width: 640px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  position: relative;
+  height: 100%;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+}
+.slide1{background: url('img/a.png') center center no-repeat;background-size: 100% 100%}
+.slide2{background: url('img/b.png') center center no-repeat;background-size: 100% 100%}
+.slide3{background: url('img/c.png') center center no-repeat;background-size: 100% 100%}
+
+.swiper-slide .title {
+  font-style: italic;
+  font-size: 42px;
+  margin-top: 80px;
+  margin-bottom: 0;
+  line-height: 45px;
+}
+.pagination {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
+  text-align: center;
+  bottom: 10%;
+}
+.swiper-pagination-switch {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  background: #E6ECF3;
+  margin-right: 8px;
+  opacity: 0.8;;
+  cursor: pointer;
+}
+.swiper-visible-switch {
+  background: #aaa;
+}
+.swiper-active-switch {
+  background: #FFA578;
+}
+  </style>
+</head>
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide slide1">
+        <div class="title">Slide 1</div>
+      </div>
+      <div class="swiper-slide slide2">
+        <div class="title">Slide 2</div>
+      </div>
+      <div class="swiper-slide slide3">
+        <div class="title">Slide 3</div>
+      </div>
+    </div>
+    <div class="pagination" style="display: none"></div>
+  </div>
+  <script src="js/jquery-1.10.1.min.js"></script>
+  <script src="js/idangerous.swiper.min.js"></script>
+  <script>
+  var mySwiper = new Swiper('.swiper-container',{
+    pagination: '.pagination',
+    paginationClickable: true
+  })
+  </script>
+</body>
+</html>

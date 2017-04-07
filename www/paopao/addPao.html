@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>账户中心-addPao</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myShare.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<script type="text/javascript" src="js/jquery.form.js"></script>
+	</head>
+	<body>
+		<!--公共头部-->	
+		<div id="header2"></div>
+			
+		<div class="myShare">
+			<!--我的泡泡-->
+			<div class="parttenFix parttenFix-l sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgleft" /></a>
+			</div>
+			<div class="parttenFix parttenFix-r sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgright" /></a>
+			</div>
+			<!--我的泡泡-->
+			<div class="myShare-title sm-hidden">分享泡泡</div>
+			<div class="myShare-chose clearfix">
+				<label><input type="radio" name="t" readonly="readonly" disabled="disabled">进步商业</label>
+				<label><input type="radio" name="t"  checked="checked" >杜绝童乞</label>
+				<label><input type="radio" name="t"  readonly="readonly" disabled="disabled">救急精神</label>
+			</div>
+			<div class="myShare-chose-all">
+				<form id="formToUpdate" method="post" action="#" enctype="multipart/form-data">
+					<div class="myShare-chose-list clearfix">
+						<div id="one" data="0" class="hide">
+							<div class="ipt clearfix">
+								<label>企业名称：</label>
+								<div>
+									<input type="text" class="corporate-name"  />
+								</div>
+							</div>
+							<div class="ipt clearfix">
+								<label>所属行业：</label>
+								<div>
+									<select class="industry">
+										<option value="">请选择</option>
+										<option value="10001">农、林、牧、渔业</option>
+										<option value="10002">采矿业</option>
+										<option value="10003">制造业</option>
+										<option value="10004">电力、热力、燃气、及水的生产和供应业</option>
+										<option value="10005">环境和公共设施管理业</option>
+										<option value="10006">建筑业</option>
+										<option value="10007">交通运输、仓储业和邮政业</option>
+										<option value="10008">信息传输、计算机服务和软件业</option>
+										<option value="10009">批发和零售业</option>
+										<option value="10010">住宿、餐饮业</option>
+										<option value="10011">金融、保险业</option>
+										<option value="10012">房地产业</option>
+										<option value="10013">租赁和商务服务业</option>
+										<option value="10014">科学研究、技术服务和地质勘查业</option>
+										<option value="10015">水利、环境和公共设施管理业</option>
+										<option value="10016">居民服务和其他服务业</option>
+										<option value="10017">卫生、社会保障和社会服务业</option>
+										<option value="10019">文化、体育、娱乐业</option>
+										<option value="10020">其他</option>
+									</select>
+								</div>
+							</div>
+							<div class="ipt clearfix">
+								<label>推动了：</label>
+								<div>
+									<select class="push-up">
+										<option value="">请选择</option>
+										<option value="01">老年人</option>
+										<option value="02">健康</option>
+										<option value="03">食品</option>
+										<option value="04">环境</option>
+										<option value="05">资源</option>
+										<option value="06">低收入人群</option>
+										<option value="07">文化融合升华</option>
+										<option value="08">教育</option>
+										<option value="09">前沿科技及其与人的关系</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div id="two" data="1">
+							<div class="ipt clearfix">
+								<label>性别：</label>
+								<div>
+									<select name="" class="sex">
+										<option value="">请选择</option>
+										<option value="M">男</option>
+										<option value="F">女</option>
+										<option value="O">不确定</option>
+									</select>
+								</div>
+							</div>
+							<div class="ipt clearfix">
+								<label>年龄：</label>
+								<div>
+									<select name="" class="age">
+										<option value="">请选择</option>
+										<option value="00">0~4岁</option>
+										<option value="01">5~9岁</option>
+										<option value="02">10~14岁</option>
+									</select>
+								</div>
+							</div>
+							<div class="ipt clearfix">
+								<label>身高：</label>
+								<div>
+									<select class="height">
+										<option value="">请选择</option>
+										<option value="00">0~80cm</option>
+										<option value="01">80~120cm</option>
+										<option value="02">120~180cm</option>
+										<option value="03">180cm以上</option>
+									</select>
+								</div>
+							</div>
+							<div class="ipt clearfix">
+								<label class="sf">是否残疾：</label>
+								<div>
+									<input type="text" class="physicalstatus" placeholder="请描述该儿童大致身体状况" />
+								</div>
+							</div>
+						</div>
+						<div id="three" data="2" class="hide">
+							<div class="ipt clearfix">
+								<label>性别：</label>
+								<div>
+									<select name="" class="sex">
+										<option value="">请选择</option>
+										<option value="M">男</option>
+										<option value="F">女</option>
+										<option value="O">第三性别</option>
+									</select>
+								</div>
+							</div>
+							<div class="ipt clearfix">
+								<label>年龄：</label>
+								<div>
+									<select name="" class="age">
+										<option value="">请选择</option>
+										<option value="00">0~6岁</option>
+										<option value="01">7~12岁</option>
+										<option value="02">13~24岁</option>
+										<option value="03">25~36岁</option>
+										<option value="04">37岁以上</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						
+						<div class="ipt say clearfix">
+							<label>备注：</label>
+							<div>
+								<textarea name="description" class="textarea" placeholder="请描述详细情况以及您想表达的话"></textarea>
+							</div>
+						</div>
+						<div class="ipt address clearfix">
+							<label>坐标：</label>
+							<div>
+								<select name="province" class="province">
+									<option value="">请选择省</option>
+								</select>
+								<select name="city" class="city">
+									<option value="">请选择市</option>
+								</select>
+								<select name="district" class="district">
+									<option value="">请选择县/区</option>
+								</select>
+								<input type="text" name="address" class="address" placeholder="请填写详细地址"  />
+							</div>
+						</div>
+						<div class="upVideo">
+							<div class="upVideo-title"><label><input type="file" name="videoFile" id="videoFile" class="videofile"  onchange="Preview(this)" /></label>视频</div>
+							<div class="upVideo-con hide">
+								<!--<video width="100%" height="400" controls="controls" id="playerIdName">
+									<source id="v1" src="http://192.168.4.58/1472720066358.mp4" type="video/ogg">
+									<source id="v2" src="http://192.168.4.58/1472720066358.mp4" type="video/mp4">
+									<embed id="v3" src="http://192.168.4.58/1472720066358.mp4" allowscriptaccess="always"
+									 bgcolor="#000" id="playerIdName2" name="playerIdName" quality="high" >
+								</video>-->
+							</div>
+						</div>
+						<a href="javascript:void(0)" class="myShareSub">确定上传</a>
+					</div>
+				</form>	
+			</div>
+		</div>
+		<div class="mask mask3 hide">
+			<div class="rz">
+				<p class="title">您还没有认证!</p>
+				<p class="btn3">
+					<a href="mSafe.html" class="sub">去认证</a>
+					<a href="javascript:void(0)" class="close close2">关闭</a>
+				</p>
+			</div>
+		</div>
+		<div id="footer" data = "0"></div>
+		<script src="js/myCenter.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(function(){
+				//tab切换
+				$(".myShare-chose label").click(function(){
+					//$("#one,#two,#three").hide();
+					//$("div[data="+$(this).index()+"]").show();
+					$("#one,#two,#three").hide();
+					$("#two").show();
+				});
+				
+				
+				//加载所有省
+				$.ajax({
+					type:"post",
+					dataType:dataType, 
+					url:url+"coord/getCoordInfo.json",
+					data:{parentCode:""},
+					success:function(data){
+						var str = '';
+						str += '<option>请选择</option>';
+						$.each(data.distareas,function(idx,el){
+							str += '<option value="'+el.code+'">'+el.province+'</option>';
+						});
+						$(".province").html(str);
+					}
+				});
+				$(".province").change(function(){
+					$(".district").html("<option>请选择县/区</option>");
+				});
+				//根据省加载对应市级单位
+				$(".province").change(function(){
+					var code = $(this).find("option:selected").val();
+					
+					$.ajax({
+						type:"post",
+						dataType:dataType, 
+						url:url+"coord/getCoordInfo.json",
+						data:{parentCode:code},
+						success:function(data){
+							var str = '';
+							str += "<option>请选择市</option>"
+							$.each(data.distareas,function(idx,el){
+								str += '<option value="'+el.code+'">'+el.city+'</option>';
+							});
+							$(".city").html(str);
+						}
+					});
+				});
+				
+				//根据市级单位加载县区
+				$(".city").change(function(){
+					var code = $(this).find("option:selected").val();
+					$.ajax({
+						type:"post",
+						dataType:dataType, 
+						url:url+"coord/getCoordInfo.json",
+						data:{parentCode:code},
+						success:function(data){
+							var str = '';
+							console.log(data);
+							$.each(data.distareas,function(idx,el){
+								str += '<option value="'+el.code+'">'+el.district+'</option>';
+							});
+							$(".district").html(str);
+						}
+					});
+				});
+				
+				//上传视频
+				$(".myShareSub").click(function(){
+					
+					var idx = $(".myShare-chose input:checked").closest("label").index();
+					var videoType = "";//视频类型
+					//进步商业
+					var corporate_name = $(".corporate-name").val();//企业名称
+					var occupation = $(".industry option:selected").val();//所属行业
+					var	push_up = $(".push-up option:selected").val();//推动
+					//杜绝童乞
+					var gender = $("#two .sex option:selected").val();
+					var	age = $("#two .age option:selected").val();
+					var	height = $("#two .height option:selected").val();
+					var	physiclalStatus = $(".physicalstatus").val();//身体状况
+					//雪中送碳
+					var gender2 = $("#three .sex option:selected").val();
+					var	age2 = $("#three .age option:selected").val();
+					
+					var description = $(".textarea").val();//备注
+					var province = $(".province").val();
+					var city = $(".city").val();
+					var district = $(".district").val();
+					var address = $("input.address").val();
+					
+					//是否认证
+					if($.cookie("identify")!=1){
+						$(".mask3").removeClass("hide");
+						return
+					}
+					if(description==""){
+						alert("请输入视频描述...");
+						return;
+					}
+					if(province==""){
+						alert("请选择省份...");
+						return;
+					}
+					if(city==""){
+						alert("请输入市...");
+						return;
+					}
+					if(district==""){
+						alert("请选择区县...");
+						return;
+					}
+					
+					if(address==""){
+						alert("请输入详细地址...");
+						return;
+					}
+					if($("#videoFile").val()==""){
+						alert("请上传视频...");
+						return;
+					}
+					var userId = $.cookie("c_member_id");
+					if(idx==0){
+						var dataJson = {vidioType:"D",userId:userId,corporateName:corporate_name,occupation:occupation,pushUp:push_up};
+						uploadVideo(dataJson);
+					}else if(idx==1){
+						var dataJson = {vidioType:"C",userId:userId,gender:gender,ageGroup:age,height:height,physiclalStatus:physiclalStatus}
+						console.log(dataJson);
+						uploadVideo(dataJson);
+					}else if(idx==2){
+						var dataJson = {vidioType:"G",userId:userId,gender:gender2,ageGroup:age2}
+						uploadVideo(dataJson);
+					}
+				});
+			});
+			$(".close").click(function(){
+				$(".mask3").addClass("hide")	
+			});
+			//进步商业
+			function uploadVideo(data){
+				 $("#formToUpdate").ajaxSubmit({
+                    type:'post',
+                    dataType:'json',
+                    url:url+"video/addVideo.json",
+                    data:data,
+                    success:function(data){
+                    	if(data.respCode=="9999"){
+                    		alert(data.respMsg);
+                    		return;
+                    	}else if(data.respCode=="0000"){
+                    		var str = '';
+	                        str +=' <video width="100%" height="auto" controls="controls" id="playerIdName">';
+							str +='	<source id="v1" src="'+imgUrl+data.vidioSrc+'" type="video/ogg">';
+							str +='	<source id="v2" src="'+imgUrl+data.vidioSrc+'" type="video/mp4">';
+							str +='	<embed id="v3"  src="'+imgUrl+data.vidioSrc+'" allowscriptaccess="always"'
+							str +='	 bgcolor="#000" id="playerIdName2" name="playerIdName" quality="high" >';
+							str +='</video>';
+							$(".upVideo-con").html(str).removeClass("hide");
+							alert("上传成功");
+							document.getElementById("formToUpdate").reset(); 
+							$(".upVideo-con").html("");
+                    	}else{
+                    		alert(data.respMsg);
+                    	}
+                    },
+                    error:function(XmlHttpRequest,textStatus,errorThrown){
+                        console.log(XmlHttpRequest);
+                        console.log(textStatus);
+                        console.log(errorThrown);
+                    }
+                });
+			}
+			//显示临时上传视频
+			function Preview(e) {  
+			   var ext =$(e).val().split(".")[1].toUpperCase();
+               var src = window.URL.createObjectURL($(e)[0].files[0]);
+           	    var str = '';
+                str +=' <video width="100%" height="auto" controls="controls" id="playerIdName">';
+				str +='	<source id="v1" src="'+src+'" type="video/ogg">';
+				str +='	<source id="v2" src="'+src+'" type="video/mp4">';
+				str +='	<embed id="v3"  src="'+src+'" allowscriptaccess="always"'
+				str +='	 bgcolor="#000" id="playerIdName2" name="playerIdName" quality="high" >';
+				str +='</video>';
+				
+				$(".upVideo-con").html(str).removeClass("hide");
+	        }
+			//左右两侧广告图片
+			ad("00,01");
+		</script>
+	</body>
+</html>

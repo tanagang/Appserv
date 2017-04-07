@@ -1,0 +1,121 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>pccb</title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/tz_style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body class="fff">
+    <header class="box">
+        <a href="javascript:void(0)"><img src="images/back.png" height="16" width="9"></a>
+        <p class="flex ellipsis">帖子详情</p>
+        <a href="javascript:void(0)"></a>
+    </header>
+    <div class="bbs-detail">
+        <p class="bbs-title">【帖子分类】V5多少人了？排名前十多少成长值啊？</p>
+        <div class="bbs-con box">
+            <img src="images/temp/header.png" height="30" width="30">
+            <dl class="flex mt5">
+                <dt>昵称&ensp;<i>楼主</i><span class="fr">2016-01-08 10:28:32</span></dt>
+                <dd>V5现在多少人了？排名前十多少成长值啊？V6什么时候晋级啊？ </dd>
+            </dl>
+        </div>
+        <div class="bbs-con box">
+            <img src="images/temp/header.png" height="30" width="30">
+            <dl class="flex pr30" style="padding-right:30px;">
+                <dt><span>张三</span><br/>沙发 17分钟</dt>
+                <dd>V5现在多少人了？<a href="javascript:void(0)" class="comment" onclick="comment(this,0)" ></a></dd>
+            </dl>
+        </div>
+        <div class="bbs-con box">
+            <img src="images/temp/header.png" height="30" width="30">
+            <dl class="flex pr30 clearfix" style="padding-right:30px;">
+                <dt><span>李四</span><br/>沙发 17分钟</dt>
+                <dd>V5现在多少人了？排名前十多少成长值啊？V6什么时候晋级啊？<a href="javascript:void(0)" class="comment" onclick="comment(this,0)"></a></dd>
+                <dd class="reply">
+                    王五 回复于 2分钟前
+                    <p>v6晋级很慢很慢</p>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="screen">
+        <div id="alertComment">
+            <textarea name="" ></textarea>
+            <p class="btn-group">
+                <a href="javascript:void(0)" onclick="hideComment()">放弃</a>
+                <a href="javascript:void(0)" class="active">提交</a>
+            </p>
+        </div>
+    </div>
+    <div style="height:55px"></div>
+    <div class="box" id="footer2">
+        <div class="flex">
+            <a href="#"  class="active">
+                <dl>
+                    <dt><img src="images/prasie.png" height="14" width="16"></dt>
+                    <dd>点赞</dd>
+                </dl>
+            </a>
+         </div>
+        <div class="flex">
+            <a href="#" >
+                <dl>
+                    <dt><img src="images/collect.png" height="16" width="16" style="margin-top:-2px" /></dt>
+                    <dd>收藏</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex" id="btnComment" onclick="comment(this,1)">
+            <a href="#">
+                <dl>
+                    <dt><img src="images/comment2.png" height="14" width="14" /></dt>
+                    <dd>去评论</dd>
+                </dl>
+             </a>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+//帖子详情
+function getList1(){
+    $.ajax({
+        url: '',
+        type: 'POST',
+        dataType: 'jsonp',
+        data: {productCode: 'LC20151223000010',platformId:'2e2302818a996993c08f2f07c9606e79',type:1},
+        success: function(data){
+           console.log(data);
+        }
+    })
+}
+//评论
+function comment(obj,tag){
+    if(tag==0){
+        $("#alertComment textarea").attr("placeholder","回复:"+$(obj).closest('dd').prev().find("span").html());
+    }else if(tag==1){
+         $("#alertComment textarea").attr("placeholder","请输入评论内容...");
+    }
+    $("#screen").fadeIn();
+    $("#alertComment").css("transform","translateY(80%)");
+}
+//隐藏评论窗口
+function hideComment(){
+    $("#screen").fadeOut();
+    $("#alertComment").css("transform","translateY(-100%)");
+    $("#alertComment textarea").val("");
+}
+</script>
+
+
+

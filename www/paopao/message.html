@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>站内信</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myBubble.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+	</head>
+	<body>
+		<!--公共头部-->	
+		<div id="header2"></div>
+		<div class="myBubble wd1000">
+			<!--我的泡泡-->
+			<div class="parttenFix parttenFix-l sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgleft" /></a>
+			</div>
+			<div class="parttenFix parttenFix-r sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgright" /></a>
+			</div>
+			<!--我的泡泡-->
+			<div class="myBubble-top myBubble-top2">
+				<div class="myBubble-title clearfix sm-hidden">
+					<div class="myBubble-title-l fl">站内消息</div>
+				</div>
+				
+				<div class="myBubble-tab">
+					<ul class="clearfix">
+						<li class="on" rel="2">全部消息</li>
+						<li rel="0">未读消息</li>
+						<li rel="1">已读消息</li>
+					</ul>
+				</div>
+				<div class="myBubble-liatAll">
+					<table width="100%" class="message">
+						<thead id="thead">
+							<tr>
+								<th width="5%" class="fd" style="text-align: center;">选择</th>
+								<th>主题</th>
+								<th width="15%">时间</th>
+							</tr>
+						</thead>
+						<tbody id="tbody">
+							<tr>
+								<td align="center" class="fd" ><input type="checkbox" /></td>
+								<td><a href="messageDetail.html"><i class="m m1"></i>恭喜您陈宫注册称谓有知庐会员！</a></td>
+								<td>2015-10-22 14:07:02</td>
+							</tr>
+							<tr>
+								<p class="noData hide">暂无数据...</p>
+							</tr>
+						</tbody>
+						<tfoot id="tfoot">
+							<tr>
+								<td colspan="3">
+									<span class="fl" style="margin:50px 0" id="opr">
+										<a href="javascript:void(0)" rel="0" class="allSelect">全选</a>
+										<a href="javascript:void(0)" class="del">删除</a>
+										<a href="javascript:void(0)" class="hasRead">标记已读</a>
+									</span>
+									
+									
+									<div class="page hide">
+										<span class="count">记录总数：23条</span>
+										<span class="curPage">当前：1/3页</span>
+										<a href="javascript:void(0)" rel="0">首页</a><span>|</span>
+										<a href="javascript:void(0)" rel="prev">上页</a><span>|</span>
+										<a href="javascript:void(0)" rel="next">下页</a><span>|</span>
+										<a href="javascript:void(0)" rel="1">尾页</a>
+										<input type="text" id="pageGo"><a href="javascript:void(0)" id="go">Go</a>
+									</div>
+								</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	
+		<!--公共脚部-->
+		<div id="footer"></div>
+		<script src="js/myCenter.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			var pagenum = 1;
+			var pagesize = 10;
+			var status = "2";
+			$(function(){
+				$(".edit").click(function(){
+					$(".message .fd").toggleClass("sm-hidden");
+				});
+				//全选
+				$(".allSelect").click(function(){
+					var rel = $(this).attr("rel");
+					if(rel==0){
+						$(".message .fd input").prop("checked",true);
+						$(".allSelect").attr("rel",1).html("全不选");
+					}else{
+						$(".message .fd input").prop("checked",false);
+						$(".allSelect").attr("rel",0).html("全选");
+					}
+				});
+				//选项卡
+				$(".myBubble-tab li").click(function(){
+					status = $(this).attr("rel");
+					if(status=="1"){
+						$(".hasRead").addClass("hide");
+					}else{
+						$(".hasRead").removeClass("hide");
+					}
+					messageList(pagenum,pagesize);
+				});
+				//默认全部
+				messageList(pagenum,pagesize);
+				
+			});
+			//站内消息
+			function messageList(pagenum,pagesize){
+				$.ajax({
+					type:"post",
+					dataType:dataType, 
+					url:url+"message/list.json",
+					data:{readStatus:status,pageNum:pagenum,pageSize:pagesize},
+					success:function(data){
+						storage.setItem("messageList",JSON.stringify(data));
+						setPage(data,pagenum,pagesize);
+						if(data.records.length==0){
+							$("#tfoot,table.message").addClass("hide");
+						}else{
+							$("#tfoot,table.message").removeClass("hide");
+						}
+						var str = '';
+						$.each(data.records, function(idx,el) {
+							str += '<tr>';
+							str +=	'<td align="center" class="fd" ><input type="checkbox" value="'+el.id+'" /></td>';
+							str +=	'<td class="ellipsis"><a href="messageDetail.html?id='+el.id+'">';
+							if(el.readStatus=="1"){
+								str +=  '<i class="m m3" rel="'+el.id+'"></i>';
+							}else{
+								str +=  '<i class="m m2" rel="'+el.id+'"></i>';
+							}
+							str +=   el.title+'</a></td>';
+							str +=	'<td>'+el.sendTime+'</td>';
+							str +='</tr>';
+						});
+						$("#tbody").html(str);
+					}
+				});
+			}
+			
+			//标记为已读
+			$(".hasRead").click(function(){
+				var ids = "";
+				$("#tbody tr input:checked").each(function(idx,el){
+					if(ids==""){
+						ids = $(el).val();
+					}else{
+						ids += ","+$(el).val();
+					}
+				});
+			
+				$.ajax({
+					type:"post",
+					dataType:dataType, 
+					url:url+"message/read.json",
+					data:{msgId:ids},
+					success:function(data){
+						var idAttr = ids.split(",");
+						for(var i=0;i<idAttr.length;i++){
+							$("#tbody i.m2[rel="+idAttr[i]+"]").removeClass("m1").addClass("m3");
+						}
+						
+					}
+				});
+			});
+			
+			//标记为已读
+			$(".del").click(function(){
+				var ids = "";
+				$("#tbody tr input:checked").each(function(idx,el){
+					if(ids==""){
+						ids = $(el).val();
+					}else{
+						ids += ","+$(el).val();
+					}
+				});
+				$.ajax({
+					type:"post",
+					dataType:dataType, 
+					url:url+"message/delete.json",
+					data:{msgId:ids},
+					success:function(data){
+						var idAttr = ids.split(",");
+						for(var i=0;i<idAttr.length;i++){
+							$("#tbody i.m[rel="+idAttr[i]+"]").closest("tr").fadeOut();
+						}
+					}
+				});
+			});
+			goPage('messageList',pagenum,pagesize);
+			//左右两侧广告图片
+			ad("00,01");
+		</script>
+	</body>
+</html>

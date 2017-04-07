@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>账户中心-我支持的泡泡</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/myBubble.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+	</head>
+	<body>
+		
+		<!--公共头部-->	
+		<div id="header2"></div>
+		
+		<div class="myBubble wd1000">
+			<!--我的泡泡-->
+			<div class="parttenFix parttenFix-l sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgleft" /></a>
+			</div>
+			<div class="parttenFix parttenFix-r sm-hidden md-hidden hide">
+				<a class="fr parttenFixClose" href="javascript:void(0)"></a>
+				<a href="javascript:void(0)"><img src="" class="imgright" /></a>
+			</div>
+			<!--我的泡泡-->
+			
+			<div class="myBubble-top">
+				<div class="myBubble-title clearfix sm-hidden">
+					<div class="myBubble-title-l fl">我支持的泡泡</div>
+					<div class="myCenter-soso fr hide">
+						<input type="" value="" placeholder="视频ID和状态搜索" />
+						<a href="javascript:void(0)" class="myCenter-soso-btn"></a>
+					</div>
+				</div>
+				
+				<div class="myBubble-tab">
+					<ul class="clearfix">
+						<li rel="" class="on sm-hidden">全部泡泡</li>
+						<li rel="D">进步商业</li>
+						<li rel="C">杜绝童乞</li>
+						<li rel="G">救急精神</li>
+					</ul>
+				</div>
+				<div class="myBubble-liatAll">
+					<div class="myBubble-list">
+						<ul>
+							<li>
+								<div class="myBubble-list-title">
+									<span>SPID201601</span>
+									<span>发布时间：2016-06-21</span>
+								</div>
+								<div class="myBubble-list-con clearfix pr">
+									<div class="con-l fl">
+										<div class="con-img-l fl">
+											<img src="img/temp/mybubbles-img.png"/>
+										</div>
+										<div class="con-img-r">
+											拍于东方大厦门口，世纪大道马路附近，男孩估计四五岁，他在便利店门口徘徊了好久，还有一个未满周岁的小孩一直睡在或者应该说昏在他的背上。。。
+										</div>
+									</div>
+									<div class="con-cr2 fl">
+										<span>2016AAA</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+						<p class="noData hide">暂无数据...</p>
+						<div class="page">
+							<span class="count">记录总数：23条</span>
+							<span class="curPage">当前：1/3页</span>
+							<a href="javascript:void(0)" rel="0">首页</a><span>|</span>
+							<a href="javascript:void(0)" rel="prev">上页</a><span>|</span>
+							<a href="javascript:void(0)" rel="next">下页</a><span>|</span>
+							<a href="javascript:void(0)" rel="1">尾页</a>
+							<input type="text" id="pageGo"><a href="javascript:void(0)" id="go">Go</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="myBubble-bot sm-hidden">
+				<div class="myBubble-bot-title">
+					<a href="moreVedio.html" class="fr">MORE 》</a>
+					为您推荐
+				</div>
+				<div class="myBubble-bot-con">
+					<ul class="clearfix">
+						<li>
+							<img src="img/temp/video-top-01.png"/>
+							<a class="autoPlay" href="#"></a>
+							<p>郑州二七街六岁无臂儿童乞讨</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	
+		<div id="footer"></div>
+		<script src="js/myCenter.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
+<script>
+	var pagenum = 1;
+	var pagesize = 10;
+	var videoType = "";
+	$(function(){
+		$(".myBubble-tab li").click(function(){
+			videoType = $(this).attr("rel");
+			getMypaopao(pagenum,pagesize);
+		}).eq(0).trigger("click");
+	});
+	//我的收藏列表
+		function getMypaopao(pagenum,pagesize){
+			$.ajax({
+				type:"post",
+				dataType:dataType, 
+				url:url+"video/myVideos.json",
+				data:{videoType:videoType,operateType:"00",pageNum:pagenum,pageSize:pagesize},
+				success:function(data){
+					//console.log(data);
+					setPage(data,pagenum,pagesize);
+					var str = '';
+					$.each(data.records, function(idx,el) {
+						str += '<li>';
+						str += '	<div class="myBubble-list-title">';
+						str += '		<span>'+el.vidioId+'</span>';
+						str += '		<span>支持时间：'+el.operDate+'</span>';
+						str += '	</div>';
+						str += '	<div class="myBubble-list-con clearfix pr">';
+						str += '		<div class="con-l fl">';
+						str += '			<div class="con-img-l fl">';
+						str += '				<img src="'+imgUrl+el.vidioPic+'"/>';
+						str += '			</div>';
+						str += '			<div class="con-img-r">'+el.description+'</div>';
+						str += '		</div>';
+						str += '		<div class="con-cr2 fl">';
+						str += '			<span>积分ID：'+el.pointsId+'</span>';
+						str += '		</div>';
+						str += '	</div>';
+						str += '</li>';
+					});
+					$(".myBubble-list ul").html(str);
+				}
+			});
+		}
+		goPage('getMypaopao',pagenum,pagesize);
+		tjVideo()//推荐视频
+		//左右两侧广告图片
+		ad("00,01");
+</script>

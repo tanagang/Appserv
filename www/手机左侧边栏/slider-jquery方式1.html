@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://plux.hlo.cc/lottery/test/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<script src="js/jquery-1.8.2.js"></script>
+<title>jquery 方式2</title>
+
+<style type="text/css">
+	*{padding:0;margin:0}
+     ul{ list-style: none;}
+    li{height:35px;line-height: 35px; text-indent: 10px; font-size: 16px; font-family: "黑体";color:green;border-bottom: 1px solid #ccc}
+	.clearfix{*zoom:1}
+	.clearfix:after{content:"";display:table;clear:both;}
+	#leftNav::-webkit-scrollbar{display: none;}
+	#rightNav::-webkit-scrollbar{display: none;}
+	
+	#main{overflow:hidden;}
+	#leftNav{ overflow-y:auto;position:fixed;left:0;top:0;width: 200px;background: #333;}
+	#rightNav{overflow-y:auto;position:relative;z-index:999;background:#fff;}
+	.fix{position:fixed;top:0;left:0;height:50px; line-height:50px; background:#abcdef;width:100%}
+</style>
+</head>
+<body>
+    <div id="main">
+    	<ul id="leftNav">
+            <li>首页</li>
+            <li>家用电器</li>
+            <li>手机数码</li>
+            <li>在线商城</li>
+            <li>服装城</li>
+            <li>美容馆</li>
+            <li>客户服务</li>
+            <li>联系方式</li>
+            <li>关于我们</li>
+            <li>首页</li>
+            <li>家用电器</li>
+            <li>手机数码</li>
+            <li>在线商城</li>
+            <li>服装城</li>
+            <li>美容馆</li>
+            <li>客户服务</li>
+            <li>联系方式</li>
+            <li>关于我们</li>
+            <li>首页</li>
+            <li>家用电器</li>
+            <li>手机数码</li>
+            <li>在线商城</li>
+            <li>服装城</li>
+            <li>美容馆</li>
+            <li>客户服务</li>
+            <li>联系方式</li>
+            <li>关于我们</li>
+        </ul>
+        <div id="rightNav">
+             <p class="fix"><button>菜单</button></p>
+            <div style="height:1800px;margin-top:80px">
+            发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份发达省份
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+		
+		var flag=true;
+		$("button").click(function(){
+			if(flag){
+			    $("#rightNav").animate({"marginLeft":200},200);
+			    $(".fix").animate({"left":200},200);
+				//$("#leftNav").animate({"left":0},200);	
+				flag=false;
+			}else{
+				$("#rightNav").animate({"marginLeft":0},200);
+				$(".fix").animate({"left":0},200);
+               
+				//$("#leftNav").animate({"left":-200},200);	
+				flag=true;
+			}
+			
+		});
+		
+		
+		//先调用一下，给section赋对应手机屏幕大小的宽度宽度
+		resizeMenu();
+		function resizeMenu()
+		{
+			var h = $(window).height();
+			var w= $(window).width();
+			$("#leftNav").height(h);
+			$("#rightNav").height(h).width(w);
+		}
+		//当手机横竖屏时，触发resize调用resizeMenu方法重置屏幕宽和高
+		if (document.all) {//IE
+			window.attachEvent('onresize', function(){
+				resizeMenu();
+			});
+		} else {//非IE
+			window.addEventListener('resize', function(){
+				resizeMenu();
+			}, false);
+		}
+    </script>

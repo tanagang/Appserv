@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<title>免费专列送你回家大型公益活动</title>
+  <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery-ui-1.10.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/index.js"></script>
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+<div style=" height:0; width:0; overflow:hidden; line-height:0; font-size:0;"><img src="images/jia.jpg" /><p>乡愁是一缕浓浓的思念，你在这头，家在那头。让我们一起放飞思念，分享团圆！</p></div>
+<audio src="images/bgm.mp3" controls autoplay="autoplay" loop id="audio" style="opacity:0;position:absolute;left:0;top:0">
+     Your browser does not support the audio element.
+</audio> 
+<div id="music">
+    <img src="images/music.png" id="music-img" width="16" height="16" style="padding-top:6px" />
+</div>
+<div class="section" id="section1">
+	<div id="loading"><img src="images/loading.gif" width="134" height="83" style="position:absolute;left:50%;top:50%;margin:-60px 0 0 -67px; z-index:999" /></div>
+    <div class="text1"></div>
+    <div id="my3dspace">
+    <div id="pagegroup">
+        <div class="page page4"></div>
+        <div class="page page3"></div>
+        <div class="page page2"></div>
+        <div class="page page1"></div>
+    </div>
+</div>
+    <div id="bottom-bg1"></div>
+    <div class="next-page"><span>︿</span></div>
+</div>
+<div class="section"  id="section2">
+	<div id="bg2-top"></div>
+	<div id="bg2">
+    	<div id="bg2-left"></div>
+        <div id="bg2-right"></div>
+    </div>
+    <div id="bg2-bottom"></div>
+    <div class="next-page"><span>︿</span></div>
+</div>
+<div class="section"  id="section3">
+	 <div id="bg3"></div>
+     <div id="bg3-bottom"></div>
+     <div class="next-page"><span>︿</span></div>
+</div>
+<div class="section"  id="section4">
+	<div id="bg4-top"></div>
+    <div id="bg4">
+    	<div id="message">
+        	<img src="images/bg4_message.png" width="180" height="150" />
+            <img src="images/bg4_message2.png" width="180" height="150" />
+        </div>
+        <div id="person">
+        	<img src="images/daughter.png" width="138" height="145" />
+        	<img src="images/parents4.png" width="138" height="150" />
+         </div>
+    </div>
+    <div class="next-page"><span>︿</span></div>
+</div>
+<div class="section"  id="section5">
+	<div id="bg5-top"></div>
+    <div id="bg5-family">
+    	<img src="images/family1.png" width="282" height="226" id="family1" />
+        <img src="images/family2.png" width="282" height="226" id="family2" />
+        <img src="images/family3.png" width="282" height="226" id="family3" /> 
+    </div>
+    <img src="images/family4.png" width="300" height="164" id="family4"  /> 
+    <div id="bg5-bottom"><a href="http://m.12306.51kl.com/huijia.html"><img src="images/rxcf.png" width="164"/></a></div>
+</div>
+<div class="section"  id="section6">
+    <div id="share">
+        <a href="javascript:void(0)" id="btn-share"><img src="images/btn-share.png" width="120" /></a>
+    </div>
+    <div id="screen-share">
+        <div style="position:relative;left:0;top:0;width:280px;height:196px;left:50%;margin-left:-140px">
+            <div id="close" ></div>
+            <img src="images/zhe.png" width="280" height="196" />
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		autoplay();
+		function autoplay(){
+			var a = document.getElementById("audio");
+			a.play();
+		}	
+	};
+	$("#btn-share").click(function(){
+		$("#screen-share").fadeIn();	
+	});
+	$("#close").click(function(){
+		$("#screen-share").fadeOut();	
+	});
+	
+	var tit = '免费专列送你回家大型公益活动'; //标题
+		var img = 'http://115.28.46.44/reds/reds.jpg'; //图片
+		var con = '你在的地方才有家，让心与家没有距离，这个春节，快乐工作送你回家……'; //简介
+		var link = 'http://115.28.46.44/hongling'; //链接
+		
+		function shareFriend() {
+			WeixinJSBridge.invoke('sendAppMessage', {
+				"img_url" : img,
+				"img_width" : "200",
+				"img_height" : "200",
+				"link" : link,
+				"desc" : con,
+				"title" : tit
+			}, function(res) {
+				//_report('send_msg', res.err_msg);
+			})
+		}
+		function shareTimeline() {
+			WeixinJSBridge.invoke('shareTimeline', {
+				"img_url" : img,
+				"img_width" : "200",
+				"img_height" : "200",
+				"link" : link,
+				"desc" : con,
+				"title" : tit
+			}, function(res) {
+				//_report('timeline', res.err_msg);
+			});
+		}
+		function shareWeibo() {
+			WeixinJSBridge.invoke('shareWeibo', {
+				"content" : con,
+				"url" : link,
+			}, function(res) {
+				//_report('weibo', res.err_msg);
+			});
+		}
+		
+		// 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+		document.addEventListener('WeixinJSBridgeReady',
+				function onBridgeReady() {
+			
+					WeixinJSBridge.call('showOptionMenu');
+					// 发送给好友
+					
+					WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+						shareFriend();
+					});
+					// 分享到朋友圈
+					WeixinJSBridge.on('menu:share:timeline', function(argv) {
+						shareTimeline();
+					});
+					// 分享到微博
+					WeixinJSBridge.on('menu:share:weibo', function(argv) {
+						shareWeibo();
+					});
+				}, false);
+</script>

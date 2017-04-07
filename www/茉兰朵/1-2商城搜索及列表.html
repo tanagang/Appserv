@@ -1,0 +1,113 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script src="js/jquery-1.7.2.min.js"></script>
+</head>
+<body class="eee">
+<header>
+	<form id="soso" class="box">
+    	<input type="text" class="flex" placeholder="输入商品关键字"/><a href="#"><img src="images/soso.png" width="22"/></a></div>
+    </form>
+    <nav id="nav">
+    	<a href="#" class="hover">默认</a><a href="#" >价格 <img src="images/nav_jg_bottom.png" data-src="images/nav_ja_top.png" data-rel="bottom" width="8" /></a><a href="#">销量 <img src="images/nav_bottom.png" data-src="images/nav_top.png" data-rel="bottom" width="8" /></a><a href="#">评价数 <img src="images/nav_bottom.png" width="8" data-src="images/nav_top.png" data-rel="bottom" /></a>
+    </nav>
+</header>
+ <section id="section1" class="padding10 clear">
+ 	<dl>
+    	<dt><a href="#"><img src="images/temp/img1.jpg" /></a></dt>
+        <dd>￥998.00</dd>
+        <dd>茉兰朵　恋蔷薇活性亲肤纯棉四件套</dd>
+    </dl>
+    <dl>
+    	<dt><a href="#"><img src="images/temp/img1.jpg" /></a></dt>
+        <dd>￥998.00</dd>
+        <dd>茉兰朵　恋蔷薇活性亲肤纯棉四件套</dd>
+    </dl>
+    <dl>
+    	<dt><a href="#"><img src="images/temp/img1.jpg" /></a></dt>
+        <dd>￥998.00</dd>
+        <dd>茉兰朵　恋蔷薇活性亲肤纯棉四件套</dd>
+    </dl>
+    <dl>
+    	<dt><a href="#"><img src="images/temp/img1.jpg" /></a></dt>
+        <dd>￥998.00</dd>
+        <dd>茉兰朵　恋蔷薇活性亲肤纯棉四件套</dd>
+    </dl>
+    <dl>
+    	<dt><a href="#"><img src="images/temp/img1.jpg" /></a></dt>
+        <dd>￥998.00</dd>
+        <dd>茉兰朵　恋蔷薇活性亲肤纯棉四件套</dd>
+    </dl>
+    <dl>
+    	<dt><a href="#"><img src="images/temp/img1.jpg" /></a></dt>
+        <dd>￥998.00</dd>
+        <dd>茉兰朵　恋蔷薇活性亲肤纯棉四件套</dd>
+    </dl>
+ </section>
+ <footer class="box">
+    	<div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/sc_active.png" width="22" height="22" /></dt>
+                    <dd class="hover">商城</dd>
+                </dl>
+            </a>
+         </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/ss.png"  width="27" height="22"/></dt>
+                    <dd>搜索</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#">
+                <dl>
+                    <dt><img src="images/gwc.png"  width="25" height="22" /></dt>
+                    <dd>购物车</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/wd.png"  width="22" height="22"/></dt>
+                    <dd>我的</dd>
+                </dl>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+	$(function(){
+		$("#nav>a").click(function(){
+			
+			var src=$(this).children("img").attr("src");
+			var data_src=$(this).children("img").attr("data-src");
+			var data_rel=$(this).children("img").attr("data-rel");
+			
+			$("#nav>a").removeClass("hover");
+			$(this).addClass("hover");
+			
+			var flag=data_rel=="bottom"?"top":"bottom";
+			$(this).children("img").attr("src",data_src);
+			var data_rel=$(this).children("img").attr("data-src",src);
+			if(flag=="bottom"){
+				$(this).children("img").attr("data-rel","top");
+			}else{
+				$(this).children("img").attr("data-rel","bottom");
+			}
+		});	
+	});
+</script>

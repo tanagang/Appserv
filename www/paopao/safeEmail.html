@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>绑定邮箱</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			body{background: #F5F5F5;max-width: 640px;margin:0 auto;}
+			.hh{height:40px;line-height: 40px;background:#fff;border-bottom:1px solid #DCDCDC; text-align: center;color:#000;font-size:15px}
+			.hh .fl{padding:0 12px;}
+			.mm{margin:50px 15px}
+			.mm>div{margin:15px auto;font-size:12px}
+			.mm input{width:100%;height:35px;line-height: 35px;border:1px solid #E4E4E4;border-radius:3px;background: #fff;text-indent:5px}
+			a.code{display:inline-block;width:120px; margin-left:15px;text-align: center;height:40px;line-height: 40px;background: #244789;color:#fff;border-radius:5px}
+			a.bind{width:100%;margin-left:0;margin-top:30px}
+		</style>
+	</head>
+	<body>
+		<div class="hh">
+			<a class="fl" href="javascript:window.history.back()"><img src="img/arrowleft.png" width="10"/></a>
+			绑定邮箱
+		</div>
+		<div class="mm">
+			<div>
+				<p style="color:#244789">请输入能正常接收邮件的邮箱</p>
+				<input type="text" class="inputEmail" placeholder="请输入邮箱" />
+				<span class="eMailError"></span>
+			</div>
+			<div>
+				1.点击邮箱链接完成绑定<br>
+				2.验证邮件可能会在垃圾箱或广告邮件中，请仔细查收
+			</div>
+		<div>
+		<a href="javascript:void(0)" class="code bind bangEmail">获取链接</a>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		/*绑定邮箱*/
+		$('.bangEmail').click(function(){
+			$.ajax({
+			    type:"POST",
+			    url:url+"/user/sendMail.json",
+			    dataType: 'jsonp',
+			    data: {email:$('.inputEmail').val()},
+			    beforeSend:function(){
+			    	if($('.inputEmail').val()==""){
+						$('.eMailError').html('<i class="cpr cpr2"></i><span class="error">邮箱不能为空！</span>');
+						return false;
+					}
+			    	var isEmail = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+					if(!(isEmail.test($('.inputEmail').val()))){
+						$('.eMailError').html('<i class="cpr cpr2"></i><span class="error">请填写正确的邮箱格式！</span>');
+						return false;
+					}
+	
+			    },
+			    success: function (data) {
+			    	console.log(data);
+			    	if(data.respCode==0000){
+			    		alert("邮件发送成功，请前往认证！");
+			    		window.location.href="mSafe.html";
+			    	}else{
+			        	alert(data.respMsg);
+			        }
+			    },
+			    complete:function(){
+	
+			    },
+			    error:function(){}
+			});
+		});
+	})	
+</script>

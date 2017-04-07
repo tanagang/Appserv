@@ -1,0 +1,105 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/confirm.js" ></script>
+<script>
+	$(function(){
+		$.JSLayer.Show("提示","您已经完成交易！<br/>是否立即对商品进行评价?","立即评价","稍后评价",
+			function(){
+				alert("我是回调函数")
+			}
+		);
+	});
+</script>
+</head>
+<body>
+<header class="header1">
+	<a href="javascript:void(0)"><img src="images/arrow_left.png" style=" vertical-align:-4px" width="9"  height="17" /> 返回</a>
+    <a href="javascript:void(0)">首页</a>
+</header>
+<section class="section1">
+	<dl>
+    	<dt>
+        	张三&emsp;&emsp;2015-05-06 
+        	<ul class="jsstar fr">
+                <li data-rel="0"></li>
+                <li data-rel="1"></li>
+                <li data-rel="2"></li>
+                <li data-rel="3"></li>
+                <li data-rel="4"></li>
+            </ul>
+        </dt>
+        <dd class="box">
+        	<div class="flex">镇等很阿克苏货到付款inad阿卡ad空间拉
+在京东爱空间三毒奶粉两年拉萨市</div>
+			<a href="javascript:void(0)"><img src="images/msg.png" width="12" /> 回复</a>
+        </dd>
+    </dl>
+    <dl>
+    	<dt>
+        	回复张三
+            <span class="fr">李四&emsp;2015-05-06</span> 
+        </dt>
+        <dd class="box">
+        	<div class="flex">镇等很阿克苏货到付款inad阿卡ad空间拉
+在京东爱空间三毒奶粉两年拉萨市</div>
+			<a href="javascript:void(0)"><img src="images/msg.png" width="12" /> 回复</a>
+        </dd>
+    </dl>
+    <dl>
+    	<dt>
+        	回复张三
+            <span class="fr">李四&emsp;2015-05-06</span> 
+        </dt>
+        <dd class="box">
+        	<div class="flex">镇等很阿克苏货到付款inad阿卡ad空间拉
+在京东爱空间三毒奶粉两年拉萨市</div>
+			<a href="javascript:void(0)"><img src="images/msg.png" width="12" /> 回复</a>
+        </dd>
+    </dl>
+    <dl>
+    	<dt>
+        	回复张三
+            <span class="fr">李四&emsp;2015-05-06</span> 
+        </dt>
+        <dd class="box">
+        	<div class="flex">镇等很阿克苏货到付款inad阿卡ad空间拉
+在京东爱空间三毒奶粉两年拉萨市</div>
+			<a href="javascript:void(0)"><img src="images/msg.png" width="12" /> 回复</a>
+        </dd>
+    </dl>
+</section>
+<form id="bottom" class="box">
+	<div class="flex"><input type="text"  /></div>
+    <input type="submit" value="发送" />
+</form>
+</body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".jsstar>li").click( function(){
+                var rel = $(this).attr("data-rel");
+				var li =  $(this).parent().find("li");
+                li.css({"background-position":"0 0"});
+                li.each(function(key,value){
+                    if(key<=rel){
+                        $(this).css({"background-position":"0 -20px"});
+                    }
+                });
+               
+            }); 
+    });
+</script>
+
+
+

@@ -1,0 +1,154 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+
+<link rel="stylesheet" href="css/public.css" />
+<link href="css/mobiscroll.custom-2.5.0.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/mobiscroll.js" ></script>
+<script type="text/javascript" src="js/mobiscroll.datetime.js" ></script>
+</head>
+<body>
+<section class="m5">
+	<div class="th">
+		<p class="th-title"><img src="images/circle.png" style="width:0.3rem" > 设置您的订阅信息,系统有特惠信息将微信通知您</p>
+		<div class="box th-address">
+			<a href="4.html" class="flex address" >
+				<input type="text" placeholder="起点" readonly />
+			</a>
+			<img src="images/air3.png" style="margin:.3rem 1rem;width:2.2rem" />
+			<a href="4.html" class="flex address" >
+				<input type="text" placeholder="终点"readonly />
+			</a>
+		</div>
+		<div class="box th-address">
+			<div class="flex address" >
+				<input type="text" placeholder="最早出发时间"  class="dateInput" rel="date" />
+			</div>
+			<img src="images/calendar2.png" style="margin:.3rem 1rem;width:2rem" />
+			<div class="flex address" >
+				<input type="text" placeholder="最晚出发时间"  class="dateInput" rel="date" />
+			</div>
+		</div>
+	</div>
+	<div class="th">
+		<p class="th-title"><img src="images/circle.png" style="width:0.3rem" > 输入您想要的价格</p>
+		<div style="padding-left:10%">
+			 <label class="rdo">
+                <span><input type="radio" name="rdo" /></span>
+                <input type="text" placeholder="输入价格" /> 元以下
+            </label>
+             <label class="rdo">
+                <span><input type="radio" name="rdo" /></span>
+                <i style="border-bottom:1px solid #999">不限价格，有票提醒</i>
+            </label>
+		</div>
+	</div>
+	<div class="mt15 pl10">请在：
+		<p class="date2">
+			<img src="images/calendar2.png" alt="" width="12"><input type="text" class="dateInput2" value="2015-04-05 09：30"  /></p>
+		之前提醒我
+	</div>
+
+	<p class="m10"><a href="#" class="btn mt10" id="take">提交订阅</a></p>
+	<p class="m10"><a href="#" class="btn btn-default">查看订阅记录</a></p>
+</section>
+<style>
+	#screen{width:100%;height:100%;background: rgba(0,0,0,.5);position: fixed;left:0;top:0;display: none}
+	#close{display: block;position: absolute;right:0;top:0;background: #999;color:#fff;font-size: 12px;padding:0 5px;}
+	.wrap{width:250px;height:180px;background: #fff;border-radius: 3px;position: absolute;left:50%;top:50%;margin-left: -125px;margin-top: -90px; text-align: center;}
+	.wrap>p{padding:40px 0 35px 0; text-align: center; font-size: 18px;color:#999;}
+	.wrap>a{width:180px;}
+</style>
+<div id="screen">
+	<div class="wrap">
+		<span id="close">X</span>
+		<p><img src="images/duihao.png" width="45">&ensp;订阅成功</p>
+		<a href="#" class="btn">查看订阅记录</a>
+	</div>
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        $(".rdo span").click(function(){
+            var span = $(this);
+            var flag = span.find("input").prop("checked");
+            if(flag){
+                $(".rdo span").removeClass("rdo-active");
+                $(this).addClass("rdo-active");
+            }
+        });
+
+        $(".chk span").click(function(){
+            var span = $(this);
+            var flag = span.find("input").prop("checked");
+            if(flag){
+                $(this).addClass("rdo-active");
+            }else{
+                $(this).removeClass("rdo-active");
+            }
+        });
+       $("#take").click(function(){
+       		$("#screen").fadeIn(200);
+       });
+
+       $("#close").click(function(){
+			$("#screen").fadeOut(200);
+       });
+
+        var newjavascript={
+		plugdatetime:function ($dateTxt,type) {
+				//var curr = new Date().getFullYear();
+				var opt = {}
+				opt.time = {preset : type};
+				opt.date = {
+					preset : type, 
+					minDate: new Date(2010,02,02,00,00), 
+					maxDate: new Date(2020,11,30,24,59), 
+					stepMinute: 1  
+				};
+				opt.datetime = { 
+					preset : type, 
+					minDate: new Date(2010,02,02,00,00), 
+					maxDate: new Date(2020,12,31,24,59), 
+					stepMinute: 1  
+				};
+				$dateTxt.scroller('destroy').scroller($.extend(opt[type], {
+					theme: "android-ics light",//default,android-ics light,android-ics,ios,sense-ui,wp light,wp
+					mode: "scroller",
+					display: "modal",
+					lang: "zh",
+					monthText: "月",
+					dayText: "日",
+					yearText: "年",
+					hourText: "时",
+					minuteText: "分",
+					ampmText:"上午/下午",
+		            timeFormat: 'HH:ii',
+		            timeWheels: 'HHii',
+					setText: '确定',
+					cancelText: '取消',
+		            dateFormat: 'yyyy-mm-dd', // 日期格式
+		            dateOrder: 'yymmdd' //面板中日期排列格
+				})
+			);
+		}
+	}
+		newjavascript.plugdatetime($(".dateInput"), "date");
+	    newjavascript.plugdatetime($(".dateInput2"), "datetime");
+    });
+</script>
+
+
+
+
+

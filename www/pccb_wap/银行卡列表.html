@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>pccb</title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/cardList.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+    <header class="box">
+        <a href="javascript:void(0)"><img src="images/back.png" height="16" width="9"></a>
+        <p class="flex ellipsis">银行卡列表</p>
+        <a href="javascript:void(0)"></a>
+    </header>
+    <section>
+      <ul class="content">
+        <li class="active">
+               <div class="conleft"><img src="images/boc.png"></div>
+               <div class="conright">
+                 <p>中国银行</p>
+                 <p>尾号12340 储蓄卡</p>
+               </div>
+        </li>
+        <li>
+               <div class="conleft"><img src="images/spdb.png"></div>
+               <div class="conright">
+                 <p>浦发银行</p>
+                 <p>尾号12340 信用卡</p>
+               </div>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <p>
+        <a href="javascript:void(0)" class="btn mt5 cred">解绑银行卡</a>
+      </p>
+    </section>
+</body>
+</html>
+<script type="text/javascript">
+    window.onload = function(){
+        $(".content li").click(function(event) {
+          $(this).toggleClass('active').siblings('li').removeClass('active');
+        });
+    }
+</script>

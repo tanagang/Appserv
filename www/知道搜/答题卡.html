@@ -1,0 +1,72 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<style>
+.result-tag span{display:block;float:left;width:30px;height:30px; line-height:30px;border:1px solid #FD9F88;color:#FD9F88;background:#fff;margin:2px 8px 8px 8px; text-align:center;}
+.clear-result{font-size:12px;padding:5px 8px;border:1px solid #ccc;background:#fff;border-radius:5px}
+.ka .select a{display:block;float:left;width:30px;height:30px; line-height:30px;border:1px solid #E2E2E2;color:#666;background:#fff;margin:2px 8px 8px 8px; text-align:center;}
+.ka .select a.active{background:#62CD61;border-color:#62CD61;color:#fff}
+</style>
+</head>
+<body>
+<section>
+	<form>
+        <dl class="test ka" style="background:#F9F9F9">
+            <dt class="box">
+                <img src="images/ka.png" width="18" height="18" />
+                <div class="flex">遨游网是中青旅控股股份有限公司旗下的什么网站？</div>
+            </dt>
+            <dd class="box pl5" style="border-bottom:1px solid #D6D6D6">
+            	<span class="p15">答案</span>
+                <div class="flex result">
+                	<div class="clear result-tag"><span></span><span></span><span></span><span></span></div>
+                    <p class="mt5"><a href="javascript:void(0)" class="clear-result" id="clearResult">清空答案</a></p>
+                </div>
+            </dd>
+            <dd class="box pl5">
+            	<span class="p15">选项</span>
+                <div class="flex select">
+                	<a href="javascript:void(0)">中</a><a href="javascript:void(0)">华</a><a href="javascript:void(0)">人</a><a href="javascript:void(0)">民</a><a href="javascript:void(0)">共</a><a href="javascript:void(0)">和</a><a href="javascript:void(0)">国</a>
+                </div>
+            </dd>
+        </dl>
+        <p class="p15 mt10"><a href="#" class="btn btn-active">下一题</a></p>
+    </form>
+</section>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		//选择选项填充到答案区域
+		$(".select a").click(function(){
+			$(".select a").removeClass("active");
+			$(this).addClass("active");
+			var str = $(this).html();
+			$(".result-tag span").each(function(index, element) {
+				var that = $(element);
+                if(that.hasClass("on")==false){
+					that.html(str).addClass("on");
+					return false;
+				}
+            });
+		});
+		//清空答案
+		$("#clearResult").click(function(){
+			$(".result-tag span").each(function(index, element) {
+                $(element).html("").removeClass("on");
+            });
+		});
+	});
+</script>
+
+

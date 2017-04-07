@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta property="qc:admins" content="1516067742540360273137646375" />
+		<meta property="wb:webmaster" content="003736e8afd4a041" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>register</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--公共头部-->	
+		<div class="header">
+			<div class="header-top sm-hidden">
+				<div class="wd1000">
+					<ul>
+						<li id="userInfo"><a href="login.html">登录</a> / <a href="regist.html">注册</a></li>
+						<li class="mp hide"><a href="pindex.html">我的泡泡</a></li>
+						<li><a href="patternTag2.html">泡泡模式</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="header-nav clearfix">
+				<div class="logo clearfix">
+					<a href="index.html"><img src="img/header-nav.png"/></a>
+					<div class="sm-hidden infomation">有知庐集研究、实践、教学为一体，通过筛选出有助于理想未来的愿望型有知需求，促进其转变为公德型有知需求，以推动社会的进步。有知庐使用前沿的商业模式，将盈余100%支持这一事业的理念推广和独立运营。</div>
+				</div>
+				<div class="bar hide sm-visible">
+					<span id="userInfo2"><a href="login.html">登录 </a>&ensp;/&ensp;<a href="regist.html">注册 </a></span>
+					<a href="javascript:void(0)" id="barToggle"><img src="img/bar.png"/></a>
+					<ul id="ulNav" class="hide">
+						<li rel="navOne"><a href="navOne.html" >进步商业</a></li>
+						<li rel="navTwo"><a href="navTwo.html">杜绝童乞</a></li>
+						<li rel="navThree"><a href="navThree.html">救急精神</a></li>
+					</ul>
+				</div>
+				<ul class="ul-nav sm-hidden">
+					<li rel="navOne"><a href="navOne.html">进步商业</a></li>
+					<li rel="navTwo"><a href="navTwo.html">杜绝童乞</a></li>
+					<li rel="navThree"><a href="navThree.html">救急精神</a></li>
+				</ul>
+			</div>
+			<div class="header-bottom hide">
+				<div class="wd1000">
+					<p class="header-bottom-t">有知庐</p>
+					<p class="header-bottom-b">集研究、实践、教学为一体，通过筛选出有助于理想未来的愿望型有知需求，促进其转变为公德型有知需求，以推动社会的进步。有知庐使用前沿的商业模式，将盈余100%支持这一事业的理念推广和独立运营。</p>
+					<p class="header-bottom-t">有知需求</p>
+					<p class="header-bottom-b">是指超越个人生存和繁殖的需求，包括对自身，他人、社会、动物或环境的关注， 分为愿望型（个人或少数人的）和公德型（大多数人所共享的）。</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="wd1000" >
+			<!--login主体-->
+			<div class="loginSystem clearfix">
+				<div class="loginSystem-l fl sm-hidden">
+					<h3>成为有知庐会员，您可享有</h3>				
+					<ul>
+						<li class="loginSystem-l-t">
+							* 查看泡泡
+						</li>
+						<li>查看、收藏、评分视频记录</li>
+					</ul>
+					<ul>
+						<li class="loginSystem-l-t">
+							* 分享泡泡
+						</li>
+						<li>上传视频（最多一分钟），并结合文字，作出简单描述，分享自己的泡泡。关键词：拍摄时间、地点，简要描述当时当地的情况，你拍摄的心情</li>
+					</ul>
+					<ul>
+						<li class="loginSystem-l-t">
+							* 激励泡泡
+						</li>
+						<li>购买我们精心准备的产品，支持其它上传的泡泡</li>
+					</ul>
+				</div>
+				<div class="loginSystem-r fr">
+					<div class="change">
+						<a href="login.html">登录</a>
+						<a href="javascript:void(0)" class="on">注册</a>
+					</div>
+					
+					<div class="login register">
+						<form action="" autocomplete="off">
+							<input type="text" id="registerName" maxlength="11" placeholder="请输入手机号码" value=""/>
+							<input type="password" id="registerPwd" maxlength="20" placeholder="设置密码" value=""/>
+							<label for="" class="clearfix">
+								<input type="text" name="" id="verify" placeholder="验证码"/>
+								<a href="javascript:void(0)" class="send" rel="0">获取验证码</a>
+							</label>							
+							<label class="agreen"><input type="checkbox" id="accord" />同意<a href="protocol.html" target="_blank">有知庐网站协议</a>，承诺不恶意散播该网站信息</label>
+							<a href="javascript:void(0)" id="toRegister" />注册</a>
+						</form>
+					</div>
+				</div>				
+			</div>
+		</div>
+		<!--公共内容底部-->
+		<div id="footer"></div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		//判断用户是否登录
+		var userid = $.cookie("c_member_mobile");
+		if(userid){
+			userid = userid.substring(0,3)+"****"+userid.substring(7,11);
+			$(".mp").removeClass("hide");
+		}
+		//注册
+		$("#toRegister").click(function(){
+			var mobile = $("#registerName").val();
+			var pwd = $("#registerPwd").val();
+			var code = $("#verify").val();
+			var accord = $("#accord").prop("checked");
+			if(mobile==""){
+				alert("请填写手机号码");
+				return;
+			}
+			if(pwd==""){
+				alert("请设置密码");
+				return;
+			}
+			if(code==""){
+				alert("请输入验证码");
+				return;
+			}
+			if(!accord){
+				alert("未同意有知庐网站协议不能注册");
+				return;
+			}
+			
+			$.ajax({
+				type:"post",
+				dataType:dataType, 
+				url:url+"user/register.json",
+				data:{mobile:mobile,password:pwd,smsCode:code},
+				success:function(data){
+					if(data.respCode=="0000"){
+						alert("注册成功！");
+						//window.location.href="login.html";
+					}else{
+						alert(data.respMsg);
+					}
+				},
+				complete:function(){
+					$.ajax({
+						type:"post",
+						dataType:dataType, 
+						url:url+"user/login.json",
+						data:{mobileOrEmail:mobile,password:pwd},
+						success:function(data){
+							if(data.respCode=="0000"){
+								window.location.href="index.html";
+							}else{
+								alert(data.respMsg);
+							}
+						}
+					});
+				}
+			});
+		});
+	});
+	$(".send").click(function(){
+		var mobile = $("#registerName").val();
+		var obj = $(this);
+		if(isMobilePhone(mobile)){
+			send(mobile,obj,"00");
+		}else{
+			alert("请输入正确的手机号")
+		}
+		
+	});
+</script>
+

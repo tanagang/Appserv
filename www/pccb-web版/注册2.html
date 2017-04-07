@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+</head>
+<body class="fff">
+	<header>
+		<a href="javascript:void(0)"><img src="images/back.png"  height="20" width="12"></a>
+		设置登陆密码
+	</header>
+   <section class="margin-top-20 section4">
+		<div class="box">
+			<span>短信验证码</span>
+			<input type="text" class="flex" placeholder="请输入验证码">
+			<a href="javascript:void(0)" class="set-time"><span id="sec">60</span>秒</a>
+		</div>
+		<div class="box">
+			<span>登&nbsp;陆&nbsp;密&nbsp;码</span>
+			<input type="text" class="flex" placeholder="请输入密码">
+			<a href="javascript:void(0)" class="see" rel="show"><img src="images/see.png" width="18" /></a>
+		</div>
+		<a href="javascript:void(0)" class="btn" style="margin-top:50px">注册并登陆</a>
+   </section>
+</body>
+</html>
+<script>
+	window.onload=function(){
+		var m = document.getElementById("sec");
+		var time = 60;
+		var clr = setInterval(function(){
+			time--;
+  			m.innerHTML = time;
+  			if(time<=0){
+  				clearInterval(clr);
+  				alert("时间到，验证码怎么还没有发来？");
+  			}
+		}, 1000);
+		$(".see").click(function(event) {
+			var that = $(this);
+			var flag = that.attr("rel");
+			if(flag=="show"){
+				that.prev().attr("type","password");
+				that.attr("rel","hide");
+			}else{
+				that.prev().attr("type","text");
+				that.attr("rel","show");
+			}
+			
+		});
+	}
+</script>
+
+
+
+
+
+
+

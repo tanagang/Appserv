@@ -1,0 +1,155 @@
+/*addPao*/
+.myExcit{
+	position: relative;
+	z-index: 5;
+	width: 958px;
+	border: solid 1px #E3E3E3;
+	margin: 42px auto 90px;
+	background-color: #fff;
+	padding: 0px 20px;
+}
+.myExcit-title{
+	font-size: 20px;
+	color: #010101;
+	font-weight: bold;
+	height: 26px;
+	line-height: 26px;
+	margin-top: 25px;
+	margin-bottom: 35px;
+}
+.myExcit-get,
+.myExcit-mine{
+	border: solid 1px #E3E3E3;
+	padding: 0px 25px;
+	margin-bottom: 20px;
+}
+.myExcit-get-title{
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+	height: 26px;
+	line-height: 26px;
+	margin-top: 35px;
+}
+.myExcit-get-order{
+	line-height: 35px;
+	padding: 50px 35px;
+	border-bottom: solid 1px #ECECEC;
+}
+.myExcit-get-order label{
+	font-size: 14px;
+	color: #444;
+	margin-right: 50px;
+}
+.myExcit-get-order input{
+	border: solid 1px #e3e3e3;
+	padding: 3px 10px;
+	width: 328px;
+	height: 27px;
+	line-height: 27px;
+}
+.myExcit-get-order .myExcitOrderSub{
+	display: block;
+	width: 260px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	background-color: #234788;
+	font-size: 18px;
+	margin-top: 55px;
+	margin-left: 112px;
+}
+.productgo{
+	background: url(../img/myShare/partten_10.png) left center no-repeat;
+	font-size: 14px;
+	color: #444;
+	padding-left: 85px;
+	display: inline-block;
+	margin: 0 auto;
+}
+.productgo>div{
+	text-align: left;
+}
+.productgo a{
+	color: #234788;
+	text-decoration: underline;
+}
+.productgout{
+	padding-left: 35px;
+	margin: 56px 0;
+}
+.myExcit-mine-intr{
+	border: solid 1px #ECECEC;
+	background-color: #F6F6F6;
+	border-left: none;
+	margin-top: 25px;
+}
+.myExcit-mine-intr ul li{
+	float: left;
+	border-left: solid 1px #ECECEC;
+	width: 225px;
+	padding-top: 15px;
+	height: 85px;
+}
+.myExcit-mine-intr ul li>div{
+	height: 36px;
+	line-height: 36px;
+	padding-left: 20px;
+}
+.myExcit-mine-intr ul li span{
+	font-size: 24px;
+	color: #00d093;
+	margin-right: 5px;
+}
+.myExcit-mine-tab{
+	margin: 30px 0;
+	border: dotted 1px #e3e3e3;
+	padding: 7px 22px;
+}
+.myExcit-mine-tab ul li{
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	color: #444;
+	float: left;
+	margin-right: 12px;
+	padding: 0px 12px;
+	cursor: pointer;
+}
+.myExcit-mine-tab ul li.on{
+	color: #fff;
+	background-color: #234788;
+	
+}
+.myExcit-mine-list{
+	display: none;
+}
+.myExcit-mine-list:first-child{
+	display: block;
+}
+.myExcit-mine-all{
+	border-top: solid 2px #00D093;
+}
+.myExcit-mine-list table tr th,
+.myExcit-mine-list table tr td{
+	font-size: 12px;
+	height: 41px;
+	text-indent: 20px;
+}
+.myExcit-mine-list table {
+	width: 100%;
+	box-shadow: 0px 3px 3px #F4F4F4;
+}
+.myExcit-mine-list table tr th{
+	color: #444;
+}
+.myExcit-mine-list table tr td{
+	color: #777;
+}
+.myExcit-mine-list table tr:nth-child(odd){
+	background-color: #F6F6F6;
+}
+.myExcit-mine-list .page{
+	margin: 35px 0;
+}

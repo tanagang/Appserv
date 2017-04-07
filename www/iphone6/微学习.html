@@ -1,0 +1,117 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>微学习</title>
+<link rel="stylesheet" href="css/index.css" />
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/swipe.js"></script>
+</head>
+<body class="eee">
+	<div class="xx-title box">
+    	<img src="images/head.jpg" width="55" height="55">
+        <div class="flex">
+        	<p>Andy</p>
+            <p>我报名了这个活动,<br>为我投票吧</p>
+        </div>
+        <a href="javascript:void(0)" class="vote" id="vote1">投票</a>
+    </div>
+	<div id='mySwipe' class='swipe'>
+      <ul class='swipe-wrap'>
+        <li><img src="images/banner.jpg" style="width:100%;" title="0"></li>
+        <li><img src="images/banner.jpg" style="width:100%;" title="1"></li>
+		<li><img src="images/banner.jpg" style="width:100%;" title="2"></li>
+      </ul>
+       <div id="dot">
+       	<span class="span1">报名人数：1668</span>
+        <span class="span2">价格：<i>￥168</i></span>
+       </div>
+    </div>
+    <p class="swipe-title">火速轻应用CEO九州 重新定义互联网的三种形式</p>
+    <dl class="tz-detail" >
+        <dd class="font12"><img src="images/icon1.png" /> 2015.08.26 09:30-17:30</dd>
+        <dd class="box">
+        	<div class="flex font12"><img src="images/icon2.png" /> 上海市浦东新区 哈哈路 123号</div>				            
+            <a href="#" class="adr"><img src="images/map.png" /> ></a>
+         </dd>
+        <dd class="font12"><img src="images/icon3.png" /> 021-123456</dd>
+    </dl>
+    <p class="xx-tips">课程内容：未来趋势  个体消亡，平台会诞生
+所以，我们提到一个问题叫——APP到底是不是未来的唯一的移动互联网的产品形态？对用户来讲，尤其O2O用户...</p>
+    <footer class="box">
+    	<a href="#">
+        	<img src="images/icon8.png" width="20"  height="20" /><br/>投票榜单
+        </a>
+        <a href="javascript:void(0)" id="vote2">
+        	<img src="images/icon9.png" width="16" height="23" /><br/>转发抽奖
+        </a>
+        <a href="#" class="on">
+        	<img src="images/icon7_on.png" width="20" height="20" /><br/>我要报名
+        </a>
+    </footer>
+	<div class="share" id="shareScreen">
+    	<img src="images/share1.png" width="280" />
+        <p class="ewm"><img src="images/map.png" >&emsp;<img src="images/map.png"></p>
+    </div>
+	<div class="share" id="shareScreen2">
+    	<img src="images/share2.png" width="280" />
+        <p class="ewm"><img src="images/map.png" >&emsp;<img src="images/map.png"></p>
+    </div>
+</body>
+</html>
+<script>
+	var elem = document.getElementById('mySwipe');
+	var size=$(".swipe-wrap li").size();
+	var startIndex = 0;
+	var str='';
+	if(size>1){
+		startIndex = 1;
+		for(var i=0;i<size;i++){
+		   str+='<img src="images/dot2.png" width="10" />';
+		}
+		$("#dot").append(str);
+		$("#dot img").eq(1).attr("src","images/dot1.png");
+	}
+	window.mySwipe = Swipe(elem, {
+	  startSlide:startIndex,
+	  auto: 5000,
+	  continous: true,
+	   disableScroll: true,
+	  // stopPropagation: true,
+	   callback: function(index, element) {
+		   var idx=$(element).find("img").attr("title");
+		   $("#dot img").attr("src","images/dot2.png");
+		   $("#dot img").eq(idx).attr("src","images/dot1.png");
+		},
+	  // transitionEnd: function(index, element) {}
+	});
+    $(function(){
+        $("#vote1").click(function(event) {
+            /* Act on the event */
+            $("#shareScreen").css("display","block");
+        });
+        $("#vote2").click(function(event) {
+            /* Act on the event */
+            $("#shareScreen2").css("display","block");
+        });
+        $(".share").click(function(){
+            $(this).css("display","none");
+        });
+        $(".ewm").click(function(){
+            return false;
+        });
+    });
+</script>
+
+
+
+
+
+
+

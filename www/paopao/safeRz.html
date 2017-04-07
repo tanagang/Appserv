@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<title>绑定手机</title>
+		<link rel="stylesheet" type="text/css" href="css/global.css"/>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			body{background: #F5F5F5;max-width: 640px;margin:0 auto;}
+			.hh{height:40px;line-height: 40px;background:#fff;border-bottom:1px solid #DCDCDC; text-align: center;color:#000;font-size:15px}
+			.hh .fl{padding:0 12px;}
+			.mm{margin:30px 15px}
+			.mm>div{margin:15px auto;font-size:12px}
+			.mm input{width:100%;height:35px;line-height: 35px;border:1px solid #E4E4E4;border-radius:3px;background: #fff;text-indent:5px}
+			a.code{display:inline-block;width:120px; margin-left:15px;text-align: center;height:40px;line-height: 40px;background: #244789;color:#fff;border-radius:5px}
+			a.bind{width:100%;margin-left:0;margin-top:50px}
+		</style>
+	</head>
+	<body>
+		<div class="hh">
+			<a class="fl" href="javascript:window.history.back()"><img src="img/arrowleft.png" width="10"/></a>
+			实名认证
+		</div>
+		<div class="mm">
+			<div>
+				<input type="text" class="idCardName" placeholder="请输入您的姓名" />
+				<span class="idCardNameError"></span>
+			</div>
+			<div>
+				<input type="text" class="idCardNum" placeholder="请输入您的身份证号" />
+				<span class="idCardNumError"></span>
+			</div>
+			<div>
+				1、有知庐承诺不会将您的信息传播给其他第三方<br>
+				2、实名认证通过才能分享泡泡，帮助更多需要帮助的人
+			</div>
+		<div>
+		<a href="javascript:void(0)" class="code bind idCard">提交</a>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		/*实名认证*/
+		$('.idCard').click(function(){
+			$.ajax({
+			    type:"POST",
+			    url:url+"/user/realName.json",
+			    dataType: 'jsonp',
+			    data: {realName:$('.idCardName').val(),idNumber:$('.idCardNum').val()},
+			    beforeSend:function(){
+					if($('.idCardName').val()==""){
+						$('.idCardNameError').append('<i class="cpr cpr2"></i><span class="error">用户名不能为空！</span>');
+						return false;
+					}
+					if($('.idCardNum').val()==""){
+						$('.idCardNumError').html('<i class="cpr cpr2"></i><span class="error">身份证号不能为空！</span>');
+						return false;
+					}
+					if($('.idCardNum').val().length!=18){
+						$('.idCardNumError').html('<i class="cpr cpr2"></i><span class="error">身份证号格式不正确！</span>');
+						return false;
+					}
+			    },
+			    success: function (data) {
+			    	console.log(data);
+			        if(data.respCode==0000){
+			        	alert("实名认证完成！");
+			        	window.location.href="mSafe.html";
+			        }else{
+			        	alert(data.respMsg);
+			        }
+			    },
+			    complete:function(){
+	
+			    },
+			    error:function(){}
+			});
+		});
+	})	
+</script>
+

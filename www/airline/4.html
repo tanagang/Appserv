@@ -1,0 +1,69 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script type="text/javascript" src="js/zepto.min.js"></script>
+</head>
+<body>
+<div class="soso pr">
+	<input type="text" placeholder="输入城市" />
+	<a href="#"><img src="images/soso.png" width="23" height="23" /></a>
+</div>
+<div class="box sel-c" id="sel_c">
+	<a href="javascript:void(0)" class="flex">国内</a>
+	<a href="javascript:void(0)" class="flex">国际/港澳台</a>
+</div>
+<section class="mb20">
+	<dl class="soso-result fff">
+		<dt>热门城市</dt>
+		<dd><a href="1.html" >北京 BeiJing</a></dd>
+		<dd><a href="1.html">上海 ShangHai</a></dd>
+		<dd><a href="1.html">天津 TianJin</a></dd>
+	</dl>
+	<dl class="soso-result fff">
+		<dt>ABCDE</dt>
+		<dd><a href="1.html">北京 BeiJing</a></dd>
+		<dd><a href="1.html">北京 BeiJing</a></dd>
+		<dd><a href="1.html">北京 BeiJing</a></dd>
+	</dl>
+	<dl class="soso-result fff">
+		<dt>ABCDE</dt>
+		<dd><a href="1.html">北京 BeiJing</a></dd>
+		<dd><a href="1.html">北京 BeiJing</a></dd>
+		<dd><a href="1.html">北京 BeiJing</a></dd>
+		<dd><a href="1.html">北京 BeiJing</a></dd>
+	</dl>
+</section>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		/*控制国内和国际*/
+		$("#sel_c>a").tap(function(){
+			$("#sel_c>a").removeClass("active");
+			$(this).toggleClass("active");
+		}).eq(0).trigger("tap");
+		/*控制城市展开*/
+		$(".soso-result dt").tap(function(e){
+			e.preventDefault(); 
+			$(".soso-result dd").css("display","none");
+			$(this).closest("dl").find("dd").toggle();
+		});
+		/*默认热门城市展开*/
+		$(".soso-result").first().find("dt").trigger("tap");
+	});
+</script>
+
+
+
+
+
+

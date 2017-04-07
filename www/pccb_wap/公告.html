@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>pccb</title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/notice.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+    <section class="mt0">
+      <dl>
+        <dt>利率下行趋势不改，股债依然风采</dt>
+        <dd class="hidden"><span class="fc4">摘要：</span>前期CPI,出口和PMI数据超预期让市场浮想联翩，但是随着2015年1-2月工业增加值，固定资产投资。<p>前期CPI,出口和PMI数据超预期让市场浮想联翩，但是随着2015年1-2月工业增加值，固定资产投资，但是随着2015年1-2月工业增加值，固定资产投资。</p></dd>
+        <dd class="clearfix">
+            <a href="#" class="toggle">
+                <span class="dleft">2015-02-01</span>
+                <span class="dright">展开</span>
+                <i>&gt;</i>
+            </a>
+        </dd>
+      </dl>  
+    </section>
+    <section>
+      <dl>
+        <dt>利率下行趋势不改，股债依然风采</dt>
+        <dd class="hidden"><span class="fc4">摘要：</span>前期CPI,出口和PMI数据超预期让市场浮想联翩，但是随着2015年1-2月工业增加值，固定资产投资。<p>前期CPI,出口和PMI数据超预期让市场浮想联翩，但是随着2015年1-2月工业增加值，固定资产投资，但是随着2015年1-2月工业增加值，固定资产投资。</p></dd>
+        <dd class="clearfix">
+            <a href="#" class="toggle">
+                <span class="dleft">2015-02-01</span>
+                <span class="dright">展开</span>
+                <i>&gt;</i>
+            </a>
+        </dd>
+      </dl>  
+    </section>
+</body>
+</html>
+<script type="text/javascript">
+    window.onload = function(){
+        $(".toggle").click(function(event) {
+            $(this).parent("dd").siblings('dd').toggleClass('hidden');
+            $(this).children('.dright').html($(this).parent("dd").siblings('dd').is('.hidden')?"展开":"收起");
+            $(this).children('i').toggleClass('down');
+        });
+    }
+</script>

@@ -1,0 +1,113 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="0">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>pccb</title>
+<link rel="stylesheet" href="css/global.css" />
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script src="js/public.js"></script>
+</head>
+<body>
+    <section class="mt0">
+        <p class="p1">年化收益率<span>限时抢购</span></p>
+        <dl class="yield">
+            <dt>18.8<small>%</small></dt>
+            <dd>已完成<span>80%</span>，剩余可投金额 <span>99,999,999.00 </span>元</dd>
+            <dd>
+                <div class="progress">
+                    <div class="per" rel="80"></div>
+                </div>
+            </dd>
+        </dl>
+        <div class="ensure clearfix">
+            <div class="yen">
+                <p>本金保障</p>
+                <p>100%兑付</p>
+            </div>
+            <div class="safe">
+                <p>抵押保障</p>
+            </div>
+            <div class="income">
+                <p>稳定收益</p>
+            </div>
+        </div>
+        <div class="invest clearfix">
+            <div class="inleft">
+                <input type="text">份，总金额 <small>500</small> 万元
+            </div>
+            <div class="inright">
+                <a href="#" class="inbtn">立刻投资</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <ul class="content">
+            <li>
+                <a href="#">
+                    <span class="conleft">交易记录</span>
+                    <span class="conright">88888888 笔</span>
+                    <i>&gt;</i>
+                </a>
+            </li>
+            <li>
+                    <span class="conleft">投资期限</span>
+                    <span class="conright">120 天</span>
+            </li>
+            <li>
+                <span class="conleft">起购金额</span>
+                <span class="conright">5 万元</span>
+            </li>
+            <li>
+                    <span class="conleft">起息日期</span>
+                    <span class="conright">2015-5-12 (周三)</span>
+            </li>
+            <li>
+                    <span class="conleft">到期日期</span>
+                    <span class="conright">2015-5-13 (周四)</span>
+            </li>
+            <li>
+                    <span class="conleft">预计到账</span>
+                    <span class="conright">到期日起2个工作日内</span>
+            </li>
+            <li>
+                    <span class="conleft">相关文件</span>
+                    <span class="conright">8 个</span>
+                    <i>&gt;</i>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="conleft">担保说明</span>
+                    <i>&gt;</i>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="footer clearfix">
+        <div class="ftleft">
+            <input type="text">份，总金额 <small>500</small> 万元
+        </div>
+        <div class="ftright">
+            <a href="#" class="ftbtn">已售罄</a>
+        </div>
+    </section>
+</body>
+</html>
+<script type="text/javascript">
+    window.onload = function(){
+        $("div.per").each(function(index, el) {
+            var that = $(this);
+            var per = that.attr("rel");
+            that.css("width",per+"%");
+        });
+    }
+</script>
+
+
+

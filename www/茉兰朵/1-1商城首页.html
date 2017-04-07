@@ -1,0 +1,119 @@
+<!DOCTYPE>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/public.css" />
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/swipe.js"></script>
+</head>
+
+<body class="eee">
+<header>
+	<div id='mySwipe' class='swipe'>
+      <ul class='swipe-wrap'>
+        <li><img src="images/temp/img.jpg" style="width:100%;" title="0"></li>
+        <li><img src="images/temp/img.jpg" style="width:100%;" title="1"></li>
+		<li><img src="images/temp/img.jpg" style="width:100%;" title="2"></li>
+        <li><img src="images/temp/img.jpg" style="width:100%;" title="3"></li>
+      </ul>
+       <p id="dot"></p>
+    </div>
+    <ul id="list-ul" class="clear">
+    	<li><a href="#">丽芙生活</a></li>
+        <li><a href="#">现代简约</a></li>
+        <li><a href="#">时尚清新</a></li>
+        <li><a href="#">卡通名品</a></li>
+        <li><a href="#">素色拼接</a></li>
+        <li><a href="#">更多</a></li>
+    </ul>
+</header>
+ <section id="section1" class="padding10 clear">
+ 	<dl>
+    	<dt><a href="#"><img src="images/temp/img1.jpg" /></a></dt>
+        <dd>￥998.00</dd>
+        <dd>茉兰朵　恋蔷薇活性亲肤纯棉四件套</dd>
+    </dl>
+    <dl>
+    	<dt><a href="#"><img src="images/temp/img1.jpg" /></a></dt>
+        <dd>￥998.00</dd>
+        <dd>茉兰朵　恋蔷薇活性亲肤纯棉四件套</dd>
+    </dl>
+    <dl>
+    	<dt><a href="#"><img src="images/temp/img1.jpg" /></a></dt>
+        <dd>￥998.00</dd>
+        <dd>茉兰朵　恋蔷薇活性亲肤纯棉四件套</dd>
+    </dl>
+    <dl>
+    	<dt><a href="#"><img src="images/temp/img1.jpg" /></a></dt>
+        <dd>￥998.00</dd>
+        <dd>茉兰朵　恋蔷薇活性亲肤纯棉四件套</dd>
+    </dl>
+ </section>
+ <footer class="box">
+    	<div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/sc_active.png" width="22" height="22" /></dt>
+                    <dd class="hover">商城</dd>
+                </dl>
+            </a>
+         </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/ss.png"  width="27" height="22"/></dt>
+                    <dd>搜索</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#">
+                <dl>
+                    <dt><img src="images/gwc.png"  width="25" height="22" /></dt>
+                    <dd>购物车</dd>
+                </dl>
+             </a>
+        </div>
+        <div class="flex">
+        	<a href="#" >
+                <dl>
+                    <dt><img src="images/wd.png"  width="22" height="22"/></dt>
+                    <dd>我的</dd>
+                </dl>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+	var elem = document.getElementById('mySwipe');
+	var size=$(".swipe-wrap li").size();
+	
+	var str='';
+   	for(var i=0;i<size;i++){
+	   str+='<img src="images/dot2.png" width="8" />';
+	}
+	$("#dot").html(str);
+	$("#dot img").eq(1).attr("src","images/dot1.png");
+	window.mySwipe = Swipe(elem, {
+	  startSlide:1,
+	  auto: 5000,
+	  continuous: true,
+	   disableScroll: true,
+	  // stopPropagation: true,
+	   callback: function(index, element) {
+		   var idx=$(element).find("img").attr("title");
+		   $("#dot>img").attr("src","images/dot2.png");
+		   $("#dot>img").eq(idx).attr("src","images/dot1.png");
+		},
+	  // transitionEnd: function(index, element) {}
+	});
+</script>
+

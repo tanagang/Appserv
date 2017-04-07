@@ -1,0 +1,195 @@
+/*addPao*/
+.myShare{
+	position: relative;
+	z-index: 5;
+	max-width: 960px;
+	border: solid 1px #E3E3E3;
+	margin: 42px auto 90px;
+	background-color: #fff;
+	padding: 0px 20px;
+}
+.myShare-title{
+	font-size: 20px;
+	color: #010101;
+	font-weight: bold;
+	height: 26px;
+	line-height: 26px;
+	margin-top: 25px;
+}
+.myShare-chose{
+	margin-top: 35px;
+	height: 33px;
+	line-height: 33px;
+	padding:20px 0 20px 120px;
+	border: dotted 1px #E3E9EF;
+}
+.myShare-chose label{
+	float: left;
+	margin:0 5%;
+	font-size: 14px;
+	color: #444;
+	cursor: pointer;
+	text-align: center;
+}
+.myShare-chose label input[type="radio"]{
+	height:16px;
+	width:16px;
+	vertical-align: -3px;
+	margin-right:5px;
+}
+
+.myShare-chose-list:first-child{
+	display: block;
+}
+.myShare-chose-list{
+	display: none;
+	margin:20px auto;
+	width:70%;
+}
+.myShare-chose-list .ipt{
+	overflow: hidden;
+	margin-bottom: 22px;
+}
+.myShare-chose-list .ipt label{
+	float: left;
+	font-size: 14px;
+	color: #444;
+	width: 20%;
+	height: 35px;
+	line-height: 35px;
+}
+.myShare-chose-list .ipt>div{
+	float: left;
+	width:78%;
+}
+.myShare-chose-list .ipt select,
+.myShare-chose-list .ipt input,
+.myShare-chose-list .ipt textarea{
+	width:100%;
+	padding: 3px 10px;
+	font-size: 14px;
+	color: #777;
+	height:35px;
+	line-height:35px;
+	border: solid 1px #E3E9EF;
+	box-sizing: border-box;
+}
+.ipt.address>div select{width:31.33%;margin:10px 2% 10px 0}
+.ipt.address>div select,.ipt.address>div input{}
+.myShare-chose-list .ipt textarea{
+	width: 100%;
+	height: 150px;
+}
+.ipt .lx input[type="radio"]{
+	height:16px;
+	width:16px;
+	vertical-align: -3px;
+	margin-right:5px;
+}
+.myShare-chose-list .address label{
+	background: url(../img/address.png) 10px 50% no-repeat;
+	text-indent: 25px;
+}
+.myShare-chose-list .address select{
+	width: 160px;
+  	margin-right: 6px;
+  	float: left;
+}
+.myShare-chose-list .upVideo{
+	margin-bottom: 22px;
+	border: dotted 1px #E3E9EF;
+	margin-left: 120px;
+}
+.myShare-chose-list .upVideo-title{
+	position: relative;
+	padding:10px 0;
+	text-indent: 56px;
+	font-size: 14px;
+	color: #444;
+	background: url(../img/video.png) 20px center no-repeat;
+}
+.myShare-chose-list .upVideo-title label{
+	position: absolute;left:10px;top:0;
+	width:80px;
+	height:40px;
+	opacity: 0;
+	z-index: 2;
+	cursor: pointer;
+	overflow: hidden;
+}
+.myShare-chose-list .upVideo-con{
+
+	border-top: dotted 1px #E3E9EF;
+}
+.myShare-chose-list .radioSelect input{
+	width: auto;
+	display: none;
+}
+.myShare-chose-list .radioSelect{
+	float: left;
+	margin-right: 70px;
+	height: 35px;
+	line-height: 35px;
+	
+}
+.myShare-chose-list .radioSelect i{
+	float: left;
+	width: 14px;
+	height: 35px;
+	margin-right: 6px;
+	background: url(../img/radio.png) right center no-repeat;
+}
+.myShare-chose-list .radioSelect i.curr{
+	background: url(../img/radio.png) left center no-repeat;
+}
+.myShare-chose-list .myShareSub{
+	margin:0 auto;
+	display: block;
+	width: 260px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	color: #FFFFFF;
+	background-color: #234788;
+	font-size: 18px;
+	margin-top: 50px;
+}
+
+/*媒体查询，参考部分Bootstrap 框架*/
+/*当页面大于1200px 时，大屏幕，主要是PC 端*/
+@media (min-width: 1200px){
+	
+}
+/*在992 和1199 像素之间的屏幕里，中等屏幕，分辨率低的PC*/
+@media (min-width: 992px) and (max-width: 1199px){
+	
+}
+/*在768 和991 像素之间的屏幕里，小屏幕，主要是PAD*/
+@media (min-width: 768px) and (max-width: 991px){
+	
+}
+/*在480 和767 像素之间的屏幕里，超小屏幕，主要是手机*/
+@media (min-width: 480px) and (max-width: 767px) {
+	.myShare{margin:0 auto;border:none}
+	.myShare-chose{padding:0}
+	.myShare-chose label{width:33%;padding:0;margin:0;text-align: center;}
+	.myShare-chose-list{width:95%;}
+	.ipt.address label,.ipt.say label{width:100%}
+	.ipt.address>div,.ipt.say>div{width:100%}
+	.ipt.address>div select,.ipt.address>div input,.ipt.address>div textarea{width:100%;margin:10px auto}
+	.myShare-chose-list .upVideo{margin-left:0}
+	.myShare-chose-list .ipt .lx label{width:40%}
+}
+/*在小于480 像素的屏幕，微小屏幕，更低分辨率的手机*/
+@media (max-width: 479px) {
+	.myShare{margin:0 auto;padding:0 10px;border:none}
+	.myShare-chose{padding:0}
+	.myShare-chose label{width:30%;padding:0;margin:0;text-align: center;}
+	.myShare-chose-list{width:100%;}
+	.myShare-chose-list .ipt label.sf{font-size:12px}
+	.ipt.address label,.ipt.say label{width:100%}
+	.ipt.address>div,.ipt.say>div{width:100%}
+	.ipt.address>div select,.ipt.address>div input,.ipt.address>div textarea{width:100%;margin:10px auto}
+	.myShare-chose-list .upVideo{margin-left:0}
+	.myShare-chose-list .ipt .lx label{width:40%}
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title>温州大学</title>
+<link rel="stylesheet" href="css/index.css" />
+<script src="js/jquery-2.1.3.min.js"/></script>
+<style>
+        html{height: 100%; overflow: hidden;}
+        body{height: 100%;overflow-y:scroll;}
+        body::-webkit-scrollbar{display: none;}
+        .wrap{position: fixed; overflow: auto; width: 100%; height: 230px;padding:50px 0 35px; left: 0px; bottom: -300px; background-color: #fff; z-index:999;}
+        .wrap .title{position:fixed;bottom:-180px;left:0;height:50px;font-size:12px;padding:12px 0;background:#fff;border-bottom:1px solid #ddd;width:100%; z-index:999;}
+        .wrap .sub{position:fixed;bottom:0;left:0;height:35px;line-height:35px; background: #2382D2; text-align:center;color:#fff;font-size:16px;width:100%; z-index:999;}
+        .wrap .title .flex{margin-left:10px;}
+        .wrap .title a{display:block;margin-right:10px;margin-top:5px;}
+    </style>
+</head>
+<body class="fff">
+	<div class="body">
+        <header>
+            <a href="#" class="back"><img src="images/arrow_back.png"></a>
+            讲座信息
+        </header>
+        <div class="div-cj">
+            <p class="jz-title" >学术沙龙预告：中国当代文学视域中的余光中<br>——人文学院　人文社科处</p>
+            <p class="author">作者：宣传部 来源：人文学院　人文社科处 编辑：新闻中心 时间：2014-10-17 浏览：190 </p>
+            <ul class="ul-info">
+                <li>主&emsp;&emsp;题：中国当代文学视域中的余光中</li>
+                <li>时&emsp;&emsp;间：2014年10月21日晚上6:30</li>
+                <li>地&emsp;&emsp;点：育英图书馆213B</li>
+                <li>特邀嘉宾：古远清 中南财经政法大学台港文学所所长、教授</li>
+                <li>主&emsp;&emsp;办：温州大学人文社科处</li>
+                <li>承&emsp;&emsp;办：温州大学人文学院</li>
+            </ul>
+            <div class="div-info">
+                嘉宾简介<br/>
+　　古远清，中国新文学学会副会长，中南财经政法大学台港文学所所长、教授，曾任香港中文大学和香港岭南大学客座教授，在中国大陆、台湾、香港等地出版《中国当代文学理论批评史》、《当代台港文学概论》、《海峡两岸文学关系史》等20多部专著。他是将中国大陆、台湾、香港当代文论史试图整合的第一人。其中台湾文学研究，被两岸三地学界誉为 “南北二古” （ 另一“古”为中国社会科学院研究员古继堂 ）之一。他的《台湾当代文学理论批评史》、《诗歌分类学》、《诗歌修辞学》等著作，被台湾各高校作为教材和参考书使用。
+            </div>
+        </div>
+        <p class="more" id="bm"><a href="#">报名参加</a></p>
+    </div>
+    <footer>
+    	<p class="p1">温州大学 © 版权所有&emsp;&emsp;Powered By BianGuo</p>
+    </footer>
+    <div id="screen"></div>
+     <form class="wrap">
+        <div class="title box">
+            <div class="flex">学术沙龙预告:中国当代文学视域中的余光中<br/>——人文学院&emsp;人文社科处</div>
+            <a href="javascript:void(0)" id="close"><img src="images/close.png" width="20"></a>
+        </div>
+        <div class="pr bm-inp">
+            <p>姓&emsp;&emsp;名：<input type="text"></p>
+            <p>学&emsp;&emsp;号：<input type="text"></p>
+            <p>手机号码：<input type="text"></p>　　
+        </div>
+        <a href="#" class="sub">提交报名</a>
+    </form>
+    
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        //报名参加
+        $("#bm").click(function(event) {
+           $(".wrap").animate({"bottom":"0"},200,function(){
+            $("#screen").fadeIn(200);
+           });
+           $(".title").animate({"bottom":"180px"},200);  
+           $(".sub").animate({"bottom":"0"},200);  
+        });
+        //提交报名
+        $("#close").click(function(){
+            $(".wrap").animate({"bottom":"-300px"},200,function(){
+                $("#screen").fadeOut(0);
+            });    
+            $(".title,.sub").animate({"bottom":"-50px"},200);    
+        }); 
+    });
+</script>
+
+
+
+
+
+
+

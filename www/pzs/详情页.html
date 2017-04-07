@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="Expires" CONTENT="-1">           
+<meta http-equiv="Cache-Control" CONTENT="no-cache">           
+<meta http-equiv="Pragma" CONTENT="no-cache"> 
+<title></title>
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+</head>
+<body class="fff">
+	<div id="wrap">
+		<header>
+			P2P行业还能走多久？
+			<p>2015/08/15&emsp;23:04:15&emsp;来源：&emsp;点击：1000</p>
+		</header>
+		<div class="detail">
+			<img src="images/img1.jpg">
+			当地时间10月22日下午，习近平来到英国首相卡梅伦的乡间别墅——契克斯庄园，卡梅伦在庄园门口欢迎习近平一行，而照片中两位领导人都没有打领带。会晤后，两国领导人还一同走进一家当地的小镇酒吧，体验英国乡间的酒吧文化。<br>
+	习近平和卡梅伦上，卡梅伦向习主席啤酒-印度麦啤，并且举杯向习主席说钟。
+		</div>
+	</div>
+	<footer>
+		分享到：
+		<a href="#"><img src="images/icon1.png" width="26"></a>
+		<a href="#"><img src="images/icon2.png" width="20"></a>
+		<a href="#"><img src="images/icon3.png" width="26"></a>
+	</footer>
+</body>
+</html>
+<script type="text/javascript">
+	window.onload=function(){
+		resize();
+		window.onresize = function(){
+			setTimeout(resize(), 100);
+		}
+		function resize(){
+			var winH = $(window).height();
+			var h = $("footer").height();
+			var wrapH = $("#wrap").height();
+			if(wrapH>=(winH-h)){
+				$("footer").css("position","static");
+			}else{
+				$("footer").css("position","fixed");
+			}
+		}
+	}
+</script>
+
+
+
